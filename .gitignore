@@ -1,3 +1,5 @@
-db.sqlite3
-*.pyc
-.DS*
+whoisfe\db.sqlite3
+whoisfe\whoisfe\__pycache__\__init__.cpython-39.pyc
+whoisfe\whoisfe\__pycache__\settings.cpython-39.pyc
+whoisfe\whoisfe\__pycache__\urls.cpython-39.pyc
+whoisfe\whoisfe\__pycache__\wsgi.cpython-39.pyc
