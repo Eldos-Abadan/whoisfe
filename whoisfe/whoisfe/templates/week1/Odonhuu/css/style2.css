@@ -1,0 +1,130 @@
+body {
+    font-family: 'Dekko';
+    font-size: 12px;
+}
+
+/* Ariin dewsger */
+#back {
+    background-color: rgb(213, 153, 42);
+    border: 4px dotted rgb(213, 153, 42);
+    border-bottom-right-radius: 60px;
+    border-top-left-radius: 60px;
+    border: 0.5rem outset rgb(125, 125, 216);
+    margin: auto;
+    height: 600px;
+    width: 450px;
+    z-index: 1;
+}
+
+/* Zurag oruulah heseg */
+#deed {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(125, 125, 216);
+    /* border-top-right-radius: 60px; */
+    border-top-left-radius: 60px;
+    display: inline-flex;
+    margin-left: 12px;
+    z-index: 2;
+    margin-top: 20px;
+    width: 420px;
+    height: 120px;
+}
+
+/* Zurag oruulah dotor div avsanii style*/
+#topInformation {
+    display: inline-flex;
+    margin-left: 10px;
+    margin-top: 30px;
+    height: 120px;
+    width: 390px;
+    z-index: 3;
+}
+
+/* Bolovsrol bolon busad medeelliin hesgiin yrunhii div */
+#dundHeseg {
+    /* background-color: rgb(125, 125, 216); */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 12px;
+    margin-top: 30px;
+    height: 170px;
+    width: 420px;
+    z-index: 3;
+}
+
+/* Dund heseg dotorh ZVVN taliin diviin style */
+#hajuu1 {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(125, 125, 216);
+    margin-right: 10px;
+    height: 100%;
+    width: auto;
+    z-index: 3;
+}
+
+/* Dund heseg dotorh BARUUN taliin diviin style */
+#hajuu2 {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(125, 125, 216);
+    margin-left: 10px;
+    height: 100%;
+    width: auto;
+    z-index: 3;
+}
+
+/* Dood hesgiin diviin medeelel */
+#tugsgulHeseg {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(125, 125, 216);
+    border-bottom-right-radius: 60px;
+    /* border-bottom-left-radius: 60px; */
+    margin-left: 12px;
+    margin-top: 30px;
+    height: 190px;
+    width: 420px;
+    z-index: 3;
+}
+
+/* li tagnii */
+#turul {
+    list-style-type: none;
+    margin-left: -20px;
+}
+
+/* Tseej zuragnii style */
+#pic {
+    width: 80px;
+    height: 100px;
+    margin-left: 40px;
+    margin-top: -20px;
+}
+
+/* */
+#nerniiHeseg {
+    line-height: 20px;
+    margin-top: 0px;
+    margin-left: -30px;
+    font-size: large;
+}
+
+/* Dogol zai avch baigaa ni */
+p {
+    line-height: 5px;
+    text-indent: 30px;
+}
+
+#about {
+    line-height: 10px;
+    text-indent: 20px;
+}
+
+/* button */
+button {
+    margin-top: 10px;
+    margin-left: 350px;
+    border-radius: 10px;
+}
+
+img {
+    border-radius: 30px;
+}
