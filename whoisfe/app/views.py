@@ -13,3 +13,7 @@ def tuugii(request):
     return render(request,"week1/HaTuguldur/webcv.html")
 def odke(request):
     return render(request,"week1/odontungalag/odkeCV.html")
+def xuslen(request):
+    return render(request,"week1/Xuslen/XuslnCV.html")
+def sarnai(request):
+    return render(request,"week1/Sarnai/index.html")
