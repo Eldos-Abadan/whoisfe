@@ -8,4 +8,5 @@ urlpatterns = [
     path("week1/magnai/", views.magnai, name="magnai"),
      path("week1/tuugii/", views.tuugii, name="tuugii"),
     path("week1/odke/", views.odke, name="odke"),
+    path("week1/sarnai/", views.sarnai, name="sarnai"),
 ]
