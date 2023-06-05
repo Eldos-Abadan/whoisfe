@@ -1,95 +1,108 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>CV</title>
-    <style>
-        body {
-            display: flex;
-            width: 800px;
-            height: 750px;
-            border-style:groove;
-            border-radius: 5px;
-            margin-left: 300px;
-            box-shadow: 5px 7px 15px 5px #b9b6b6;
-        }
-        .t {
-            width: 35%;
-            background-color: #CD5C5C;
-            
-            
-        }
-        .t2 {
-            width:60%;
-            background-color: white ;
-            font-size: 18px;
-        }
-        img {
-            border-radius: 50%;
-            margin-left: 40px;
-            margin-top: 20px;
-            }
-        .ner{
-            margin-left: 20px ;
-        }
-        .ab{
-          margin-left: 20px;
-        }
-        .t3 {
-          display: flex;
-        }
 
-    </style>
+<head>
+  <title>CV</title>
+  <style>
+    body {
+      display: flex;
+      width: 800px;
+      height: 750px;
+      border-style: groove;
+      border-radius: 5px;
+      margin-left: 300px;
+      box-shadow: 5px 7px 15px 5px #b9b6b6;
+    }
+
+    .t {
+      width: 35%;
+      background-color: #CD5C5C;
+
+
+    }
+
+    .t2 {
+      width: 60%;
+      background-color: white;
+      font-size: 18px;
+    }
+
+    img {
+      border-radius: 50%;
+      margin-left: 40px;
+      margin-top: 20px;
+    }
+
+    .ner {
+      margin-left: 20px;
+    }
+
+    .ab {
+      margin-left: 20px;
+    }
+
+    .t3 {
+      display: flex;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="t">
-      <img src="{% static '/images/kedo/zurag.jpg' %}"  width="180"  > <br>
-      <div class="ner">
-        <h2> Будсүрэнгийн Одонтунгалаг</h2> <hr style="border-top: 2px solid ; width: 230px;">
-        <h4>Мандах их сургууь  <br> Мэдээлэл, Техногийн Сургууль  <br></h4> 
-        <p>Мэдээлийн систем-1 </p> 
-        <hr style="border-top: 2px solid ;width: 230px;">
-        <h3>CONTACT</h3>
-        <p> Email: IS22dD11@mandakh.edu.mn</p>
-        <p>Phone: +976 89019618</p>
-        <p>Facebook: Ođkə</p>
-        <p>Instagram: _odke_ </p>
-      </div>
+  <a href="/week1">
+    <h3>Back</h3>
+  </a>
+  <div class="t">
+    <img src="{% static '/images/kedo/zurag.jpg' %}" width="180"> <br>
+    <div class="ner">
+      <h2> Будсүрэнгийн Одонтунгалаг</h2>
+      <hr style="border-top: 2px solid ; width: 230px;">
+      <h4>Мандах их сургууь <br> Мэдээлэл, Техногийн Сургууль <br></h4>
+      <p>Мэдээлийн систем-1 </p>
+      <hr style="border-top: 2px solid ;width: 230px;">
+      <h3>CONTACT</h3>
+      <p> Email: IS22dD11@mandakh.edu.mn</p>
+      <p>Phone: +976 89019618</p>
+      <p>Facebook: Ođkə</p>
+      <p>Instagram: _odke_ </p>
     </div>
-    <div class="t2">
-       <div class="ab">
-        <h1>
-          ABOUT ME
-        </h1> <hr>
-        <ul>
-          <p>
+  </div>
+  <div class="t2">
+    <div class="ab">
+      <h1>
+        ABOUT ME
+      </h1>
+      <hr>
+      <ul>
+        <p>
           Намайг Одонтунгалаг гэдэг. Би хотод төрж өссөн бөгөөд айлын том охин.
           Миний сул тал гэвэл би хэтэрхий инээд муутай учир заримдаа тохиромжгүй нөхцөлд инээгээд байдаг дутагдалтай
-          мөн ихэнх үед инээгээд явж байдаг учраас яагаад инээгээд байгаа юм? ямар нэгэн инээдтэй зүйл болсон юм уу? 
-          намайг шоолоод байгаа юм уу? гэж битгий асуугаарай. </p> <br> 
-          
-          <h3>EDUCATION:</h3>
-          <li>Нийслэлийн ерөнхий боловсролын 52-р сургуулийг төгссөн.</li> <br> <br> 
+          мөн ихэнх үед инээгээд явж байдаг учраас яагаад инээгээд байгаа юм? ямар нэгэн инээдтэй зүйл болсон юм уу?
+          намайг шоолоод байгаа юм уу? гэж битгий асуугаарай. </p> <br>
 
-          <div class="t3">
-            <div style="width: 45%;">
-                <h3>SKILLS:</h3>
-                <li>Word</li>
-                <li>Power Point</li>
-                <li>Excel</li>
-            </div>
-            <div style="border-left: 1px solid#969595 ; width:10%"></div>
-                <div style="width: 45%; ">
-                  <h3>HOBBY:</h3>
-                  <li>Дугуй унах</li>
-                  <li>Кино үзэх</li>
-                  <li>Дуу сонсох</li>
-                  <li>Найзууд болон гэр бүлийнхэнтэйгээ цагийг хөгжилтэй өнгөрүүлэх</li> 
-                </div>
-           </div> 
-        </ul>
+        <h3>EDUCATION:</h3>
+        <li>Нийслэлийн ерөнхий боловсролын 52-р сургуулийг төгссөн.</li> <br> <br>
 
-       </div>
+        <div class="t3">
+          <div style="width: 45%;">
+            <h3>SKILLS:</h3>
+            <li>Word</li>
+            <li>Power Point</li>
+            <li>Excel</li>
+          </div>
+          <div style="border-left: 1px solid#969595 ; width:10%"></div>
+          <div style="width: 45%; ">
+            <h3>HOBBY:</h3>
+            <li>Дугуй унах</li>
+            <li>Кино үзэх</li>
+            <li>Дуу сонсох</li>
+            <li>Найзууд болон гэр бүлийнхэнтэйгээ цагийг хөгжилтэй өнгөрүүлэх</li>
+          </div>
+        </div>
+      </ul>
+
     </div>
+  </div>
 </body>
+
 </html>
