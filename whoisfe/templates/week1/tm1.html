@@ -1,103 +1,137 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="tm1.css">
-    <style>
-        .dropbtn {
-          background-color: rgb(39, 55, 70);
-          color: white;
-          padding: 16px;
-          font-size: 16px;
-          border: none;
-          cursor: pointer;
-          border-radius: 10px;
-          flex: 1;
-        }
-        
-        .dropdown {
-          position: relative;
-          display: inline-block;
-        }
-        
-        .dropdown-content {
-          display: none;
-          position: absolute;
-          background-color: #f9f9f9;
-          min-width: 140px;
-          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-          z-index: 1;
-        }
-        
-        .dropdown-content a {
-          color: black;
-          padding: 12px 16px;
-          text-decoration: none;
-          display: block;
-        }
-        
-        .dropdown-content a:hover {
-          background-color: rgb(39, 55, 70);
-          color: white;
-        }
-        
-        .dropdown:hover .dropdown-content {
-          display: block;
-        }
-        
-        .dropdown:hover .dropbtn {
-          background-color: rgb(44, 62, 80);
-        }
-        </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'css/tm1.css' %}">
+  <style>
+    .dropbtn {
+      background-color: rgb(39, 55, 70);
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+      flex: 1;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 140px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: rgb(39, 55, 70);
+      color: white;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: rgb(44, 62, 80);
+    }
+  </style>
 </head>
+
 <body>
-   
-    <div class="head , helber">
+  <a href="{% url 'magnai'%}"><h3>Magnai</h3></a>
+  <div class="head , helber">
 
-        <div class="dropdown , helber">
-            <button class="dropbtn">Name</button>
-            <div class="dropdown-content">
-                <a href="Eldos/index.html"><li>Eldos</li></a>
-                <a href="Odonhuu/CV_version_02.html"><li>Odonhuu</li></a>
-                <a href="olzii/index.html"><li>Olzii</li></a>
-                <a href="bumaa/cv.html"><li>Bumaa</li></a>
-                <a href="Ha.Tuguldur/web cv.html"><li>Tuguldur.H</li></a>
-                <a href="Magnai/index.html"><li>Magnai</li></a>
-                <a href="N.bilguun/cv.html"><li>Bilguun.n</li></a>
-                <a href="N.tuguldr/index.html"><li>Tuguldur.N</li></a>
-                <a href="Nomin-Erdene(2)/index.html"><li>Nomin-Erdene</li></a>
-                <a href="Sarnai/index.html"><li>Sarnai</li></a>
-                <a href="T.tudu/index.html"><li>TUDU</li></a>
-                <a href="Tserenbaatr/index.html"><li>Tserenbaatar</li></a>
-                <a href="Xuslen/XuslnCV.html"><li>Xuslen</li></a>
-                <a href="Zndra/cv.html"><li>Zandra</li></a>
-            </div>
-          </div>
-          <a href="home1.html"><p style="margin-top: -35px;" class="gradient-text">
-            Whois
-           </p></a>
+    <div class="dropdown , helber">
+      <button class="dropbtn">Name</button>
+      <div class="dropdown-content">
+        <a href="Eldos/index.html">
+          <li>Eldos</li>
+        </a>
+        <a href="Odonhuu/CV_version_02.html">
+          <li>Odonhuu</li>
+        </a>
+        <a href="olzii/index.html">
+          <li>Olzii</li>
+        </a>
+        <a href="bumaa/cv.html">
+          <li>Bumaa</li>
+        </a>
+        <a href="Ha.Tuguldur/web cv.html">
+          <li>Tuguldur.H</li>
+        </a>
+        <a href="{% url 'magnai' %}">
+          <li>Magnai</li>
+        </a>
+        <a href="N.bilguun/cv.html">
+          <li>Bilguun.n</li>
+        </a>
+        <a href="N.tuguldr/index.html">
+          <li>Tuguldur.N</li>
+        </a>
+        <a href="Nomin-Erdene(2)/index.html">
+          <li>Nomin-Erdene</li>
+        </a>
+        <a href="Sarnai/index.html">
+          <li>Sarnai</li>
+        </a>
+        <a href="T.tudu/index.html">
+          <li>TUDU</li>
+        </a>
+        <a href="Tserenbaatr/index.html">
+          <li>Tserenbaatar</li>
+        </a>
+        <a href="Xuslen/XuslnCV.html">
+          <li>Xuslen</li>
+        </a>
+        <a href="Zndra/cv.html">
+          <li>Zandra</li>
+        </a>
+      </div>
+    </div>
+    <a href="home1.html">
+      <p style="margin-top: -35px;" class="gradient-text">
+        Whois
+      </p>
+    </a>
 
 
-    </div>    
-        <div id="myDiv" class="cvharah">
-            <object id="embeddedObject" data="home1.html" width="100%" height="100%"></object>
-        </div>
-    
-        <script>
-            
-            var links = document.querySelectorAll('.helber a');
-            links.forEach(function(link) {
-            link.addEventListener('click', function(event) {
-                    event.preventDefault(); 
-                    var newLink = link.getAttribute('href');
-             document.getElementById('embeddedObject').data = newLink;
-                });
-            });
-        </script>
-   
-    
+  </div>
+  <div id="myDiv" class="cvharah">
+    <object id="embeddedObject" data="home1.html" width="100%" height="100%"></object>
+  </div>
+
+  <script>
+
+    var links = document.querySelectorAll('.helber a');
+    links.forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        var newLink = link.getAttribute('href');
+        document.getElementById('embeddedObject').data = newLink;
+      });
+    });
+  </script>
+
+
 </body>
+
 </html>
