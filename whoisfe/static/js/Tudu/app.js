@@ -3,9 +3,9 @@ function changeImage() {
     let img = document.getElementById("myImage");
     let currentImage = img.getAttribute("src");
     let imageList = [
-      "img/image1.jpg",
-      "img/image2.jpg",
-      "img/image3.jpg"
+      "{% static '/images/Tudu/image1' %}",
+      "{% static '/images/Tudu/image2' %}",
+      "{% static '/images/Tudu/image3' %}"
     ];
   
     let currentIndex = imageList.indexOf(currentImage);
