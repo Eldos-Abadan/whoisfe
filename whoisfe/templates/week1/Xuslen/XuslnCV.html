@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +13,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url("dark.jpg");
+            background-image: url("{% static '/images/dark.jpg' %}");
             background-size: 300%;
         }
         
@@ -125,10 +126,11 @@
     </style>
 </head>
 <body>
+    <a href="/week1"><h3>Back</h3></a>
     <div id="hi">
     <div class="container">
         <div class="profile">
-            <img src="ap.jpg" class="profile-image">
+            <img src="{% static '/images/ap.jpg' %}" class="profile-image">
             <h1>Otgonbayar Huslen</h1>
             <h2>Freshman</h2>
             <div class="divider"></div>
