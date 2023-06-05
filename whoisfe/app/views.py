@@ -10,6 +10,6 @@ def week1View(request):
 def magnai(request):
     return render(request,"week1/Magnai/index.html")
 def tuugii(request):
-    return render(request,"week1/Ha.Tuguldur/webcv.html")
-def xuslen(request):
-    return render(request,"week1/Xuslen/XuslnCV.html")
+    return render(request,"week1/HaTuguldur/webcv.html")
+def odke(request):
+    return render(request,"week1/odontungalag/odkeCV.html")
