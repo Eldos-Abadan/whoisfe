@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +16,8 @@
     <script src="path/to/jspdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="{% static 'js/olzii.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/olzii/CIIIVIII.css' %}">
     
 </head>
 
@@ -24,16 +27,16 @@
             <div class="shdw">
                 <div class="proback">
                     <div class="propos">
-                        <img class="profile" src="nuurzurag.jpg">
+                        <img class="profile" src="{% static '/images/olzii/nuurzurag.jpg' %}">
                     </div>
                     <span>
                         <p class="name">Өлзий сүрэн</p>
                         <p class="lol">Student</p>
                         <div class="har"></div>
                         <br>
-                        <a href=""><img class="size" src="messenger.png" alt=""></a>
-                        <a href=""><img class="size" src="ig.png" alt=""></a>
-                        <a href=""><img class="size" src="twitter-logo.png" alt=""></a>
+                        <a href=""><img class="size" src="{% static '/images/olzii/messenger.png' %}"></a>
+                        <a href=""><img class="size" src="{% static '/images/olzii/ig.png' %}"></a>
+                        <a href=""><img class="size" src="{% static '/images/olzii/twitter-logo.png' %}"></a>
                     </span>
                 </div>
                 <div class="back">
