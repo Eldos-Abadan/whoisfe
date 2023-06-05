@@ -10,7 +10,7 @@ def week1View(request):
     return render(request,"week1/bumaa/cv.html")
 
 
-def homeView(request):
+# def homeView(request):
     return render(request,"week1/odontungalag/odkeCV.html")
 
 
