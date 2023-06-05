@@ -11,3 +11,9 @@ def week1View(request):
 
 def magnai(request):
     return render(request,"week1/Magnai/index.html")
+
+def Eldos(request):
+    return render(request,"week1/Eldos/index.html")
+
+def HaTuguldur(request):
+    return render(request,"week1/HaTuguldur/web cv.html")
