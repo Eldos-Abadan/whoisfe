@@ -1,0 +1,62 @@
+body
+{
+    max-width: device-width;
+    margin: 0 0 0 0 ;
+}
+.head
+{
+    width: 100%;
+    height: 50x;
+    background-color: rgb(39, 55, 70);
+
+}
+
+li 
+{
+    list-style: none;
+}
+a
+{
+    color: black;
+    text-decoration: none;
+}
+a:hover
+{
+    color: white;
+    text-decoration: none;
+}
+
+.gradient-text {
+    text-align: center;
+    background: linear-gradient(to top, #58D68D,#8E44AD );   -webkit-background-clip: text; /* For Safari and older Chrome versions */
+    -moz-background-clip: text; /* For Firefox */
+    background-clip: text;
+    color: transparent; /* Set text color as transparent */
+    text-align: center; /* Center the text horizontally */
+    display: flex; /* Enable flexbox layout */
+    justify-content: center; /* Center the text horizontally */
+    font-size: 2em;
+    font-style: italic;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+header
+{
+    text-align: center;
+}
+
+/* cvharah */
+.cvharah
+{
+    width: device-width;
+    height: 1000px;;
+    margin-left: 100px;
+    /* margin-top: -300px; */
+    flex: 1;
+}
+
+/* pin */
+.fixed-div {
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
