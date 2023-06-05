@@ -1,3 +1,4 @@
-db.sqlite3
+whoisfe\db.sqlite3
+whoisfe\whoisfe\__pycache__\*
 *.pyc
-.DS*
+.env
