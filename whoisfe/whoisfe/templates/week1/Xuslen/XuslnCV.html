@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Отгонбаяр Хүслэн</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.4.0/ionicons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("dark.jpg");
+            background-size: 300%;
+        }
+        
+        .container {
+            width: 800px;
+            height: 820px;
+            margin: 0 auto;
+            padding: 40px;
+            position: relative;
+            border-radius: 10px;
+        }
+        
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(128, 128, 128, 0.3); /* Adjust the alpha value to control opacity */
+            border-radius: 10px;
+        }
+        
+        .profile {
+            text-align: center;
+            margin-bottom: 0px;
+            position: relative;
+            z-index: 1;
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            opacity: 50%;
+        }
+        .profile-image:hover{
+            opacity: 1;
+        }
+        h1, h2, h3, p {
+            text-align: center;
+            color: white;
+            opacity: 1; /* Set opacity to 1 for full visibility */
+        }
+        
+        h2 {
+            margin-top: 3px;
+            font-size: 24px;
+            opacity: 1;
+        }       
+        
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            color: white;
+            opacity: 1; /* Set opacity to 1 for full visibility */
+        }       
+        
+        .section {
+            margin-bottom: 0;
+        }
+        
+        .bordered {
+            border: 2px solid black;
+            padding: 10px;
+            display: inline-block;
+        }
+        .divider {
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid white;
+        }
+        .icon{
+            width: 50px;
+            height: 50px;
+            color: white;
+        }
+        .icon:hover{
+            color: #4267B2;
+        }
+        .brday{
+            float: left;
+            padding-bottom: 10px;
+            width: 420px;
+        }
+        .skl{
+            float: center;
+            padding-bottom: 10px;
+        }
+        h3{
+            font-size: 25px;
+        }
+        p{
+            font-size: 20px;
+        }
+        .instagram-logo {
+            width: 50px;
+            height: 50px;
+            color: white;
+        }
+
+        .instagram-logo:hover {
+            color: rgb(228, 64, 95);
+        }
+        .has{
+            float: center;
+            padding-bottom: 10px;
+            height: 170px;
+        }
+    </style>
+</head>
+<body>
+    <div id="hi">
+    <div class="container">
+        <div class="profile">
+            <img src="ap.jpg" class="profile-image">
+            <h1>Otgonbayar Huslen</h1>
+            <h2>Freshman</h2>
+            <div class="divider"></div>
+        </div>        
+        <div class="brday">
+            <h3 style="margin-top: -0.1px;">Education</h3>
+            <p style="text-align: left; ">124th school, 2009-2021</p>
+            <p style="text-align: left; ">Information Technology <br>University, Freshman, 2022-2026 </p>
+            <h3 style="margin-top: 31px;">Birthday</h3>
+            <p style="text-align: left; font-size: 20px; margin-left: 160px; margin-top: 40px;">2003.05.26</p>
+        </div>
+        
+        <div class="skl">
+            <h3 style="margin-top: -0.1px;">Skills</h3>
+            <ul>
+                <li style="margin-left: 400px; font-size: 20px;">HTML</li>
+                <li style="margin-left: 400px; font-size: 20px;">CSS</li>
+                <li style="margin-left: 400px; font-size: 20px;">After Effect</li>
+            </ul>
+            <div class="divider" style="padding-top: 10px;"></div>
+            <h3 style="margin-top: 24px;">Languages</h3>
+            <ul>
+                <li style="margin-left: 400px; font-size: 20px;">Englsih - Good</li>
+                <li style="margin-left: 400px; font-size: 20px;">Japan - Below good</li>
+            </ul>
+        </div>
+        <div class="brday" style="padding-top:-50px;">
+            <h3 style="text-align: center; ">Contact Information</h3>
+            <p style="text-align: left;">Email: huslenotgonbayar92@gmail.com</p>
+            <p style="text-align: left;">Phone: 89816045</p>
+            <p style="text-align: left;">Location: Ulaanbaatar, 24th strict, Zeel 34-20</p>
+            <a href="https://www.facebook.com/profile.php?id=100054022748041"><ion-icon name="logo-facebook" style="float: right; padding-right: 20px;" class="icon"></ion-icon></a>
+            <a href="https://www.instagram.com/gzy_xusle/"><ion-icon name="logo-instagram" style="float: left;" class="instagram-logo"></ion-icon></a>
+        </div>
+        <div class="has">
+            <h3 style="margin-top: 22px;">Hobby</h3>
+            <ul>
+                <li style="margin-left: 400px; font-size: 20px;">Anime</li>
+                <li style="margin-left: 400px; font-size: 20px;">Music</li>
+                <li style="margin-left: 400px; font-size: 20px;">Edit photo & video</li>
+                <li style="margin-left: 400px; font-size: 20px;">Gaming</li>
+            </ul>
+        </div>
+        <button onclick="print()" id="printButton" style=" float: right; margin-top: 30px;">Хэвлэх</button>
+    </div>
+    </div>
+    <script>
+        window.jsPDF = window.jspdf.jsPDF;
+        var docPDF = new jsPDF();
+        function print() {
+            console.log('Hello');
+            var elementHTML = document.querySelector("#hi");
+            docPDF.html(elementHTML, {
+                callback: function (docPDF) {
+                    docPDF.save('CV_version_02.pdf');
+                },
+                x: 15,
+                y: 15,
+                width: 170,
+                windowWidth: 650
+            });
+        }
+    </script>
+</body>
+</html>
