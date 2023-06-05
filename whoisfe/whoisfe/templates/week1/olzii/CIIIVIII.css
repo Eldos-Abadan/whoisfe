@@ -1,0 +1,400 @@
+.profile {
+  width: 140px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+body {
+  max-width: 1200px;
+  background-color: black;
+}
+
+.propos {
+  background-color: #82E0AA;
+  width: 160px;
+  height: 160px;
+  margin: 55px;
+  margin-top: 0;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  background-image: url('path/to/logo.png');
+  background-size: cover;
+  animation-name: splashAnimation;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes splashAnimation {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.proback {
+  width: 270px;
+  height: 380px;
+  background-color: #58D68D;
+  margin-left: 160px;
+  filter: blur(0.1px);
+}
+
+@import url('https://fonts.cdnfonts.com/css/atakana-sarif');
+
+.name {
+  text-align: center;
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+@keyframes flowy {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes flow {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+}
+
+.size {
+  animation: flow 2s linear forwards;
+  margin-left: 35px;
+  width: 40px;
+  height: 40px;
+}
+
+.har {
+  margin-left: 35px;
+  background-color: black;
+  height: 5px;
+  width: 200px;
+  margin-top: -10px;
+}
+
+span a img:hover {
+  background-color: #82E0AA;
+  width: 50px;
+  height: 45px;
+}
+
+.back {
+  background-color: black;
+  width: 270px;
+  height: 80px;
+  margin-left: 160px;
+  box-shadow: 5px 5px 0 #5865;
+  border-radius: 0 0 8px 8px;
+}
+
+.lefm {
+  margin-left: 70px;
+}
+
+.shdw {
+  margin-left: -170px;
+  margin-top: -10px;
+}
+
+.lol {
+  text-align: center;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+
+.abome {
+  width: 900px;
+  height: 483px;
+  background-color: #58D68D;
+  margin-top: -480px;
+  margin-left: 300px;
+  border-radius: 0 0 10px 0;
+  box-shadow: 10px 10px 0 #5865;
+}
+
+.ab {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.helber {
+  text-align: center;
+  text-align: justify;
+  padding: 0 20px;
+}
+
+.zuraas {
+  margin: 0 20px;
+  width: 860px;
+  height: 3px;
+  background-color: black;
+}
+
+table {
+  margin: 0 20px;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  border: black 2px solid;
+  opacity: 0;
+  animation-name: fade;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.ro {
+  opacity: 0;
+  animation-name: fade;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.circled {
+  width: 10px;
+  height: 10px;
+  background-color: #58D68D;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  border: black 2px solid;
+  opacity: 0;
+  animation-name: fade;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in:nth-child(1) {
+  animation-delay: 2s;
+}
+
+.fade-in:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.fade-in:nth-child(3) {
+  animation-delay: 3s;
+}
+
+.fixed-div {
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.fade-in {
+  opacity: 0;
+  animation-name: fadey;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.fadey-animation {
+  animation: fadey 1s ease-in-out forwards;
+}
+
+.text-animation {
+  animation: textAnimation 1s ease-in-out forwards;
+}
+
+@keyframes fadey {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadey-text {
+  animation: fadey 1s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+.text-animation {
+  animation: textAnimation 1s ease-in-out forwards;
+  animation-delay: 2s;
+}
+
+.anim1 {
+  animation: textAnimation 1s ease-in-out forwards;
+}
+
+.zus {
+  width: 900px;
+  height: 100px;
+  margin-left: 300px;
+  background-color: #82E0AA;
+  filter: blur(0px);
+}
+
+.skill {
+  width: 900px;
+  height: 483px;
+  box-shadow: 10px 10px 0 #5865;
+  background-color: #58D68D;
+  margin-top: 10px;
+  margin-left: 300px;
+  border-radius: 0 0 10px 0;
+}
+
+.skill2 {
+  width: 900px;
+  box-shadow: 10px 10px 0 #5865;
+  height: 483px;
+  background-color: #58D68D;
+  margin-top: 10px;
+  margin-left: 300px;
+  border-radius: 0 0 10px 0;
+}
+
+.downloadButton {
+  background-color: #58D68D;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 50px;
+  text-decoration: none;
+}
+
+.downloadButton:hover {
+  background-color: #82E0AA;
+}
+
+.contact {
+  width: 900px;
+  height: 120px;
+  background-color: #82E0AA;
+  margin-top: 10px;
+  margin-left: 300px;
+  border-radius: 0 0 10px 0;
+  box-shadow: 10px 10px 0 #5865;
+}
+
+.contact h2 {
+  font-size: 30px;
+  color: #000;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.contact .social {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.contact .social a {
+  margin: 0 10px;
+}
+
+.contact .social a img {
+  width: 30px;
+  height: 30px;
+}
+
+.footer {
+  width: 100%;
+  height: 50px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding-top: 15px;
+}
+
+media (max-width: 767px) {
+  /* Styles for small screens */
+  .propos {
+    width: 120px;
+    height: 120px;
+    margin: 30px;
+  }
+
+  .abome {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .abome,
+  .skill,
+  .skill2,
+  .contact {
+    height: auto;
+  }
+
+  .skill,
+  .skill2 {
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  /* Styles for medium screens */
+  .propos {
+    width: 140px;
+    height: 140px;
+    margin: 40px;
+  }
+
+  .abome,
+  .skill,
+  .skill2,
+  .contact {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+

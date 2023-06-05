@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tuguldur CV</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="path/to/jspdf.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" integrity="sha512-...your-integrity-hash-here..." crossorigin="anonymous" />
+    <link rel="icon" type="image/png" href="img/icons8-about-16.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/609039e62e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-user"></i> Tuguldur</h1>
+        <img id="myImage" src="img/image1.jpg" alt="Tuguldur's photo" onclick="showImage()">
+        <div id="overlay">
+            <img id="overlayImg" src="" alt="">
+            <button id="closeButton" onclick="hideImage()">Close</button>
+          </div>
+        <div class="socials">
+            <a href="https://www.facebook.com/tuguldur.stn/" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://www.instagram.com/uiliin_ur/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+        </div>
+    </header>
+    <div class="container">
+        <section class="section">
+            <h2><i class="fas fa-info-circle"></i> About Me</h2>
+            <p>My name is Tuguldur and I am a freshman at Mandakh University. My goal is to become a professional front-end developer.</p>
+            <h3>First name: <span>Tuguldur</span></h3>
+            <h3>Last name: <span>Dambasuren</span></h3>
+            <h3>Birth Date: <span>March 27, 2004</span></h3>
+            <h3>Astrology Sign: <span>Aries</span></h3>
+            <h3>Address</h3>
+            <p>Bayanzurkh district , 4th ward , Building 111, No.25</p>
+            <h3>Languages</h3>
+            <ul class="lang">
+                <li><i class="flag-icon flag-icon-mn"></i> Mongolian (Native)</li>
+                <li><i class="flag-icon flag-icon-gb"></i> English (Pre-intermediate)</li>
+                <li><i class="flag-icon flag-icon-jp"></i> Japanese (N5)</li>
+            </ul>
+        </section>
+        <section class="section">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            <h3>University</h3>
+            <p>Mandakh University, Freshman</p>
+            <h3>Highschool</h3>
+            <p>23rd Secondary School: 2010 - 2022</p>
+        </section>
+        <section class="section">
+            <h2><i class="fas fa-code"></i> Profession Skills</h2>
+            <ul>
+                <li><i class="fab fa-html5"></i>HTML</li>
+                <li><i class="fab fa-css3-alt"></i>CSS</li>
+                <li><i class="fab fa-square-js"></i>JavaScript</li>
+                <li><i class="fa-brands fa-python"></i></i>Python</li>
+            </ul>
+            <h2><i class="fa-solid fa-lightbulb"></i> Soft Skills</h2>
+            <ul>
+                <li><i class="fa-solid fa-clock"></i>Timekeeper</li>
+                <li><i class="fa-solid fa-handshake"></i>Polite</li>
+                <li><i class="fa-solid fa-check"></i></i>Honest</li>
+            </ul>
+        </section>
+        <section class="section">
+            <h2><i class="fas fa-heart"></i> Hobbies</h2>
+            <ul>
+                <li><i class="fas fa-star"></i> Anime</li>
+                <li><i class="fas fa-film"></i> Movie</li>
+                <li><i class="fas fa-music"></i> Rock music</li>
+                <li><i class="fas fa-gamepad"></i> Gaming</li>
+            </ul>
+        </section>
+        <section class="contact section">
+            <h2><i class="fas fa-envelope"></i> Contact</h2>
+            <p>Personal Email: <a href="mailto:apoxmn@gmail.com">apoxmn@gmail.com</a></p>
+            <p>School Email: <a href="mailto:sw22d004@mandakh.edu.mn">sw22d004@mandakh.edu.mn</a></p>
+            <p>Phone number: +97699881175</p>
+        </section>
+        <button class="downloadButton" onclick="savePageAsPDF()">Download as PDF</button>
+    </div>
+    </body>
+</html>
