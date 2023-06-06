@@ -119,9 +119,6 @@
   <a href="{% url 'enkhzul'%}"><h3>Enkhzul</h3></a>
   <a href="{% url 'eldos'%}"><h3>Eldos</h3></a>
   <a href="{% url 'Bayrbat'%}"><h3>Bayrbat</h3></a>
-  <a href="{% url 'Nomio1'%}"><h3>Nomio</h3></a>
-
-  <a href="{% url 'nomi'%}"><h3>Nomin</h3></a>
   <div class="head , helber">
 
     <div class="dropdown , helber">
@@ -173,14 +170,7 @@
         <a href="{% url 'Bayrbat'%}">
           <li>Баярбат</li>
         </a>
-
-        <a href="{% url 'odke'%}">
-          <li>Odontungalag</li>
-        </a>
         
-        <a href="{% url 'Nomio1'%}">
-          <li>Nomio1</li>
-        </a>
       </div>
     </div>
     <a href="{% url 'homm' %}">
@@ -288,12 +278,12 @@
           </div>
           <div class="ug">
             <h2>Nomin-Erdene</h2>
-            <h2>2-kurs</h2>
+            <h2>1-kurs</h2>
           </div>
         </a>
       </div>
 
-      <div class="name"><a class="bt" href="{% url 'sarnai'%}">
+      <div class="name"><a class="bt" href="Sarnai/index.html">
           <div class="zurag">
             <img src="{% static '/images/bi.png' %}" alt="">
           </div>
@@ -338,7 +328,7 @@
         </a>
       </div>
 
-      <div class="name"><a class="bt" href="{% url 'zndra'%}">
+      <div class="name"><a class="bt" href="Zndra/cv.html">
           <div class="zurag">
             <img src="Zndra/dd.jpg">
           </div>
@@ -349,9 +339,9 @@
         </a>
       </div>
 
-      <div class="name"><a class="bt" href="{% url 'odke'%}">
+      <div class="name"><a class="bt" href="odontungalag/odkeCV.html">
           <div class="zurag">
-            <img src="{% static '/images/kedo/zurag.jpg' %}">
+            <img src="odontungalag/zurag.jpg">
           </div>
           <div class="ug">
             <h2>Odontungalag</h2>
@@ -359,17 +349,6 @@
           </div>
         </a>
       </div>
-
-      <div class="name"><a class="bt" href="{% url 'Nomio1'%}">
-        <div class="zurag">
-          <img src="{% static '/images/nomin.jpg' %}">
-        </div>
-        <div class="ug">
-          <h2>Nomin-Erdene</h2>
-          <h2>1-kurs</h2>
-        </div>
-      </a>
-    </div>
 
       <div class="name"><a class="bt" href="{% url 'Bayrbat'%}">
         <div class="zurag">
@@ -381,7 +360,7 @@
         </div>
       </a>
     </div>
-    
+
     </div>
   </div>
 
@@ -396,6 +375,27 @@
       });
     });
   </script>
+<a href="{% url 'magnai'%}">
+  <h3>Magnai</h3>
+</a>
+<a href="{% url 'tuugii'%}">
+  <h3>Tuguldur</h3>
+</a>
+<a href="{% url 'odke'%}">
+  <h3>Odontungalag</h3>
+</a>
+<a href="{% url 'sarnai'%}">
+  <h3>Sarnai</h3>
+</a>
+<a href="{% url 'xuslen'%}">
+  <h3>Xuslen</h3>
+</a>
+<a href="{% url 'enkhzul'%}">
+  <h3>Enkhzul</h3>
+</a>
+<a href="{% url 'zndra' %}">
+  <h3>Zndra</h3>
+</a>
 
 </body>
 
