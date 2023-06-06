@@ -1,23 +1,36 @@
 from django.shortcuts import render
 
+
 def homeView(request):
-    return render(request,"home/mycv.html")
+    return render(request, "home/mycv.html")
 
 
 def week1View(request):
-    return render(request,"week1/tm1.html")
+    return render(request, "week1/tm1.html")
+
 
 def magnai(request):
-    return render(request,"week1/Magnai/index.html")
+    return render(request, "week1/Magnai/index.html")
+
+
 def tuugii(request):
-    return render(request,"week1/HaTuguldur/webcv.html")
+    return render(request, "week1/HaTuguldur/webcv.html")
+
+
 def odke(request):
-    return render(request,"week1/odontungalag/odkeCV.html")
+    return render(request, "week1/odontungalag/odkeCV.html")
+
+
 def xuslen(request):
-    return render(request,"week1/Xuslen/XuslnCV.html")
+    return render(request, "week1/Xuslen/XuslnCV.html")
+
+
 def sarnai(request):
-    return render(request,"week1/Sarnai/index.html")
+    return render(request, "week1/Sarnai/index.html")
+
+
 def enkhzul(request):
     return render(request,"week1/Enkhzul/index.html")
+
 def eldos(request):
     return render(request,"week1/Eldos/index.html")
