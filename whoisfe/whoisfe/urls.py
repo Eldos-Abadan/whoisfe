@@ -5,7 +5,7 @@ from app import views
 urlpatterns = [
     path("", views.homeView, name="homeView"),
     path("week1/", views.week1View, name="week1View"),
-    path("week1/home/", views.home, name="homm"),
+    path("week1/home/", views.homeView, name="homm"),
     path("week1/magnai/", views.magnai, name="magnai"),
     path("week1/tuugii/", views.tuugii, name="tuugii"),
     path("week1/odke/", views.odke, name="odke"),
@@ -14,4 +14,5 @@ urlpatterns = [
     path("week1/enkhu/", views.enkhzul, name="enkhzul"),
     path("week1/zndra/", views.zndra, name="zndra"),
     path("week1/Bayrbat/", views.Bayrbat, name="Bayrbat"),
+    path("week1/Eldos/", views.eldos, name="eldos"),
 ]
