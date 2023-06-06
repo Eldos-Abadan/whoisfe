@@ -30,7 +30,6 @@ def sarnai(request):
 
 
 def enkhzul(request):
-<<<<<<< Updated upstream
     return render(request, "week1/Enkhzul/index.html")
 
 def zndra(request):
@@ -38,8 +37,6 @@ def zndra(request):
 
 def home(request):
     return render(request, "week1/home1.html")
-=======
-    return render(request,"week1/Enkhzul/index.html")
+
 def Bayrbat(request):
     return render(request,"week1/Bayrbat/nuur.html")
->>>>>>> Stashed changes
