@@ -11,4 +11,5 @@ urlpatterns = [
     path("week1/sarnai/", views.sarnai, name="sarnai"),
     path("week1/xuslen/", views.xuslen, name="xuslen"),
     path("week1/enkhu/", views.enkhzul, name="enkhzul"),
+    path("/whoisfe/templates/week1", views.eldos, name="eldos"),
 ]

@@ -19,3 +19,5 @@ def sarnai(request):
     return render(request,"week1/Sarnai/index.html")
 def enkhzul(request):
     return render(request,"week1/Enkhzul/index.html")
+def eldos(request):
+    return render(request,"week1/Eldos/index.html")
