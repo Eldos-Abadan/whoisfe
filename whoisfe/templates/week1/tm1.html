@@ -119,6 +119,7 @@
   <a href="{% url 'enkhzul'%}"><h3>Enkhzul</h3></a>
   <a href="{% url 'eldos'%}"><h3>Eldos</h3></a>
   <a href="{% url 'Bayrbat'%}"><h3>Bayrbat</h3></a>
+  
   <div class="head , helber">
 
     <div class="dropdown , helber">
@@ -169,6 +170,10 @@
 
         <a href="{% url 'Bayrbat'%}">
           <li>Баярбат</li>
+        </a>
+
+        <a href="{% url 'odke'%}">
+          <li>Odontungalag</li>
         </a>
         
       </div>
@@ -283,7 +288,7 @@
         </a>
       </div>
 
-      <div class="name"><a class="bt" href="Sarnai/index.html">
+      <div class="name"><a class="bt" href="{% url 'sarnai'%}">
           <div class="zurag">
             <img src="{% static '/images/bi.png' %}" alt="">
           </div>
@@ -339,9 +344,9 @@
         </a>
       </div>
 
-      <div class="name"><a class="bt" href="odontungalag/odkeCV.html">
+      <div class="name"><a class="bt" href="{% url 'odke'%}">
           <div class="zurag">
-            <img src="odontungalag/zurag.jpg">
+            <img src="{% static '/images/kedo/zurag.jpg' %}">
           </div>
           <div class="ug">
             <h2>Odontungalag</h2>
