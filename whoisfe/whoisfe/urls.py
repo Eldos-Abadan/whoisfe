@@ -16,4 +16,5 @@ urlpatterns = [
     path("week1/Bayrbat/", views.Bayrbat, name="Bayrbat"),
     path("week1/Eldos/", views.eldos, name="eldos"),
     path("week1/Nomio1/", views.Nomio1, name="Nomio1"),
+    path("week1/nomin", views.nomin, name="nomi" ), 
 ]

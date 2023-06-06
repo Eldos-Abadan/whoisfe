@@ -44,3 +44,5 @@ def eldos(request):
 def Nomio1(request):
     return render(request,"week1/Nomio1/cv.html")
 
+def nomin(request):
+    return render(request, "week1/Nomin-Erdene(2)/index.html")
