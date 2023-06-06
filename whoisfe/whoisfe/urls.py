@@ -12,8 +12,6 @@ urlpatterns = [
     path("week1/sarnai/", views.sarnai, name="sarnai"),
     path("week1/xuslen/", views.xuslen, name="xuslen"),
     path("week1/enkhu/", views.enkhzul, name="enkhzul"),
-<<<<<<< Updated upstream
     path("week1/zndra/", views.zndra, name="zndra"),
     path("week1/Bayrbat/", views.Bayrbat, name="Bayrbat"),
->>>>>>> Stashed changes
 ]
