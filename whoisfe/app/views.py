@@ -40,3 +40,6 @@ def Bayrbat(request):
 
 def eldos(request):
     return render(request,"week1/Eldos/index.html")
+
+def Nomio1(request):
+    return render(request,"week1/Nomio1/cv.html")
