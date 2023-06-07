@@ -8,6 +8,472 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>levi.mn</title>
+    <style>
+
+body,
+html {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+#header {
+    padding: 15px 0;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.container {
+    width: 100%;
+    height: 41px;
+    margin-top: -5px;
+}
+
+#header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav {}
+
+.main-nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.main-nav ul li {
+    display: inline-block;
+    font-size: 18px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: white;
+    margin-left: 150px;
+}
+
+.main-nav ul li a .btn {
+    background-color: aliceblue;
+    height: 30px;
+    border-radius: 10px;
+    border-color: aliceblue;
+    cursor: pointer;
+}
+
+.pro img {
+    width: 100%;
+    height: 746px;
+    margin-bottom: -30px;
+}
+
+.text {
+    font-family: 'Lobster', cursive;
+    font-size: 25px;
+}
+
+.text1 {
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+
+}
+
+.dic {
+    border: 1px solid black;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+}
+
+.basic {
+    position: absolute;
+    top: 28%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    rotate: -36deg;
+    text-align: center;
+}
+
+.contact {
+    position: absolute;
+    top: 59%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    rotate: -36deg;
+    color: black;
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+.mail {
+    position: absolute;
+    top: 61%;
+    left: 42%;
+    transform: translate(-50%, -50%);
+    rotate: -36deg;
+    color: black;
+    font-size: 24px;
+    margin-top: 13px;
+}
+
+.web {
+    position: absolute;
+    top: 63%;
+    left: 44%;
+    transform: translate(-50%, -50%);
+    rotate: -36deg;
+    color: black;
+    font-size: 25px;
+    margin-top: 17px;
+}
+
+.loc {
+    position: absolute;
+    top: 68%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    rotate: -36deg;
+    color: black;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.num {
+    position: absolute;
+    top: 39%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    rotate: -36deg;
+    color: black;
+    font-size: 23px;
+    margin-top: 20px;
+}
+
+.ml {
+    position: absolute;
+    top: 39%;
+    left: 46%;
+    transform: translate(-50%, -50%);
+    rotate: -36deg;
+    color: black;
+    font-size: 23px;
+    margin-top: -20px;
+    margin-left: 54px;
+}
+
+.ww {
+    position: absolute;
+    top: 39%;
+    left: 46%;
+    transform: translate(-50%, -50%);
+    rotate: -36deg;
+    color: black;
+    font-size: 23px;
+    margin-top: 45px;
+    margin-left: 65px;
+}
+
+.loca {
+    position: absolute;
+    top: 32%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    rotate: -36deg;
+    color: black;
+    font-size: 23px;
+    margin-top: 80px;
+    margin-left: 95px;
+}
+
+.inst {
+    position: absolute;
+    top: 67%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    rotate: -36deg;
+    color: black;
+    font-size: 26px;
+}
+
+.it {
+    position: absolute;
+    top: 41%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    rotate: -36deg;
+    color: black;
+    font-size: 23px;
+    margin-top: 45px;
+    margin-left: 70px;
+}
+
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: gray;
+    z-index: 9999;
+}
+
+.progress {
+    height: 100%;
+    background-color: black;
+    width: 0;
+    transition: width 0.7s ease;
+}
+
+.ae {
+    display: flex;
+    margin-top: 20px;
+}
+
+.about {
+    flex: 1;
+    height: 500px;
+    width: 200px;
+    background-color: rgb(30, 30, 30);
+}
+
+.edu {
+    display: flex;
+    background-color: rgb(30, 30, 30);
+    width: 100%;
+
+}
+
+.ae img {
+    height: 200px;
+    border-radius: 50px;
+    margin-left: -70px;
+}
+
+.scnd {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.cnt {
+    flex: 2;
+    background-color: #EBF1FF;
+}
+
+.scnd b {
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-left: 70px;
+}
+
+.inf {
+    flex: 5;
+    background-color: white;
+}
+
+.scnd p {
+    margin-left: 25%;
+    margin-top: 5px;
+}
+
+.sab table {
+    margin-left: 5px;
+    margin-top: 10px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.sab td {
+    text-align: left;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #ccc;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-content {
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.timeline-content.f {
+    margin-right: 50%;
+    text-align: center;
+    justify-content: center;
+}
+
+.timeline-content.s {
+    margin-left: 50%;
+    text-align: center;
+    justify-content: center;
+}
+
+.timeline-content::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.timeline-content h2 {
+    margin-top: 0;
+}
+
+.thi {
+    display: flex;
+}
+
+.sk {
+    flex: 5;
+    background-color: white;
+    display: flex;
+
+}
+
+.in {
+    flex: 2;
+    background-color: #EBF1FF;
+}
+
+.thi b{
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-left: 50%;
+}
+
+
+.sk .bakccom{
+    width: 200px;
+    background-color: gray;
+    border-radius: 5px;
+    height: 10px;
+}
+.sk .com{
+    width: 120px;
+    background-color: black;
+    border-radius: 5px;
+    height: 10px;
+    position: absolute;
+}
+
+.sk .bcus{
+    width: 140px;
+    background-color: black;
+    border-radius: 5px;
+    height: 10px;
+    position: absolute;
+    margin-top: -10px;
+}
+
+.sk .bcpro{
+    width: 60px;
+    background-color: black;
+    border-radius: 5px;
+    height: 10px;
+    position: absolute;
+    margin-top: -10px;
+}
+
+.sk .bgra{
+    width: 20px;
+    background-color: black;
+    border-radius: 5px;
+    height: 10px;
+    position: absolute;
+    margin-top: -10px;
+}
+
+.sk .bph{
+    width: 10px;
+    background-color: black;
+    border-radius: 5px;
+    height: 10px;
+    position: absolute;
+    margin-top: -10px;
+}
+
+.sk .bmcr{
+    width: 170px;
+    background-color: black;
+    border-radius: 5px;
+    height: 10px;
+    position: absolute;
+    margin-top: -10px;
+}
+
+.sk .be{
+    width: 140px;
+    background-color: black;
+    border-radius: 5px;
+    height: 10px;
+    position: absolute;
+    margin-top: -10px;
+}
+
+.sk .bk{
+    width: 10px;
+    background-color: black;
+    border-radius: 5px;
+    height: 10px;
+    position: absolute;
+    margin-top: -10px;
+}
+
+.sk .bm{
+    width: 180px;
+    background-color: black;
+    border-radius: 5px;
+    height: 10px;
+    position: absolute;
+    margin-top: -10px;
+}
+
+.thi .st{
+    font-size: 20px;
+    flex: 1;
+    margin-left: -450px;
+    margin-top: 50px;
+}
+
+.ts{
+    flex: 1px;
+    font-size: 20px;
+    margin-top: 50px;
+
+}
+
+.in table{
+    margin-left: 100px;
+    margin-top: -20px;
+    font-size: 25px;
+}
+    </style>
 </head>
 <body>
     <div class="container">
