@@ -1,28 +1,174 @@
 {% load static %}
+
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.7) url( "{% static '/images/Web.gif'%}");
+            background-size: cover;
+            background-position: center;
+            background-blend-mode:lighten ;
+            
+        }
+        
+            
+        .navbar{
+            
+            width: 85%;
+            margin: auto;
+            padding: 35px 0;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
 
-<head> </head>
+        }
+     
+        .navbar ul li{
+            list-style: none;
+            display: inline-block;
+            margin: 0 20px;
+            position: relative;
+            font-size: 20px;
+            font-weight: bold;
+            
+            
+        }
 
+       
+
+      
+        .navbar ul li a{
+            text-decoration: none;
+            color: #fff;
+            text-transform: uppercase;
+            
+        }
+        .navbar ul li::after{
+            content: '';
+            height: 3px;
+            width: 0%;
+            background: #009688;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            bottom: -10px;
+            transition: 0.5s;
+            
+             
+        }
+
+        .navbar ul li:hover::after{
+            width: 100%;
+            
+        }
+        
+       
+
+
+
+        .content{
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translate();
+            text-align: center;
+            color: #fff;
+            
+        }
+        .content h1{
+            font-size: 90px;
+            line-height: 160px;
+            margin-left: -10px;
+            color: transparent;
+            -webkit-text-stroke: 1px #fff;
+            background: url("{% static '/images/back.png'%}");
+            -webkit-background-clip: text;
+            background-position: 0 0;
+            animation: back 20s linear infinite;
+        }
+        @keyframes back{
+            100%{
+                background-position: 2000px 0;
+            }
+        }
+        .content p{
+            margin: 20px auto;
+            font-weight: 100;
+            line-height: 25px;
+        }
+        button{
+            width: 200px;
+            padding: 15px 0;
+            text-align: center;
+            margin: 20px 10px;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 2px solid #009688;
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        span{
+            background: #009688;
+            height: 100%;
+            width: 0;
+            border-radius: 25px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: 0.5s;
+        }
+        button:hover span{
+            width: 100%;
+
+        }
+
+
+
+ 
+     
+
+    </style>
+</head>
 <body>
-  <table>
-    <tr>
-      <th>Нэр</th>
-      <th>Зураг</th>
-    </tr>
-    <tr>
-      <td>Өсөхбаяр</td>
-      <td><img src="{% static '/images/avatar.jpg' %}" width="200px" /></td>
-    </tr>
-    <tr>
-      <td>Elon</td>
-      <td><img src="{% static '/images/2.jpg' %}" width="200px" /></td>
-    </tr>
-  </table>
-  <iframe width="200" src="https://www.youtube.com/embed/p0MGwdLcmgU" title="YouTube video player" frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen></iframe>
-    <a href="/week1"><h3>CV of students</h3></a>
-</body>
+    <div class="banner">
+        <div class="navbar">
+          
+        </div>
 
+        <div class="content">
+            <h1>Coming soon...</h1>
+         
+            <div>
+                <a href="/week1">  <button type="button"><span></span>Cv of students</button></a>
+                
+            </div>
+        </div>
+
+
+        
+    </div>
+
+    
+
+    
+</body>
 </html>
