@@ -18,4 +18,5 @@ urlpatterns = [
     path("week1/Odonkhuu/", views.Odonkhuu, name="Odonkhuu"),
     path("week1/Eldos/", views.eldos, name="eldos"),
     path("week1/nomin/", views.nomin, name="nomi"),
+    path("week1/Tudu/", views.Tudu, name="tudu"),
 ]
