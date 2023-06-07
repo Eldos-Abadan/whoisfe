@@ -70,9 +70,9 @@
 
 <body>
     <div class="gol">
-        <div class="name"><a class="bt" href="bumaa/cv.html">
+        <div class="name"><a class="bt" href="{% url 'bumaa.cv.html' %}">
                 <div class="zurag">
-                    <img src="bumaa/img/propic.jpg" alt="">
+                    <img src="{% static '/images/nuur.jpg' %}" alt="">
                 </div>
                 <div class="ug">
                     <h2>Bumandemberel</h2>
@@ -81,7 +81,7 @@
             </a>
         </div>
 
-        <div class="name"><a class="bt" href="Eldos/index.html">
+        <div class="name"><a class="bt" href="{% url 'Eldos/index.html' %}">
                 <div class="zurag">
                     <img src="Eldos/images/20210828_152113.jpg" alt="">
                 </div>
@@ -105,7 +105,7 @@
 
         <div class="name"><a class="bt" href="olzii/index.html">
                 <div class="zurag">
-                    <img src="{% static '/images/olzii/messenger.png' %}" alt="">
+                    <img src="{% static 'olzii/images/olzii/nuurzurag.jpg' %}" alt="">
                 </div>
                 <div class="ug">
                     <h2>Olziisuren</h2>
