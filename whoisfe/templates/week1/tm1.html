@@ -112,7 +112,6 @@
 
 <body>
   <a href="{% url 'magnai'%}"><h3>Magnai</h3></a>
-  <a href="{% url 'tuugii'%}"><h3>Tuguldur</h3></a>
   <a href="{% url 'odke'%}"><h3>Odontungalag</h3></a>
   <a href="{% url 'sarnai'%}"><h3>Sarnai</h3></a>
   <a href="{% url 'xuslen'%}"><h3>Xuslen</h3></a>
@@ -121,17 +120,20 @@
   <a href="{% url 'Bayrbat'%}"><h3>Bayrbat</h3></a>
   <a href="{%url 'nomi' %}"><h3>nomin</h3></a>
   <a href="{%url 'Nomio1' %}"><h3>Nomio1</h3></a>
+  <a href="{%url 'bumaa' %}"><h3>bumaa</h3></a> 
+  <a href="{%url 'Odonkhuu' %}"><h3>Odonkhuu</h3></a>
+  <a href="{%url 'HaTuguldur' %}"><h3>HaTuguldur</h3></a>
   <div class="head , helber">
 
     <div class="dropdown , helber">
       <button class="dropbtn">Name</button>
       <div class="dropdown-content">
         <a href="{% url 'eldos'%}"><li>Eldos</li></a>
-        <a href="Odonhuu/CV_version_02.html">
+        <a href="Odonkhuu/index.html">
           <li>Odonhuu</li>
         </a>
         <a href="olzii/index.html">
-          <li>Olzii</li>
+          <li>olzii</li>
         </a>
         <a href="bumaa/cv.html">
           <li>Bumaa</li>
@@ -187,9 +189,9 @@
   <div id="myDiv" class="cvharah">
     <!-- <object id="embeddedObject" data="../week1/home1.html" width="100%" height="100%"></object> -->
     <div class="gol">
-      <div class="name"><a class="bt" href="bumaa/cv.html">
+      <div class="name"><a class="bt" href="{%url 'bumaa'%}">
           <div class="zurag">
-            <img src="bumaa/img/propic.jpg" alt="">
+            <img src="{% static '/images/bumaa/python.png' %}" alt="">
           </div>
           <div class="ug">
             <h2>Bumandemberel</h2>
@@ -209,9 +211,9 @@
         </a>
       </div>
 
-      <div class="name"><a class="bt" href="Odonhuu/CV_version_02.html">
+      <div class="name"><a class="bt" href="{% url 'Odonkhuu'%}">
           <div class="zurag">
-            <img src="Odonhuu/image/binary.png" alt="">
+            <img src="{% static '/images/binary.png'%}" alt="">
           </div>
           <div class="ug">
             <h2>Odonhuu</h2>
@@ -220,20 +222,20 @@
         </a>
       </div>
 
-      <div class="name"><a class="bt" href="olzii/index.html">
+      <div class="name"><a class="bt" href="{% url 'olzii'%}">
           <div class="zurag">
-            <img src="olzii/nuurzurag.jpg" alt="">
+            <img src="{% static '/images/nuurzurag.jpg'%}" alt="">
           </div>
           <div class="ug">
-            <h2>Olziisuren</h2>
+            <h2>olzii</h2>
             <h2>1-kurs</h2>
           </div>
         </a>
       </div>
 
-      <div class="name"><a class="bt" href="Ha.Tuguldur/web cv.html">
+      <div class="name"><a class="bt" href="{% url 'HaTuguldur'%}">
           <div class="zurag">
-            <img src="Ha.Tuguldur/1.jpg" alt="">
+            <img src="{% static '/images/1.jpg'%}" alt="">
           </div>
           <div class="ug">
             <h2>Tuguldur.H</h2>
@@ -242,9 +244,9 @@
         </a>
       </div>
 
-      <div class="name"><a class="bt" href="Magnai/index.html">
+      <div class="name"><a class="bt" href="{% url 'magnai'%}">
           <div class="zurag">
-            <img src="Magnai/image/pro.jpg" alt="">
+            <img src="{% static '/images/pro.jpg'%}" alt="">
           </div>
           <div class="ug">
             <h2>Magnai</h2>
@@ -254,7 +256,9 @@
       </div>
 
       <div class="name"><a class="bt" href="{% url 'bilguun'%}">
-          
+        <div class="zurag">
+          <img src="{% static '/images/pro.jpg'%}" alt="">
+        </div>
           <div class="ug">
             <h2>Bilguun</h2>
             <h2>2-kurs</h2>
@@ -262,16 +266,7 @@
         </a>
       </div>
 
-      <div class="name"><a class="bt" href="N.tuguldr/index.html">
-          <div class="zurag">
-            <img src="N.tuguldr/assets/images/profile-image.jpg" alt="">
-          </div>
-          <div class="ug">
-            <h2>Tuguldur.N</h2>
-            <h2>2-kurs</h2>
-          </div>
-        </a>
-      </div>
+  
 
       <div class="name"><a class="bt" href="{% url 'nomi'%}">
           <div class="zurag">
@@ -279,12 +274,12 @@
           </div>
           <div class="ug">
             <h2>Nomin-Erdene</h2>
-            <h2>1-kurs</h2>
+            <h2>2-kurs</h2>
           </div>
         </a>
       </div>
 
-      <div class="name"><a class="bt" href="Sarnai/index.html">
+      <div class="name"><a class="bt" href="{% url 'sarnai'%}">
           <div class="zurag">
             <img src="{% static '/images/bi.png' %}" alt="">
           </div>
@@ -296,9 +291,9 @@
       </div>
 
 
-      <div class="name"><a class="bt" href="T.tudu/index.html">
+      <div class="name"><a class="bt" href="{% url 'Tudu'%}">
           <div class="zurag">
-            <img src="T.tudu/img/image1.jpg" alt="">
+            <img src="{% static '/images/Tudu/image1.jpg' %}" alt="">
           </div>
           <div class="ug">
             <h2>Tudu</h2>
@@ -307,9 +302,9 @@
         </a>
       </div>
 
-      <div class="name"><a class="bt" href="Tserenbaatr/index.html">
+      <div class="name"><a class="bt" href="{% url 'Tserenbaatar'%}">
           <div class="zurag">
-            <img src="Tserenbaatr/img/1.jpg" alt="">
+            <img src="{% static '/images/1.jpg' %}" alt="">
           </div>
           <div class="ug">
             <h2>Tserenbaatar</h2>
@@ -318,9 +313,9 @@
         </a>
       </div>
 
-      <div class="name"><a class="bt" href="Xuslen/XuslnCV.html">
+      <div class="name"><a class="bt" href="{% url 'xuslen'%}">
           <div class="zurag">
-            <img src="Xuslen/ap.jpg" alt="">
+            <img src="{% static '/images/ap.jpg' %}" alt="">
           </div>
           <div class="ug">
             <h2>Huslen</h2>
@@ -331,7 +326,7 @@
 
       <div class="name"><a class="bt" href="{% url 'zndra'%}">
           <div class="zurag">
-            <img src="Zndra/dd.jpg">
+            <img src="{% static '/images/dd.jpg' %}">
           </div>
           <div class="ug">
             <h2>Zndra</h2>
@@ -340,9 +335,9 @@
         </a>
       </div>
 
-      <div class="name"><a class="bt" href="odontungalag/odkeCV.html">
+      <div class="name"><a class="bt" href="{% url 'odke'%}">
           <div class="zurag">
-            <img src="odontungalag/zurag.jpg">
+            <img src="{% static '/images/kedo/zurag.jpg' %}">
           </div>
           <div class="ug">
             <h2>Odontungalag</h2>
@@ -350,6 +345,18 @@
           </div>
         </a>
       </div>
+
+
+      <div class="name"><a class="bt" href="{% url 'Nomio1'%}">
+        <div class="zurag">
+          <img src="{% static '/images/nomin.jpg' %}">
+        </div>
+        <div class="ug">
+          <h2>Nomio1</h2>
+          <h2>1-kurs</h2>
+        </div>
+      </a>
+    </div>
 
       <div class="name"><a class="bt" href="{% url 'Bayrbat'%}">
         <div class="zurag">

@@ -8,7 +8,7 @@ urlpatterns = [
     path("week1/", views.week1View, name="week1View"),
     path("week1/home/", views.homeView, name="homm"),
     path("week1/magnai/", views.magnai, name="magnai"),
-    path("week1/tuugii/", views.tuugii, name="tuugii"),
+    # path("week1/tuugii/", views.tuugii, name=""),
     path("week1/odke/", views.odke, name="odke"),
     path("week1/sarnai/", views.sarnai, name="sarnai"),
     path("week1/xuslen/", views.xuslen, name="xuslen"),
@@ -20,4 +20,9 @@ urlpatterns = [
     path("week1/nomin/", views.nomin, name="nomi"),
     path("week1/Tudu/", views.Tudu, name="Tudu"),
     path("week1/Nomio1/", views.Nomio1, name="Nomio1"),
+    path("week1/Tserenbaatar/", views.Tserenbaatar, name="Tserenbaatar"),
+    path("week1/bumaa/", views.bumaa, name="bumaa"),
+    path("week1/olzii/", views.olzii, name="olzii"),
+    path("week1/HaTuguldur/", views.HaTuguldur, name="HaTuguldur"),
+
 ]
