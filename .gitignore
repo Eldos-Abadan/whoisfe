@@ -1,4 +1,5 @@
 whoisfe\db.sqlite3
 whoisfe\whoisfe\__pycache__\*
+whoisfe\whoisfe\__pycache__\__init__.cpython-39.pyc
 *.pyc
 .env
