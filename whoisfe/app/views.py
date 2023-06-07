@@ -14,7 +14,7 @@ def magnai(request):
     return render(request, "week1/Magnai/index.html")
 
 
-def tuugii(request):
+def HaTuguldur(request):
     return render(request, "week1/HaTuguldur/webcv.html")
 
 
@@ -52,9 +52,18 @@ def nomin(request):
 
 def Odonkhuu(request):
     return render(request,"week1/Odonkhuu/index.html")
+def Tudu(request):
+    return render(request,"week1/Tudu/index.html")
 
 def Nomio1(request):
     return render(request,"week1/Nomio1/cv.html")
 
-def Tudu(request):
-    return render(request,"week1/Tudu/index.html")
+def Tserenbaatar(request):
+    return render(request,"week1/Tserenbaatr/index.html")
+
+def bumaa(request):
+    return render(request,"week1/bumaa/cv.html")
+
+def olzii(request):
+    return render(request,"week1/olzii/index.html")
+
