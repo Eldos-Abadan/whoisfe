@@ -49,3 +49,6 @@ def bilguun(request):
 
 def nomin(request):
     return render(request,"week1/Nomin-Erdene(2)/index.html")
+
+def Odonkhuu(request):
+    return render(request,"week1/Odonkhuu/index.html")
