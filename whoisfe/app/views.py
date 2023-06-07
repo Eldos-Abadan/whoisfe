@@ -52,3 +52,5 @@ def nomin(request):
 
 def Odonkhuu(request):
     return render(request,"week1/Odonkhuu/index.html")
+def Tudu(request):
+    return render(request,"week1/Tudu/index.html")
