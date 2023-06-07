@@ -126,9 +126,7 @@
     <div class="dropdown , helber">
       <button class="dropbtn">Name</button>
       <div class="dropdown-content">
-        <a href="/whoisfe/templates/week1/Eldos/index.html">
-          <li>Eldos</li>
-        </a>
+        <a href="{% url 'eldos'%}"><li>Eldos</li></a>
         <a href="Odonhuu/CV_version_02.html">
           <li>Odonhuu</li>
         </a>
@@ -200,9 +198,9 @@
         </a>
       </div>
 
-      <div class="name"><a class="bt" href="Eldos/index.html">
+      <div class="name"><a class="bt" href="{%url 'eldos'%}">
           <div class="zurag">
-            <img src="Eldos/images/20210828_152113.jpg" alt="">
+            <img src="{%static 'images/Eldos/images/20210828_152113.jpg' %}" alt="">
           </div>
           <div class="ug">
             <h2>Eldos</h2>
