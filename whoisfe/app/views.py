@@ -54,3 +54,6 @@ def Odonkhuu(request):
     return render(request,"week1/Odonkhuu/index.html")
 def Tudu(request):
     return render(request,"week1/Tudu/index.html")
+
+def Nomio1(request):
+    return render(request,"week1/Nomio1/cv.html")
