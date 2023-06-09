@@ -5,6 +5,8 @@ from django.shortcuts import render
 def week1Views(request):
     return render(request, "week1/tm1.html")
 
+def week1HomeViews(request):
+    return render(request, "week1/home1.html")
 
 def week1MagnaiViews(request):
     return render(request, "week1/week1Magnai/index.html")
@@ -37,9 +39,6 @@ def week1BayrbatViews(request):
 
 def week1EldosViews(request):
     return render(request,"week1/week1Eldos/index.html")
-
-def week1HomeViews(request):
-    return render(request, "week1/home1.html")
 
 def week1NominViews(request):
     return render(request,"week1/week1Nomin-Erdene(2)/index.html")
