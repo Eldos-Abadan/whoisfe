@@ -51,7 +51,7 @@ def nomin(request):
     return render(request,"week1/Nomin-Erdene(2)/index.html")
 
 def Odonkhuu(request):
-    return render(request,"week1/Odonhuu/index.html")
+    return render(request,"week1/Odonkhuu/index.html")
 def Tudu(request):
     return render(request,"week1/Tudu/index.html")
 
