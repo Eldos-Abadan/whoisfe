@@ -2,10 +2,6 @@ from django.shortcuts import render
 
 
 
-def homeView(request):
-    return render(request, "home/mycv.html")
-
-
 def week1View(request):
     return render(request, "week1/tm1.html")
 
@@ -41,7 +37,8 @@ def Bayrbat(request):
 
 def eldos(request):
     return render(request,"week1/Eldos/index.html")
-def home(request):
+
+def week1HomeView(request):
     return render(request, "week1/home1.html")
 
 def bilguun(request):
@@ -66,4 +63,3 @@ def bumaa(request):
 
 def olzii(request):
     return render(request,"week1/olzii/index.html")
-

@@ -1,388 +1,392 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/tm1.css' %}" />
+    <style>
+      .dropbtn {
+        background-color: rgb(39, 55, 70);
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+        flex: 1;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="{% static 'css/tm1.css' %}">
-  <style>
-    .dropbtn {
-      background-color: rgb(39, 55, 70);
-      color: white;
-      padding: 16px;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-      border-radius: 10px;
-      flex: 1;
-    }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
 
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 140px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
 
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 140px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-    }
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
 
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
+      .dropdown-content a:hover {
+        background-color: rgb(39, 55, 70);
+        color: white;
+      }
 
-    .dropdown-content a:hover {
-      background-color: rgb(39, 55, 70);
-      color: white;
-    }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
 
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
+      .dropdown:hover .dropbtn {
+        background-color: rgb(44, 62, 80);
+      }
 
-    .dropdown:hover .dropbtn {
-      background-color: rgb(44, 62, 80);
-    }
+      a {
+        text-decoration: none;
+        color: black;
+        font-size: 17px;
+      }
 
-    a {
-      text-decoration: none;
-      color: black;
-      font-size: 17px;
-    }
+      li {
+        list-style-type: none;
+      }
 
-    li {
-      list-style-type: none;
-    }
+      .name {
+        border: 1px solid;
+        border-radius: 10px;
+        width: 400px;
+        height: 150px;
+        float: left;
+        margin-left: 50px;
+        margin-top: 50px;
+        box-shadow: 4px 0 4px 0 gray;
+        opacity: 1;
+        transition: background-color 0.7s ease, opacity 0.5s linear;
+      }
 
-    .name {
-      border: 1px solid;
-      border-radius: 10px;
-      width: 400px;
-      height: 150px;
-      float: left;
-      margin-left: 50px;
-      margin-top: 50px;
-      box-shadow: 4px 0 4px 0 gray;
-      opacity: 1;
-      transition: background-color 0.7s ease, opacity 0.5s linear;
-    }
+      .name:hover {
+        width: 400px;
+        height: 150px;
+        background-color: black;
+      }
 
-    .name:hover {
-      width: 400px;
-      height: 150px;
-      background-color: black;
-    }
+      .name:hover h2 {
+        color: white;
+      }
 
-    .name:hover h2 {
-      color: white;
-    }
+      .name img {
+        width: 150px;
+        height: 150px;
+        border-radius: 10px;
+      }
 
-    .name img {
-      width: 150px;
-      height: 150px;
-      border-radius: 10px;
-    }
+      .zurag {
+        float: left;
+        width: 150px;
+        height: 150px;
+      }
 
-    .zurag {
-      float: left;
-      width: 150px;
-      height: 150px;
-    }
+      .ug {
+        text-align: center;
+      }
 
-    .ug {
-      text-align: center;
+      .bt {
+        margin-left: 10px;
+      }
+    </style>
+  </head>
 
-    }
+  <body>
+    <div class="head , helber">
+      <div class="dropdown , helber">
+        <button class="dropbtn">Name</button>
+        <div class="dropdown-content">
+          <a href="{% url 'eldos'%}"><li>Eldos</li></a>
 
-    .bt {
-      margin-left: 10px;
-    }
-  </style>
-</head>
+          <a href="Odonkhuu/index.html">
+            <li>Odonhuu</li>
+          </a>
 
-<body>
-  <div class="head , helber">
+          <a href="olzii/index.html">
+            <li>olzii</li>
+          </a>
 
-    <div class="dropdown , helber">
-      <button class="dropbtn">Name</button>
-      <div class="dropdown-content">
+          <a href="bumaa/cv.html">
+            <li>Bumaa</li>
+          </a>
 
-        <a href="{% url 'eldos'%}"><li>Eldos</li></a>
+          <a href="Ha.Tuguldur/webcv.html">
+            <li>Tuguldur.H</li>
+          </a>
 
-        <a href="Odonkhuu/index.html">
-          <li>Odonhuu</li>
-        </a>
+          <a href="{% url 'magnai' %}">
+            <li>Magnai</li>
+          </a>
 
-        <a href="olzii/index.html">
-          <li>olzii</li>
-        </a>
+          <a href="{% url 'bilguun'%}">
+            <li>Bilguun</li>
+          </a>
 
-        <a href="bumaa/cv.html">
-          <li>Bumaa</li>
-        </a>
+          <a href="N.tuguldr/index.html">
+            <li>Tuguldur.N</li>
+          </a>
+          <a href="Nomin-Erdene(2)/index.html">
+            <li>Nomin-Erdene</li>
+          </a>
+          <a href="{% url 'sarnai'%}">
+            <li>Sarnai</li>
+          </a>
+          <a href="{% url 'Tudu' %}">
+            <li>TUDU</li>
+          </a>
+          <a href="Tserenbaatr/index.html">
+            <li>Tserenbaatar</li>
+          </a>
+          <a href="{% url 'xuslen' %}">
+            <li>Xuslen</li>
+          </a>
+          <a href="{% url 'zndra' %}">
+            <li>Zandra</li>
+          </a>
 
-        <a href="Ha.Tuguldur/webcv.html">
-          <li>Tuguldur.H</li>
-        </a>
+          <a href="{% url 'Bayrbat'%}">
+            <li>Баярбат</li>
+          </a>
 
-        <a href="{% url 'magnai' %}">
-          <li>Magnai</li>
-        </a>
+          <a href="{% url 'Nomio1'%}">
+            <li>Nomio1</li>
+          </a>
 
-        <a href="{% url 'bilguun'%}">
-          <li>Bilguun</li>
-        </a>
-
-        <a href="N.tuguldr/index.html">
-          <li>Tuguldur.N</li>
-        </a>
-        <a href="Nomin-Erdene(2)/index.html">
-          <li>Nomin-Erdene</li>
-        </a>
-        <a href="{% url 'sarnai'%}">
-          <li>Sarnai</li>
-        </a>
-        <a href="{% url 'Tudu' %}">
-          <li>TUDU</li>
-        </a>
-        <a href="Tserenbaatr/index.html">
-          <li>Tserenbaatar</li>
-        </a>
-        <a href="{% url 'xuslen' %}">
-          <li>Xuslen</li>
-        </a>
-        <a href="{% url 'zndra' %}">
-          <li>Zandra</li>
-        </a>
-
-        <a href="{% url 'Bayrbat'%}">
-          <li>Баярбат</li>
-        </a>
-        
-        <a href="{% url 'Nomio1'%}">
-          <li>Nomio1</li>
-        </a>
-
-        <a href="{% url 'odke'%}">
-          <li>Odnoo</li>
-        </a>
-      </div>
-    </div>
-    <a href="{% url 'homm' %}">
-      <p style="margin-top: -35px;" class="gradient-text">
-        Whois
-      </p>
-    </a>
-
-
-  </div>
-  <div id="myDiv" class="cvharah">
-    <!-- <object id="embeddedObject" data="../week1/home1.html" width="100%" height="100%"></object> -->
-    <div class="gol">
-      <div class="name"><a class="bt" href="{%url 'bumaa'%}">
-          <div class="zurag">
-            <img src="{% static '/images/nuur.jpg' %}" alt="">
-          </div>
-          <div class="ug">
-            <h2>Bumandemberel</h2>
-            <h2>1-kurs</h2>
-          </div>
-        </a>
-      </div>
-
-      <div class="name"><a class="bt" href="{%url 'eldos'%}">
-          <div class="zurag">
-            <img src="{%static 'images/Eldos/images/20210828_152113.jpg' %}" alt="">
-          </div>
-          <div class="ug">
-            <h2>Eldos</h2>
-            <h2>2-kurs</h2>
-          </div>
-        </a>
-      </div>
-
-      <div class="name"><a class="bt" href="{% url 'Odonkhuu'%}">
-          <div class="zurag">
-            <img src="{% static '/images/binary.png'%}" alt="">
-          </div>
-          <div class="ug">
-            <h2>Odonhuu</h2>
-            <h2>1-kurs</h2>
-          </div>
-        </a>
-      </div>
-
-      <div class="name"><a class="bt" href="{% url 'olzii'%}">
-          <div class="zurag">
-            <img src="{% static '/images/olzii/nuurzurag.jpg'%}" alt="">
-          </div>
-          <div class="ug">
-            <h2>Olziisuren</h2>
-            <h2>1-kurs</h2>
-          </div>
-        </a>
-      </div>
-
-      <div class="name"><a class="bt" href="{% url 'HaTuguldur'%}">
-          <div class="zurag">
-            <img src="{% static '/images/tuguldur/1.jpg'%}" alt="">
-          </div>
-          <div class="ug">
-            <h2>Tuguldur.H</h2>
-            <h2>2-kurs</h2>
-          </div>
-        </a>
-      </div>
-
-      <div class="name"><a class="bt" href="{% url 'magnai'%}">
-          <div class="zurag">
-            <img src="{% static '/images/pro.jpg'%}" alt="">
-          </div>
-          <div class="ug">
-            <h2>Magnai</h2>
-            <h2>2-kurs</h2>
-          </div>
-        </a>
-      </div>
-
-      <div class="name"><a class="bt" href="{% url 'bilguun'%}">
-        <div class="zurag">
-          <img src="{% static '/images/pro.jpg'%}" alt="">
+          <a href="{% url 'odke'%}">
+            <li>Odnoo</li>
+          </a>
         </div>
-          <div class="ug">
-            <h2>Bilguun</h2>
-            <h2>2-kurs</h2>
-          </div>
-        </a>
       </div>
-
-  
-
-      <div class="name"><a class="bt" href="{% url 'nomi'%}">
-          <div class="zurag">
-            <img src="{% static '/images/pic.jpg'%}" alt="">
-          </div>
-          <div class="ug">
-            <h2>Nomin-Erdene</h2>
-            <h2>2-kurs</h2>
-          </div>
-        </a>
-      </div>
-
-      <div class="name"><a class="bt" href="{% url 'sarnai'%}">
-          <div class="zurag">
-            <img src="{% static '/images/bi.png' %}" alt="">
-          </div>
-          <div class="ug">
-            <h2>Sarnai</h2>
-            <h2>1-kurs</h2>
-          </div>
-        </a>
-      </div>
-
-
-      <div class="name"><a class="bt" href="{% url 'Tudu'%}">
-          <div class="zurag">
-            <img src="{% static '/images/Tudu/image1.jpg' %}" alt="">
-          </div>
-          <div class="ug">
-            <h2>Tudu</h2>
-            <h2>1-kurs</h2>
-          </div>
-        </a>
-      </div>
-
-      <div class="name"><a class="bt" href="{% url 'Tserenbaatar'%}">
-          <div class="zurag">
-            <img src="{% static '/images/tseba.jpg' %}" alt="">
-          </div>
-          <div class="ug">
-            <h2>Tserenbaatar</h2>
-            <h2>2-kurs</h2>
-          </div>
-        </a>
-      </div>
-
-      <div class="name"><a class="bt" href="{% url 'xuslen'%}">
-          <div class="zurag">
-            <img src="{% static '/images/ap.jpg' %}" alt="">
-          </div>
-          <div class="ug">
-            <h2>Huslen</h2>
-            <h2>1-kurs</h2>
-          </div>
-        </a>
-      </div>
-
-      <div class="name"><a class="bt" href="{% url 'zndra'%}">
-          <div class="zurag">
-            <img src="{% static '/images/dd.jpg' %}">
-          </div>
-          <div class="ug">
-            <h2>Zndra</h2>
-            <h2>2-kurs</h2>
-          </div>
-        </a>
-      </div>
-
-      <div class="name"><a class="bt" href="{% url 'odke'%}">
-          <div class="zurag">
-            <img src="{% static '/images/kedo/zurag.jpg' %}">
-          </div>
-          <div class="ug">
-            <h2>Odontungalag</h2>
-            <h2>1-kurs</h2>
-          </div>
-        </a>
-      </div>
-
-
-      <div class="name"><a class="bt" href="{% url 'Nomio1'%}">
-        <div class="zurag">
-          <img src="{% static '/images/nomin.jpg' %}">
-        </div>
-        <div class="ug">
-          <h2>Nomio1</h2>
-          <h2>1-kurs</h2>
-        </div>
+      <a href="{% url 'week1Home' %}">
+        <p style="margin-top: -35px" class="gradient-text">Whois</p>
       </a>
     </div>
+    <div id="myDiv" class="cvharah">
+      <!-- <object id="embeddedObject" data="../week1/home1.html" width="100%" height="100%"></object> -->
+      <div class="gol">
+        <div class="name">
+          <a class="bt" href="{%url 'bumaa'%}">
+            <div class="zurag">
+              <img src="{% static '/images/nuur.jpg' %}" alt="" />
+            </div>
+            <div class="ug">
+              <h2>Bumandemberel</h2>
+              <h2>1-kurs</h2>
+            </div>
+          </a>
+        </div>
 
-      <div class="name"><a class="bt" href="{% url 'Bayrbat'%}">
-        <div class="zurag">
-          <!-- <img src="odontungalag/zurag.jpg"> -->
+        <div class="name">
+          <a class="bt" href="{%url 'eldos'%}">
+            <div class="zurag">
+              <img
+                src="{%static 'images/Eldos/images/20210828_152113.jpg' %}"
+                alt=""
+              />
+            </div>
+            <div class="ug">
+              <h2>Eldos</h2>
+              <h2>2-kurs</h2>
+            </div>
+          </a>
         </div>
-        <div class="ug">
-          <h2>Б. Баярбат</h2>
-          <h2>1-р курс </h2>
+
+        <div class="name">
+          <a class="bt" href="{% url 'Odonkhuu'%}">
+            <div class="zurag">
+              <img src="{% static '/images/binary.png'%}" alt="" />
+            </div>
+            <div class="ug">
+              <h2>Odonhuu</h2>
+              <h2>1-kurs</h2>
+            </div>
+          </a>
         </div>
-      </a>
+
+        <div class="name">
+          <a class="bt" href="{% url 'olzii'%}">
+            <div class="zurag">
+              <img src="{% static '/images/olzii/nuurzurag.jpg'%}" alt="" />
+            </div>
+            <div class="ug">
+              <h2>Olziisuren</h2>
+              <h2>1-kurs</h2>
+            </div>
+          </a>
+        </div>
+
+        <div class="name">
+          <a class="bt" href="{% url 'HaTuguldur'%}">
+            <div class="zurag">
+              <img src="{% static '/images/tuguldur/1.jpg'%}" alt="" />
+            </div>
+            <div class="ug">
+              <h2>Tuguldur.H</h2>
+              <h2>2-kurs</h2>
+            </div>
+          </a>
+        </div>
+
+        <div class="name">
+          <a class="bt" href="{% url 'magnai'%}">
+            <div class="zurag">
+              <img src="{% static '/images/pro.jpg'%}" alt="" />
+            </div>
+            <div class="ug">
+              <h2>Magnai</h2>
+              <h2>2-kurs</h2>
+            </div>
+          </a>
+        </div>
+
+        <div class="name">
+          <a class="bt" href="{% url 'bilguun'%}">
+            <div class="zurag">
+              <img src="{% static '/images/pro.jpg'%}" alt="" />
+            </div>
+            <div class="ug">
+              <h2>Bilguun</h2>
+              <h2>2-kurs</h2>
+            </div>
+          </a>
+        </div>
+
+        <div class="name">
+          <a class="bt" href="{% url 'nomi'%}">
+            <div class="zurag">
+              <img src="{% static '/images/pic.jpg'%}" alt="" />
+            </div>
+            <div class="ug">
+              <h2>Nomin-Erdene</h2>
+              <h2>2-kurs</h2>
+            </div>
+          </a>
+        </div>
+
+        <div class="name">
+          <a class="bt" href="{% url 'sarnai'%}">
+            <div class="zurag">
+              <img src="{% static '/images/bi.png' %}" alt="" />
+            </div>
+            <div class="ug">
+              <h2>Sarnai</h2>
+              <h2>1-kurs</h2>
+            </div>
+          </a>
+        </div>
+
+        <div class="name">
+          <a class="bt" href="{% url 'Tudu'%}">
+            <div class="zurag">
+              <img src="{% static '/images/Tudu/image1.jpg' %}" alt="" />
+            </div>
+            <div class="ug">
+              <h2>Tudu</h2>
+              <h2>1-kurs</h2>
+            </div>
+          </a>
+        </div>
+
+        <div class="name">
+          <a class="bt" href="{% url 'Tserenbaatar'%}">
+            <div class="zurag">
+              <img src="{% static '/images/tseba.jpg' %}" alt="" />
+            </div>
+            <div class="ug">
+              <h2>Tserenbaatar</h2>
+              <h2>2-kurs</h2>
+            </div>
+          </a>
+        </div>
+
+        <div class="name">
+          <a class="bt" href="{% url 'xuslen'%}">
+            <div class="zurag">
+              <img src="{% static '/images/ap.jpg' %}" alt="" />
+            </div>
+            <div class="ug">
+              <h2>Huslen</h2>
+              <h2>1-kurs</h2>
+            </div>
+          </a>
+        </div>
+
+        <div class="name">
+          <a class="bt" href="{% url 'zndra'%}">
+            <div class="zurag">
+              <img src="{% static '/images/dd.jpg' %}" />
+            </div>
+            <div class="ug">
+              <h2>Zndra</h2>
+              <h2>2-kurs</h2>
+            </div>
+          </a>
+        </div>
+
+        <div class="name">
+          <a class="bt" href="{% url 'odke'%}">
+            <div class="zurag">
+              <img src="{% static '/images/kedo/zurag.jpg' %}" />
+            </div>
+            <div class="ug">
+              <h2>Odontungalag</h2>
+              <h2>1-kurs</h2>
+            </div>
+          </a>
+        </div>
+
+        <div class="name">
+          <a class="bt" href="{% url 'Nomio1'%}">
+            <div class="zurag">
+              <img src="{% static '/images/nomin.jpg' %}" />
+            </div>
+            <div class="ug">
+              <h2>Nomio1</h2>
+              <h2>1-kurs</h2>
+            </div>
+          </a>
+        </div>
+
+        <div class="name">
+          <a class="bt" href="{% url 'Bayrbat'%}">
+            <div class="zurag">
+              <!-- <img src="odontungalag/zurag.jpg"> -->
+            </div>
+            <div class="ug">
+              <h2>Б. Баярбат</h2>
+              <h2>1-р курс</h2>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
 
-    </div>
-  </div>
-
-  <script>
-
-    var links = document.querySelectorAll('.helber a');
-    links.forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        event.preventDefault();
-        var newLink = link.getAttribute('href');
-        document.getElementById('embeddedObject').data = newLink;
+    <script>
+      var links = document.querySelectorAll(".helber a");
+      links.forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+          var newLink = link.getAttribute("href");
+          document.getElementById("embeddedObject").data = newLink;
+        });
       });
-    });
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
