@@ -2,64 +2,65 @@ from django.shortcuts import render
 
 
 
-def week1View(request):
+def week1Views(request):
     return render(request, "week1/tm1.html")
 
 
-def magnai(request):
-    return render(request, "week1/Magnai/index.html")
+def week1MagnaiViews(request):
+    return render(request, "week1/week1Magnai/index.html")
 
 
-def HaTuguldur(request):
-    return render(request, "week1/HaTuguldur/webcv.html")
+def week1HaTuguldurViews(request):
+    return render(request, "week1/week1HaTuguldur/webcv.html")
 
 
-def odke(request):
-    return render(request, "week1/odontungalag/odkeCV.html")
+def week1OdkeViews(request):
+    return render(request, "week1/week1Odontungalag/odkeCV.html")
 
 
-def xuslen(request):
-    return render(request, "week1/Xuslen/XuslnCV.html")
+def week1XuslenViews(request):
+    return render(request, "week1/week1Xuslen/XuslnCV.html")
 
 
-def sarnai(request):
-    return render(request, "week1/Sarnai/index.html")
+def week1SarnaiViews(request):
+    return render(request, "week1/week1Sarnai/index.html")
 
 
-def enkhzul(request):
-    return render(request, "week1/Enkhzul/index.html")
+def week1EnkhzulViews(request):
+    return render(request, "week1/week1Enkhzul/index.html")
 
-def zndra(request):
-    return render(request, "week1/Zndra/cv.html")
+def week1ZndraViews(request):
+    return render(request, "week1/week1Zndra/cv.html")
 
-def Bayrbat(request):
-    return render(request,"week1/Bayrbat/nuur.html")
+def week1BayrbatViews(request):
+    return render(request,"week1/week1Bayrbat/nuur.html")
 
-def eldos(request):
-    return render(request,"week1/Eldos/index.html")
+def week1EldosViews(request):
+    return render(request,"week1/week1Eldos/index.html")
 
-def week1HomeView(request):
+def week1HomeViews(request):
     return render(request, "week1/home1.html")
 
-def bilguun(request):
-    return render(request, "week1/N.bilguun/cv.html")
+def week1NominViews(request):
+    return render(request,"week1/week1Nomin-Erdene(2)/index.html")
 
-def nomin(request):
-    return render(request,"week1/Nomin-Erdene(2)/index.html")
+def week1OdonkhuuViews(request):
+    return render(request,"week1/week1Odonkhuu/index.html")
 
-def Odonkhuu(request):
-    return render(request,"week1/Odonhuu/index.html")
-def Tudu(request):
-    return render(request,"week1/Tudu/index.html")
+def week1TuduViews(request):
+    return render(request,"week1/week1Tudu/index.html")
 
-def Nomio1(request):
-    return render(request,"week1/Nomio1/cv.html")
+def week1Nomio1Views(request):
+    return render(request,"week1/week1Nomio1/cv.html")
 
-def Tserenbaatar(request):
-    return render(request,"week1/Tserenbaatr/index.html")
+def week1TserenbaatarViews(request):
+    return render(request,"week1/week1Tserenbaatar/index.html")
 
-def bumaa(request):
-    return render(request,"week1/bumaa/cv.html")
+def week1BumaaViews(request):
+    return render(request,"week1/week1Bumaa/cv.html")
 
-def olzii(request):
-    return render(request,"week1/olzii/index.html")
+def week1OlziiViews(request):
+    return render(request,"week1/week1Olzii/index.html")
+
+def week1BilguunViews(request):
+    return render(request,"week1/week1Bilguun/cv.html")
