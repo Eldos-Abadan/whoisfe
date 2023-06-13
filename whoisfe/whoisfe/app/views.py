@@ -8,3 +8,6 @@ def homeView(request):
 
 def week1View(request):
     return render(request,"week1/tm1.html")
+
+def registerViews(request):
+    return render(request,"register/register.html")
