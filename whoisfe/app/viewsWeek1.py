@@ -63,3 +63,4 @@ def week1OlziiViews(request):
 
 def week1BilguunViews(request):
     return render(request,"week1/week1Bilguun/cv.html")
+
