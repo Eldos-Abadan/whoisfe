@@ -2,6 +2,12 @@
 from pathlib import Path
 import os
 
+# busad nemelt import
+import hashlib
+import base64
+from django.urls import resolve, get_resolver, URLResolver, URLPattern
+###############################
+
 
 BASE_DIR =          Path(__file__).resolve().parent.parent
 
@@ -118,3 +124,52 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# bidnii nemsen function
+
+
+## Нууц үгийг md5 хашруу хөрвүүлж байгаа
+def mandakhHash(password):
+    return hashlib.md5(password.encode('utf-8')).hexdigest()
+#   mandakhHash
+
+## Бүртгүүлэхэд автоматаар үүсэх 5 оронтой код
+def createPassword(length):
+    # Random string of length 5
+    result_str = ''.join((random.choice('abcdefghjkmnpqrstuvwxyz123456789$!?') for i in range(length)))
+    return result_str
+    # Output example: ryxay
+#   createPassword
+
+## Хэрэглэгчийн бүртгэл баталгаажуулах код үүсгэнэ. 
+## 30 тэмдэгт байгаа. 
+## length нь үсгийн урт
+def createCodes(length):
+    # Random string of length 30
+    result_str = ''.join((random.choice('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789') for i in range(length)))
+    return result_str
+    # Output example: ryxay
+#   createCodes
+
+def base64encode(length):
+    return str(base64.b64encode((createCodes(length-26) + str(datetime.now().time())).encode('ascii'))).replace('\'','').replace('"','').replace('=','')
+#   base64encode
+
+def get_view_name_by_path(path):
+    result = resolve(path=path)
+    return result.view_name
+#   get_view_name_by_path
+
+def pth(request):
+    return get_view_name_by_path(request.path)
+#   pth
+
+def reqValidation(json,keys):
+    validReq = True
+    for key in keys:
+        if(key not in json):
+            validReq = False
+            break
+    return validReq
+#   def
