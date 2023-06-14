@@ -14,7 +14,7 @@ urlpatterns = [
     path("", include('whoisfe.route.urlsWeek1')),
     ###################################################### 
 
-     ##### Log in ###############################
-    path("", include('whoisfe.route.urlsLogin')),
+     ##### Forget ###############################
+    path("", include('whoisfe.route.urlsForget')),
     ######################################################   
 ]
