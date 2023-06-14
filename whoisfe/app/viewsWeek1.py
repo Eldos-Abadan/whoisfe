@@ -65,5 +65,5 @@ def week1BilguunViews(request):
     return render(request,"week1/week1Bilguun/cv.html")
 
 def week1EbeViews(request):
-    return render(request,"week1/week1Ebe/Ebe.html")
+    return render(request,"week1/week1Ebe/Ebe/Ebe.html")
 
