@@ -2,239 +2,265 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
 
-    <link rel="stylesheet" href="{% static 'css/home1.css' %}">
+        <link rel="stylesheet" href="{% static 'css/home1.css' %}">
 
-    <style>
-        a {
-            text-decoration: none;
-            color: black;
-            font-size: 17px;
-        }
+        <style>
+            a {
+                text-decoration: none;
+                color: black;
+                font-size: 17px;
+            }
 
-        li {
-            list-style-type: none;
-        }
+            li {
+                list-style-type: none;
+            }
 
-        .name {
-            border: 1px solid;
-            border-radius: 10px;
-            width: 400px;
-            height: 150px;
-            float: left;
-            margin-left: 50px;
-            margin-top: 50px;
-            box-shadow: 4px 0 4px 0 gray;
-            opacity: 1;
-            transition: background-color 0.7s ease, opacity 0.5s linear;
-        }
+            .name {
+                border: 1px solid;
+                border-radius: 10px;
+                width: 400px;
+                height: 150px;
+                float: left;
+                margin-left: 50px;
+                margin-top: 50px;
+                box-shadow: 4px 0 4px 0 gray;
+                opacity: 1;
+                transition: background-color 0.7s ease, opacity 0.5s linear;
+            }
 
-        .name:hover {
-            width: 400px;
-            height: 150px;
-            background-color: black;
-        }
+            .name:hover {
+                width: 400px;
+                height: 150px;
+                background-color: black;
+            }
 
-        .name:hover h2 {
-            color: white;
-        }
+            .name:hover h2 {
+                color: white;
+            }
 
-        .name img {
-            width: 150px;
-            height: 150px;
-            border-radius: 10px;
-        }
+            .name img {
+                width: 150px;
+                height: 150px;
+                border-radius: 10px;
+            }
 
-        .zurag {
-            float: left;
-            width: 150px;
-            height: 150px;
-        }
+            .zurag {
+                float: left;
+                width: 150px;
+                height: 150px;
+            }
 
-        .ug {
-            text-align: center;
+            .ug {
+                text-align: center;
 
-        }
+            }
 
-        .bt {
-            margin-left: 10px;
-        }
-    </style>
+            .bt {
+                margin-left: 10px;
+            }
+        </style>
 
-</head>
+    </head>
 
-<body>
-    <div class="gol">
-        <div class="name"><a class="bt" href="{% url 'week1Bumaa' %}">
-                <div class="zurag">
-                    <img src="{% static '/images/week1/nuur.jpg' %}" alt="">
-                </div>
-                <div class="ug">
-                    <h2>Bumandemberel</h2>
-                    <h2>1-kurs</h2>
-                </div>
-            </a>
-        </div>
-
-        <div class="name"><a class="bt" href="{% url 'week1Eldos/index.html' %}">
-                <div class="zurag">
-                    <img src="Eldos/images/20210828_152113.jpg" alt="">
-                </div>
-                <div class="ug">
-                    <h2>Eldos</h2>
-                    <h2>2-kurs</h2>
-                </div>
-            </a>
-        </div>
-
-        <div class="name"><a class="bt" href="{% url 'week1Odonkhuu/index.html' %}">
-                <div class="zurag">
-                    <img src="{% static 'Odonkhuu/image/binary.png' %}" alt="">
-                </div>
-                <div class="ug">
-                    <h2>Odonhuu</h2>
-                    <h2>1-kurs</h2>
-                </div>
-            </a>
-        </div>
-
-        <div class="name"><a class="bt" href="{% url 'week1Olzii/index.html' %}">
-                <div class="zurag">
-                    <img src="{% static 'olzii/images/olzii/nuurzurag.jpg' %}" alt="">
-                </div>
-                <div class="ug">
-                    <h2>Olziisuren</h2>
-                    <h2>1-kurs</h2>
-                </div>
-            </a>
-        </div>
-
-        <div class="name"><a class="bt" href="{% url 'week1HaTuguldur/webcv.html' %}">
-                <div class="zurag">
-                    <img src="HaTuguldur/1.jpg" alt="">
-                </div>
-                <div class="ug">
-                    <h2>Tuguldur.H</h2>
-                    <h2>2-kurs</h2>
-                </div>
-            </a>
-        </div>
-
-        <div class="name"><a class="bt" href="{% url 'week1Magnai/index.html' %}">
-                <div class="zurag">
-                    <img src="Magnai/image/pro.jpg" alt="">
-                </div>
-                <div class="ug">
-                    <h2>Magnai</h2>
-                    <h2>2-kurs</h2>
-                </div>
-            </a>
-        </div>
-
-        <div class="name"><a class="bt" href="{% url 'week1Nomin-Erdene(2)/index.html' %}">
-                <div class="zurag">
-                    <img src="Nomin-Erdene(2)/pic.jpg" alt="">
-                </div>
-                <div class="ug">
-                    <h2>Nomin-Erdene</h2>
-                    <h2>2-kurs</h2>
-                </div>
-            </a>
-        </div>
-
-        <div class="name"><a class="bt" href="{% url 'week1Nomio1'%}">
-            <div class="zurag">
-                <img src="{% static '/images/nomin.jpg' %}" alt="">
+    <body>
+        <div class="gol">
+            <div class="name">
+                <a class="bt" href="{% url 'week1Bumaa' %}">
+                    <div class="zurag">
+                        <img src="{% static '/images/week1/nuur.jpg' %}" alt="">
+                    </div>
+                    <div class="ug">
+                        <h2>Bumandemberel</h2>
+                        <h2>1-kurs</h2>
+                    </div>
+                </a>
             </div>
-            <div class="ug">
-                <h2>Nomin-Erdene</h2>
-                <h2>1-kurs</h2>
+
+            <div class="name">
+                <a class="bt" href="{% url 'week1Eldos/index.html' %}">
+                    <div class="zurag">
+                        <img src="Eldos/images/20210828_152113.jpg" alt="">
+                    </div>
+                    <div class="ug">
+                        <h2>Eldos</h2>
+                        <h2>2-kurs</h2>
+                    </div>
+                </a>
             </div>
-        </a>
-    </div>
 
-        <div class="name"><a class="bt" href="week1Sarnai/index.html">
-                <div class="zurag">
-                    <img src="Sarnai/img/6.png" alt="">
-                </div>
-                <div class="ug">
-                    <h2>Sarnai</h2>
-                    <h2>1-kurs</h2>
-                </div>
-            </a>
+            <div class="name">
+                <a class="bt" href="{% url 'week1Odonkhuu/index.html' %}">
+                    <div class="zurag">
+                        <img src="{% static 'Odonkhuu/image/binary.png' %}" alt="">
+                    </div>
+                    <div class="ug">
+                        <h2>Odonhuu</h2>
+                        <h2>1-kurs</h2>
+                    </div>
+                </a>
+            </div>
+
+            <div class="name">
+                <a class="bt" href="{% url 'week1Olzii/index.html' %}">
+                    <div class="zurag">
+                        <img src="{% static 'olzii/images/olzii/nuurzurag.jpg' %}" alt="">
+                    </div>
+                    <div class="ug">
+                        <h2>Olziisuren</h2>
+                        <h2>1-kurs</h2>
+                    </div>
+                </a>
+            </div>
+
+            <div class="name">
+                <a class="bt" href="{% url 'week1HaTuguldur/webcv.html' %}">
+                    <div class="zurag">
+                        <img src="HaTuguldur/1.jpg" alt="">
+                    </div>
+                    <div class="ug">
+                        <h2>Tuguldur.H</h2>
+                        <h2>2-kurs</h2>
+                    </div>
+                </a>
+            </div>
+
+            <div class="name">
+                <a class="bt" href="{% url 'week1Magnai/index.html' %}">
+                    <div class="zurag">
+                        <img src="Magnai/image/pro.jpg" alt="">
+                    </div>
+                    <div class="ug">
+                        <h2>Magnai</h2>
+                        <h2>2-kurs</h2>
+                    </div>
+                </a>
+            </div>
+
+            <div class="name">
+                <a class="bt" href="{% url 'week1Nomin-Erdene(2)/index.html' %}">
+                    <div class="zurag">
+                        <img src="Nomin-Erdene(2)/pic.jpg" alt="">
+                    </div>
+                    <div class="ug">
+                        <h2>Nomin-Erdene</h2>
+                        <h2>2-kurs</h2>
+                    </div>
+                </a>
+            </div>
+
+            <div class="name">
+                <a class="bt" href="{% url 'week1Nomio1'%}">
+                    <div class="zurag">
+                        <img src="{% static '/images/nomin.jpg' %}" alt="">
+                    </div>
+                    <div class="ug">
+                        <h2>Nomin-Erdene</h2>
+                        <h2>1-kurs</h2>
+                    </div>
+                </a>
+            </div>
+
+            <div class="name">
+                <a class="bt" href="week1Sarnai/index.html">
+                    <div class="zurag">
+                        <img src="Sarnai/img/6.png" alt="">
+                    </div>
+                    <div class="ug">
+                        <h2>Sarnai</h2>
+                        <h2>1-kurs</h2>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="name">
+                <a class="bt" href="{% url 'week1Tudu'%}">
+                    <div class="zurag">
+                        <img src="{% static '/images/Tudu/image1.jpg' %}" alt="">
+                    </div>
+                    <div class="ug">
+                        <h2>Tudu</h2>
+                        <h2>1-kurs</h2>
+                    </div>
+                </a>
+            </div>
+
+            <div class="name">
+                <a class="bt" href="week1Tserenbaatar/index.html">
+                    <div class="zurag">
+                        <img src="{% static '/images/tseba.jpg' %}" alt="">
+                    </div>
+                    <div class="ug">
+                        <h2>Tserenbaatar</h2>
+                        <h2>2-kurs</h2>
+                    </div>
+                </a>
+            </div>
+
+            <div class="name">
+                <a class="bt" href="week1Xuslen/XuslnCV.html">
+                    <div class="zurag">
+                        <img src="Xuslen/ap.jpg" alt="">
+                    </div>
+                    <div class="ug">
+                        <h2>Huslen</h2>
+                        <h2>1-kurs</h2>
+                    </div>
+                </a>
+            </div>
+
+            <div class="name">
+                <a class="bt" href="week1Zndra/cv.html">
+                    <div class="zurag">
+                        <img src="Zndra/dd.jpg">
+                    </div>
+                    <div class="ug">
+                        <h2>Zndra</h2>
+                        <h2>2-kurs</h2>
+                    </div>
+                </a>
+            </div>
+
+            <div class="name">
+                <a class="bt" href="{% url 'week1odke'%}">
+                    <div class="zurag">
+                        <img src="odontungalag/zurag.jpg">
+                    </div>
+                    <div class="ug">
+                        <h2>Odontungalag</h2>
+                        <h2>1-kurs</h2>
+                    </div>
+                </a>
+            </div>
+
+            <div class="name">
+                <a class="bt" href="{% url 'week1Bayrbat'%}">
+                    <div class="zurag"></div>
+                    <div class="ug">
+                        <h2>Б. Баярбат</h2>
+                        <h2>1-р курс</h2>
+                    </div>
+                </a>
+            </div>
+
+            <div class="name">
+                <a class="bt" href="{% url 'week1Ebe' %}">
+                    <div class="zurag">
+                        <img src="{% static '/images/week1/ebe.jpg' %}" alt="">
+                    </div>
+                    <div class="ug">
+                        <h2>Эрдэнэбуян</h2>
+                        <h2>1-р курс</h2>
+                    </div>
+                </a>
+            </div>
         </div>
-
-
-        <div class="name"><a class="bt" href="{% url 'week1Tudu'%}">
-                <div class="zurag">
-                    <img src="{% static '/images/Tudu/image1.jpg' %}" alt="">
-                </div>
-                <div class="ug">
-                    <h2>Tudu</h2>
-                    <h2>1-kurs</h2>
-                </div>
-            </a>
-        </div>
-
-        <div class="name"><a class="bt" href="week1Tserenbaatar/index.html">
-                <div class="zurag">
-                    <img src="{% static '/images/tseba.jpg' %}" alt="">
-                </div>
-                <div class="ug">
-                    <h2>Tserenbaatar</h2>
-                    <h2>2-kurs</h2>
-                </div>
-            </a>
-        </div>
-
-        <div class="name"><a class="bt" href="week1Xuslen/XuslnCV.html">
-                <div class="zurag">
-                    <img src="Xuslen/ap.jpg" alt="">
-                </div>
-                <div class="ug">
-                    <h2>Huslen</h2>
-                    <h2>1-kurs</h2>
-                </div>
-            </a>
-        </div>
-
-        <div class="name"><a class="bt" href="week1Zndra/cv.html">
-                <div class="zurag">
-                    <img src="Zndra/dd.jpg">
-                </div>
-                <div class="ug">
-                    <h2>Zndra</h2>
-                    <h2>2-kurs</h2>
-                </div>
-            </a>
-        </div>
-
-        <div class="name"><a class="bt" href="{% url 'week1odke'%}">
-                <div class="zurag">
-                    <img src="odontungalag/zurag.jpg">
-                </div>
-                <div class="ug">
-                    <h2>Odontungalag</h2>
-                    <h2>1-kurs</h2>
-                </div>
-            </a>
-        </div>
-
-        <div class="name"><a class="bt" href="{% url 'week1Bayrbat'%}">
-                <div class="zurag">
-                </div>
-                <div class="ug">
-                    <h2>Б. Баярбат</h2>
-                    <h2>1-р курс</h2>
-                </div>
-            </a>
-        </div>
-    </div>
-</body>
+    </body>
 
 </html>

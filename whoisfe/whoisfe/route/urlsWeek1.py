@@ -20,4 +20,5 @@ urlpatterns = [
     path("week1/week1Bumaa/",       viewsWeek1.week1BumaaViews,         name="week1Bumaa"),
     path("week1/week1Olzii/",       viewsWeek1.week1OlziiViews,         name="week1Olzii"),
     path("week1/week1HaTuguldur/",  viewsWeek1.week1HaTuguldurViews,    name="week1HaTuguldur"),
+    path("week1/week1Ebe/",         viewsWeek1.week1EbeViews,           name="week1Ebe"),
     ]  
