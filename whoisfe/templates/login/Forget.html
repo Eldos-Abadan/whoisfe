@@ -1,12 +1,13 @@
-{% load static %}
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Home/log in</title>
+    
+    <title>forget password</title>
+    <link rel="icon" type="image/x-icon" href="l.jpg">
     <style>
         * {
   margin: 0;
@@ -133,10 +134,10 @@ button{
         <div class="form-box">
             <div class="form-value">
                 <form action="" id="loginForm">
-                   <h2>Нэвтрэх</h2>
+                   <h2>Нууц үг сэргээх</h2>
                    <div class="inputbox">
                     
-                    <input type="text" id="username" placeholder="Энд имэйл хаягаа хийнэ үү." required>
+                    <input type="email" id="username" placeholder="Бүртгэлтэй имэйл хаягаа оруулна уу." required>
                     <label for="">Email</label>
                     <ion-icon name="mail-outline"></ion-icon>
                    </div>
@@ -144,16 +145,23 @@ button{
                    <div class="inputbox">
                     <ion-icon name="lock-closed-outline"></ion-icon>
                     <input type="password" id="password" placeholder="Энд нууц үгээ хийнэ үү." required>
-                    <label for="">Нууц үг</label>
+                    <label for="">Шинэ нууц үг</label>
                    </div>
-                   <div class="forget">
-                    <label for=""><input type="checkbox">Намайг сана <a href="#"><span style="color: aqua;">Нууц үг мартсан?</span></a> </label>
+
+                   <div class="inputbox">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" id="password" placeholder="Энд нууц үгээ хийнэ үү." required>
+                    <label for="">Нууц үгээ дахин оруулна уу</label>
+                   </div>
+
+
+
+
 
                    
-                    </div>
                     <button id="loginForm" type="submit">Нэвтрэх</button>
                     <div class="register">
-                        <p> Бүртгэлгүй бол <a href="/registerViews"><span style="color: aqua;">Бүртгүүлэх</span></a></p>
+                        <p><a href="{% url 'homeView'%}"><span style="color: aqua;">Буцах</span></a></p>
                     </div>
                 </form>
             </div>
