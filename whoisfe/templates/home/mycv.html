@@ -136,7 +136,8 @@
     <section>
       <div class="form-box">
         <div class="form-value">
-          <form action="" id="loginForm">
+          <form action="" id="loginForm" method="post">
+            {%csrf_token%}
             <img
               class="lg"
               src="{% static '/images/week1/l.png'%}"
@@ -144,14 +145,16 @@
               width="100px"
               height="100px"
             />
-            <h2>Нэвтрэх {{ tooluur }}</h2>
+            <span style="color: #ff0000"> {{ aldaaniiMedegdel }} </span>
+            <h2>Нэвтрэх</h2>
 
             <div class="inputbox">
               <input
-                type="email"
+                type="text"
                 id="username"
                 placeholder="Энд имэйл хаягаа хийнэ үү."
                 required
+                name="myName"
               />
               <label for="">Email</label>
               <ion-icon name="mail-outline"></ion-icon>
@@ -163,6 +166,7 @@
                 type="password"
                 id="password"
                 placeholder="Энд нууц үгээ хийнэ үү."
+                name="myPass"
                 required
               />
               <label for="">Нууц үг</label>
@@ -175,7 +179,8 @@
                 >
               </label>
             </div>
-            <button id="loginForm" type="submit">Нэвтрэх</button>
+            <!-- <button id="loginForm" type="submit">Нэвтрэх</button> -->
+            <input type="submit" value="Нэвтрэх" />
             <div class="register">
               <p>
                 Бүртгэлгүй бол
@@ -201,29 +206,29 @@
     </section>
 
     <script>
-      document
-        .getElementById("loginForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault(); // Хуудсыг дахин ачаалахгүйн тулд маягт оруулахаас сэргийлнэ үү
+      // document
+      //   .getElementById("loginForm")
+      //   .addEventListener("submit", function (event) {
+      //     event.preventDefault(); // Хуудсыг дахин ачаалахгүйн тулд маягт оруулахаас сэргийлнэ үү
 
-          //Хэрэглэгчийн оруулсан мэдээллийг авах
+      //     //Хэрэглэгчийн оруулсан мэдээллийг авах
 
-          var username = document.getElementById("username").value;
-          var password = document.getElementById("password").value;
+      //     var username = document.getElementById("username").value;
+      //     var password = document.getElementById("password").value;
 
-          // Баталгаажуулалт хийх (жишээ нь логик)
+      //     // Баталгаажуулалт хийх (жишээ нь логик)
 
-          if (username === "admin" && password === "password") {
-            // Амжилттай нэвтэрлээ
+      //     if (username === "admin" && password === "password") {
+      //       // Амжилттай нэвтэрлээ
 
-            alert("Нэвтрэлт амжилттай!");
-            //Шинэ хуудас руу дахин чиглүүлэх гэх мэт үйлдлүүдийг гүйцэтгэнэ
-          } else {
-            // Буруу нэвтрэх
-            alert("Хэрэглэгчийн нэр эсвэл нууц үг буруу");
-            //
-          }
-        });
+      //       alert("Нэвтрэлт амжилттай!");
+      //       //Шинэ хуудас руу дахин чиглүүлэх гэх мэт үйлдлүүдийг гүйцэтгэнэ
+      //     } else {
+      //       // Буруу нэвтрэх
+      //       alert("Хэрэглэгчийн нэр эсвэл нууц үг буруу");
+      //       //
+      //     }
+      //   });
     </script>
   </body>
 </html>
