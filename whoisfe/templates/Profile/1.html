@@ -1,0 +1,265 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link href="{% static '/css/Profile/1.css' %}" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="">
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="cctabs">
+                <input checked id="one" name="tabs" type="radio">
+                <label for="one"><i class="fa fa-pencil-square-o"></i> Personal Information</label>
+                <input id="two" name="tabs" type="radio" value="Two">
+                <label for="two"><i class="fa fa-magic"></i> Education</label>
+                <input id="three" name="tabs" type="radio">
+                <label for="three"><i class="fa fa-plus-square"></i> Hobby</label>
+                <input id="four" name="tabs" type="radio">
+                <label for="four"><i class="fa fa-envelope"></i> Experience</label>
+                <div class="panels">
+                    <div class="panel">
+                        <div class="example">
+                            <form id="cc-contact" class="form-group" action="" method="post">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-floating mt-3">
+                                            <input type="name" name="Fist name" class="form-control form-control-sm"
+                                                id="floatingFname" placeholder="First Name">
+                                            <label for="floatingInput">First Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-floating mt-3">
+                                            <input type="name" name="last name" class="form-control form-control-sm"
+                                                id="floatingLname" placeholder="Last Name">
+                                            <label for="floatingInput">Last Name</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-sm-8 mt-3">
+                                        <div class="form-floating mt-8">
+                                            <input type="email" name="email" class="form-control form-control-sm"
+                                                id="floatingEmail" placeholder="Email">
+                                            <label for="floatingInput">Email</label>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2"></div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <div class="form-floating mt-3">
+                                            <input type="tel" name="phone-number" class="form-control" step="10"
+                                                id="floatingNumber" placeholder="Number">
+                                            <label for="floatingInput">Phone Number</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <label for="sex" class="lable_sex"><br>Gender :</label>
+                                            <div class="col-sm-2 mt-2">
+                                                <div class="form-check mt-3">
+                                                    <div class="form-check">
+                                                        <select>
+                                                            <option>Male</option>
+                                                            <option>Female</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div><br>
+
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <label for="lable_birth" class="lable_birth">Tursun on, sar, udur :</label>
+                                    </div>
+
+                                    <div class="col-sm-3 mt-3">
+                                        <div class="form">
+                                            <input class="form-control" id="date" name="date" type="date" />
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-8 mt-3">
+                                        <div class="form-floating mt-3">
+                                            <input type="text" name="Address" class="form-control form-control-lg"
+                                                id="floatingAddress" placeholder="Address">
+                                            <label for="floatingInput">About me</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-8 mt-3">
+                                        <div class="form-floating mt-8">
+                                            <input type="city" name="city" class="form-control form-control-sm"
+                                                id="floatingCity" placeholder="City">
+                                            <label for="floatingInput">City</label>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2"></div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-sm-8 mt-3">
+                                        <div class="form-floating mt-3">
+                                            <input type="text" name="Address" class="form-control form-control-lg"
+                                                id="floatingAddress" placeholder="Address">
+                                            <label for="floatingInput">Full Address</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row">
+                                    <div class="col-sm-12 mt-3 mb-4" class="col-sm-2">
+                                        <div class="btn-group mr-2 " role="group" aria-label="First group">
+                                            <button name="submit" type="submit">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="headline">
+                            <form id="cc-contact-2" class="form-group" action="" method="post">
+                                <div class="Education">
+                                    <h1>Боловсрол</h1>
+                                    <table>
+                                        <tr>
+                                            <td style="width: 100px; text-align: right;"> Боловсрол: </td>
+                                            <td style="color: red; text-align: center; width: 20px;"> * </td>
+                                            <td style="width: 100px;">
+                                                <select>
+                                                    <option> </option>
+                                                    <option> бага </option>
+                                                    <option> Бүрэн Дунд </option>
+                                                    <option> Суурь </option>
+                                                    <option> Боловсролгүй </option>
+                                                    <option> Дээд </option>
+                                                    <option> Техник мэргэжлийн </option>
+
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+
+
+                                    <!-- <h1>Эрдмийн зэрэг</h1> -->
+                                    <table>
+                                        <tr>
+                                            <td style="width: 100px; text-align: right;"> Эрдмийн зэрэг: </td>
+                                            <td style="color: red; text-align: center; width: 20px;"> * </td>
+                                            <td style="width: 100px;">
+                                                <select>
+                                                    <option></option>
+                                                    <option> Магистр </option>
+                                                    <option> Доктор </option>
+                                                    <option> Профессор</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+
+                                    <table>
+                                        <tr>
+                                            <td style="width: 100px; text-align: right;"> Албан тушаал: </td>
+                                            <td style="color: red; text-align: center; width: 20px;"> * </td>
+                                            <td> <input type="text" name="lastname" size="30"> </td>
+                                        </tr>
+                                    </table>
+
+                                    <table>
+                                        <tr>
+                                            <td style="width: 100px; text-align: right;"> Албан байгууллагын нэр: </td>
+                                            <td style="color: red; text-align: center; width: 20px;"> * </td>
+                                            <td> <input type="text" name="lastname" size="30"> </td>
+                                        </tr>
+                                    </table>
+
+                                    <button name="submit" type="submit" id="contact-submit"
+                                        data-submit="Saved">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="headline">
+                            <form id="cc-contact" class="form-group" action="" method="post">
+                                <h1>Hobby</h1>
+
+                                <div class="form-check mt-3">
+                                    <textarea name="Message" cols="80" rows="10"></textarea>
+                                </div>
+                                <button name="submit" type="submit" id="contact-submit"
+                                    data-submit="Saved">Save</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="headline">
+                            <form id="cc-contact" class="form-group" action="" method="post">
+                                <div class="form-check mt-3">
+                                    <h1 style="float: left;">Туршлага</h1> <br> <br> <br>
+                                    <div>
+                                        Ажил эрхлэлтийн байдал: <br>
+                                        <select>
+                                            <option></option>
+                                            <option> Тодорхой хугацааны өмнө ажил эрхэлж байсан </option>
+                                            <option> Ажил эрхэлж байгаа </option>
+                                            <option> Оюутан</option>
+                                            <option> Төгссөнөөс хойш ажил эрхлээгүй</option>
+                                        </select> <br> <br>
+                                        Ажиллаж байсан жилүүд: <br>
+                                        <input placeholder="уу-уу" type="datetime"> <br> <br>
+                                        Ажиллаж байсан байгууллагууд: <br>
+                                        <input type="text"> <br> <br>
+                                        Албан тушаал: <br>
+                                        <input type="text">
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                                <button name="submit" type="submit" id="contact-submit"
+                                    data-submit="Saved">Save</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

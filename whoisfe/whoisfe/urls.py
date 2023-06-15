@@ -21,5 +21,8 @@ urlpatterns = [
      ##### Register ###############################
     path("", include('whoisfe.route.urlsRegister')),
     ######################################################   
+    ##### Personal Information Form ###############################
+    path("", include('whoisfe.route.urlsPerInfo')),
+    ######################################################   
 
 ]
