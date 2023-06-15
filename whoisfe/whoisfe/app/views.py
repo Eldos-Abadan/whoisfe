@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def homeView(request):
+def loggedViews(request):
     return render(request,"home/mycv.html")
 
 

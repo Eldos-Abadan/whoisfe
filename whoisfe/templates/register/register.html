@@ -9,22 +9,26 @@
     <style>
         body{
             font-family: 'Open Sans', sans-serif;
+            background: url( "{% static '/images/week1/nana.jpg'%}") no-repeat;
+             /* background-position: center; */
+         background-size: cover;
+         /* min-height: 100vh;    */
+
         }
         .wrapper{
             position: absolute;
             top: 0;
             right: 0;
             width: 450px;
-            height: 115%;
-            background: linear-gradient(rgb(131, 18, 131), black);
+            height: 100%;
+            background: transparent;
             backdrop-filter: blur(15px);
             z-index: 100;
-            
             display: flex;
             flex-direction: column;
             justify-content: center;
             padding: 0 40px;
-            margin-right: 400px;
+            /* margin-right: 400px; */
         }
         .wrapper .logreg-box{
             width: 100%;
@@ -47,7 +51,7 @@
         .logreg-box .input-box{
             position: relative;
             width: 100%;
-            height: 50px;
+            height: 30px;
             margin: 30px 0;
             border-bottom: 2px solid #fff;
         }
@@ -213,7 +217,8 @@
                         </div>
                         <button type="submit" class="btn">Бүртгүүлэх</button>
                         <div class="logreg-link">
-                            <p>Бүртгэлтэй бол<a href="/loginView" class="register-link"> &nbsp;
+                            <p>Бүртгэлтэй бол
+                            <a href="/" class="register-link"> &nbsp;
                                 Нэвтрэх</a></p>
                         </div>
                     </form>
