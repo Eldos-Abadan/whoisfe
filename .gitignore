@@ -6,3 +6,4 @@ whoisfe\whoisfe\__pycache__\__init__.cpython-39.pyc
 whoisfe/web.config
 *.pyc
 *.pyc
+whoisfe/db.sqlite3
