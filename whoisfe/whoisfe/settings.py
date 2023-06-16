@@ -172,4 +172,13 @@ def reqValidation(json,keys):
             validReq = False
             break
     return validReq
-#   def
+#   reqValidation
+
+def checkSession(request):
+    if "tooluur" not in request.session:        
+        request.session['tooluur'] = 0        
+    else:
+        request.session['tooluur'] = request.session['tooluur'] + 1
+    if "beegii" not in request.session:        
+        request.session['beegii'] = 0
+    #   checkSession
