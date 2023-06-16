@@ -1,6 +1,7 @@
 
 from pathlib import Path
 import os
+import psycopg2
 
 # busad nemelt import
 import hashlib
@@ -125,6 +126,12 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+pgDbName = "dbwhois"
+pgUser = "uwhois"
+pgHost = "202.131.254.138"
+pgPassword = "whoispass"
+pgPort = "5938"
+
 
 # bidnii nemsen function
 
@@ -182,3 +189,20 @@ def checkSession(request):
     if "beegii" not in request.session:        
         request.session['beegii'] = 0
     #   checkSession
+
+def connectDB():
+    
+
+    con = psycopg2.connect(
+        dbname=pgDbName,
+        user=pgUser,
+        host=pgHost,
+        password=pgPassword,
+        port=pgPort,
+    )
+    return con
+
+def disconnectDB(con):
+    if(con):
+        con.close()
+
