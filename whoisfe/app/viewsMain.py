@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from whoisfe.settings import *
+# import requests 
 import json
 
     
@@ -30,17 +31,17 @@ def homeView(request):
         requestJSON["name"] = myName
         requestJSON["pass"] = myPass
 
-        r = requests.get("http://whoisb.mandakh.org/userLogin/",
-                            data=json.dumps(requestJSON),
-                            headers={'Content-Type': 'application/json'} )
-        # print(r.json())
-        resultCode = r.json()['responseCode']
-        resultMessage = r.json()['responseText']
-        if(resultCode == 200):
-            request.session['beegii'] = 1
-            return redirect("perinfoViews")
-        else:
-            aldaaniiMedegdel = resultMessage        
+        # r = requests.get("http://whoisb.mandakh.org/userLogin/",
+        #                     data=json.dumps(requestJSON),
+        #                     headers={'Content-Type': 'application/json'} )
+        # # print(r.json())
+        # resultCode = r.json()['responseCode']
+        # resultMessage = r.json()['responseText']
+        # if(resultCode == 200):
+        #     request.session['beegii'] = 1
+        #     return redirect("perinfoViews")
+        # else:
+        #     aldaaniiMedegdel = resultMessage        
 
     zahia["aldaaniiMedegdel"] = aldaaniiMedegdel
 
