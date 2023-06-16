@@ -1,5 +1,5 @@
 from django.shortcuts import render
 
 
-def loginhomelogViews(request):
-    return render(request,"login/homelog.html")
+def loginHomeLogViews(request):
+    return render(request,"logged/homeLog.html")
