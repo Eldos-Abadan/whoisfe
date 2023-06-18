@@ -17,3 +17,6 @@ def perinfoViews(request):
 
 def myNCViews(request):
     return render(request,"myNC/myNC.html")
+
+def createCVViews(request):
+    return render(request,"createCV/createCV.html")

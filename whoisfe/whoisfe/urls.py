@@ -25,5 +25,9 @@ urlpatterns = [
     
     # my name card  #
     path("", include('whoisfe.route.urlsMyNC')),
+    
+    # CreateCV #
+     path("", include('whoisfe.route.urlsCreateCV')),
+
 
 ]
