@@ -23,7 +23,5 @@ urlpatterns = [
     # login huudas #
     path("", include('whoisfe.route.urlsLogin')),
     
-    # CreateNC #
-     path("", include('whoisfe.route.urlsCreateNC')),
 
 ]
