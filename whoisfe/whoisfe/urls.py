@@ -28,6 +28,8 @@ urlpatterns = [
     
     # CreateCV #
      path("", include('whoisfe.route.urlsCreateCV')),
-
+     
+     # guide #
+     path("", include('whoisfe.route.urlsGuide')),
 
 ]

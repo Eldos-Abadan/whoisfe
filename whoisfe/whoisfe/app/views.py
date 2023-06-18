@@ -20,3 +20,6 @@ def myNCViews(request):
 
 def createCVViews(request):
     return render(request,"createCV/createCV.html")
+
+def guideViews(request):
+    return render(request, "guide/guide.html")
