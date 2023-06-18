@@ -2,32 +2,28 @@
 from django.urls import path,  include
 
 urlpatterns = [
-    ##### undsen huudasnuud ##############################
+    # undsen huudasnuud #
     path("", include('whoisfe.route.urlsMain')),
-    ######################################################
 
-    ##### newtersen hereglegchiin huudasnuud #############
+    # newtersen hereglegchiin huudasnuud #
     path("", include('whoisfe.route.urlsLogged')),
-    ######################################################
-
-    ##### week1 huudasnuud ###############################
+  
+    # week1 huudasnuud #
     path("", include('whoisfe.route.urlsWeek1')),
-    ###################################################### 
-
-    ###### Forget ########################################
+   
+    # Forget #
     path("", include('whoisfe.route.urlsForget')),
-    ######################################################  
-    
-    ###### Register ######################################
+ 
+    # Register #
     path("", include('whoisfe.route.urlsRegister')),
-    ######################################################  
     
-    ##### Personal Information Form ######################
+    # Personal Information Form #
     path("", include('whoisfe.route.urlsPerInfo')),
-    ######################################################  
-     
-    ##### login huudas ###################################
+ 
+    # login huudas #
     path("", include('whoisfe.route.urlsLogin')),
-    ######################################################
+    
+    # CreateNC #
+     path("", include('whoisfe.route.urlsCreateNC')),
 
 ]
