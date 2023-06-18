@@ -14,3 +14,6 @@ def registerViews(request):
 
 def perinfoViews(request):
     return render(request,"Profile/1.html")
+
+def myNCViews(request):
+    return render(request,"myNC/myNC.html")
