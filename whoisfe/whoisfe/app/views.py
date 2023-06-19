@@ -12,6 +12,9 @@ def week1View(request):
 def registerViews(request):
     return render(request,"register/register.html")
 
+def dashboardViews(request):
+    return render(request, "dashboard/dashboard.html")
+
 def perinfoViews(request):
     return render(request,"Profile/1.html")
 
