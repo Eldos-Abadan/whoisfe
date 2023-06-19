@@ -1,5 +1,7 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,6 +31,7 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="{% static '/css/dashboard/pe-icon-7-stroke.css'%}" rel="stylesheet" />
 </head>
+
 <body>
     <!-- endees -->
     <div class="wrapper">
@@ -88,14 +91,14 @@
             </div>
         </div>
         <!-- ene hurtel bitgii ustgaarai!!!-->
-    <div class="myNC">
-    <div class="content">
-        <div class="row">
-            <input type="text" name="name" 
-                id="floatingFname" placeholder=" Name">
+        <div class="myNC">
+            <div class="content">
+                <div class="row">
+                    <input type="text" name="name" id="floatingFname" placeholder=" Name">
+                </div>
+            </div>
         </div>
     </div>
-</div>
 </body>
 <!-- Bitgii ustga!!! -->
 <!--   Core JS Files   -->
@@ -111,50 +114,55 @@
 <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 <script src="{% static '/js/dashboard/demo.js'%}"></script>
 <style>
-body{
-    background-color: rgb(228, 239, 235);
-    background-size: cover;
-    background-position: center;
-    min-height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-input[type=text] {
-    background-color: white;
-    box-sizing: border-box;
-    border: 1px solid ;
-    outline: none;
+    body {
+        background-color: rgb(228, 239, 235);
+        background-size: cover;
+        background-position: center;
+        min-height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-  }
-.myNC{
-    position: relative;
-    width: 450px;
-    height: 250px;
-    background-color: white;
-    border-radius: 10px;
-    margin-top: 50px;
-    padding: 15px;
-   
-}
+    input[type=text] {
+        background-color: white;
+        box-sizing: border-box;
+        border: 1px solid;
+        outline: none;
 
-.myNC::before{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    background: #29cdee;
-}
-.myNC.content{
-    display: none;
-}
-.myNC .content.row{
-    position: absolute;
-    height: 10px;
-    margin-top: 10%;
-   
-}
+    }
+
+    .myNC {
+        position: relative;
+        width: 450px;
+        height: 250px;
+        background-color: white;
+        border-radius: 10px;
+        margin-top: 50px;
+        padding: 15px;
+
+    }
+
+    .myNC::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background: #29cdee;
+    }
+
+    .myNC.content {
+        display: none;
+    }
+
+    .myNC .content.row {
+        position: absolute;
+        height: 10px;
+        margin-top: 10%;
+
+    }
 </style>
+
 </html>
