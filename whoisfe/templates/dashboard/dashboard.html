@@ -60,31 +60,31 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{% url ''%}">
                             <i class="pe-7s-note2"></i>
                             <p>My CV</p>
                         </a>
                     </li>
                     <li>
-                        <a href="/templates/myNC/myNC.html">
+                        <a href="{% url 'myNCViews'%}">
                             <i class="pe-7s-id"></i>
                             <p>My Namecard</p>
                         </a>
                     </li>
                     <li>
-                        <a href="/templates/createCV/createCV.html">
+                        <a href="{% url 'createCVViews'%}">
                             <i class="pe-7s-news-paper"></i>
                             <p>Create a CV</p>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{% url ''%}">
                             <i class="pe-7s-note"></i>
                             <p>Create a namecard</p>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{% url ''%}">
                             <i class="pe-7s-wallet"></i>
                             <p>Wallet</p>
                         </a>
@@ -167,7 +167,7 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 
 <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
-<script src="{% static '/js/dashboard/light-bootstrap-dashboard.js'"></script>
+<script src="{% static '/js/dashboard/light-bootstrap-dashboard.js'%}"></script>
 
 <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 <script src="{% static '/js/dashboard/demo.js'%}"></script>
