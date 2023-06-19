@@ -2,12 +2,12 @@
 from pathlib import Path
 import os
 import psycopg2
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 # busad nemelt import
 import hashlib
 import base64
-from django.urls import resolve, get_resolver, URLResolver, URLPattern
-###############################
+# from django.urls import resolve, get_resolver, URLResolver, URLPattern
+# ###############################
 
 
 BASE_DIR =          Path(__file__).resolve().parent.parent
@@ -206,11 +206,11 @@ def disconnectDB(con):
     if(con):
         con.close()
 
-def emailExists(email):
-    # Check if the email already exists in the User model
-    return User.objects.filter(email=email).exists()
+# def emailExists(email):
+#     # Check if the email already exists in the User model
+#     return User.objects.filter(email=email).exists()
 
-def userNameExists(username):
-    # Check if the username already exists in the User model
-    return User.objects.filter(username=username).exists()
+# def userNameExists(username):
+#     # Check if the username already exists in the User model
+#     return User.objects.filter(username=username).exists()
 
