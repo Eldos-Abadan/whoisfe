@@ -99,31 +99,15 @@
                     <p>Account</p>
                   </a>
                 </li>
-                <li>
-                  <a href="{% url 'homeLogoutView' %}">
-                    <p>Log out</p>
-                  </a>
-                </li>
+                {% include "../includes/logout.html" %}
                 <li class="separator hidden-lg"></li>
               </ul>
             </div>
           </div>
         </nav>
-        <div>
-          <h1>Dashboard</h1>
-        </div>
+        {% include "../includes/banner.html" %}
 
-        <footer class="footer">
-          <div class="container-fluid">
-            <p class="copyright pull-right">
-              &copy;
-              <script>
-                document.write(new Date().getFullYear());
-              </script>
-              <a href="http://whois.mandakh.org">WhoIs</a>
-            </p>
-          </div>
-        </footer>
+        {% include "../includes/footer.html" %}
       </div>
     </div>
   </body>

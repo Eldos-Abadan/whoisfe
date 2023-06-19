@@ -2,7 +2,7 @@
 from pathlib import Path
 import os
 import psycopg2
-
+from django.contrib.auth.models import User
 # busad nemelt import
 import hashlib
 import base64
@@ -205,4 +205,12 @@ def connectDB():
 def disconnectDB(con):
     if(con):
         con.close()
+
+def emailExists(email):
+    # Check if the email already exists in the User model
+    return User.objects.filter(email=email).exists()
+
+def userNameExists(username):
+    # Check if the username already exists in the User model
+    return User.objects.filter(username=username).exists()
 
