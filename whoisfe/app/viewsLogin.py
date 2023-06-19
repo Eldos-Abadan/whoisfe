@@ -14,7 +14,7 @@ def homeLogoutView(request):
 def loginViews(request):    
     checkSession(request)    
     if request.session['beegii'] !=0 :
-        return redirect("perinfoViews")
+        return redirect("dashboardViews")
     zahia = {}
     aldaaniiMedegdel = "wertyu"
     # хэрвээ форм.пост бол:
@@ -39,7 +39,7 @@ def loginViews(request):
         resultMessage = r.json()['responseText']
         if(resultCode == 200):
             request.session['beegii'] = 1
-            return redirect("perinfoViews")
+            return redirect("dashboardViews")
         else:
             aldaaniiMedegdel = resultMessage        
 
