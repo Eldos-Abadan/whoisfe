@@ -16,7 +16,12 @@ def registerViews(request):
         if password != confirm_password:
             error_message = 'Нууц үгээ зөв давтан оруулна уу.'
             return render(request, 'register/register.html', {'error_message': error_message})
-
+        if emailExists(email):
+            error_message = 'Email already exists'
+            return render(request, 'register/register.html', {'error_message': error_message})
+        if userNameExists(user_name):
+            error_message = 'Username already exists'
+            return render(request, 'register/register.html', {'error_message': error_message})
         myCon = connectDB()
         userCursor = myCon.cursor()
         userCursor.execute('INSERT INTO "user" ("firstName", "lastName", "email", "pass", "userName", "date")'
