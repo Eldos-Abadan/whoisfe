@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <style>
+        body {width: 80%;
+              height: auto;
+            }
+        .button {
+            float: right;
+            margin-top: -10%;
+        }
+        .body1 {
+            margin-left: 10%;
+        }
+        .who {
+            display: flex;
+        }
+        img {
+            width: 10%;
+        }
+        h1 {
+                background: -webkit-radial-gradient(rgb(95, 1, 95) ,  blueviolet);
+                -webkit-background-clip: text;   
+                -webkit-text-fill-color: transparent;
+                margin-top: 4%
+                }
+         input[type=button] {
+            background-color:blueviolet;
+            border: none;
+            text-decoration: none;
+            color: white;
+            padding: 15px 15px;
+            margin: 10px 10px;
+            cursor: pointer;
+            border-radius: 10%;
+         }
+        
+    </style>
+</head>
+<body> 
+    <div class="body1">
+        <div class="who">
+            <img src="{% static '/images/week1/l.png'%}" alt=""> <h1>WHO IS</h1>
+        </div>
+        <div class="button">
+            <input type="button" value="Log in" onclick="myFunction()">
+            <input type="button" value="Sign up"onclick="myFunctionSignup()">
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+          window.location.href="{% url 'loginViews'%}";
+        }
+        function myFunctionSignup(){
+            window.location.href="{% url 'registerViews'%}";
+        }
+      </script>
+</body>
+</html>
