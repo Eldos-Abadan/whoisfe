@@ -1,8 +1,12 @@
 from django.shortcuts import render, redirect
 import datetime
 from whoisfe.settings import *
+import hashlib
 
 
+def mandakhHash(password):
+    return hashlib.md5(password.encode('utf-8')).hexdigest()
+    
 def registerViews(request):
     if request.method == 'POST':
         first_name = request.POST.get('first_name')
@@ -10,6 +14,7 @@ def registerViews(request):
         email = request.POST.get('email')
         user_name = request.POST.get('user_name')
         password = request.POST.get('password')
+        passw = mandakhHash(password)
         confirm_password = request.POST.get('confirm_password')
         date_joined = datetime.date.today()
 
@@ -21,7 +26,7 @@ def registerViews(request):
         userCursor = myCon.cursor()
         userCursor.execute('INSERT INTO "user" ("firstName", "lastName", "email", "pass", "userName", "date")'
                        'VALUES (%s, %s, %s, %s, %s, %s)',
-                       (first_name, last_name, email, password, user_name, date_joined))
+                       (first_name, last_name, email, passw, user_name, date_joined))
         myCon.commit()
         userCursor.close()
         disconnectDB(myCon)
