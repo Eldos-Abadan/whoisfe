@@ -85,7 +85,7 @@
   .forget label a:hover {
     text-decoration: underline;
   }
-  button {
+  #button {
     width: 100%;
     height: 40px;
     border-radius: 40px;
@@ -100,7 +100,7 @@
     font-size: 0.9em;
     color: #fff;
     text-align: center;
-    margin: 25px 0 10px;
+    margin: 25px 0 25px;
   }
   .register p a {
     text-decoration: none;
