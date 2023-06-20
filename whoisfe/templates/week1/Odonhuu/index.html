@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+</head>
+
+<body>
+    <div id="vn">
+
+        <div id="back">
+            <div id="deed">
+                <div id="topInformation">
+                    <div><img src="{% static 'image/binary.png' %}" alt="zurag" srcset="" id="pic"></div>
+                    <div style="margin-left: 30px;">
+                        <ul id="nerniiHeseg">
+                            <li id="turul">Цэгмэдийн Одонхүү</li><br>
+                            <li id="turul">Мэдээллийн систем</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="dundHeseg">
+                <div id="hajuu1">
+                    <ul id="turul" style="line-height: 5px;">
+                        <span>
+                            Боловсрол:
+                            <p style="line-height: 20px;">
+                                <span>
+                                    -Увс аймгийн 1-р сургууль сурж төгссөн.
+                                </span> <br>
+                                <span style="text-indent: 20px;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    -Мандах МТСургуульд суралцаж байгаа. 1-р курс
+                                </span>
+                            </p>
+                            Зорилго:
+                            <p>
+                                Back-end
+                            </p>
+                        </span>
+                    </ul>
+                </div>
+                <!-- onclick = "window.location = 'res/cv.pdf'" -->
+                <div id="hajuu2">
+                    <ul id="turul" style="line-height: 5px;">
+                        <br>
+                        ---- <br>
+                        <br>
+                        <br>
+
+                        <span id="OvogNer">
+                            Овог нэр:
+                            <p> -Цэгмэд Одонхүү </p>
+                        </span>
+                        <span id="HolbooBarihUtas">
+                            Утас:
+                            <p> -86649199 </p>
+                        </span>
+                        <span>
+                            Цахим шуудан:
+                            <p>
+                                -is22d009@gmail.com
+                            </p>
+                        </span>
+                    </ul>
+                </div>
+            </div>
+            <div id="tugsgulHeseg">
+                <ul id="turul">
+                    <br>
+                    <span>
+                        Одоо сурж байгаа хэлнүүд:
+                        <p>
+                            - JS, HTML, CSS, C++, Python
+                        </p>
+                    </span>
+                    <span>
+                        Хобби:
+                        <p>
+                            - Програмчлалын бодлого бодох
+                        </p>
+                        <p>
+                            - 100 буудалт даам тоглох
+                        </p>
+                        <p>
+                            - Идэх
+                        </p>
+                    </span>
+                </ul>
+            </div>
+            <button onclick="print()" id="printButton">Хэвлэх</button>
+        </div>
+    </div>
+
+    <script>
+        window.jsPDF = window.jspdf.jsPDF;
+        var docPDF = new jsPDF();
+        function print() {
+            var elementHTML = document.querySelector("#vn");
+            docPDF.html(elementHTML, {
+                callback: function (docPDF) {
+                    docPDF.save('CV_version_02.pdf');
+                },
+                x: 15,
+                y: 15,
+                width: 170,
+                windowWidth: 650
+            });
+        }
+
+    </script>
+</body>
+
+</html>

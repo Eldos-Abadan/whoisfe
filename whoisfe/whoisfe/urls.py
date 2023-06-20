@@ -35,4 +35,10 @@ urlpatterns = [
      # guide #
      path("", include('whoisfe.route.urlsGuide')),
 
+      # notlogin #
+     path("", include('whoisfe.route.urlsNotlogin')),
+
+      # logged #
+     path("", include('whoisfe.route.urlsLogged')),
+
 ]

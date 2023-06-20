@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="{% static 'css/week1/bstyles.css' %}">
+    <link rel="stylesheet" href="styles.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <a href="/week1" style="text-decoration: none;" ><h3>Back</h3></a>
+    <main class="main-content">
+        <section class="left-section">
+            <div class="left-content">
+                <div class="profile">
+                    <div class="image">
+                        <img src="{% static 'images/avatar.jpg' %}" alt="">
+                    </div>
+                    <h2 class="name"> Б. Баярбат </h2>
+                    <p class="career">University Student</p>
+                </div>
+
+
+                <section class="right-section">
+                    <div class="right-main-content">
+                        <section class="about sect">
+                            <h2 class="right-title"> Миний тухай </h2>
+                            <p class="para">
+                                Батмөнх овогтой Баярбат<br>
+                                <br>
+                                Мандах Их Сургууль Мэдээлэл, Технологийн Сургууль
+                                <br>
+                                 Программ Хангамж 1-р курсийн оюутан.
+                            </p>
+                        </section>
+                       
+                    </div>
+                </section>
+
+
+                
+                <div class="skills-section">
+                    <h3 class="main-title"> Мэргэжлийн Ур Чадвар </h3>
+                    <ul>
+                        <li>
+                            <p class="skill-title">Javascript</p>
+                            <div class="progress-bar">
+                                <div class="progress js-progress"></div>
+                            </div>
+                        </li>
+                       
+                        <li>
+                            <p class="skill-title">C </p>
+                            <div class="progress-bar">
+                                <div class="progress ps-progress"></div>
+                            </div>
+                        </li>
+
+
+                        <li>
+                            <p class="skill-title">C++</p>
+                            <div class="progress-bar">
+                                <div class="progress ps-progress"></div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <p class="skill-title"> html / css</p>
+                            <div class="progress-bar">
+                                <div class="progress c-progress"></div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+                <div class="skills-section">
+                    <h3 class="main-title"> Сонирхол </h3>
+
+                    <ul>
+                
+                        <li>
+                            <p class="skill-title"> Gaming </p>
+                            <p class="skill-title"> Coding </p>
+                        </li>
+                        <li>
+                            <p class="skill-title"> Anime </p>
+                        
+                            <p class="skill-title"> Movie </p>
+                        </li>
+                    </ul>
+
+                </div>
+
+                
+                <div class="contact-info">
+                    <h3 class="main-title"> Холбоо Барих </h3>
+                    <ul>
+
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            95495451
+                        </li>
+                        <li>
+                            <i class="fa fa-fax"></i>
+                            sw22d031@mandakh.edu.mn
+                        </li>
+
+                    </ul>
+
+
+                    <div class="columns download">
+                        <button onclick="download()"> PDF татах </button>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </section>
+        
+
+    </main>
+</body>
+
+    <script>
+        function download(){
+        const originalMediaType = window.matchMedia('screen').media;
+        window.matchMedia('screen').media = 'print';
+        window.print();
+        window.matchMedia('screen').media = originalMediaType;
+        }
+    </script>
+
+</html>
