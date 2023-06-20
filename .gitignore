@@ -11,3 +11,5 @@ whoisfe/whoisfe/__pycache__/__init__.cpython-39.pyc
 whoisfe/whoisfe/__pycache__/settings.cpython-39.pyc
 whoisfe/whoisfe/__pycache__/urls.cpython-39.pyc
 whoisfe/whoisfe/__pycache__/wsgi.cpython-39.pyc
+*.sqlite3
+*.sqlite3
