@@ -4,5 +4,5 @@ from whoisfe.settings import *
 def perinfoViews(request):
     checkSession(request)  
     if request.session['beegii'] ==0:        
-        return redirect("homeViews")
+        return redirect("homeView")
     return render(request, "Profile/1.html")
