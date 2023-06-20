@@ -13,4 +13,7 @@ def registerViews(request):
 def forgetViews(request):
     return render(request, "forget/forget.html")
 
+def guideViews(request):
+    return render(request, "guide/guide.html")
+
 
