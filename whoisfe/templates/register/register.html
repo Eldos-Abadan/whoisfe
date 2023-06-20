@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home/log in/register</title>
     <!-- <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> -->
-    <link rel="stylesheet" href="{% static 'css/register/register.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register/register.css' %}">
 </head>
 <body>
     <section>
@@ -20,7 +20,7 @@
             {% if error_message %}
             <p>{{ error_message }}</p>
             {% endif %}
-            <p> Бүртгүүлэхийн тулд дараах зүйлсийг оруулна уу</p>
+            <p style="color: aqua;"> Бүртгүүлэхийн тулд дараах зүйлсийг оруулна уу</p>
 
             <div class="inputbox">
               <input
@@ -92,12 +92,12 @@
             </div >
             <!-- <button id="loginForm" type="submit">Нэвтрэх</button> -->
             
-            <input type="button" value="Бүртгүүлэх">
+            <input type="submit" id="button" value="Бүртгүүлэх">
             <div class="register">
               <p>
                 Бүртгэлтэй бол
                 <a href="/login"
-                  ><span style="color: aqua;margin-bottom: 30px;" >Нэвтрэх</span></a
+                  ><span style="color: aqua;padding-top:-300px ;" >Нэвтрэх</span></a
                 >
               </p>
               
