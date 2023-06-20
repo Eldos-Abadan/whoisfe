@@ -44,6 +44,7 @@ def loginViews(request):
         resultMessage = r.json()['responseText']
         if(resultCode == 200):
             request.session['beegii'] = 1
+            request.session['userData'] = r.json()['userData']
             return redirect("dashboardViews")
         else:
             aldaaniiMedegdel = resultMessage        

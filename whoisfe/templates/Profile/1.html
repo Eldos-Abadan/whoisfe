@@ -106,7 +106,18 @@
           </div>
         </nav>
         {% include "../includes/banner.html" %}
-          <h1>Profile</h1>
+        <h1>Profile</h1>
+        {{ userName }}
+        <br />
+        {{ firstName }}
+        <br />
+        {{ lastName }}
+        <br />
+        {{ email }}
+        <br />
+        {{ id }}
+        <br />
+        <input type="text" value="{{ email }}" />
 
         {% include "../includes/footer.html" %}
       </div>
