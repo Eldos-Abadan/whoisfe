@@ -45,4 +45,4 @@ def homeView(request):
 
     zahia["aldaaniiMedegdel"] = aldaaniiMedegdel
 
-    return render(request, "home/mycv.html",zahia)
+    return render(request, "home/home.html",zahia)
