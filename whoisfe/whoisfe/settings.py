@@ -1,12 +1,13 @@
 
 from pathlib import Path
 import os
-
+import psycopg2
+# from django.contrib.auth.models import User
 # busad nemelt import
 import hashlib
 import base64
-from django.urls import resolve, get_resolver, URLResolver, URLPattern
-###############################
+# from django.urls import resolve, get_resolver, URLResolver, URLPattern
+# ###############################
 
 
 BASE_DIR =          Path(__file__).resolve().parent.parent
@@ -60,6 +61,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
             ],
         },
     },
@@ -125,6 +127,12 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+pgDbName = "dbwhois"
+pgUser = "uwhois"
+pgHost = "202.131.254.138"
+pgPassword = "whoispass"
+pgPort = "5938"
+
 
 # bidnii nemsen function
 
@@ -182,3 +190,45 @@ def checkSession(request):
     if "beegii" not in request.session:        
         request.session['beegii'] = 0
     #   checkSession
+
+def connectDB():
+    
+
+    con = psycopg2.connect(
+        dbname=pgDbName,
+        user=pgUser,
+        host=pgHost,
+        password=pgPassword,
+        port=pgPort,
+    )
+    return con
+
+def disconnectDB(con):
+    if(con):
+        con.close()
+
+# def emailExists(email):
+#     # Check if the email already exists in the User model
+#     return User.objects.filter(email=email).exists()
+
+# def userNameExists(username):
+#     # Check if the username already exists in the User model
+#     return User.objects.filter(username=username).exists()
+def emailExists(email):
+    myCon = connectDB()
+    userCursor = myCon.cursor()
+    userCursor.execute('SELECT COUNT(*) FROM "user" WHERE "email" = %s', (email,))
+    result = userCursor.fetchone()
+    userCursor.close()
+    disconnectDB(myCon)
+    return result[0] > 0
+def userNameExists(username):
+    myCon = connectDB()
+    userCursor = myCon.cursor()
+    userCursor.execute('SELECT COUNT(*) FROM "user" WHERE "userName" = %s', (username,))
+    result = userCursor.fetchone()
+    userCursor.close()
+    disconnectDB(myCon)
+    return result[0] > 0
+
+

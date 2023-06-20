@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static '/css/home/home.css'%}">
+</head>
+<body> 
+    <div class="body1">
+        <div class="who">
+            <img src="{% static '/images/week1/l.png'%}" alt=""> <h1>WHO IS</h1>
+        </div>
+        <div class="button">
+            <input type="button" value="Нэвтрэх" onclick="myFunction()">
+            <input type="button" value="Бүртгүүлэх"onclick="myFunctionSignup()">
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+    window.location.href="{% url 'loginViews'%}";
+  }
+  function myFunctionSignup(){
+      window.location.href="{% url 'registerViews'%}";
+  }
+    </script>
+</html>

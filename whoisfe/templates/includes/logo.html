@@ -1,0 +1,45 @@
+{%load static%}
+<style>
+    body {
+        width: 80%;
+        height: auto;
+    }
+
+    .button {
+        float: right;
+        margin-top: -10%;
+    }
+
+    .body1 {
+        margin-left: 10%;
+    }
+
+    .who {
+        display: flex;
+    }
+
+    img {
+        width: 60px;
+    }
+
+    h1 {
+        background: -webkit-radial-gradient(rgb(95, 1, 95), blueviolet);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-top: 4%
+    }
+
+    input[type=button] {
+        background-color: blueviolet;
+        border: none;
+        text-decoration: none;
+        color: white;
+        padding: 15px 15px;
+        margin: 10px 10px;
+        cursor: pointer;
+        border-radius: 10%;
+    }
+</style>
+<div class="who">
+    <img src="{% static '/images/week1/l.png'%}" alt="logo" width="60px" height="60px"> &nbsp; <h3> WHO IS</h3>
+</div>
