@@ -3,7 +3,9 @@ from whoisfe.settings import *
 import requests
 import json
 
-    
+def walletView(request): 
+  return render(request, "wallet/wallet.html")
+
 
 def homeLogoutView(request): 
     checkSession(request)    

@@ -8,4 +8,5 @@ urlpatterns = [
     path("guide/", viewsGuide.guideViews, name="guideViews"),
     path("profile/", viewsProfile.profileViews, name="profileViews"),
     path("home/", viewsMain.homeLogoutView, name="homeLogoutView"),
+    path("wallet/", viewsMain.walletView, name="wallet"),
     ]   
