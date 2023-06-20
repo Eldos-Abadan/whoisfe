@@ -10,4 +10,7 @@ def homeViews(request):
 def registerViews(request):
     return render(request, "register/register.html")
 
+def forgetViews(request):
+    return render(request, "forget/forget.html")
+
 
