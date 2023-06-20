@@ -1,9 +1,9 @@
 from django.urls import path
-from app import viewsNotLogin
+from app import viewsMain, viewsLogin, viewsRegister, viewsForget, viewsGuide
 urlpatterns = [  
-    path("home/", viewsNotLogin.homeViews, name="homeViews"),
-    path("login/", viewsNotLogin.loginViews, name="loginViews"),
-    path("register/", viewsNotLogin.registerViews, name="registerViews"), 
-    path("forget/", viewsNotLogin.forgetViews, name="forgetViews"),
-    path("guide/", viewsNotLogin.guideViews, name="guideViews"),
+    path("", viewsMain.homeView, name="homeView"),
+    path("login/", viewsLogin.loginViews, name="loginViews"),
+    path("register/", viewsRegister.registerViews, name="registerViews"), 
+    path("forget/", viewsForget.forgetView, name="forgetView"),
+    path("guide/", viewsGuide.guideViews, name="guideViews"),
     ]   

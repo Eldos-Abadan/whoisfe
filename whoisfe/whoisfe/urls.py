@@ -2,8 +2,6 @@
 from django.urls import path,  include
 
 urlpatterns = [
-    # undsen huudasnuud #
-    path("", include('whoisfe.route.urlsMain')),
 
     # newtersen hereglegchiin huudasnuud #
     path("", include('whoisfe.route.urlsLogged')),
@@ -11,34 +9,7 @@ urlpatterns = [
     # week1 huudasnuud #
     path("", include('whoisfe.route.urlsWeek1')),
 
-    # Dashboard #
-    path("", include('whoisfe.route.urlsDashboard')),
-   
-    # Forget #
-    path("", include('whoisfe.route.urlsForget')),
- 
-    # Register #
-    path("", include('whoisfe.route.urlsRegister')),
-    
-    # Personal Information Form #
-    path("", include('whoisfe.route.urlsPerInfo')),
- 
-    # login huudas #
-    path("", include('whoisfe.route.urlsLogin')),
-    
-    # my name card  #
-    path("", include('whoisfe.route.urlsMyNC')),
-    
-    # CreateCV #
-     path("", include('whoisfe.route.urlsCreateCV')),
-     
-     # guide #
-     path("", include('whoisfe.route.urlsGuide')),
-
       # notlogin #
-    #  path("", include('whoisfe.route.urlsNotlogin')),
-
-      # logged #
-     path("", include('whoisfe.route.urlsLogged')),
+     path("", include('whoisfe.route.urlsNotLogin')),
 
 ]
