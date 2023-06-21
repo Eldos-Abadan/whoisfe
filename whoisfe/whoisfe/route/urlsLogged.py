@@ -11,4 +11,5 @@ urlpatterns = [
     path("wallet/",     viewsMain.walletView,            name="wallet"),
     path("myCV/",       viewsMyCV.myCVViews,            name="myCV"),
     path("favorite/",       viewsFavorite.favoriteView,            name="favoriteView"),
+    path("myCV/",       viewsMyCV.myCVViews,            name="myCVViews"),
     ]   
