@@ -39,13 +39,13 @@ def registerViews(request):
 
         myCon = connectDB()
         userCursor = myCon.cursor()
-        userCursor.execute('INSERT INTO "f_user" ("firstName", "lastName", "email", "pass", "userName", "date")'
+        userCursor.execute('INSERT INTO "user" ("firstName", "lastName", "email", "pass", "userName", "date")'
                            'VALUES (%s, %s, %s, %s, %s, %s)',
                            (first_name, last_name, email, passw, user_name, date_joined))
         myCon.commit()
         userCursor.close()
         disconnectDB(myCon)
 
-        return redirect('loginViews')
+        return redirect('homeView')
 
     return render(request, 'register/register.html')
