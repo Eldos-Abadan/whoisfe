@@ -193,9 +193,9 @@ body {
 
     <div class="form-group">
         <form action="" id="loginForm" method="POST">
-            {%csrf_token%}
-            <p>{{aldaaniiMedeelel}}</p>
-        <p><label for="username">Email</label></p>
+            {% csrf_token %}
+            
+        <p><label for="username"><span style="color: #ff0000"> {{aldaaniiMedeelel}} </span>Email</label></p>
         <input type="email" id="username" placeholder="Бүртгэлтэй имэйл хаягаа оруулна уу." required name = "email">
         <!-- <p><label for="username">Email</label></p> -->
 
