@@ -193,21 +193,20 @@ body {
 
     <div class="form-group">
         <form action="" id="loginForm" method="POST">
-            {% csrf_token %}
-            
-        <p><label for="username"><span style="color: #ff0000"> {{aldaaniiMedeelel}} </span>Email</label></p>
-        <input type="email" id="username" placeholder="Бүртгэлтэй имэйл хаягаа оруулна уу." required name = "email">
+
+        <p><label for="username">Email</label></p>
+        <input type="email" id="username" placeholder="Бүртгэлтэй имэйл хаягаа оруулна уу." required >
         <!-- <p><label for="username">Email</label></p> -->
 
 
     <div class="form-group">
         <p><label for="password">Шинэ нууц үг  </label></p>
-        <input type="password" id="password" placeholder="Энд нууц үгээ хийнэ үү." required name = "newPass1">
+        <input type="password" id="password" placeholder="Энд нууц үгээ хийнэ үү." required >
         <!-- <p><label for="password">Шинэ нууц үг</label></p> -->
 
     <div class="form-group">
         <p><label for="password">Нууц үгээ дахин оруулна уу.</label></p>
-        <input type="password" id="password" placeholder="Энд нууц үгээ хийнэ үү." required name = "newPass2">
+        <input type="password" id="password" placeholder="Энд нууц үгээ хийнэ үү." required >
         <!-- <p><label for="password">Нууц үгээ дахин оруулна уу.</label></p> -->
     
 
@@ -223,7 +222,7 @@ body {
             </div>
         </div>
     </section>
-	{% comment %} <script>
+	<script>
 
 		document.getElementById("loginForm").addEventListener("submit", function(event) {
 	  event.preventDefault(); // Хуудсыг дахин ачаалахгүйн тулд маягт оруулахаас сэргийлнэ үү
@@ -247,7 +246,6 @@ body {
 		// 
 	  }
 	});
-	 {% endcomment %}
 		</script>
 
   </body>
