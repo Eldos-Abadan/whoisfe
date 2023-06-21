@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Georgia, serif;
   width: 98%;
 }
 
@@ -16,11 +16,13 @@ header h1 {
   background: -webkit-radial-gradient(rgb(95, 1, 95) ,  blueviolet);
   -webkit-background-clip: text;   
   -webkit-text-fill-color: transparent;
+  font-family:Georgia, serif;
       
 }
 .button {
-  margin-top: -5%;
   float: right;
+  display: flex;
+  margin-top: -5%;
 }
 
 main {
@@ -65,9 +67,21 @@ input[type=button].active {
 .head1{
   display: flex;
 }
-/* .head1 h1  {
-  margin-top: 3%;
-} */
+
 .bd{
   padding: 10px;
+}
+.img2 {
+  width: 10%;
+  height: auto;
+}
+.main1 {
+  border: purple solid 2px;
+  border-radius: 5px;
+  text-align: justify ;
+
+}
+.main1 p{
+  font-size: xx-large;
+  padding-left: 40%;
 }
