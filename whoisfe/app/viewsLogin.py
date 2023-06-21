@@ -1,5 +1,5 @@
-from django.shortcuts import render,redirect
-from whoisfe.settings import *
+from   django.shortcuts import render,redirect
+from   whoisfe.settings import *
 import requests 
 import json
 import hashlib
@@ -14,41 +14,48 @@ def homeLogoutView(request):
     return redirect("loginViews")
 #   homeLogoutView
 
-def loginViews(request):    
-    checkSession(request)    
-    if request.session['beegii'] !=0 :
+def loginViews(request):
+    checkSession(request)
+    if request.session.get('beegii') != 0:
         return redirect("dashboardViews")
+    
     zahia = {}
     aldaaniiMedegdel = ""
-    # хэрвээ форм.пост бол:
-    #     үр дүн  = нэвтрэх сервис(нэр, нууц үг)
-    #     хэрвээ үр дүн.responseCode == 200
-    #         request.session['beegii'] = 1
-    #         return redirect("profileViews")
-    #     else:
-    #         aldaaniiMedegdel = "нэр нууц үг буруу"
+
     if request.method == "POST":
-        myName = request.POST["myName"]
-        myPass = request.POST["myPass"]
+        myName = request.POST.get("myName")
+        myPass = request.POST.get("myPass")
         passs = mandakhHash(myPass)
 
-        requestJSON = {}
-        requestJSON["name"] = myName
-        requestJSON["pass"] = passs
+        requestJSON = {
+            "name": myName,
+            "pass": passs
+        }
 
-        r = requests.get("http://whoisb.mandakh.org/userLogin/",
+        required_fields = ["name", "pass"]
+        if not reqValidation(requestJSON, required_fields):
+            error_message = 'Fields are missing or invalid'
+            zahia["error_message"] = error_message
+            return render(request, 'login/login.html', zahia)
+
+        try:
+            r = requests.get("http://whoisb.mandakh.org/userLogin/",
                             data=json.dumps(requestJSON),
-                            headers={'Content-Type': 'application/json'} )
-        # print(r.json())
-        resultCode = r.json()['responseCode']
-        resultMessage = r.json()['responseText']
-        if(resultCode == 200):
-            request.session['beegii'] = 1
-            request.session['userData'] = r.json()['userData']
-            return redirect("dashboardViews")
-        else:
-            aldaaniiMedegdel = resultMessage        
+                            headers={'Content-Type': 'application/json'})
+            response_json = r.json()
+            resultCode = response_json.get('responseCode')
+            resultMessage = response_json.get('responseText')
+
+            if resultCode == 200:
+                request.session['beegii'] = 1
+                request.session['userData'] = response_json.get('userData')
+                return redirect("dashboardViews")
+            else:
+                aldaaniiMedegdel = resultMessage
+
+        except requests.exceptions.RequestException as e:
+            aldaaniiMedegdel = str(e)
 
     zahia["aldaaniiMedegdel"] = aldaaniiMedegdel
 
-    return render(request, "login/login.html",zahia)
+    return render(request, "login/login.html", zahia)
