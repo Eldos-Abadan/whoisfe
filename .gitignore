@@ -1,4 +1,3 @@
-whoisfe\db.sqlite3
 whoisfe\whoisfe\__pycache__\*
 whoisfe\whoisfe\__pycache__\__init__.cpython-39.pyc
 *.pyc
@@ -6,13 +5,7 @@ whoisfe\whoisfe\__pycache__\__init__.cpython-39.pyc
 whoisfe/web.config
 *.pyc
 *.pyc
-whoisfe/db.sqlite3
 whoisfe/whoisfe/__pycache__/__init__.cpython-39.pyc
 whoisfe/whoisfe/__pycache__/settings.cpython-39.pyc
 whoisfe/whoisfe/__pycache__/urls.cpython-39.pyc
 whoisfe/whoisfe/__pycache__/wsgi.cpython-39.pyc
-*.sqlite3
-*.sqlite3
-*.pyc
-whoisfe/db.sqlite3
-*.sqlite3
