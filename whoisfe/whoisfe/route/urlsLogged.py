@@ -1,5 +1,5 @@
 from django.urls import path
-from app import viewsCreateCV, viewsDashboard, viewsMyNC, viewsGuide, viewsProfile, viewsMain, viewsCreateNC, viewsFavorite
+from app import viewsMyCV, viewsCreateCV, viewsDashboard, viewsMyNC, viewsGuide, viewsProfile, viewsMain, viewsCreateNC
 urlpatterns = [
    path("createNC/",    viewsCreateNC.createNCViews,     name="createNCViews"),
     path("createCV/",   viewsCreateCV.createCVViews,     name="createCVViews"),
@@ -9,5 +9,5 @@ urlpatterns = [
     path("profile/",    viewsProfile.profileViews,       name="profileViews"),
     path("home/",       viewsMain.homeLogoutView,        name="homeLogoutView"),
     path("wallet/",     viewsMain.walletView,            name="wallet"),
-    path("favorite/",     viewsFavorite.favoriteView,            name="favoriteView"),
+    path("myCV/",       viewsMyCV.myCVViews,            name="myCV"),
     ]   
