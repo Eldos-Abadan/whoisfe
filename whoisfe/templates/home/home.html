@@ -6,15 +6,42 @@
     <link rel="stylesheet" href="{% static '/css/home/home.css'%}">
 </head>
 <body> 
-    <div class="body1">
-        <div class="who">
-            <img src="{% static '/images/week1/l.png'%}" alt=""> <h1>WHO IS</h1>
-        </div>
-        <div class="button">
-            <input type="button" value="Нэвтрэх" onclick="myFunction()">
-            <input type="button" value="Бүртгүүлэх"onclick="myFunctionSignup()">
-        </div>
+    <div class="bd">
+        <header>
+            <div class="head1">
+                <img src="{% static '/images/week1/l.png'%}" alt="">
+                <h1>Who is</h1>
+    
+            </div>
+            <div class="button">
+                    <input type="button" value="Нэвтрэх" onclick="myFunction()">
+                    <input type="button" value="Бүртгүүлэх"onclick="myFunctionSignup()">
+            </div>
+        </header><hr><br>
+        <main>
+            <section id="about">
+                <h3>Танилцуулга</h3>
+                <p>Өөрийн танилцуулга /CV/ болон нэрийн хуудасны <br>бэлэн дизайн template  зохион бүтээж техник <br> технологид 
+                суурилсан шинэ систем нэвтрүүлэх.</p>
+            </section>
+            <section id="about">
+                <h3>Бидний зорилго</h3>
+                <p>Хэрэглэгч өөрийн мэдээллийг оруулаад өөрийн <br> хүссэн загвар дизайн, өнгө  төрхийг 
+                бүрдүүлсэн <br>танилцуулга /CV/ болон нэрийн хуудсыг цахимаар <br>гарган  авах боломжийг олгоно.</p>
+            </section>
+            <section id="about">
+                <h3>Үр дүн</h3>
+                <p>Хүмүүсийн ажлыг хөнгөвчлөн хэзээ ч хаанаас ч <br> байршуулсан системээсээ 
+                цахимаар танилцуулгаа <br>хэрэгтэй үедээ татан авч, цаг хугацаагаа хэмнэнэ.		</p>
+            </section>
+        </main><br>
+        <footer>
+        {% include "../includes/footer.html" %}
+        </footer>
+
     </div>
+
+
     <script>
         function myFunction() {
     window.location.href="{% url 'loginViews'%}";

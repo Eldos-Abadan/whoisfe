@@ -1,32 +1,73 @@
-body {width: 80%;
-    height: auto;
-  }
+body {
+  font-family: Arial, sans-serif;
+  width: 98%;
+}
+
+header {
+  background-color: white;
+  display: flex;  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 98%;
+}
+
+header h1 {
+  background: -webkit-radial-gradient(rgb(95, 1, 95) ,  blueviolet);
+  -webkit-background-clip: text;   
+  -webkit-text-fill-color: transparent;
+      
+}
 .button {
+  margin-top: -5%;
   float: right;
-  margin-top: -10%;
 }
-.body1 {
-  margin-left: 10%;
+
+main {
+  padding: 25px;
+  display: flex ;
 }
-.who {
-  display: flex;
-}
+
 img {
-  width: 10%;
+  width:7% ;
+  height: auto;
 }
-h1 {
-      background: -webkit-radial-gradient(rgb(95, 1, 95) ,  blueviolet);
-      -webkit-background-clip: text;   
-      -webkit-text-fill-color: transparent;
-      margin-top: 4%
-      }
+
+#about {
+  border: solid purple   2px;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 10px;
+
+}
+
+footer {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
 input[type=button] {
-  background-color:blueviolet;
   border: none;
   text-decoration: none;
-  color: white;
+  color: black;
   padding: 15px 15px;
   margin: 10px 10px;
-  cursor: pointer;
   border-radius: 10%;
+  font-size: 15px;
+  
+}
+
+input[type=button]:hover,
+input[type=button].active {
+  background-color: blueviolet;
+}
+
+.head1{
+  display: flex;
+}
+/* .head1 h1  {
+  margin-top: 3%;
+} */
+.bd{
+  padding: 10px;
 }
