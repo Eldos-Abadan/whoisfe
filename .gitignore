@@ -14,3 +14,4 @@ whoisfe/whoisfe/__pycache__/wsgi.cpython-39.pyc
 *.sqlite3
 *.sqlite3
 *.pyc
+whoisfe/db.sqlite3
