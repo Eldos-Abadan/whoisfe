@@ -1,5 +1,5 @@
-from django.shortcuts import render,redirect
-from whoisfe.settings import *
+from   django.shortcuts import render,redirect
+from   whoisfe.settings import *
 import requests 
 import json
 import hashlib
