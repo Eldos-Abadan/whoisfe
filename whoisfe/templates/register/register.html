@@ -7,263 +7,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home/log in/register</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <style>
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background: url("{% static '/images/week1/nana.jpg'%}") no-repeat;
-            /* background-position: center; */
-            background-size: cover;
-            /* min-height: 100vh;    */
-        }
-
-        .wrapper {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 450px;
-            height: 100%;
-            background: transparent;
-            backdrop-filter: blur(15px);
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 40px;
-            /* margin-right: 400px; */
-        }
-
-        .wrapper .logreg-box {
-            width: 100%;
-
-        }
-
-        .logreg-box .logreg-title {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #fff;
-
-        }
-
-        .logreg-title h2 {
-            font-size: 32px;
-        }
-
-        .logreg-title p {
-            font-size: 14px;
-            font-weight: 500;
-
-        }
-
-        .logreg-box .input-box {
-            position: relative;
-            width: 100%;
-            height: 30px;
-            margin: 30px 0;
-            border-bottom: 2px solid #fff;
-        }
-
-        .input-box input {
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            border: none;
-            outline: none;
-            color: #fff;
-            font-weight: 500;
-            padding-right: 25px;
-        }
-
-        .input-box label {
-            position: absolute;
-            left: 0;
-            font-size: 16px;
-            color: #fff;
-            font-weight: 500;
-            transform: translateY(-50%);
-            top: 50%;
-            pointer-events: none;
-            transition: .5s;
-        }
-
-        .input-box .icon {
-            position: absolute;
-            top: 50%;
-            right: 0;
-            transform: translateY(-50%);
-            font-size: 19px;
-            color: #fff;
-
-        }
-
-        .input-box input:focus~label,
-        .input-box input:valid~label {
-            top: -5px;
-        }
-
-        .logreg-box .remember-forgot {
-            font-size: 14.5px;
-            color: #fff;
-            font-weight: 500;
-            margin: -15px 0 15px;
-            display: flex;
-            justify-content: space-between;
-
-        }
-
-        .remember-forgot label input {
-            accent-color: #fff;
-            margin-right: 3px;
-        }
-
-        .remember-forgot a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .remember-forgot a:hover {
-            text-decoration: underline;
-
-        }
-
-        .logreg-box .btn {
-            width: 100%;
-            height: 45px;
-            background: #fff;
-            border: none;
-            outline: none;
-            border-radius: 40px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
-            cursor: pointer;
-            font-size: 16px;
-            color: #222;
-            font-weight: 600;
-
-        }
-
-        .logreg-box .logreg-link {
-            font-size: 14.5px;
-            color: #fff;
-            text-align: center;
-            font-weight: 500;
-
-            margin: 25px 0 15px;
-        }
-
-        .logreg-link p a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-
-        }
-
-        .logreg-link p a:hover {
-            text-decoration: underline;
-        }
-
-        .media-options {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-        }
-
-        .media-options a {
-            width: 100%;
-            height: 50px;
-            border: 2px solid #fff;
-            margin: 10px 0;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
-            border-radius: 40px;
-            color: #fff;
-            text-decoration: none;
-            transition: .5s;
-        }
-
-        .media-options a i {
-            font-size: 22px;
-            margin: 0 8px 1.5px 0;
-        }
-
-        .media-options a:hover {
-            background: rgba(255, 255, 255, .1);
-        }
-
-        .media-options a span {
-            font-size: 16px;
-            font-weight: 500;
-
-        }
-    </style>
+    <!-- <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register/register.css' %}">
 </head>
-
 <body>
-    <div class="wrapper">
-        <div class="logreg-box">
-            <div class="form-box login">
-                <div class="logreg-title login">
-                    <h2>Бүртгэлийн хуудас</h2>
-                    {% if error_message %}
-                    <p>{{ error_message }}</p>
-                    {% endif %}
-                    <p> Бүртгүүлэхийн тулд дараах зүйлсийг оруулна уу</p>
-                </div>
-                <form method="post">
-                    {%csrf_token%}
-                    <div class="input-box">
-                        <span class="icon"><i class='bx bxs-user'></i></span>
-                        <input type="text" name="first_name" required>
-                        <label for="">Овог</label>
-                    </div>
-                    <div class="input-box">
-                        <span class="icon"><i class='bx bx-user'></i></span>
-                        <input type="text" name="last_name" required>
-                        <label for="">Нэр </label>
-                    </div>
-                    <div class="input-box">
-                        <span class="icon"><i class='bx bxl-gmail'></i></span>
-                        <input type="email" name="email" required>
-                        <label for="">Имэйл хаяг</label>
-                    </div>
-                    <div class="input-box">
-                        <span class="icon"><i class='bx bxl-gmail'></i></span>
-                        <input type="text" name="user_name" required>
-                        <label for="">Хэрэглэгчийн нэр</label>
-                    </div>
-                    <div class="input-box">
-                        <span class="icon"><i class='bx bxs-lock-alt'></i></span>
-                        <input type="password" name="password" required>
-                        <label for="">Нууц үг</label>
-                    </div>
-                    <div class="input-box">
-                        <span class="icon"><i class='bx bxs-lock'></i></span>
-                        <input type="password" name="confirm_password" required>
-                        <label for="">Нууц үгээ баталгаажуулна уу</label>
-                    </div>
-                    <div class="remember-forgot">
-                        <label>
-                            <input type="checkbox">Мэдээллээ шалгана уу
-                        </label>
-                    </div>
-                    <!-- <button type="submit" class="btn">Бүртгүүлэх</button> -->
-                    <input type="submit" style="font-size: 16px;font-weight: 500;" value="Бүртгүүлэх">
-                    <div class="logreg-link">
-                        <p>Бүртгэлтэй бол
-                            <a href="/" class="register-link"> &nbsp;
-                                Нэвтрэх</a>
-                        </p>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="media-options">
-            <a href="https://www.google.com/"><i class='bx bxl-google'></i><span>Register with Google</span></a>
-        </div>
-    </div>
-    <script></script>
-</body>
+    <section>
+      <div class="form-box">
+        <div class="form-value">
+          <form action="" id="loginForm" method="post">
+            {%csrf_token%}
+            <h2>Бүртгэлийн хуудас</h2>
+            {% if error_message %}
+            <p>{{ error_message }}</p>
+            {% endif %}
+            <p style="color: aqua;"> Бүртгүүлэхийн тулд дараах зүйлсийг оруулна уу</p>
 
+            <div class="inputbox">
+              <input
+                type="text"
+                id="username"
+                placeholder="Энд овгоо оруулна уу."
+                name="first_name"
+                required
+              />
+              <label for="">Овог</label>
+              <!-- <span class="icon"><i class='bx bxs-user'></i></span> -->
+            </div>
+            <div class="inputbox">
+                <input
+                  type="text"
+                  id="username"
+                  placeholder="Энд нэрээ оруулна уу."
+                  name="last_name"
+                  required
+                />
+                <label for="">Нэр</label>
+                <!-- <span class="icon"><i class='bx bxs-user'></i></span> -->
+              </div>
+              <div class="inputbox">
+                <input
+                  type="text"
+                  id="username"
+                  placeholder="Энд хэрэглэгчийн нэрээ оруулна уу."
+                  name="user_name"
+                  required
+                />
+                <label for="">Хэрэглэгчийн нэр</label>
+                <!-- <span class="icon"><i class='bx bxs-user'></i></span> -->
+              </div>
+              <div class="inputbox">
+                <input
+                  type="text"
+                  placeholder="Энд имэйл хаягаа оруулна уу."
+                  name="email"
+                  required
+                />
+                <label for="">Имэйл хаяг</label>
+                <!-- <span class="icon"><i class='bx bxl-gmail'></i></span> -->
+              </div>
+            <div class="inputbox">
+              <input
+                type="password"
+                placeholder="Энд нууц үгээ оруулна уу."
+                name="password"
+                required
+              />
+              <label for="">Нууц үг</label>
+              <!-- <span class="icon"><i class='bx bxs-lock-alt'></i></span> -->
+            </div>
+            <div class="inputbox">
+                <input
+                  type="password"
+                  placeholder="Нууц үгээ баталгаажуулна уу."
+                  name="confirm_password"
+                  required
+                />
+                <label for="">Нууц үг</label>
+                <!-- <span class="icon"><i class='bx bxs-lock-alt'></i></span> -->
+              </div>
+            <div class="forget">
+                <label>
+                    <input type="checkbox">Мэдээллээ шалгана уу
+                </label>
+            </div >
+            <!-- <button id="loginForm" type="submit">Нэвтрэх</button> -->
+            
+            <input type="submit" id="button" value="Бүртгүүлэх">
+            <div class="register">
+              <p>
+                Бүртгэлтэй бол
+                <a href="/login"
+                  ><span style="color: aqua;padding-top:-300px ;" >Нэвтрэх</span></a
+                >
+              </p>
+              
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+
+  </body>
 </html>

@@ -19,7 +19,7 @@ def loginViews(request):
     if request.session['beegii'] !=0 :
         return redirect("dashboardViews")
     zahia = {}
-    aldaaniiMedegdel = "wertyu"
+    aldaaniiMedegdel = ""
     # хэрвээ форм.пост бол:
     #     үр дүн  = нэвтрэх сервис(нэр, нууц үг)
     #     хэрвээ үр дүн.responseCode == 200
@@ -44,6 +44,7 @@ def loginViews(request):
         resultMessage = r.json()['responseText']
         if(resultCode == 200):
             request.session['beegii'] = 1
+            request.session['userData'] = r.json()['userData']
             return redirect("dashboardViews")
         else:
             aldaaniiMedegdel = resultMessage        
