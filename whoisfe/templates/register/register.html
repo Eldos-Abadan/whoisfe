@@ -20,6 +20,15 @@
           <h2>Бүртгэлийн хуудас</h2>
           {% if error_message %}
           <p>{{ error_message }}</p>
+        <form action="" id="registerForm" method="post">
+          {% csrf_token %}
+          <h2>Бүртгэлийн хуудас</h2>
+          {% if messages %}
+          <ul class="messages">
+            {% for message in messages %}
+              <li style="color:red" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+          </ul>
           {% endif %}
           <p style="color: gray;"> Бүртгүүлэхийн тулд дараах зүйлсийг оруулна уу</p>
 
@@ -53,6 +62,61 @@
             <input type="password" placeholder="Нууц үгээ баталгаажуулна уу." name="confirm_password" required />
             <label for="">Нууц үг</label>
             <!-- <span class="icon"><i class='bx bxs-lock-alt'></i></span> -->
+            <input
+              type="text"
+              id="username"
+              placeholder="Энд овгоо оруулна уу."
+              name="first_name"
+              required
+            />
+            <label for="">Овог</label>
+          </div>
+          <div class="inputbox">
+            <input
+              type="text"
+              id="username"
+              placeholder="Энд нэрээ оруулна уу."
+              name="last_name"
+              required
+            />
+            <label for="">Нэр</label>
+          </div>
+          <div class="inputbox">
+            <input
+              type="text"
+              id="username"
+              placeholder="Энд хэрэглэгчийн нэрээ оруулна уу."
+              name="user_name"
+              required
+            />
+            <label for="">Хэрэглэгчийн нэр</label>
+          </div>
+          <div class="inputbox">
+            <input
+              type="text"
+              placeholder="Энд имэйл хаягаа оруулна уу."
+              name="email"
+              required
+            />
+            <label for="">Имэйл хаяг</label>
+          </div>
+          <div class="inputbox">
+            <input
+              type="password"
+              placeholder="Энд нууц үгээ оруулна уу."
+              name="password"
+              required
+            />
+            <label for="">Нууц үг</label>
+          </div>
+          <div class="inputbox">
+            <input
+              type="password"
+              placeholder="Нууц үгээ баталгаажуулна уу."
+              name="confirm_password"
+              required
+            />
+            <label for="">Нууц үг</label>
           </div>
           <div class="forget">
             <label>
@@ -72,10 +136,27 @@
           </div>
         </form>
 
+          <input type="submit" id="button" value="Бүртгүүлэх">
+          <div class="register">
+            <p>
+              Бүртгэлтэй бол
+              <a href="/login"
+                ><span style="color: aqua;padding-top:-300px ;" >Нэвтрэх</span></a
+              >
+            </p>
+          </div>
+        </form>
       </div>
     </div>
   </section>
 
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      document.getElementById('registerForm').submit();
+    });
+  </script>
+</body>
 
 </body>
 

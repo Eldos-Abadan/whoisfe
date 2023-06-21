@@ -8,4 +8,6 @@ urlpatterns = [
     path("guide/",      viewsGuide.guideViews,          name="guideViews"),
     path("signUpWar/",  viewsSignUpWar.signUpWarViews,  name="viewsSignUpWarning"),
     path("register/email_activation",   viewsEmailVer.EmailVerView,    name="EmailVerView"), 
+    path("justCV/",     viewsMain.justCVViews,          name="justcv"),
+    path("justNC/",     viewsMain.justNCViews,          name="justnc"),
     ]   
