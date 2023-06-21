@@ -231,4 +231,9 @@ def userNameExists(username):
     disconnectDB(myCon)
     return result[0] > 0
 
+def reqValidation(data, required_fields):
+    for field in required_fields:
+        if field not in data or not data[field]:
+            return False
+    return True
 
