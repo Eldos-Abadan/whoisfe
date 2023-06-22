@@ -179,11 +179,11 @@ section {
 }
 
 .cctabs label:hover {
-  background: -webkit-linear-gradient(#cac0d7);
+  background: -webkit-linear-gradient(#fff);
 }
 
 .cctabs input:checked+label {
-  background: #cac0d7;
+  background: #fff;
   color: #000000;
   border-top: solid 2px #ebb704;
 }
@@ -203,14 +203,14 @@ section {
   clear: both;
   position: relative;
   width: 100%;
-  background: #cac0d7;
+  background: #fff;
 }
 
 .cctabs .panel {
   width: 100%;
   opacity: 0;
   position: absolute;
-  background: #cac0d7;
+  background: #fff;
   padding: 2%;
   box-sizing: border-box;
 }
