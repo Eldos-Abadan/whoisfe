@@ -7,6 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home/log in/register</title>
+  <!-- <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> -->
   <link rel="stylesheet" type="text/css" href="{% static 'css/register/register.css' %}">
 </head>
 
@@ -14,6 +15,11 @@
   <section>
     <div class="form-box">
       <div class="form-value">
+        <form action="" id="loginForm" method="post">
+          {%csrf_token%}
+          <h2>Бүртгэлийн хуудас</h2>
+          {% if error_message %}
+          <p>{{ error_message }}</p>
         <form action="" id="registerForm" method="post">
           {% csrf_token %}
           <h2>Бүртгэлийн хуудас</h2>
@@ -27,6 +33,35 @@
           <p style="color: gray;"> Бүртгүүлэхийн тулд дараах зүйлсийг оруулна уу</p>
 
           <div class="inputbox">
+            <input type="text" id="username" placeholder="Энд овгоо оруулна уу." name="first_name" required />
+            <label for="">Овог</label>
+            <!-- <span class="icon"><i class='bx bxs-user'></i></span> -->
+          </div>
+          <div class="inputbox">
+            <input type="text" id="username" placeholder="Энд нэрээ оруулна уу." name="last_name" required />
+            <label for="">Нэр</label>
+            <!-- <span class="icon"><i class='bx bxs-user'></i></span> -->
+          </div>
+          <div class="inputbox">
+            <input type="text" id="username" placeholder="Энд хэрэглэгчийн нэрээ оруулна уу." name="user_name"
+              required />
+            <label for="">Хэрэглэгчийн нэр</label>
+            <!-- <span class="icon"><i class='bx bxs-user'></i></span> -->
+          </div>
+          <div class="inputbox">
+            <input type="text" placeholder="Энд имэйл хаягаа оруулна уу." name="email" required />
+            <label for="">Имэйл хаяг</label>
+            <!-- <span class="icon"><i class='bx bxl-gmail'></i></span> -->
+          </div>
+          <div class="inputbox">
+            <input type="password" placeholder="Энд нууц үгээ оруулна уу." name="password" required />
+            <label for="">Нууц үг</label>
+            <!-- <span class="icon"><i class='bx bxs-lock-alt'></i></span> -->
+          </div>
+          <div class="inputbox">
+            <input type="password" placeholder="Нууц үгээ баталгаажуулна уу." name="confirm_password" required />
+            <label for="">Нууц үг</label>
+            <!-- <span class="icon"><i class='bx bxs-lock-alt'></i></span> -->
             <input
               type="text"
               id="username"
@@ -88,6 +123,19 @@
               <input type="checkbox">Мэдээллээ шалгана уу
             </label>
           </div>
+          <!-- <button id="loginForm" type="submit">Нэвтрэх</button> -->
+          <a href="{% url 'EmailVerView'%}">
+            <input type="submit" id="button" value="Бүртгүүлэх">
+          </a>
+          <div class="register">
+            <p>
+              Бүртгэлтэй бол
+              <a href="/login"><span style="color: aqua;padding-top:-300px ;">Нэвтрэх</span></a>
+            </p>
+
+          </div>
+        </form>
+
           <input type="submit" id="button" value="Бүртгүүлэх">
           <div class="register">
             <p>
@@ -108,6 +156,8 @@
       document.getElementById('registerForm').submit();
     });
   </script>
+</body>
+
 </body>
 
 </html>

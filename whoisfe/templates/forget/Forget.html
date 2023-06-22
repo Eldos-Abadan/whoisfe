@@ -192,25 +192,26 @@ body {
         <!-- <h6 class="information-text">Enter your Registered email to reset password.</h6> -->
 
     <div class="form-group">
-        <form action="" id="loginForm">
+        <form action="" id="loginForm" method="POST">
+
         <p><label for="username">Email</label></p>
-        <input type="email" id="username" placeholder="Бүртгэлтэй имэйл хаягаа оруулна уу." required>
+        <input type="email" id="username" placeholder="Бүртгэлтэй имэйл хаягаа оруулна уу." required >
         <!-- <p><label for="username">Email</label></p> -->
 
 
     <div class="form-group">
-        <p><label for="password">Шинэ нууц үг</label></p>
-        <input type="password" id="password" placeholder="Энд нууц үгээ хийнэ үү." required>
+        <p><label for="password">Шинэ нууц үг  </label></p>
+        <input type="password" id="password" placeholder="Энд нууц үгээ хийнэ үү." required >
         <!-- <p><label for="password">Шинэ нууц үг</label></p> -->
 
     <div class="form-group">
         <p><label for="password">Нууц үгээ дахин оруулна уу.</label></p>
-        <input type="password" id="password" placeholder="Энд нууц үгээ хийнэ үү." required>
+        <input type="password" id="password" placeholder="Энд нууц үгээ хийнэ үү." required >
         <!-- <p><label for="password">Нууц үгээ дахин оруулна уу.</label></p> -->
     
 
 
-        <button id="loginForm" type="submit">Нэвтрэх</button>
+        <button id="forget" type="submit">Нэвтрэх</button>
                     <div class="register">
                         <p><a href="{% url 'homeView'%}"><span style="color: aqua;">Буцах</span></a></p>
                     </div>
@@ -245,7 +246,6 @@ body {
 		// 
 	  }
 	});
-	
 		</script>
 
   </body>
