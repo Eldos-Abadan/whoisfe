@@ -8,7 +8,7 @@ body {
   font-family: 'Lato', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  /* padding-bottom: 40px; */
+  padding-bottom: 40px; 
 }
 a {
   color: #2f2f8f;
@@ -376,4 +376,9 @@ section {
 
 .unit-4 {
   width: 25%;
+}
+.form-check select{
+  width: 50px ;
+  height: 25px;
+  border-radius: 5px;
 }

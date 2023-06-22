@@ -8,6 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
   <title>Dashboard WhoIs</title>
+  
 
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
   <meta name="viewport" content="width=device-width" />
@@ -154,16 +155,15 @@
         </ul> -->
     <div class="container">
       <div class="wrapper">
-        <h1>Хувийн мэдээлэл</h1>
         <div class="cctabs">
           <input checked id="one" name="tabs" type="radio">
-          <label for="one"><i class="fa fa-pencil-square-o"></i> Personal Information</label>
+          <label for="one"><i class="fa fa-pencil-square-o"></i>  Хувийн мэдээлэл</label>
           <input id="two" name="tabs" type="radio" value="Two">
-          <label for="two"><i class="fa fa-magic"></i> Education</label>
+          <label for="two"><i class="fa fa-magic"></i> Боловсрол</label>
           <input id="three" name="tabs" type="radio">
-          <label for="three"><i class="fa fa-plus-square"></i> Hobby</label>
+          <label for="three"><i class="fa fa-plus-square"></i> Хобби</label>
           <input id="four" name="tabs" type="radio">
-          <label for="four"><i class="fa fa-envelope"></i> Experience</label>
+          <label for="four"><i class="fa fa-envelope"></i> Туршлага</label>
           <div class="panels">
             <div class="panel">
               <div class="example">
@@ -171,16 +171,18 @@
                   <div class="row">
                     <div class="col-sm-3">
                       <div class="form-floating mt-3">
+                        <label for="floatingInput"> Овог</label>
                         <input type="name" name="Fist name" class="form-control form-control-sm" id="floatingFname"
                           placeholder="First Name">
-                        <label for="floatingInput">First Name</label>
+                        
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-floating mt-3">
+                        <label for="floatingInput">Нэр</label>
                         <input type="name" name="last name" class="form-control form-control-sm" id="floatingLname"
-                          placeholder="Last Name">
-                        <label for="floatingInput">Last Name</label>
+                          placeholder="Нэр">
+                        
                       </div>
                     </div>
                   </div>
@@ -189,9 +191,10 @@
                   <div class="row">
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-8">
+                        <label for="floatingInput">Цахим хаяг</label>
                         <input type="email" name="email" class="form-control form-control-sm" id="floatingEmail"
                           placeholder="Email">
-                        <label for="floatingInput">Email</label>
+                        
 
                       </div>
                     </div>
@@ -202,49 +205,46 @@
                   <div class="row">
                     <div class="col-sm-5">
                       <div class="form-floating mt-3">
+                        <label for="floatingInput">Утасны дугаар: </label>
                         <input type="tel" name="phone-number" class="form-control" step="10" id="floatingNumber"
                           placeholder="Number">
-                        <label for="floatingInput">Phone Number</label>
+                        
                       </div>
-                    </div>
+                    </div> 
+
                     <div class="row">
-                      <div class="col-sm-2">
-                        <label for="sex" class="lable_sex"><br>Gender :</label>
-                        <div class="col-sm-2 mt-2">
-                          <div class="form-check mt-3">
-                            <div class="form-check">
-                              <select>
-                                <option>Male</option>
-                                <option>Female</option>
-                              </select>
-                            </div>
-                          </div>
+                      <div class="col-sm-8 mt-3">
+                        <div class="form-floating mt-3">
+                          <label for="floatingInput"> Хүйс: </label>   
+                        </div>
+                        <div class="form-check">
+                          <select>
+                            <option>--/--</option>
+                            <option>Эр</option>
+                            <option>Эм</option>
+                          </select>
                         </div>
                       </div>
-
                     </div>
-                  </div><br>
 
                   <div class="row">
-                    <div class="col-sm-2">
-                      <label for="lable_birth" class="lable_birth">Tursun on, sar, udur
-                        :</label>
-                    </div>
-
-                    <div class="col-sm-3 mt-3">
+                    <div class="col-sm-8 mt-3">
+                      <div class="form-floating mt-3">
+                        <label for="floatingInput">Төрсөн он,сар,өдөр: </label>   
+                      </div>
                       <div class="form">
                         <input class="form-control" id="date" name="date" type="date" />
                       </div>
                     </div>
-
                   </div>
 
                   <div class="row">
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-3">
+                        <label for="floatingInput">Миний тухай</label>
                         <input type="text" name="Address" class="form-control form-control-lg" id="floatingAddress"
                           placeholder="Address">
-                        <label for="floatingInput">About me</label>
+                        
                       </div>
                     </div>
                   </div>
@@ -252,38 +252,33 @@
                   <div class="row">
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-8">
+                        <label for="floatingInput">Хот</label>
                         <input type="city" name="city" class="form-control form-control-sm" id="floatingCity"
                           placeholder="City">
-                        <label for="floatingInput">City</label>
-
                       </div>
                     </div>
-                    <div class="col-sm-2"></div>
                   </div>
-
-
                   <div class="row">
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-3">
+                        <label for="floatingInput">Хаяг</label>
                         <input type="text" name="Address" class="form-control form-control-lg" id="floatingAddress"
-                          placeholder="Address">
-                        <label for="floatingInput">Full Address</label>
+                          placeholder="Address">                       
                       </div>
                     </div>
                   </div>
-
-
 
                   <div class="row">
                     <div class="col-sm-12 mt-3 mb-4" class="col-sm-2">
                       <div class="btn-group mr-2 " role="group" aria-label="First group">
-                        <button name="submit" type="submit">Save</button>
+                       <input type="button" value="Хадгалах"> 
                       </div>
                     </div>
                   </div>
                 </form>
               </div>
-            </div>
+            
+
             <div class="panel">
               <div class="headline">
                 <form id="cc-contact-2" class="form-group" action="" method="post">
@@ -416,6 +411,9 @@
 <script src="{% static '/js/dashboard/demo.js'%}"></script>
 
 <script type="text/javascript">
+
+
+
   $(document).ready(function () {
     demo.initChartist();
 
