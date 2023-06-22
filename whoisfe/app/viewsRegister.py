@@ -3,27 +3,10 @@ import datetime
 import hashlib
 from django.contrib import messages
 from whoisfe.settings import *
-import re
-import dns.resolver
+
 
 def mandakhHash(password):
     return hashlib.md5(password.encode('utf-8')).hexdigest()
-
-
-def isEmailValid(email):
-    # Use regex pattern to validate email format
-    pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
-    if re.match(pattern, email):
-        try:
-            # Check if the domain has valid MX records using DNS resolution
-            domain = email.split('@')[1]
-            records = dns.resolver.resolve(domain, 'MX')
-            return True
-        except dns.resolver.NXDOMAIN:
-            return False
-        except dns.resolver.NoAnswer:
-            return False
-    return False
 
 def registerViews(request):
     if request.method == 'POST':

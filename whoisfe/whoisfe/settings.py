@@ -2,6 +2,7 @@
 from pathlib import Path
 import os
 import psycopg2
+import re
 # from django.contrib.auth.models import User
 # busad nemelt import
 import hashlib
@@ -237,3 +238,8 @@ def reqValidation(data, required_fields):
             return False
     return True
 
+def isEmailValid(email):
+    pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
+    if re.match(pattern, email):
+        return True
+    return False
