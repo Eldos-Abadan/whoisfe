@@ -16,19 +16,21 @@
     <div class="form-box">
       <div class="form-value">
         <form action="" id="loginForm" method="post">
-          {%csrf_token%}
+          {% csrf_token %}
           <h2>Бүртгэлийн хуудас</h2>
           {% if error_message %}
-          <p>{{ error_message }}</p>
+            <p>{{ error_message }}</p>
+          {% endif %}
+        </form>
         <form action="" id="registerForm" method="post">
           {% csrf_token %}
           <h2>Бүртгэлийн хуудас</h2>
           {% if messages %}
-          <ul class="messages">
-            {% for message in messages %}
-              <li style="color:red" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-          </ul>
+            <ul class="messages">
+              {% for message in messages %}
+                <li style="color:red" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+              {% endfor %}
+            </ul>
           {% endif %}
           <p style="color: gray;"> Бүртгүүлэхийн тулд дараах зүйлсийг оруулна уу</p>
 

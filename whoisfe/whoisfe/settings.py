@@ -237,9 +237,10 @@ def reqValidation(data, required_fields):
         if field not in data or not data[field]:
             return False
     return True
-
+###############################
 def isEmailValid(email):
     pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
     if re.match(pattern, email):
         return True
     return False
+############################

@@ -5,9 +5,6 @@ from django.contrib import messages
 from whoisfe.settings import *
 
 
-def mandakhHash(password):
-    return hashlib.md5(password.encode('utf-8')).hexdigest()
-
 def registerViews(request):
     if request.method == 'POST':
         try:
