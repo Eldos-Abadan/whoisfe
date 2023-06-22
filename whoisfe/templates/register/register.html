@@ -17,7 +17,7 @@
       <div class="form-value">
         <form action="" id="loginForm" method="post">
           {% csrf_token %}
-          <h2>Бүртгэлийн хуудас</h2>
+          <!-- <h2>Бүртгэлийн хуудас</h2> --> 
           {% if error_message %}
             <p>{{ error_message }}</p>
           {% endif %}
@@ -31,7 +31,7 @@
                 <li style="color:red" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
               {% endfor %}
             </ul>
-          {% endif %}
+          {% endif %}<br> <br>
           <p style="color: gray;"> Бүртгүүлэхийн тулд дараах зүйлсийг оруулна уу</p>
 
           <div class="inputbox">
@@ -60,72 +60,12 @@
             <label for="">Нууц үг</label>
             <!-- <span class="icon"><i class='bx bxs-lock-alt'></i></span> -->
           </div>
-          <!-- <div class="inputbox">
-            <input type="password" placeholder="Нууц үгээ баталгаажуулна уу." name="confirm_password" required />
-            <label for="">Нууц үг</label>
-            <span class="icon"><i class='bx bxs-lock-alt'></i></span> -->
-            <input
-              type="text"
-              id="username"
-              placeholder="Энд овгоо оруулна уу."
-              name="first_name"
-              required
-            />
-            <label for="">Овог</label>
-          </div>
           <div class="inputbox">
-            <input
-              type="text"
-              id="username"
-              placeholder="Энд нэрээ оруулна уу."
-              name="last_name"
-              required
-            />
-            <label for="">Нэр</label>
+            <input type="password" placeholder="Энд нууц үгээ давтаж оруулна уу." name="confirm_password" required />
+            <label for="">Нууц үг баталгаажуулах</label>
+            <!-- <span class="icon"><i class='bx bxs-lock-alt'></i></span> -->
           </div>
-          <div class="inputbox">
-            <input
-              type="text"
-              id="username"
-              placeholder="Энд хэрэглэгчийн нэрээ оруулна уу."
-              name="user_name"
-              required
-            />
-            <label for="">Хэрэглэгчийн нэр</label>
-          </div>
-          <div class="inputbox">
-            <input
-              type="text"
-              placeholder="Энд имэйл хаягаа оруулна уу."
-              name="email"
-              required
-            />
-            <label for="">Имэйл хаяг</label>
-          </div>
-          <div class="inputbox">
-            <input
-              type="password"
-              placeholder="Энд нууц үгээ оруулна уу."
-              name="password"
-              required
-            />
-            <label for="">Нууц үг</label>
-          </div>
-          <div class="inputbox">
-            <input
-              type="password"
-              placeholder="Нууц үгээ баталгаажуулна уу."
-              name="confirm_password"
-              required
-            />
-            <label for="">Нууц үг</label>
-          </div>
-          <div class="forget">
-            <label>
-              <input type="checkbox">Мэдээллээ шалгана уу
-            </label>
-          </div>
-          <!-- <button id="loginForm" type="submit">Нэвтрэх</button> -->
+              
           <a href="{% url 'EmailVerView'%}">
             <input type="submit" id="button" value="Бүртгүүлэх">
           </a>
