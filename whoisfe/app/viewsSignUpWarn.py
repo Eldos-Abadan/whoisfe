@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
-def signUpWarViews(request):
+def signUpWarnViews(request):
     return render(request, "register/signUpwarning.html")
