@@ -1,4 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from django.urls import reverse
 
 def signUpWarnViews(request):
-    return render(request, "register/signUpwarning.html")
+    if request.method == 'POST':
+
+        return redirect(reverse('loginViews'))
+    else:
+        return render(request, "register/signUpwarning.html")
