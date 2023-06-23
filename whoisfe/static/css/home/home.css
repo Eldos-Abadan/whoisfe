@@ -30,6 +30,8 @@ header h1 {
   margin-right: 5%;
   margin-left: 5%;
   width: 90%;
+  height: auto;
+  text-align: justify;
 }
 
 img {
@@ -84,10 +86,14 @@ input[type=button].active {
   margin-left: 5%;
   width: 90%;
   display: flex;
+  height: auto;
 
 }
 .main1 p{
   font-size: xx-large;
   margin: 15px;
   
+}
+.main1 a{
+  margin: 15px;
 }
