@@ -163,6 +163,10 @@
           <label for="three"><i class="fa fa-plus-square"></i> Хобби</label>
           <input id="four" name="tabs" type="radio">
           <label for="four"><i class="fa fa-envelope"></i> Туршлага</label>
+          <input checked id="zero" name="tabs" type="radio">
+          <label for="zero"><i class="fa fa-pencil-square-o"></i> Үндсэн мэдээлэл</label>
+          <input id="three" name="tabs" type="radio">
+          <label for="three"><i class="fa fa-plus-square"></i>Чадвар</label>
           <div class="panels">
             <div class="panel">
               <div class="example">
@@ -253,7 +257,7 @@
                   <div class="row">
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-8">
-                        <label for="floatingInput">Хот</label>
+                        <label for="floatingInput">Хот/аймаг/дүүрэг</label>
                         <input type="city" name="city" class="form-control form-control-sm" id="floatingCity"
                           placeholder="City">
                       </div>
@@ -388,9 +392,22 @@
                 </form>
               </div>
             </div>
+            
+          
           </div>
         </div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="headline">
+        <form id="cc-contact" class="form-group" action="" method="post">
+          <h1>Чадвар</h1>
 
+          <div class="form-check mt-3">
+            <textarea name="Message" cols="80" rows="10"></textarea>
+          </div>
+          <button name="submit" type="submit" id="contact-submit" data-submit="Saved">Save</button>
+        </form>
       </div>
     </div>
     <div class="wrapper2">
