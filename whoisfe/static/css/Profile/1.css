@@ -155,7 +155,7 @@ section {
 
 
 .cctabs {
-  width: 106%;
+  width: 143.5%;
   margin: 100px auto;
   margin-top: 0px;
 }
@@ -191,7 +191,9 @@ section {
 .cctabs input:nth-of-type(1):checked~.panels .panel:first-child,
 .cctabs input:nth-of-type(2):checked~.panels .panel:nth-child(2),
 .cctabs input:nth-of-type(3):checked~.panels .panel:nth-child(3),
-.cctabs input:nth-of-type(4):checked~.panels .panel:last-child {
+.cctabs input:nth-of-type(4):checked~.panels .panel:nth-child(4),
+.cctabs input:nth-of-type(5):checked~.panels .panel:nth-child(5),
+.cctabs input:nth-of-type(6):checked~.panels .panel:last-child {
   opacity: 1;
   /* -webkit-transition: .3d; */
   /*position:relative;*/
@@ -353,7 +355,9 @@ section {
 
 .unit-2,
 .unit-3,
-.unit-4 {
+.unit-4
+.unit-5
+.unit-6 {
   float: left;
   border-left: 10px solid transparent;
   box-sizing: border-box;
@@ -366,15 +370,21 @@ section {
 }
 
 .unit-2 {
-  width: 50%;
+  width: 80%;
 }
 
 .unit-3 {
-  width: 33.3%;
+  width: 60%;
 }
 
 .unit-4 {
-  width: 25%;
+  width: 40%;
+}
+.unit-5 {
+  width: 20%;
+}
+.unit-6 {
+  width: 15%;
 }
 .form-check select{
   width: 50px ;
