@@ -82,12 +82,12 @@ input[type=button].active {
   border-radius: 5px;
   margin-right: 5%;
   margin-left: 5%;
+  text-align: end;
   width: 90%;
   display: flex;
 
 }
 .main1 p{
   font-size: xx-large;
-  margin: 15px;
   
 }
