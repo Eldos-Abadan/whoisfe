@@ -1,13 +1,150 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        *{margin: 0;
+padding: 0;
+box-sizing: border-box;}
+.bi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0 , 0, 0 , 0.5);
+    position: sticky;
+    top: 0;
+}
+.bi ul{
+    display: flex;
+    list-style: none;
+    margin: 20px 0px;
+}
+.bi ul li{
+    font-family: century;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.bi ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 8px 25px;
+    transition: all .5s ease;
+}
+.bi ul li a:hover{
+    background-color: aqua;
+    color: black;
+    box-shadow: 0 0 10px  aqua;
+}
+/* Home Section */
+#home{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0,0, 0.5);
+    height: 840px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+#home::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* background-color:palevioletred ;
+    height: 900px;
+    width: 100%; */
+    z-index: -1;
+    /* opacity: .8; */
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    /*border: 2px solid bisque;*/
+    align-items: center;
+    position: absolute;
+    top: 30%;
+    right: 10%;
+}
+.headings{
+    font-family: century;
+    font-size: 3rem;
+    text-align: center;
+    margin: 40px 0px;
+    
+}
+.btn{
+    padding: 10px 35px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    outline: none;
+    transition: .6s ease;
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 5px white,0 0 10px white,0 0 15px white;
+font-weight: bold;
+}
+/*about section*/
+#about{
+    display: flex;
+flex-direction: column;
+box-sizing: border-box;
+padding: 20px;
+margin-bottom: 50px;
+
+}
+#pic{
+    display: flex;
+
+}
+#pic img{
+    width: 600px;
+    height: 400px;
+}
+#intro{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    padding: 10px;
+
+}
+#intro h2{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+#port{
+    display: flex;
+   flex-direction: column; 
+    background-color: rgba(0 , 0, 0 , 0.9);
+    color: white;
+    align-items: center;
+    padding: 20px;
+}
+.gallery{
+    display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+box-sizing: border-box;
+
+}
+.gallery img{
+    
+    width: 360px;
+    height: 240px;
+    margin: 10px;
+}
+#con p{
+    display: flex;
+    flex-direction: column;
+}
+    </style>
 </head>
 <body>
+    <a href="/week1"><h3>Back</h3></a>
     <nav class="bi">
         <ul>
         <li><a href="#home">Home</a></li>
@@ -27,7 +164,7 @@
     <section id="about">
         <h1 class="headings">About Me</h1>
         <div id="pic">  
-            <img src="үүоооо.webp" >
+            <img src= "{% static '/images/sarnai.webp' %}" > 
             <div id="intro">
                 <h2>Миний тухай</h2>
                 <h3>Би Мандах их сургуулийн 1-р курст суралцдаг. Увс аймгийн Өмнөговь суманд 12-р ангиа төгссөн.
@@ -35,27 +172,31 @@
                      Эзэн хичээвэл заяа хичээнэ гэдэг үгийг хэлэх дуртай.
                      Миний хамгийн дургүй үйлдэл бол хүнийг үл ойшоосон байдал. Яагаад гэвэл энэ байдал 
                      надад их эвгүй мэдрэмж төрүүлдэг.
-                     Мэргэжилдээ эзэн болсон боловсон хүчин болж төгсөхийг хүсэж байна.
-                    <br> Утасны дугаар : 90210005  <br>
-                    Гэрийн хаяг : СХД Хилчин хотхон <br>
-                    Нас : 19 <br>
-                    Боловсрол : Бүрэн дунд <br>
-                    Мэргэжил : Оюутан <br>
-                    Хобби : Сагс болон хөгжим тоглох <br>
-                    Зуршил : Жоохон залхуу <br>
-                </h3>
+                     Мэргэжилдээ эзэн болсон боловсон хүчин болж төгсөхийг хүсэж байна. </h3>
+                    <ul style="margin-left: 40px;">
+                        <li>Баримталдаг зарчим : Өдөр бүрийг үр бүтээлтэй өнгөрөөх</li>
+                        <li>Утасны дугаар : 90210005</li> 
+                        <li>Гэрийн хаяг : СХД Хилчин хотхон </li> 
+                            <li>Нас : 19 </li> 
+                                <li>Боловсрол : Бүрэн дунд </li> 
+                                    <li>Мэргэжил : Оюутан </li> 
+                                        <li>Хобби : Сагс болон хөгжим тоглох </li> 
+                                            <li>  Зуршил : Жоохон залхуу</li> 
+                                        <li>Facebook : Sarnai Kh</li>
+                                    <li>instagram : sarnai.kh.75</li>
+                                </ul> 
             </div>
         </div>
     </section>
     <section id="port">
         <h1 class="headings">Portfolio</h1>
         <div class="gallery">
-           <a href="https://www.facebook.com/"> <img src="./img/hus.png"></a>
-           <a href="https://www.youtube.com/"><img src="./img/na.png" ></a> 
-            <img src="./img/nam.png" alt="">
-            <img src="./img/sur.png" alt="">
-            <a href="https://www.instagram.com/"> <img src="./img/sar.png" alt=""></a> 
-            <img src="./img/6.png" alt="">
+           <a href="https://www.facebook.com/"> <img src= "{% static '/images/img/hus.png' %}"></a>
+           <a href="https://www.youtube.com/"><img src= "{% static '/images/img/na.png' %}" ></a> 
+            <img src= "{% static '/images/img/nam.png' %}" alt="">
+            <img src="{% static '/images/img/sur.png' %}" alt="">
+            <a href="https://www.instagram.com/"> <img src="{% static '/images/img/sar.png' %}" alt=""></a> 
+            <img src="{% static '/images/img/6.png' %}" alt="">
         </div>
     </section>
    

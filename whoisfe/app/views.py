@@ -1,18 +1,19 @@
 from django.shortcuts import render
 
-# Create your views here.
-
 def homeView(request):
-    return render(request,"week1/bumaa/cv.html")
+    return render(request,"home/mycv.html")
 
 
 def week1View(request):
-    return render(request,"week1/bumaa/cv.html")
+    return render(request,"week1/tm1.html")
 
-
-# def homeView(request):
+def magnai(request):
+    return render(request,"week1/Magnai/index.html")
+def tuugii(request):
+    return render(request,"week1/HaTuguldur/webcv.html")
+def odke(request):
     return render(request,"week1/odontungalag/odkeCV.html")
-
-
-def week1View(request):
-    return render(request,"week1/odontungalag/odkeCV.html")
+def xuslen(request):
+    return render(request,"week1/Xuslen/XuslnCV.html")
+def sarnai(request):
+    return render(request,"week1/Sarnai/index.html")

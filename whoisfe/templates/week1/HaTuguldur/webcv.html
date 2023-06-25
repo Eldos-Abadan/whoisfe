@@ -1,11 +1,13 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 
+  
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="{% static 'css/styles.css'%}">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet"
@@ -17,10 +19,11 @@
 </head>
 
 <body>
+  <a href="/week1">Back</a>
   <div class="main">
     <div class="left">
       <br>
-      <div class="profile-img"><img src="1.jpg" class="img"></div>
+      <div class="profile-img"><img src=" {%static '/images/tuguldur/1.jpg' %}"class="img"></div>
       <div class="box-1">
         <div class="heading">
           <p>Contact</p>
@@ -34,22 +37,22 @@
           <p>Language</p>
         </div>
 
-        <p class="p1"> <img src="html.jpg" class="img1"></span>html,css
+        <p class="p1"> <img src="{% static '/images/tuguldur/location.png' %}" class="img1"></span>html,css
         <div class="skill-container">
           <div class="skill html"></div>
         </div>
         </p>
-        <p class="p1"><img src="react.jpg" class="img1">react
+        <p class="p1"><img src="{% static 'images/tuguldur/react.jpg'%}" class="img1">react
         <div class="skill-container">
           <div class="skill react"></div>
         </div>
         </p>
-        <p class="p1"><img src="python.jpg" class="img1">python
+        <p class="p1"><img src="{% static 'images/tuguldur/python.jpg' %}" class="img1">python
         <div class="skill-container">
           <div class="skill python"></div>
         </div>
         </p>
-        <p class="p1"><img src="js.jpg" class="img1">js
+        <p class="p1"><img src="{% static 'images/tuguldur/js.jpg'%}" class="img1">js
         <div class="skill-container">
           <div class="skill js"></div>
         </div>
@@ -90,7 +93,7 @@
             <p>Social address</p>
           </div>
   
-          <p class="p1"> <img src="qr.png" class="qr">
+          <p class="p1"> <img src="{% static 'images/tuguldur/qr.png'%}" class="qr">
           <div class="skill-container">
             <div class="skill-fb"></div>
           </div>
