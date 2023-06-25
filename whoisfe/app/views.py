@@ -17,3 +17,5 @@ def xuslen(request):
     return render(request,"week1/Xuslen/XuslnCV.html")
 def sarnai(request):
     return render(request,"week1/Sarnai/index.html")
+def enkhzul(request):
+    return render(request,"week1/Enkhzul/index.html")
