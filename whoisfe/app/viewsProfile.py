@@ -7,4 +7,4 @@ def profileViews(request):
     #     return redirect("homeView")    
     # htmlRuuDataDamjuulah = {}
     # htmlRuuDataDamjuulah = request.session['userData']
-    return render(request, "Profile/old_1.html") #htmlRuuDataDamjuulah
+    return render(request, "Profile/1.html") #htmlRuuDataDamjuulah
