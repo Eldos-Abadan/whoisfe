@@ -27,6 +27,7 @@
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
   <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css" />
   <link href="{% static '/css/dashboard/pe-icon-7-stroke.css'%}" rel="stylesheet" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -156,17 +157,18 @@
       <div class="wrapper">
         <div class="cctabs"> 
           <input checked id="one" name="tabs" type="radio">
-          <label for="one"><i class="fa fa-pencil-square-o"></i> Үндсэн мэдээлэл</label>
+          <label for="one"><i class='bx bx-user-circle' style="font-size: 20px ;margin-right: 10px;"></i> Үндсэн мэдээлэл</label>
           <input checked id="two" name="tabs" type="radio">
           <label for="two"><i class="fa fa-pencil-square-o"></i> Хувийн мэдээлэл</label>
           <input id="three" name="tabs" type="radio" value="Two">
           <label for="three"><i class="fa fa-magic"></i> Гэр бүлийн мэдээлэл</label>
           <input id="four" name="tabs" type="radio">
-          <label for="four"><i class="fa fa-plus-square"></i> Боловсрол</label>
+          <label for="four"><i class='bx bxs-graduation' style="font-size: 20px ;margin-right: 10px;"></i> Боловсрол</label>
           <input id="five" name="tabs" type="radio">
           <label for="five"><i class="fa fa-envelope"></i> Туршлага</label>
           <input id="six" name="tabs" type="radio">
-          <label for="six"><i class="fa fa-envelope"></i>Чадвар </label>
+          <label for="six"><i class="fa fa-plus-square"></i>Чадвар </label>
+            <!-- ###### Үндсэн мэдээллийн хэсэг ###### -->
           <div class="panels">
             <div class="panel">
               <div class="example">
@@ -177,15 +179,15 @@
                         <label for="floatingInput"> Овог</label>
                         <input type="name" name="fistname" class="form-control form-control-sm" id="floatingFname"
                           placeholder="Овог">
-
                       </div>
                     </div>
+
+
                     <div class="col-sm-3">
                       <div class="form-floating mt-3">
                         <label for="floatingInput">Нэр</label>
                         <input type="name" name="lastname" class="form-control form-control-sm" id="floatingLname"
                           placeholder="Нэр">
-
                       </div>
                     </div>
                   </div>
@@ -232,7 +234,7 @@
               </div>
               </form>
             </div>
-
+                <!-- ######Хувийн мэдээллийн хэсэг###### -->
             <div class="panel">
               <div class="example">
                 <div class="row">
@@ -271,7 +273,6 @@
                         </div>
                       </div>
                     </div>
-
 
 
                     <div class="row">
@@ -331,9 +332,8 @@
                 </div>
               </div>
               </div>
-
-
-              
+                       <!-- ############################################ -->
+                        <!-- ####### Гэр бүлийн мэдээллийн хэсэг ######## -->
               <div class="panel">
                 <div class="headline">
                   <form id="cc-contact-2" class="form-group" action="" method="post">
@@ -348,13 +348,13 @@
                               <option>-/-</option>
                               <option>өвөө</option>
                               <option>эмээ</option>
-                              <option >эхнэр</option>
-                              <option >нөхөр</option>
-                              <option>аав</option>
-                              <option> ээж </option>
+                              <option >аав</option>
+                              <option >ээж</option>
+                              <option>ах</option>
                               <option> эгч </option>
-                              <option> ах</option>
-                              <option> дүү</option>
+                              <option> дүү </option>
+                              <option>эхнэр</option>
+                              <option> нөхөр</option>
                             </select>
                           </td>
                         </tr>
@@ -369,7 +369,6 @@
                               <option>-/-</option>
                               <option value="">гэрлэсэн</option>
                               <option> гэрлээгүй</option>
-                              <option> салсан</option>
                             </select>
                           </td>
                         </tr>
@@ -409,7 +408,8 @@
                   </form>
                 </div>
               </div>
-
+                     <!-- ################################## -->
+                     <!-- ######## Боловсрол ########## -->
               <div class="panel">
                 <div class="headline">
                   <form id="cc-contact-2" class="form-group" action="" method="post">
@@ -421,7 +421,7 @@
                           <td style="color: red; text-align: center; width: 20px;"> * </td>
                           <td style="width: 100px;">
                             <select>
-                              <option> </option>
+                              <option> -/- </option>
                               <option> бага </option>
                               <option> Бүрэн Дунд </option>
                               <option> Суурь </option>
@@ -441,7 +441,7 @@
                           <td style="color: red; text-align: center; width: 20px;"> * </td>
                           <td style="width: 100px;">
                             <select>
-                              <option></option>
+                              <option>-/-</option>
                               <option> Магистр </option>
                               <option> Доктор </option>
                               <option> Профессор</option>
@@ -474,8 +474,8 @@
                   </form>
                 </div>
               </div>
-               
-
+                        <!-- #################################### -->
+                        <!-- ############ Туршлага ############## -->
               <div class="panel">
                 <div class="headline">
                   <form id="cc-contact-2" class="form-group" action="" method="post">
@@ -534,8 +534,8 @@
                   </form>
                 </div>
               </div>
-              
-
+                        <!-- ######################################### -->
+                        <!-- ############ Чадвар ##################### -->
               <div class="panel">
                 <div class="headline">
                   <form id="cc-contact" class="form-group" action="" method="post">
@@ -548,6 +548,7 @@
                   </form>
                 </div>
               </div>
+                      <!-- ################################################# -->
             </div>
           </div>
         </div>

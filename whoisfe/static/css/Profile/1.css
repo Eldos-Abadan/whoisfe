@@ -155,7 +155,7 @@ section {
 
 
 .cctabs {
-  width: 143.5%;
+  width: 122%;
   margin: 100px auto;
   margin-top: 0px;
 }
@@ -173,7 +173,7 @@ section {
   cursor: pointer;
   float: left;
   margin-right: 2px;
-  padding: 0.5% 2%;
+  padding: 0.5% 1%;
   font-size: 16px;
   font-weight: bold;
 }
@@ -183,7 +183,7 @@ section {
 }
 
 .cctabs input:checked+label {
-  background: #fff;
+  background: #c2b0b0;
   color: #000000;
   border-top: solid 2px #ebb704;
 }
