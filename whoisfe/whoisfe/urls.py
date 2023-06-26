@@ -4,6 +4,7 @@ from app import views
 
 urlpatterns = [
     path("", views.homeView, name="homeView"),
+    path("week1/bilguun", views.bilguun, name="bilguun"),
     path("week1/", views.week1View, name="week1View"),
     path("week1/home/", views.homeView, name="homm"),
     path("week1/magnai/", views.magnai, name="magnai"),

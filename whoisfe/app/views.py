@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 
+
 def homeView(request):
     return render(request, "home/mycv.html")
 
@@ -40,6 +41,11 @@ def Bayrbat(request):
 
 def eldos(request):
     return render(request,"week1/Eldos/index.html")
+def home(request):
+    return render(request, "week1/home1.html")
+
+def bilguun(request):
+    return render(request, "week1/N.bilguun/cv.html")
 
 def nomin(request):
     return render(request,"week1/Nomin-Erdene(2)/index.html")
