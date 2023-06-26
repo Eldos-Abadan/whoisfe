@@ -8,9 +8,9 @@
     <title>Creative CV</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link href="{% static 'css/css.e/aos.css?ver=1.1.0' %}" rel="stylesheet">
-    <link href="{% static 'css/css.e/bootstrap.min.css?ver=1.1.0' %}" rel="stylesheet">
-    <link href="{% static 'css/css.e/main.css?ver=1.1.0' %}" rel="stylesheet">
+    <link href="{% static 'css/css.e/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'css/css.e/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/css.e/main.css' %}" rel="stylesheet">
     <noscript>
       <style type="text/css">
         [data-aos] {
@@ -20,6 +20,7 @@
       </style>
     </noscript>
   </head>
+  <a href="/week1"><h3>Back</h3></a>
   <body id="top">
     <header>
       <div class="profile-page sidebar-collapse">
@@ -46,7 +47,7 @@
 <div class="profile-page">
   <div class="wrapper">
     <div class="page-header page-header-small" filter-color="green">
-      <div class="page-header-image" data-parallax="true" style="background-image: url('images/pexels-photo-1446624.jpeg')"></div>
+      <div class="page-header-image" data-parallax="true" style="background-image: url('images/zurag/pexels-photo-1446624.jpeg' )"><a href="#"><img src="{% static 'images/zurag/pexels-photo-1446624.jpeg' %}" alt="Image"/></a></div>
       <div class="container">
         <div class="content-center">
           <div class="cc-profile-image"><a href="#"><img src="{% static 'images/zurag/profile.jpg' %}" alt="Image"/></a></div>
@@ -376,7 +377,7 @@
   </div>
 </div>
 <div class="section" id="contact">
-  <div class="cc-contact-information" style="background-image: url( 'images/zurag/location.png')">
+  <div class="cc-contact-information" style="background-image: url( 'images/zurag/location.png')"><img src="{% static 'images/zurag/location.png' %}" alt="Image"/>
     <div class="container">
       <div class="cc-contact">
         <div class="row">
@@ -450,11 +451,11 @@
         <p>&copy; Creative CV. All rights reserved.<br>Design - <a class="credit" href="https://templateflip.com" target="_blank">TemplateFlip</a></p>
       </div>
     </footer>
-    <script src="js/core/jquery.3.2.1.min.js?ver=1.1.0"></script>
-    <script src="js/core/popper.min.js?ver=1.1.0"></script>
-    <script src="js/core/bootstrap.min.js?ver=1.1.0"></script>
-    <script src="js/now-ui-kit.js?ver=1.1.0"></script>
-    <script src="js/aos.js?ver=1.1.0"></script>
-    <script src="scripts/main.js?ver=1.1.0"></script>
+    <script src="{%static 'js/enkhzul/js/core/jquery.3.2.1.min.js' %}"></script>
+    <script src="{%static 'js/enkhzul/js/core/popper.min.js' %}"></script>
+    <script src="{%static 'js/enkhzul/js/core/bootstrap.min.js' %}"></script>
+    <script src="{%static 'js/enkhzul/js/now-ui-kit.js' %}"></script>
+    <script src="{%static 'js/enkhzul/js/aos.js' %}"></script>
+    <script src="{%static 'js/enkhzul/scripts/main.js' %}"></script>
   </body>
 </html>
