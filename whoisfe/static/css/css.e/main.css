@@ -5241,7 +5241,7 @@ Created using IcoMoon - icomoon.io
 .cc-reference .carousel-inner {
   box-shadow: none; }
 
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   .cc-reference .cc-reference-header {
     text-align: center; }
   .cc-reference .carousel-indicators {
