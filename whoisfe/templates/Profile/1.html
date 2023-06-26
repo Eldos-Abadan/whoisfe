@@ -40,7 +40,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Хувийн мэдээлэллл</a>
+          <a class="navbar-brand" href="#">Хувийн мэдээлэл</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-left">
@@ -233,19 +233,7 @@
                 </form>
               </div>
             </div>
-            <div class="panel">
-              <div class="example">
-                <form id="cc-contact" class="form-group" action="" method="post">
-                  <div class="row">
-                    <div class="col-sm-5">
-                      <div class="form-floating mt-3">
-                        <label for="floatingInput">Утасны дугаар: </label>
-                        <input type="tel" name="phone-number" class="form-control" step="10" id="floatingNumber"
-                          placeholder="Number">
 
-                      </div>
-                    </div>
-                  </div>
 
                   <div class="row">
                     <div class="col-sm-8 mt-3">
@@ -262,6 +250,7 @@
                     </div>
                   </div>
 
+
                   <div class="row">
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-3">
@@ -273,13 +262,28 @@
                     </div>
                   </div>
 
+
+            <div class="panel">
+              <div class="example">
+                <form id="cc-contact" class="form-group" action="" method="post">
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <div class="form-floating mt-3">
+                        <label for="floatingInput">Утасны дугаар: </label>
+                        <input type="tel" name="phone-number" class="form-control" step="10" id="floatingNumber"
+                          placeholder="Number">
+                      </div>
+                    </div>
+                  </div>
+
+
+
                   <div class="row">
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-3">
                         <label for="floatingInput">Миний тухай</label>
                         <input type="text" name="Address" class="form-control form-control-lg" id="floatingAddress"
                           placeholder="Address">
-
                       </div>
                     </div>
                   </div>
@@ -303,7 +307,20 @@
                       </div>
                     </div>
                   </div>
+                  
 
+
+                   <div class="row">
+                    <div class="col-sm-8 mt-3">
+                      <div class="form-floating mt-3">
+                        <label for="floatingInput">Хобби</label>
+                  <div class="form-check mt-3">
+                    <textarea name="Message" cols="80" rows="10"></textarea>
+                  </div>
+                 </div>
+                </div>
+              </div>
+                  
                   <div class="row">
                     <div class="col-sm-12 mt-3 mb-4" class="col-sm-2">
                       <div class="btn-group mr-2 " role="group" aria-label="First group">
@@ -382,13 +399,36 @@
                 </form>
               </div>
             </div>
-            <div class="panel">
+
+
+             <div class="panel">
               <div class="headline">
                 <form id="cc-contact" class="form-group" action="" method="post">
-                  <h1>Hobby</h1>
-
                   <div class="form-check mt-3">
-                    <textarea name="Message" cols="80" rows="10"></textarea>
+                    <h1 style="float: left;">Гэр бүлийн байдал</h1> <br> <br> <br>
+                    <div>
+                      Таны хэн болох <br>
+                      <select>
+                         <option>өвөө</option>
+                          <option>эмээ</option>
+                        <option>аав</option>
+                        <option> ээж </option>
+                        <option> эгч </option>
+                        <option> ах</option>
+                        <option> дүү</option>
+                      </select> <br> <br>
+                      Гишүүдийн тоо <br>
+                      <input type="text" name="family" class="form-control form-control-sm" id="floatingEmail" placeholder="Гишүүдийн тоо"> <br> <br>
+                      Ажил/албан тушаал <br>
+                      <input type="text"> <br> <br>
+                      Гэр бүлийн байдал <br>
+                       <select>
+                         <option>--/--</option>
+                          <option>гэрлэсэн</option>
+                        <option>гэрлээгүй</option>
+                        <option> салсан</option>
+                      </select> <br> <br>
+                    </div>
                   </div>
                   <button name="submit" type="submit" id="contact-submit" data-submit="Saved">Save</button>
                 </form>
