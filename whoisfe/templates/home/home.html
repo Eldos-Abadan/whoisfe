@@ -1,59 +1,66 @@
-{% load static %}
+{%load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Home</title>
     <link rel="stylesheet" href="{% static '/css/home/home.css'%}">
 </head>
-<body> 
-    <div class="bd">
-        <header>
-            <div class="head1">
-                <img src="{% static '/images/week1/l.png'%}" alt="">
-                <h1>Who is</h1> 
-            </div>
-            <div class="button">
-                    <!-- <img src="https://cdn.greensoft.mn/uploads/site/1017/site_config/header/3e9449bd6f715db5aaa304f3cf1bb6049ac71b98.png" class="img2"> -->
-                    <input type="button" value="Нэвтрэх" onclick="myFunction()">
-                    <input type="button" value="Бүртгүүлэх"onclick="myFunctionSignup()">
-                    
-            </div>
-        </header> <br><hr><br> <br>
-        <main class="main">
-            <section id="about">
-                <h3>Танилцуулга</h3>
-                <p>Өөрийн танилцуулга /CV/ болон нэрийн хуудасны бэлэн дизайн template зохион бүтээж техник технологид 
+<body>
+<div class="bd">
+    <header>
+        <div class="head1">
+            <img src="{% static '/images/week1/l.png'%}" alt="">
+            <h1>Who is</h1>
+        </div>
+        <div class="button">
+            <input type="button" value="Нэвтрэх" onclick="myFunction()">
+            <input type="button" value="Бүртгүүлэх" onclick="myFunctionSignup()">
+
+        </div>
+    </header>
+    <hr>
+    <main class="main">
+        <section id="about">
+            <h3>Танилцуулга</h3>
+            <p>Өөрийн танилцуулга /CV/ болон нэрийн хуудасны бэлэн дизайн template зохион бүтээж техник технологид
                 суурилсан шинэ систем нэвтрүүлэх.</p>
-            </section>
-            <section id="about">
-                <h3>Бидний зорилго</h3>
-                <p>Хэрэглэгч өөрийн мэдээллийг оруулаад өөрийн хүссэн загвар дизайн, өнгө  төрхийг 
+        </section>
+        <section id="about">
+            <h3>Бидний зорилго</h3>
+            <p>Хэрэглэгч өөрийн мэдээллийг оруулаад өөрийн хүссэн загвар дизайн, өнгө  төрхийг
                 бүрдүүлсэн танилцуулга /CV/ болон нэрийн хуудсыг цахимаар гарган  авах боломжийг олгоно.</p>
-            </section>
-            <section id="about">
-                <h3>Үр дүн</h3>
-                <p>Хүмүүсийн ажлыг хөнгөвчлөн хэзээ ч хаанаас ч байршуулсан системээсээ 
-                цахимаар танилцуулгаа хэрэгтэй үедээ татан авч, цаг хугацаагаа хэмнэнэ.		</p>
-            </section>
-        </main><br>
-        <main class="main1">
-           <p>CV болон NC template-үүд</p><br> <br>
-           <a href="{% url 'justcv'%}"><img style="height: 300px; width: auto;" src="{%static 'images/cvss.png'%}" alt=""></a><br>
-           <a href="{% url 'justnc'%}"><img style="height: 300px; width: auto;" src="{%static 'images/ncss.png'%}" alt=""></a>
-        </main> <br>
-        <footer>
+        </section>
+        <section id="about">
+            <h3>Үр дүн</h3>
+            <p>Хүмүүсийн ажлыг хөнгөвчлөн хэзээ ч хаанаас ч байршуулсан системээсээ
+                цахимаар танилцуулгаа хэрэгтэй үедээ татан авч, цаг хугацаагаа хэмнэнэ.</p>
+        </section>
+    </main>
+    <br>
+    <main class="main1">
+        <p>CV болон NC template-үүд</p>
+        <a href="{% url 'justcv'%}"><img style="max-height: 300px; width: auto;" src="{%static 'images/cvss.png'%}"
+                                           alt=""></a>
+        <a href="{% url 'justnc'%}"><img style="max-height: 300px; width: auto;" src="{%static 'images/ncss.png'%}"
+                                           alt=""></a>
+    </main>
+    <br>
+    <footer>
         {% include "../includes/footer.html" %}
-        </footer>
+    </footer>
 
-    </div>
+</div>
 
 
-    <script>
-        function myFunction() {
-    window.location.href="{% url 'loginViews'%}";
-  }
-  function myFunctionSignup(){
-      window.location.href="{% url 'registerViews'%}";
-  }
-    </script>
+<script>
+    function myFunction() {
+        window.location.href = "{% url 'loginViews'%}";
+    }
+
+    function myFunctionSignup() {
+        window.location.href = "{% url 'registerViews'%}";
+    }
+</script>
+
+</body>
 </html>
