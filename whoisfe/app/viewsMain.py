@@ -7,10 +7,10 @@ def walletView(request):
   return render(request, "wallet/wallet.html")
 
 def justCVViews(request): 
-  return render(request, "justcv/just.html")
+  return render(request, "templates/just.html")
 
 def justNCViews(request): 
-  return render(request, "justbc/bc.html")
+  return render(request, "templates/bc.html")
 
 def homeLogoutView(request): 
     checkSession(request)    
