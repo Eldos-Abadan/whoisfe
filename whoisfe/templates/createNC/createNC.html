@@ -98,6 +98,10 @@
 <script src="{% static '/js/dashboard/demo.js'%}"></script>
 
 <script type="text/javascript">
+  $(document).ready(function() {
+        $("#CreateNcMenuItem").addClass("active");
+        demo.initChartist();
+    });
   $(document).ready(function () {
     demo.initChartist();
 

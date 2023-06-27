@@ -224,6 +224,33 @@
 <script src="{% static '/js/dashboard/light-bootstrap-dashboard.js'%}"></script>
 
 
-<script src="{% static '/js/dashboard/demo.js'%}"></script>
+<script src="{% static '/js/dashboard/demo.js'%}">
+    $(document).ready(function() {
+        $("#WalletMenuItem").addClass("active");
+        demo.initChartist();
+
+        $.notify({
+            icon: "pe-7s-gift",
+            message: "Welcome to WhoIs Dashboard</b>"
+        }, {
+            type: "info",
+            timer: 4000
+        });
+    });
+$(document).ready(function () {
+    demo.initChartist();
+
+    $.notify(
+      {
+        icon: "pe-7s-gift",
+        message: "Welcome to WhoIs Dashboard</b>",
+      },
+      {
+        type: "info",
+        timer: 4000,
+      }
+    );
+  });
+</script>
 
 </html>
