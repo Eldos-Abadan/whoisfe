@@ -14,7 +14,7 @@ STATIC_DIR =        os.path.join(BASE_DIR, "static/")
 SECRET_KEY = 'django-insecure-%po15ltk=5s4^4rb==#wow8(@lp!wf!5i+i_y+q16og&e*m$v6'
 
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"    
 ]
@@ -73,7 +73,11 @@ STATICFILES_DIRS = (
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME':     'dbwhois',
+        'USER':     'whois',
+        'PASSWORD': 'whoispass',
+        'HOST':     '202.131.254.138',
+        'PORT':     '5938',
     }
 }
 
