@@ -11,11 +11,11 @@ import base64
 # ###############################
 
 
-BASE_DIR =          Path(__file__).resolve().parent.parent
+BASE_DIR    =        Path(__file__).resolve().parent.parent
 
-templateVar =       os.path.join(BASE_DIR,"templates")
+templateVar =        os.path.join(BASE_DIR,"templates")
 
-STATIC_DIR =        os.path.join(BASE_DIR, "static/")
+STATIC_DIR  =        os.path.join(BASE_DIR, "static/")
 
 
 
@@ -82,7 +82,7 @@ STATICFILES_DIRS = (
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME'  : BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -128,11 +128,11 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-pgDbName = "dbwhois"
-pgUser = "uwhois"
-pgHost = "202.131.254.138"
+pgDbName   = "dbwhois"
+pgUser     = "uwhois"
+pgHost     = "202.131.254.138"
 pgPassword = "whoispass"
-pgPort = "5938"
+pgPort     = "5938"
 
 
 # bidnii nemsen function
@@ -196,11 +196,11 @@ def connectDB():
     
 
     con = psycopg2.connect(
-        dbname=pgDbName,
-        user=pgUser,
-        host=pgHost,
-        password=pgPassword,
-        port=pgPort,
+        dbname   =  pgDbName,
+        user     =  pgUser,
+        host     =  pgHost,
+        password =  pgPassword,
+        port     =  pgPort,
     )
     return con
 
@@ -216,18 +216,18 @@ def disconnectDB(con):
 #     # Check if the username already exists in the User model
 #     return User.objects.filter(username=username).exists()
 def emailExists(email):
-    myCon = connectDB()
+    myCon      = connectDB()
     userCursor = myCon.cursor()
     userCursor.execute('SELECT COUNT(*) FROM "f_user" WHERE "email" = %s', (email,))
-    result = userCursor.fetchone()
+    result     = userCursor.fetchone()
     userCursor.close()
     disconnectDB(myCon)
     return result[0] > 0
 def userNameExists(username):
-    myCon = connectDB()
+    myCon      = connectDB()
     userCursor = myCon.cursor()
     userCursor.execute('SELECT COUNT(*) FROM "f_user" WHERE "userName" = %s', (username,))
-    result = userCursor.fetchone()
+    result     = userCursor.fetchone()
     userCursor.close()
     disconnectDB(myCon)
     return result[0] > 0
