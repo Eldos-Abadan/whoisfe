@@ -203,7 +203,7 @@
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-8">
                         <label for="floatingPassword">Нууц үг</label>
-                        <input type="password" name="password" class="form-control form-control-sm"
+                        <input type="password" name="password" class="form-control form-control-sm" autocomplete="false" readonly onfocus="this.removeAttribute('readonly');"
                           id="floatingPassword" placeholder="Нууц үг">
                       </div>
                     </div>
@@ -212,7 +212,7 @@
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-8">
                         <label for="floatingPassword">Нууц үг солих</label>
-                        <input type="password" name="changepassword" class="form-control form-control-sm"
+                        <input type="password" name="changepassword" class="form-control form-control-sm" autocomplete="false" readonly onfocus="this.removeAttribute('readonly');"
                           id="floatingPassword" placeholder="Нууц үг">
                       </div>
                     </div>
@@ -221,7 +221,7 @@
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-8">
                         <label for="floatingPassword">Шинэ нууц үг</label>
-                        <input type="password" name="newpassword" class="form-control form-control-sm"
+                        <input type="password" name="newpassword" class="form-control form-control-sm" autocomplete="false" readonly onfocus="this.removeAttribute('readonly');"
                           id="floatingPassword" placeholder="Нууц үг">
                       </div>
                     </div>
@@ -230,7 +230,7 @@
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-8">
                         <label for="floatingUsername">Хэрэглэгчийн нэр</label>
-                        <input type="text" name="username" class="form-control form-control-sm" id="floatingUsername"  autocomplete="false" readonly onfocus="this.removeAttribute('readonly');"
+                        <input type="text" name="username" class="form-control form-control-sm" id="floatingUsername"  autocomplete="false" 
                           value="{{ userName }}">
                       </div>
                     </div>
