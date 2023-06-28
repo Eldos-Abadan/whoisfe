@@ -179,14 +179,14 @@
                       <div class="form-floating mt-3">
                         <label for="floatingFname">Овог</label>
                         <input type="text" name="firstname" class="form-control form-control-sm" id="floatingFname"
-                          placeholder="Овог" value="{{ user_info.firstName }}">
+                          placeholder="Овог" value="{{ firstName }}">
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-floating mt-3">
                         <label for="floatingLname">Нэр</label>
                         <input type="text" name="lastname" class="form-control form-control-sm" id="floatingLname"
-                          placeholder="Нэр" value="{{ user_info.lastName }}">
+                          placeholder="Нэр" value="{{ lastName }}">
                       </div>
                     </div>
                   </div>
@@ -195,7 +195,7 @@
                       <div class="form-floating mt-8">
                         <label for="floatingEmail">Имэйл хаяг</label>
                         <input type="email" name="email" class="form-control form-control-sm" id="floatingEmail"
-                          placeholder="Имэйл" value="{{ user_info.email }}">
+                          placeholder="Имэйл" value="{{ email }}">
                       </div>
                     </div>
                   </div>
@@ -230,8 +230,8 @@
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-8">
                         <label for="floatingUsername">Хэрэглэгчийн нэр</label>
-                        <input type="text" name="username" class="form-control form-control-sm" id="floatingUsername"
-                          placeholder="Хэрэглэгчийн нэр" value="{{ user_info.username }}">
+                        <input type="text" name="username" class="form-control form-control-sm" id="floatingUsername"  autocomplete="off"
+                          value="{{ username }}">
                       </div>
                     </div>
                   </div>
@@ -576,7 +576,7 @@
                     <h1>Чадвар</h1>
 
                     <div class="form-check mt-3">
-                      <textarea name="Message" cols="80" rows="10"></textarea>
+                      <textarea name="Message" cols="80" rows="10">{{ userId }}</textarea>
                     </div>
                     <input type="button" style="font-size: 20px ;" name="save" value="Хадгалах">
                   </form>
