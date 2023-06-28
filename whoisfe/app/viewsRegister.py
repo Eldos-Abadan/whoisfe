@@ -6,6 +6,7 @@ from django.contrib import messages
 from whoisfe.settings import *
 
 
+
 def registerViews(request):
     if request.method == 'POST':
         try:

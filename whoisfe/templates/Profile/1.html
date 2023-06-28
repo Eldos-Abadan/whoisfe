@@ -173,87 +173,78 @@
             <div class="panel">
               <div class="example">
                 <form id="cc-contact" class="form-group" action="" method="post">
+                  {% csrf_token %}
                   <div class="row">
                     <div class="col-sm-3">
                       <div class="form-floating mt-3">
-                        <label for="floatingInput"> Овог</label>
-                        <input type="name" name="fistname" class="form-control form-control-sm" id="floatingFname"
-                          placeholder="Овог">
+                        <label for="floatingFname">Овог</label>
+                        <input type="text" name="firstname" class="form-control form-control-sm" id="floatingFname"
+                          placeholder="Овог" value="{{ user_info.firstName }}">
                       </div>
                     </div>
-
-
                     <div class="col-sm-3">
                       <div class="form-floating mt-3">
-                        <label for="floatingInput">Нэр</label>
-                        <input type="name" name="lastname" class="form-control form-control-sm" id="floatingLname"
-                          placeholder="Нэр">
+                        <label for="floatingLname">Нэр</label>
+                        <input type="text" name="lastname" class="form-control form-control-sm" id="floatingLname"
+                          placeholder="Нэр" value="{{ user_info.lastName }}">
                       </div>
                     </div>
                   </div>
-
-
                   <div class="row">
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-8">
-                        <label for="floatingInput">Имэйл хаяг</label>
+                        <label for="floatingEmail">Имэйл хаяг</label>
                         <input type="email" name="email" class="form-control form-control-sm" id="floatingEmail"
-                          placeholder="Имэйл">
+                          placeholder="Имэйл" value="{{ user_info.email }}">
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-8">
-                        <label for="floatingInput">Нууц үг</label>
+                        <label for="floatingPassword">Нууц үг</label>
                         <input type="password" name="password" class="form-control form-control-sm"
                           id="floatingPassword" placeholder="Нууц үг">
                       </div>
                     </div>
-                    <div class="col-sm-2"></div>
                   </div>
                   <div class="row">
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-8">
-                        <label for="floatingInput">Нууц үг солих</label>
+                        <label for="floatingPassword">Нууц үг солих</label>
                         <input type="password" name="changepassword" class="form-control form-control-sm"
                           id="floatingPassword" placeholder="Нууц үг">
                       </div>
                     </div>
-                    <div class="col-sm-2"></div>
                   </div>
-                  
                   <div class="row">
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-8">
-                        <label for="floatingInput">Шинэ нууц үг</label>
+                        <label for="floatingPassword">Шинэ нууц үг</label>
                         <input type="password" name="newpassword" class="form-control form-control-sm"
                           id="floatingPassword" placeholder="Нууц үг">
                       </div>
                     </div>
-                    <div class="col-sm-2"></div>
                   </div>
-                  
-
-              </div>
-              <div class="row">
-                <div class="col-sm-8 mt-3">
-                  <div class="form-floating mt-8">
-                    <label for="floatingInput">Хэрэглэгчийн нэр</label>
-                    <input type="username" name="username" class="form-control form-control-sm" id="floatingUsername"
-                      placeholder="Хэрэглэгчийн нэр">
+                  <div class="row">
+                    <div class="col-sm-8 mt-3">
+                      <div class="form-floating mt-8">
+                        <label for="floatingUsername">Хэрэглэгчийн нэр</label>
+                        <input type="text" name="username" class="form-control form-control-sm" id="floatingUsername"
+                          placeholder="Хэрэглэгчийн нэр" value="{{ user_info.username }}">
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="col-sm-2"></div>
-              </div>
-              <div class="row">
-                <div class="col-sm-12 mt-3 mb-4" class="col-sm-2">
-                  <div class="btn-group mr-2 " role="group" aria-label="First group">
-                    <input type="button" style="font-size: 20px;" name="save" value="Хадгалах">
+                  <div class="row">
+                    <div class="col-sm-12 mt-3 mb-4">
+                      <div class="btn-group mr-2" role="group" aria-label="First group">
+                        <input type="submit" style="font-size: 20px;" name="save" value="Хадгалах">
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              </form>
+                </form>
+                
+                
             </div>
                   <!-- ################################### -->
                 <!-- ######Хувийн мэдээллийн хэсэг###### -->
