@@ -46,4 +46,19 @@ def profileSkill(request):
     return render(request, "Profile/6.html",)
 
 def profileSocial(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        site = request.POST.get("site")
+
+        request_data = {
+            "ner": name,
+            "site": site,
+            }
+    requestJSON = {
+        "id": request.session['userId']
+    }
+    r = requests.get("http://whoisb.mandakh.org/userSocialIn/",
+                    data=json.dumps(requestJSON),
+                    headers={'Content-Type': 'application/json'})
+    
     return render(request, "Profile/7.html",)
