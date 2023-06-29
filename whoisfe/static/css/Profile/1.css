@@ -406,13 +406,46 @@ section {
   height: 30px;
   border-radius: 5px;
 }
-#save{
+#userInfoUpdateSubmit{
   font-size: 15px;
   color: black;
   background: none;
-  border: solid 2px rgb(165, 85, 165);
+  border: solid 2px rgb(206, 49, 101);
   border-radius: 4px;
   text-align: justify;
-  width: 100px;
-  height: 50px;
+  width: 90px;
+  height: 40px;
+}
+#userInfoUpdateSubmit:hover{
+  font-size: 15px;
+  color: rgb(206, 49, 101);
+  background: none;
+  border: solid 2px black;
+  border-radius: 4px;
+  text-align: justify;
+  width: 90px;
+  height: 40px;
+}
+#changePassSubmit{
+  font-size: 15px;
+  color: black;
+  background: none;
+  border: solid 2px rgb(206, 49, 101);
+  border-radius: 4px;
+  text-align: justify;
+  width: 120px;
+  height: 40px;
+}
+#changePassSubmit:hover{
+  font-size: 15px;
+  color: rgb(206, 49, 101);
+  background: none;
+  border: solid 2px black;
+  border-radius: 4px;
+  text-align: justify;
+  width: 120px;
+  height: 40px;
+}
+label{
+ font-size: 15px;
 }
