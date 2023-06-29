@@ -416,6 +416,16 @@ section {
   width: 90px;
   height: 40px;
 }
+#save{
+  font-size: 15px;
+  color: black;
+  background: none;
+  border: solid 2px rgb(206, 49, 101);
+  border-radius: 4px;
+  text-align: justify;
+  width: 90px;
+  height: 30px;
+}
 #userInfoUpdateSubmit:hover{
   font-size: 15px;
   color: rgb(206, 49, 101);
@@ -449,3 +459,4 @@ section {
 label{
  font-size: 15px;
 }
+.exp{display: flex;}

@@ -49,6 +49,9 @@
       </div>
     </nav>
   </div>
+  <div class="main-panel">
+    <h1>Туршлага</h1>
+  </div>
   <div class="wrapper">
     <div class="sidebar" data-color="purple" data-image="{% static '/images/sidebar-5.jpg'%}">
       {% include "../includes/menu.html" %}
@@ -58,37 +61,25 @@
     <div class="container">
       <div class="wrapper">
                         <!-- ############ Туршлага ############## -->
-              <div class="panel">
-                <div class="headline">
                   <form id="cc-contact-2" class="form-group" action="" method="post">
                     <div class="Education">
                       <!-- <h1>Туршлага</h1> -->
-                      <table>
-                        <tr>
-                          <td style="width: 100px; text-align: right;"> Ажил эрхлэлтийн байдал: </td>
-                          <td style="color: red; text-align: center; width: 20px;"> * </td>
-                          <td style="width: 100px;">
-                            <select>
-                              <option>-/-</option>
-                              <option> Тодорхой хугацааны өмнө ажил эрхэлж байсан </option>
-                              <option> Ажил эрхэлж байгаа </option>
-                              <option> Оюутан</option>
-                              <option> Төгссөнөөс хойш ажил эрхлээгүй</option>
-                            </select>
-                          </td>
-                        </tr>
-                      </table><br>
                       <div class="row">
                         <div class="col-sm-5">
                           <div class="form-floating mt-3">
-                            <label for="floatingInput">Ажиллаж байсан жилүүд: </label>
-                            <input type="text" name="aname" class="form-control" step="10" id="floatingNumber">
+                            <label for="floatingInput">Ажиллаж байсан байгууллагын нэр :</label>
+                            <input list="apps" name="site" class="form-control" step="10" id="floatingNumber">
+                            <datalist id="apps">
+                              <option value="Мандах сургууль"></option>
+                              <option value="Монголын үндэсний их телевиз"></option>
+                              <option value="Эмнэлэг"></option>
+                              <option value="Хөгжим бүжгийн коллеж"></option>
+                              <option value="CU"></option>
+                              <option value="GS25"></option>
+                            </datalist>
                           </div>
                         </div>
                       </div>
-
-                      
-                      <br>
                       <div class="row">
                         <div class="col-sm-5">
                           <div class="form-floating mt-3">
@@ -97,30 +88,59 @@
                           </div>
                         </div>
                       </div>
-    
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <div class="form-floating mt-3">
+                            <label for="floatingInput">Эхэлсэн огноо: </label>
+                            <div class="form">
+                              <input class="form-control" id="date" name="date" type="date" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <div class="form-floating mt-3">
+                            <label for="floatingInput">Гарсан огноо: </label>
+                            <div class="form">
+                              <input class="form-control" id="date" name="date" type="date" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                       <br>
                       <div class="row">
                         <div class="col-sm-5">
                           <div class="form-floating mt-3">
-                            <label for="floatingInput">Албан байгууллагын
-                              нэр: </label>
+                            <label for="floatingInput"> Ажиллаж байгаа байгууллага : </label>
                             <input type="text" name="aname" class="form-control" step="10" id="floatingNumber">
                           </div>
                         </div>
                       </div>
-                     
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <div class="form-floating mt-3">
+                            <label for="floatingInput">Албан тушаал: </label>
+                            <input type="text" name="alba" class="form-control" step="10" id="floatingNumber">
+                          </div>
+                        </div>
+                      </div>
 
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <div class="form-floating mt-3">
+                            <label for="floatingInput">Эхэлсэн огноо: </label>
+                            <div class="form">
+                              <input class="form-control" id="date" name="date" type="date" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
                      <input type="button" id="save" name="save" value="Хадгалах">
                     </div>
                   </form>
-                </div>
-              </div>
-             
-                     
                   <!-- ############################################################### -->
-
-                  
             </div>
           </div>
         </div>
@@ -131,7 +151,6 @@
         </div>
       </div>
     </div>
-
 
 </body>
 
