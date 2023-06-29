@@ -45,10 +45,10 @@ def profileEdu(request):
     return render(request, "Profile/3.html",)
 
 def profileExp(request):
-    return render(request, "Profile/5.html",)
+    return render(request, "Profile/6.html",)
 
 def profileSkill(request):
-    return render(request, "Profile/6.html",)
+    return render(request, "Profile/5.html",)
 
 def profileSocial(request):
     return render(request, "Profile/7.html",)
