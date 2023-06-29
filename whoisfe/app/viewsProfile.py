@@ -39,10 +39,10 @@ def profileAdd(request):
     return render(request, "Profile/2.html",)
 
 def profileFamily(request):
-    return render(request, "Profile/3.html",)
+    return render(request, "Profile/4.html",)
 
 def profileEdu(request):
-    return render(request, "Profile/4.html",)
+    return render(request, "Profile/3.html",)
 
 def profileExp(request):
     return render(request, "Profile/5.html",)
