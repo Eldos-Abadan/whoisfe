@@ -32,3 +32,23 @@ def profileViews(request):
 
 
 
+def profileMain(request):
+    return render(request, "Profile/1.html",)
+
+def profileAdd(request):
+    return render(request, "Profile/2.html",)
+
+def profileFamily(request):
+    return render(request, "Profile/3.html",)
+
+def profileEdu(request):
+    return render(request, "Profile/4.html",)
+
+def profileExp(request):
+    return render(request, "Profile/5.html",)
+
+def profileSkill(request):
+    return render(request, "Profile/6.html",)
+
+def profileSocial(request):
+    return render(request, "Profile/7.html",)
