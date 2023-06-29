@@ -15,7 +15,7 @@ def registerViews(request):
 def dashboardViews(request):
     return render(request, "dashboard/dashboard.html")
 
-def profileViews(request):
+def profileMain(request):
     return render(request,"Profile/1.html")
 
 def myNCViews(request):

@@ -57,19 +57,66 @@
     
     <div class="container">
       <div class="wrapper">
-                        <!-- ############ Чадвар ##################### -->
-                <div class="panel">
-                  <div class="headline">
-                    <form id="cc-contact" class="form-group" action="" method="post">
-                      <!-- <h1>Чадвар</h1> -->
-
-                      <div class="form-check mt-3">
-                        <textarea name="Message" cols="80" rows="10">{{ userId }}</textarea>
+                        <!-- ############ Туршлага ############## -->
+              <div class="panel">
+                <div class="headline">
+                  <form id="cc-contact-2" class="form-group" action="" method="post">
+                    <div class="Education">
+                      <!-- <h1>Туршлага</h1> -->
+                      <table>
+                        <tr>
+                          <td style="width: 100px; text-align: right;"> Ажил эрхлэлтийн байдал: </td>
+                          <td style="color: red; text-align: center; width: 20px;"> * </td>
+                          <td style="width: 100px;">
+                            <select>
+                              <option>-/-</option>
+                              <option> Тодорхой хугацааны өмнө ажил эрхэлж байсан </option>
+                              <option> Ажил эрхэлж байгаа </option>
+                              <option> Оюутан</option>
+                              <option> Төгссөнөөс хойш ажил эрхлээгүй</option>
+                            </select>
+                          </td>
+                        </tr>
+                      </table><br>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <div class="form-floating mt-3">
+                            <label for="floatingInput">Ажиллаж байсан жилүүд: </label>
+                            <input type="text" name="aname" class="form-control" step="10" id="floatingNumber">
+                          </div>
+                        </div>
                       </div>
-                      <input type="button" style="font-size: 20px ;" name="save" value="Хадгалах">
-                    </form>
-                  </div>
+
+                      
+                      <br>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <div class="form-floating mt-3">
+                            <label for="floatingInput">Албан тушаал: </label>
+                            <input type="text" name="alba" class="form-control" step="10" id="floatingNumber">
+                          </div>
+                        </div>
+                      </div>
+    
+                      <br>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <div class="form-floating mt-3">
+                            <label for="floatingInput">Албан байгууллагын
+                              нэр: </label>
+                            <input type="text" name="aname" class="form-control" step="10" id="floatingNumber">
+                          </div>
+                        </div>
+                      </div>
+                     
+
+
+                     <input type="button" style="font-size: 20px;" name="save" value="Хадгалах">
+                    </div>
+                  </form>
                 </div>
+              </div>
+             
                      
                   <!-- ############################################################### -->
 
