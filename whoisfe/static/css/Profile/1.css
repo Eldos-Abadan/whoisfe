@@ -406,3 +406,13 @@ section {
   height: 30px;
   border-radius: 5px;
 }
+#save{
+  font-size: 15px;
+  color: black;
+  background: none;
+  border: solid 2px rgb(165, 85, 165);
+  border-radius: 4px;
+  text-align: justify;
+  width: 100px;
+  height: 50px;
+}
