@@ -1,44 +1,51 @@
-<!-- ######## Боловсрол ########## -->
+<!-- ####### Гэр бүлийн мэдээллийн хэсэг ######## -->
 <div class="panel">
   <div class="headline">
     <form id="cc-contact-2" class="form-group" action="" method="post">
-      <div class="Education">
-        <!-- <h1>Боловсрол</h1> -->
+      <div class="FamilyInfo">
+        <!-- <h1>Гэр бүлийн мэдээлэл</h1> -->
         <table>
           <tr>
-            <td style="width: 100px; text-align: right;"> Боловсрол: </td>
-            <td style="color: red; text-align: center; width: 20px;"> * </td>
-            <td style="width: 100px;">
-              <select>
-                <option> -/- </option>
-                <option> бага </option>
-                <option> Бүрэн Дунд </option>
-                <option> Суурь </option>
-                <option> Боловсролгүй </option>
-                <option> Дээд </option>
-                <option> Техник мэргэжлийн </option>
-              </select>
-            </td>
-          </tr>
-        </table>
-        <br><br>
-
-
-        <table>
-          <tr>
-            <td style="width: 100px; text-align: right;"> Эрдмийн зэрэг: </td>
+            <td style="width: 100px; text-align: right;"> Гэр бүлийн байдал: </td>
             <td style="color: red; text-align: center; width: 20px;"> * </td>
             <td style="width: 100px;">
               <select>
                 <option>-/-</option>
-                <option> Бакалавр</option>
-                <option>Магистр </option>
-                <option> Доктор </option>
-                <option> Профессор </option>
+                <option value="">гэрлэсэн</option>
+                <option> гэрлээгүй</option>
               </select>
             </td>
           </tr>
         </table>
+        <br>
+
+        <div class="row">
+          <div class="col-sm-5">
+            <div class="form-floating mt-3">
+              <label for="floatingInput">Таны хэн болох: </label>
+              <input type="text" name="who" class="form-control" step="10" id="floatingNumber">
+            </div>
+          </div>
+          <br>
+        </div>
+        <div class="row">
+          <div class="col-sm-5">
+            <div class="form-floating mt-3">
+              <label for="floatingInput"> Нэр: </label>
+              <input type="text" name="name" lass="form-control" step="10" id="floatingNumber">
+            </div>
+          </div>
+        </div>
+
+        <br>
+        <div class="row">
+          <div class="col-sm-5">
+            <div class="form-floating mt-3">
+              <label for="floatingInput"> Гишүүдийн тоо: </label>
+              <input type="text" name="num" class="form-control" step="10" id="floatingNumber">
+            </div>
+          </div>
+        </div>
         <br>
         <div class="row">
           <div class="col-sm-5">
@@ -58,7 +65,6 @@
             </div>
           </div>
         </div>
-
         <input type="button" style="font-size: 20px;" name="save" value="Хадгалах">
       </div>
     </form>
