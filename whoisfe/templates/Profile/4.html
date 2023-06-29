@@ -15,7 +15,14 @@
 
   <link href="{% static '/css/dashboard/bootstrap.min.css'%}" rel="stylesheet" />
   <link href="{% static '/css/Profile/1.css' %}" rel="stylesheet" type="text/css">
+
+
+  <link href="{% static '/css/dashboard/animate.min.css'%}" rel="stylesheet" />
+
+
   <link href="{% static '/css/dashboard/light-bootstrap-dashboard.css'%}" rel="stylesheet" />
+
+
   <link href="{% static '/css/dashboard/demo.css'%}" rel="stylesheet" />
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
   <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css" />
@@ -24,10 +31,29 @@
 </head>
 
 <body>
+  <div class="main-panel">
+    <nav class="navbar navbar-default navbar-fixed">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            {% include "../includes/logout.html" %}
+            <li class="separator hidden-lg"></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
   <div class="wrapper">
     <div class="sidebar" data-color="purple" data-image="{% static '/images/sidebar-5.jpg'%}">
       {% include "../includes/menu.html" %}
     </div>
+    <div class="container">
+      <div class="wrapper">
     <!-- ####### Гэр бүлийн мэдээллийн хэсэг ######## -->
     <div class="wrapper">
       <div class="wrapper2">
