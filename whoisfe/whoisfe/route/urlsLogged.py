@@ -1,5 +1,5 @@
 from django.urls import path
-from app import viewsMyCV, viewsCreateCV, viewsDashboard, viewsMyNC, viewsGuide, viewsProfile, viewsMain, viewsCreateNC, viewsFavorite
+from app import viewsMyCV, viewsCreateCV, viewsDashboard, viewsMyNC, viewsGuide, viewsProfile, viewsMain, viewsCreateNC, viewsFavorite, viewsFamInfo
 urlpatterns = [
     path("createNC/" ,   viewsCreateNC.createNCViews,     name="createNCViews" ) ,
     path("createCV/" ,   viewsCreateCV.createCVViews,     name="createCVViews" ) ,
@@ -7,8 +7,18 @@ urlpatterns = [
     path("myNC/"     ,   viewsMyNC.myNCViews,             name="myNCViews"     ) ,
     path("guide/"    ,   viewsGuide.guideViews,           name="guideViews"    ) ,
     path("profile/"  ,   viewsProfile.profileViews,       name="profileViews"  ) ,
+    ##############################################################################
+    path("profile/main/"  ,   viewsProfile.profileMain,      name="profileMain"  ) ,
+    path("profile/add/"   ,   viewsProfile.profileAdd,       name="profileAdd"   ) ,
+    path("profile/family/",   viewsProfile.profileFamily,    name="profileFamily") ,
+    path("profile/edu/"   ,   viewsProfile.profileEdu,       name="profileEdu"   ) ,
+    path("profile/exp/"   ,   viewsProfile.profileExp,       name="profileExp"   ) ,
+    path("profile/skill/" ,   viewsProfile.profileSkill,     name="profileSkill" ) ,
+    path("profile/social/",   viewsProfile.profileSocial,    name="profileSocial") ,
+    ##############################################################################
     path("home/"     ,   viewsMain.homeLogoutView,        name="homeLogoutView") ,
     path("wallet/"   ,   viewsMain.walletView,            name="wallet"        ) ,
     path("myCV/"     ,   viewsMyCV.myCVViews,             name="myCV"          ) ,
     path("favorite/" ,   viewsFavorite.favoriteView,      name="favoriteView"  ) ,
+    path("famInfo/" ,   viewsFamInfo.FamInfoView,      name="FamInfoView"  ) ,
     ]   

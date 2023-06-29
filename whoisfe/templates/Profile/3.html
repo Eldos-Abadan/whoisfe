@@ -1,67 +1,157 @@
-<!-- ######## Боловсрол ########## -->
-<div class="panel">
-  <div class="headline">
-    <form id="cc-contact-2" class="form-group" action="" method="post">
-      <div class="Education">
-        <!-- <h1>Боловсрол</h1> -->
-        <table>
-          <tr>
-            <td style="width: 100px; text-align: right;"> Боловсрол: </td>
-            <td style="color: red; text-align: center; width: 20px;"> * </td>
-            <td style="width: 100px;">
-              <select>
-                <option> -/- </option>
-                <option> бага </option>
-                <option> Бүрэн Дунд </option>
-                <option> Суурь </option>
-                <option> Боловсролгүй </option>
-                <option> Дээд </option>
-                <option> Техник мэргэжлийн </option>
-              </select>
-            </td>
-          </tr>
-        </table>
-        <br><br>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/png" href="{% static ''%}" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Dashboard WhoIs</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta name="viewport" content="width=device-width" />
 
-        <table>
-          <tr>
-            <td style="width: 100px; text-align: right;"> Эрдмийн зэрэг: </td>
-            <td style="color: red; text-align: center; width: 20px;"> * </td>
-            <td style="width: 100px;">
-              <select>
-                <option>-/-</option>
-                <option> Бакалавр</option>
-                <option>Магистр </option>
-                <option> Доктор </option>
-                <option> Профессор </option>
-              </select>
-            </td>
-          </tr>
-        </table>
-        <br>
-        <div class="row">
-          <div class="col-sm-5">
-            <div class="form-floating mt-3">
-              <label for="floatingInput">Албан тушаал: </label>
-              <input type="text" name="alba" class="form-control" step="10" id="floatingNumber">
-            </div>
-          </div>
+  <link href="{% static '/css/dashboard/bootstrap.min.css'%}" rel="stylesheet" />
+  <link href="{% static '/css/Profile/1.css' %}" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <div class="main-panel">
+    <nav class="navbar navbar-default navbar-fixed">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          {% include "../includes/logout.html" %}
+          <li class="separator hidden-lg"></li>
+          </ul>
         </div>
-        <br>
-        <div class="row">
-          <div class="col-sm-5">
-            <div class="form-floating mt-3">
-              <label for="floatingInput">Албан байгууллагын
-                нэр: </label>
-              <input type="text" name="aname" class="form-control" step="10" id="floatingNumber">
-            </div>
-          </div>
-        </div>
-
-        <input type="button" style="font-size: 20px;" name="save" value="Хадгалах">
       </div>
-    </form>
+    </nav>
   </div>
-</div>
-<!-- ################################## -->
+  <div class="wrapper">
+    <div class="sidebar" data-color="purple" data-image="{% static '/images/sidebar-5.jpg'%}">
+      {% include "../includes/menu.html" %}
+    </div>
+    <!-- ################################## -->
+    <!-- ######## Боловсрол ########## -->
+    <div class="panel">
+      <div class="headline">
+        <form id="cc-contact-2" class="form-group" action="" method="post">
+          <div class="Education">
+            <!-- <h1>Боловсрол</h1> -->
+            <table>
+              <tr>
+                <td style="width: 100px; text-align: right;"> Боловсрол: </td>
+                <td style="color: red; text-align: center; width: 20px;"> * </td>
+                <td style="width: 100px;">
+                  <select>
+                    <option> -/- </option>
+                    <option> бага </option>
+                    <option> Бүрэн Дунд </option>
+                    <option> Суурь </option>
+                    <option> Боловсролгүй </option>
+                    <option> Дээд </option>
+                    <option> Техник мэргэжлийн </option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+            <br><br>
+
+
+            <table>
+              <tr>
+                <td style="width: 100px; text-align: right;"> Эрдмийн зэрэг: </td>
+                <td style="color: red; text-align: center; width: 20px;"> * </td>
+                <td style="width: 100px;">
+                  <select>
+                    <option>-/-</option>
+                    <option> Бакалавр</option>
+                    <option>Магистр </option>
+                    <option> Доктор </option>
+                    <option> Профессор </option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+            <br>
+            <div class="row">
+              <div class="col-sm-5">
+                <div class="form-floating mt-3">
+                  <label for="floatingInput">Албан тушаал: </label>
+                  <input type="text" name="alba" class="form-control" step="10" id="floatingNumber">
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-sm-5">
+                <div class="form-floating mt-3">
+                  <label for="floatingInput">Албан байгууллагын
+                    нэр: </label>
+                  <input type="text" name="aname" class="form-control" step="10" id="floatingNumber">
+                </div>
+              </div>
+            </div>
+
+            <input type="button" style="font-size: 20px;" name="save" value="Хадгалах">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="wrapper2">
+      <div class="footer">
+        {% include "../includes/footer.html" %}
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+<script src="{% static '/js/dashboard/jquery.3.2.1.min.js'%}" type="text/javascript"></script>
+<script src="{% static '/js/dashboard/bootstrap.min.js'%}" type="text/javascript"></script>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+
+<script src="{% static '/js/dashboard/light-bootstrap-dashboard.js'%}"></script>
+
+<script src="{% static '/js/dashboard/demo.js'%}"></script>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $("#profileMenuItem").addClass("active");
+    demo.initChartist();
+
+    $.notify({
+      icon: "pe-7s-gift",
+      message: "Welcome to WhoIs Dashboard</b>"
+    }, {
+      type: "info",
+      timer: 4000
+    });
+  });
+  $(document).ready(function () {
+    demo.initChartist();
+
+    $.notify(
+      {
+        icon: "pe-7s-gift",
+        message: "Welcome to WhoIs Dashboard</b>",
+      },
+      {
+        type: "info",
+        timer: 4000,
+      }
+    );
+  });
+</script>
+
+</html>
