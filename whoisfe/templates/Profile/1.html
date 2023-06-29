@@ -41,6 +41,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+<<<<<<< Updated upstream
           <!-- <a class="navbar-brand" href="#">Хувийн мэдээлэл</a>
         </div>
         <div class="collapse navbar-collapse">
@@ -67,6 +68,10 @@
             </li> -->
           {% include "../includes/logout.html" %}
           <li class="separator hidden-lg"></li>
+=======
+                     {% include "../includes/logout.html" %}
+            <li class="separator hidden-lg"></li>
+>>>>>>> Stashed changes
           </ul>
         </div>
       </div>
@@ -76,85 +81,9 @@
     <div class="sidebar" data-color="purple" data-image="{% static '/images/sidebar-5.jpg'%}">
       {% include "../includes/menu.html" %}
     </div>
-    <!-- {{ userName }}
-      <br />
-      {{ firstName }}
-      <br />
-      {{ lastName }}
-      <br />
-      {{ email }}
-      <br />
-      {{ id }}
-      <br /> -->
-    <!-- <input type="text" value="{{ email }}" /> -->
-
-    <!-- <a href="{% url 'homeLogoutView' %}">logout</a>
-    <div class="wrapper">
-        <div class="sidebar" data-color="purple" data-image="{% static '/images/sidebar-5.jpg'%}">
-
-            <div class="sidebar-wrapper">
-                <div class="logo">
-                    <a href="http://whois.mandakh.org/" class="simple-text">
-                        WhoIs
-                    </a>
-                </div>
-
-                <ul class="nav">
-                    <li>
-                        <a href="{% url 'dashboardViews' %}">
-                            <i class="pe-7s-graph"></i>
-                            <p>Dashboard</p>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a href="{% url 'profileViews'%}">
-                            <i class="pe-7s-user"></i>
-                            <p>User Profile</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <i class="pe-7s-note2"></i>
-                            <p>My CV</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{% url 'myNCViews'%}">
-                            <i class="pe-7s-id"></i>
-                            <p>My Namecard</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{% url 'createCVViews'%}">
-                            <i class="pe-7s-news-paper"></i>
-                            <p>Create a CV</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <i class="pe-7s-note"></i>
-                            <p>Create a namecard</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <i class="pe-7s-wallet"></i>
-                            <p>Wallet</p>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>-->
-    <!-- <ul class="nav navbar-nav navbar-right">
-            <li>
-                <a href="{% url 'homeLogoutView' %}">
-                    <p>Log out</p>
-                </a>
-            </li>
-            <li class="separator hidden-lg"></li>
-        </ul> -->
-    <div class="container">
+        <div class="container">
       <div class="wrapper">
+<<<<<<< Updated upstream
         <div class="cctabs">
           <input checked id="one" name="tabs" type="radio">
           <label for="one"><i class='bx bx-user-circle' style="font-size: 15px ;margin-right: 10px;"></i> Үндсэн
@@ -173,6 +102,9 @@
           <input id="seven" name="tabs" type="radio">
           <label for="seven"><i class="fa fa-plus-square"></i> Сошиал </label>
           <!-- ###### Үндсэн мэдээллийн хэсэг ###### -->
+=======
+            <!-- ###### Үндсэн мэдээллийн хэсэг ###### -->
+>>>>>>> Stashed changes
           <div class="panels">
             <div class="panel">
               <div class="example">
@@ -181,6 +113,7 @@
                   <div class="row">
                     <div class="col-sm-3">
                       <div class="form-floating mt-3">
+<<<<<<< Updated upstream
                         <<<<<<< Updated upstream <label for="floatingFname">Овог</label>
                           <input type="text" name="firstname" class="form-control form-control-sm" id="floatingFname"
                             placeholder="Овог" value="{{ firstName }}">
@@ -188,10 +121,16 @@
                             <input type="name" name="fistname" class="form-control form-control-sm" id="floatingFname">
                             >>>>>>> Stashed changes
                             >>>>>>> 6ebe5df7f8fefbf05baccdbc222c5104116751a4
+=======
+                        <label for="floatingFname">Овог</label>
+                        <input type="text" name="firstname" class="form-control form-control-sm" id="floatingFname"
+                          placeholder="Овог" value="{{ firstName }}">
+>>>>>>> Stashed changes
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-floating mt-3">
+<<<<<<< Updated upstream
                         <<<<<<< Updated upstream <label for="floatingLname">Нэр</label>
                           <input type="text" name="lastname" class="form-control form-control-sm" id="floatingLname"
                             placeholder="Нэр" value="{{ lastName }}">
@@ -199,6 +138,11 @@
                             <input type="name" name="lastname" class="form-control form-control-sm" id="floatingLname">
                             >>>>>>> Stashed changes
                             >>>>>>> 6ebe5df7f8fefbf05baccdbc222c5104116751a4
+=======
+                        <label for="floatingLname">Нэр</label>
+                        <input type="text" name="lastname" class="form-control form-control-sm" id="floatingLname"
+                          placeholder="Нэр" value="{{ lastName }}">
+>>>>>>> Stashed changes
                       </div>
                     </div>
                   </div>
@@ -206,6 +150,7 @@
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-8">
                         <label for="floatingEmail">Имэйл хаяг</label>
+<<<<<<< Updated upstream
                         <input type="email" name="email" class="form-control form-control-sm" id="floatingEmail" <<<<<<<
                           HEAD placeholder="Имэйл" value="{{ email }}">
                         =======
@@ -214,12 +159,20 @@
                           >
                           >>>>>>> Stashed changes
                           >>>>>>> 6ebe5df7f8fefbf05baccdbc222c5104116751a4
+=======
+                        <input type="email" name="email" class="form-control form-control-sm" id="floatingEmail"
+                          placeholder="Имэйл" value="{{ email }}">
+
+                          
+
+>>>>>>> Stashed changes
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-8">
+<<<<<<< Updated upstream
                         <<<<<<< Updated upstream <label for="floatingPassword">Нууц үг</label>
                           <input type="password" name="password" class="form-control form-control-sm"
                             autocomplete="false" readonly onfocus="this.removeAttribute('readonly');"
@@ -229,12 +182,19 @@
                           <input type="password" name="password" class="form-control form-control-sm"
                             id="floatingPassword">
                           >>>>>>> Stashed changes
+=======
+                        <label for="floatingPassword">Нууц үг</label>
+                        <input type="password" name="password" class="form-control form-control-sm" autocomplete="false" readonly onfocus="this.removeAttribute('readonly');"
+                          id="floatingPassword" placeholder="Нууц үг">
+
+>>>>>>> Stashed changes
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-8">
+<<<<<<< Updated upstream
                         <<<<<<< Updated upstream <label for="floatingPassword">Нууц үг солих</label>
                           <input type="password" name="changepassword" class="form-control form-control-sm"
                             autocomplete="false" readonly onfocus="this.removeAttribute('readonly');"
@@ -244,12 +204,19 @@
                           <input type="password" name="changepassword" class="form-control form-control-sm"
                             id="floatingPassword">
                           >>>>>>> Stashed changes
+=======
+                        <label for="floatingPassword">Нууц үг солих</label>
+                        <input type="password" name="changepassword" class="form-control form-control-sm" autocomplete="false" readonly onfocus="this.removeAttribute('readonly');"
+                          id="floatingPassword" placeholder="Нууц үг">
+
+>>>>>>> Stashed changes
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-8">
+<<<<<<< Updated upstream
                         <<<<<<< Updated upstream <label for="floatingPassword">Шинэ нууц үг</label>
                           <input type="password" name="newpassword" class="form-control form-control-sm"
                             autocomplete="false" readonly onfocus="this.removeAttribute('readonly');"
@@ -284,14 +251,31 @@
                     <label for="floatingInput">Хэрэглэгчийн нэр</label>
                     <input type="username" name="username" class="form-control form-control-sm" id="floatingUsername">
                     >>>>>>> Stashed changes
+=======
+                        <label for="floatingPassword">Шинэ нууц үг</label>
+                        <input type="password" name="newpassword" class="form-control form-control-sm" autocomplete="false" readonly onfocus="this.removeAttribute('readonly');"
+                          id="floatingPassword" placeholder="Нууц үг">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-8 mt-3">
+                      <div class="form-floating mt-8">
+                        <label for="floatingUsername">Хэрэглэгчийн нэр</label>
+                        <input type="text" name="username" class="form-control form-control-sm" id="floatingUsername"  autocomplete="false" 
+                          value="{{ userName }}">
+                      </div>
+                    </div>
+>>>>>>> Stashed changes
                   </div>
                   <div class="row">
                     <div class="col-sm-12 mt-3 mb-4">
                       <div class="btn-group mr-2" role="group" aria-label="First group">
-                        <input type="submit" style="font-size: 20px;" name="save" value="Хадгалах">
+                        <input type="submit" style="font-size: 20px; height: 40px; background-color:rgb(216, 108, 144);border-radius: 8px;"  name="save" value="Хадгалах">
                       </div>
                     </div>
                   </div>
+<<<<<<< Updated upstream
                   </form>
 
 
@@ -580,6 +564,10 @@
 
 
               </div>
+=======
+                </form>
+            </div> 
+>>>>>>> Stashed changes
             </div>
           </div>
         </div>
