@@ -192,6 +192,8 @@ def checkSession(request):
         request.session['tooluur'] = request.session['tooluur'] + 1
     if "beegii" not in request.session:        
         request.session['beegii'] = 0
+    if "userId" not in request.session:        
+        request.session['userId'] = 0
     #   checkSession
 
 def connectDB():

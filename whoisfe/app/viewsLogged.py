@@ -27,8 +27,6 @@ def guideViews(request):
 # def favTemplatesViews(request):
 #     return render(request, "favTemplates/favTemplates.html")
 
-def profileViews(request):
-    return render(request, "Profile/1.html")
 
 
 

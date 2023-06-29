@@ -5,8 +5,7 @@ urlpatterns = [
     path("createCV/" ,   viewsCreateCV.createCVViews,     name="createCVViews" ) ,
     path("dashboard/",   viewsDashboard.dashboardViews,   name="dashboardViews") ,
     path("myNC/"     ,   viewsMyNC.myNCViews,             name="myNCViews"     ) ,
-    path("guide/"    ,   viewsGuide.guideViews,           name="guideViews"    ) ,
-    path("profile/"  ,   viewsProfile.profileViews,       name="profileViews"  ) ,
+    path("guide/"    ,   viewsGuide.guideViews,           name="guideViews"    ) ,    
     ##############################################################################
     path("profile/main/"  ,   viewsProfile.profileMain,      name="profileMain"  ) ,
     path("profile/add/"   ,   viewsProfile.profileAdd,       name="profileAdd"   ) ,

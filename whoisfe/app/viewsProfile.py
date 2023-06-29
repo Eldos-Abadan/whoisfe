@@ -1,39 +1,34 @@
 from django.shortcuts import render, redirect
-import datetime
 import json
 import requests
-from django.contrib import messages
 from whoisfe.settings import *
 from    django.http                  import HttpResponse
 
 
-def profileViews(request):
+def profileMain(request):
     checkSession(request)  
-    if request.session['beegii'] ==0:        
+    if request.session['beegii'] == 0:        
         return redirect("homeView")    
-    baas = {}
-    baas["userId"] = request.session['userId']
-
+    
+    htmlRuuDamjuulahUtguud = {}
+    htmlRuuDamjuulahUtguud["userId"] = request.session['userId']
+    serviceHayag = "http://whoisb.mandakh.org/userInfoShow/"
     requestJSON = {
         "id": request.session['userId']
     }
-
-    r = requests.get("http://whoisb.mandakh.org/userInfoShow/",
+    r = requests.get(serviceHayag,
                     data=json.dumps(requestJSON),
                     headers={'Content-Type': 'application/json'})
     response_json = r.json()
+
     response_json = response_json[0]
-    baas["userName"] = response_json.get('userName')
-    baas["firstName"] = response_json.get('firstName')
-    baas["lastName"] = response_json.get('lastName')
-    baas["email"] = response_json.get('email')
+    htmlRuuDamjuulahUtguud["lastName"] = response_json["lastName"]
+    htmlRuuDamjuulahUtguud["firstName"] = response_json["firstName"]
+    htmlRuuDamjuulahUtguud["email"] = response_json["email"]
+    htmlRuuDamjuulahUtguud["userName"] = response_json["userName"]
     
-    return render(request, "Profile/1.html",baas)
 
-
-
-def profileMain(request):
-    return render(request, "Profile/1.html",)
+    return render(request, "Profile/1.html",htmlRuuDamjuulahUtguud)
 
 def profileAdd(request):
     return render(request, "Profile/2.html",)
