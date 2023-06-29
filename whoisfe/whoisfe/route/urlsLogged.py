@@ -1,5 +1,5 @@
 from django.urls import path
-from app import viewsMyCV, viewsCreateCV, viewsDashboard, viewsMyNC, viewsGuide, viewsProfile, viewsMain, viewsCreateNC, viewsFavorite
+from app import viewsMyCV, viewsCreateCV, viewsDashboard, viewsMyNC, viewsGuide, viewsProfile, viewsMain, viewsCreateNC, viewsFavorite, viewsFamInfo
 urlpatterns = [
     path("createNC/" ,   viewsCreateNC.createNCViews,     name="createNCViews" ) ,
     path("createCV/" ,   viewsCreateCV.createCVViews,     name="createCVViews" ) ,
@@ -11,4 +11,5 @@ urlpatterns = [
     path("wallet/"   ,   viewsMain.walletView,            name="wallet"        ) ,
     path("myCV/"     ,   viewsMyCV.myCVViews,             name="myCV"          ) ,
     path("favorite/" ,   viewsFavorite.favoriteView,      name="favoriteView"  ) ,
+    path("famInfo/" ,   viewsFamInfo.FamInfoView,      name="FamInfoView"  ) ,
     ]   
