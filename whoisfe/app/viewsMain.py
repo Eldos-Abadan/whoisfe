@@ -3,15 +3,6 @@ from whoisfe.settings import *
 import requests
 import json
 
-def walletView(request): 
-  return render(request, "wallet/wallet.html")
-
-def justCVViews(request): 
-  return render(request, "templates/just.html")
-
-def justNCViews(request): 
-  return render(request, "templates/bc.html")
-
 def homeLogoutView(request): 
     checkSession(request)    
     request.session['beegii'] = 0
@@ -53,3 +44,13 @@ def homeView(request):
     zahia["aldaaniiMedegdel"] = aldaaniiMedegdel
 
     return render(request, "home/home.html",zahia)
+
+
+def walletView(request): 
+  return render(request, "wallet/wallet.html")
+
+def justCVViews(request): 
+  return render(request, "templates/just.html")
+
+def justNCViews(request): 
+  return render(request, "templates/bc.html")
