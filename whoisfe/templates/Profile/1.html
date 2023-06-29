@@ -39,108 +39,127 @@
   <div class="wrapper">
     <div class="sidebar" data-color="purple" data-image="{% static '/images/sidebar-5.jpg'%}">
       {% include "../includes/menu.html" %}
+    
     </div>
-    <div class="container">
-      <div class="wrapper">
-            <!-- ###### Үндсэн мэдээллийн хэсэг ###### -->
-          <div class="panels">
-            <div class="panel">
-              <div class="example">
-                <form id="cc-contact" class="form-group" action="" method="post">
-                  {% csrf_token %}
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <div class="form-floating mt-3">
-                        <label for="floatingFname">Овог</label>
-                        <input type="text" name="firstname" class="form-control form-control-sm" id="floatingFname"
-                          placeholder="Овог" value="{{ firstName }}">
-                      </div>
-                    </div>
-
-
-                    <div class="col-sm-3">
-                      <div class="form-floating mt-3">
-                        <label for="floatingLname">Нэр</label>
-                        <input type="text" name="lastname" class="form-control form-control-sm" id="floatingLname"
-                          placeholder="Нэр" value="{{ lastName }}">
-                      </div>
+  <div class="container">
+    <div class="wrapper">
+          <!-- ###### Үндсэн мэдээллийн хэсэг ###### -->
+        <div class="panels">
+          <div class="panel">
+            <div class="example">
+              <form id="cc-contact" class="form-group" action="" method="post" name="userInfoUpdateForm">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="form-floating mt-3">
+                      <span style="color:#0000FF;">
+                        {{ responseText }}
+                      </span>
+                </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="form-floating mt-3">
+                      <label for="floatingFname">Овог</label>
+                      <input type="text" name="firstName" class="form-control form-control-sm" id="floatingFname"
+                        placeholder="Овог" value="{{ firstName }}">
                     </div>
                   </div>
 
 
-                  <div class="row">
-                    <div class="col-sm-8 mt-3">
-                      <div class="form-floating mt-8">
-                        <label for="floatingEmail">Имэйл хаяг</label>
-                        <input type="email" name="email" class="form-control form-control-sm" id="floatingEmail"
-                          placeholder="Имэйл" value="{{ email }}" readonly>
-                      </div>
+                  <div class="col-sm-3">
+                    <div class="form-floating mt-3">
+                      <label for="floatingLname">Нэр</label>
+                      <input type="text" name="lastName" class="form-control form-control-sm" id="floatingLname"
+                        placeholder="Нэр" value="{{ lastName }}">
                     </div>
                   </div>
+                </div>
 
 
-                  <div class="row">
-                    <div class="col-sm-8 mt-3">
-                      <div class="form-floating mt-8">
-                        <label for="floatingPassword">Нууц үг</label>
-                        <input type="password" name="password" class="form-control form-control-sm" autocomplete="false" readonly onfocus="this.removeAttribute('readonly');"
-                          id="floatingPassword" placeholder="Нууц үг">
-                      </div>
+                <div class="row">
+                  <div class="col-sm-8 mt-3">
+                    <div class="form-floating mt-8">
+                      <label for="floatingEmail">Имэйл хаяг</label>
+                      <input type="email" name="email" class="form-control form-control-sm" id="floatingEmail"
+                        placeholder="Имэйл" value="{{ email }}" readonly>
                     </div>
                   </div>
+                </div>
 
-
-                  <div class="row">
-                    <div class="col-sm-8 mt-3">
-                      <div class="form-floating mt-8">
-                        <label for="floatingPassword"> Шинэ нууц үг </label>
-                        <input type="password" name="changepassword" class="form-control form-control-sm" autocomplete="false" readonly onfocus="this.removeAttribute('readonly');"
-                          id="floatingPassword" placeholder="Нууц үг">
-                      </div>
+                <div class="row">
+                  <div class="col-sm-8 mt-3">
+                    <div class="form-floating mt-8">
+                      <label for="floatingUsername">Хэрэглэгчийн нэр</label>    
+                      <input type="text" name="userName" class="form-control form-control-sm" id="floatingUsername"  autocomplete="false" 
+                        value="{{ userName }}">
                     </div>
                   </div>
+                </div>
 
-
-                  <div class="row">
-                    <div class="col-sm-8 mt-3">
-                      <div class="form-floating mt-8">
-                        <label for="floatingPassword">шинэ нууц үгээ баталгаажуулах</label>
-                        <input type="password" name="newpassword" class="form-control form-control-sm" autocomplete="false" readonly onfocus="this.removeAttribute('readonly');"
-                          id="floatingPassword" placeholder="Нууц үг">
-                      </div>
+                <div class="row">
+                  <div class="col-sm-12 mt-3 mb-4" class="col-sm-2">
+                    <div class="btn-group mr-2 " role="group" aria-label="First group">
+                      <input type="submit" id="userInfoUpdateSubmit" name="userInfoUpdateSubmit" value="Хадгалах">
                     </div>
                   </div>
-
-
-                  <div class="row">
-                    <div class="col-sm-8 mt-3">
-                      <div class="form-floating mt-8">
-                        <label for="floatingUsername">Хэрэглэгчийн нэр</label>    
-                        <input type="text" name="username" class="form-control form-control-sm" id="floatingUsername"  autocomplete="false" 
-                          value="{{ userName }}">
-                      </div>
-                    </div>
-                 </div>
-
-                 <div class="row">
-                    <div class="col-sm-12 mt-3 mb-4" class="col-sm-2">
-                      <div class="btn-group mr-2 " role="group" aria-label="First group">
-                        <input type="button" id="save" name="save" value="Хадгалах">
-                      </div>
+                </div>
+              </form> 
+                    <!-- ############################################################### -->  
+                    <!-- Нууц үг солих хэсэг -->
+              <form id="cc-contact" class="form-group" action="" method="post" name="changePassForm">
+                {% csrf_token %}
+                      <div class="row">
+                  <div class="col-sm-8 mt-3">
+                    <div class="form-floating mt-8">
+                      <label for="floatingPassword">Нууц үг</label>
+                      <input type="password" name="old" class="form-control form-control-sm" autocomplete="false" readonly onfocus="this.removeAttribute('readonly');"
+                        id="floatingPassword" placeholder="Нууц үг">
                     </div>
                   </div>
-                </form> 
-                      <!-- ############################################################### -->  
-              </div>  
-          </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col-sm-8 mt-3">
+                    <div class="form-floating mt-8">
+                      <label for="floatingPassword"> Шинэ нууц үг </label>
+                      <input type="password" name="new" class="form-control form-control-sm" autocomplete="false" readonly onfocus="this.removeAttribute('readonly');"
+                        id="floatingPassword" placeholder="Нууц үг">
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col-sm-8 mt-3">
+                    <div class="form-floating mt-8">
+                      <label for="floatingPassword">шинэ нууц үгээ баталгаажуулах</label>
+                      <input type="password" name="new2" class="form-control form-control-sm" autocomplete="false" readonly onfocus="this.removeAttribute('readonly');"
+                        id="floatingPassword" placeholder="Нууц үг">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 mt-3 mb-4" class="col-sm-2">
+                    <div class="btn-group mr-2 " role="group" aria-label="First group">
+                      <input type="submit" id="changePassSubmit" name="changePassSubmit" value="Нууц үг солих">
+                    </div>
+                  </div>
+                </div>
+              </form>
+                    <!-- ############################ -->
+            </div>  
         </div>
       </div>
-      <div class="wrapper2">
-        <div class="footer">
-          {% include "../includes/footer.html" %}
-        </div>
+    </div>
+    <div class="wrapper2">
+      <div class="footer">
+        {% include "../includes/footer.html" %}
       </div>
     </div>
+  </div>
 </body>
 <script src="{% static '/js/dashboard/jquery.3.2.1.min.js'%}" type="text/javascript"></script>
 <script src="{% static '/js/dashboard/bootstrap.min.js'%}" type="text/javascript"></script>
