@@ -41,7 +41,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Хувийн мэдээлэл</a>
+          <!-- <a class="navbar-brand" href="#">Хувийн мэдээлэл</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-left">
@@ -64,7 +64,7 @@
               <a href="{% url 'profileViews'%}">
                 <p>Account</p>
               </a>
-            </li>
+            </li> -->
             {% include "../includes/logout.html" %}
             <li class="separator hidden-lg"></li>
           </ul>
@@ -157,17 +157,19 @@
       <div class="wrapper">
         <div class="cctabs"> 
           <input checked id="one" name="tabs" type="radio">
-          <label for="one"><i class='bx bx-user-circle' style="font-size: 20px ;margin-right: 10px;"></i> Үндсэн мэдээлэл</label>
+          <label for="one"><i class='bx bx-user-circle' style="font-size: 15px ;margin-right: 10px;"></i> Үндсэн мэдээлэл</label>
           <input checked id="two" name="tabs" type="radio">
           <label for="two"><i class="fa fa-pencil-square-o"></i> Хувийн мэдээлэл</label>
           <input id="three" name="tabs" type="radio" value="Two">
           <label for="three"><i class="fa fa-magic"></i> Гэр бүлийн мэдээлэл</label>
           <input id="four" name="tabs" type="radio">
-          <label for="four"><i class='bx bxs-graduation' style="font-size: 20px ;margin-right: 10px;"></i> Боловсрол</label>
+          <label for="four"><i class='bx bxs-graduation' style="font-size: 15px ;margin-right: 10px;"></i> Боловсрол</label>
           <input id="five" name="tabs" type="radio">
           <label for="five"><i class="fa fa-envelope"></i> Туршлага</label>
           <input id="six" name="tabs" type="radio">
           <label for="six"><i class="fa fa-plus-square"></i>Чадвар </label>
+          <input id="seven" name="tabs" type="radio">
+          <label for="seven"><i class="fa fa-plus-square"></i> Сошиал </label>
             <!-- ###### Үндсэн мэдээллийн хэсэг ###### -->
           <div class="panels">
             <div class="panel">
@@ -177,16 +179,34 @@
                   <div class="row">
                     <div class="col-sm-3">
                       <div class="form-floating mt-3">
+<<<<<<< Updated upstream
                         <label for="floatingFname">Овог</label>
                         <input type="text" name="firstname" class="form-control form-control-sm" id="floatingFname"
                           placeholder="Овог" value="{{ firstName }}">
+<<<<<<< HEAD
+=======
+=======
+                        <label for="floatingInput"> Овог</label>
+                        <input type="name" name="fistname" class="form-control form-control-sm" id="floatingFname"
+                          >
+>>>>>>> Stashed changes
+>>>>>>> 6ebe5df7f8fefbf05baccdbc222c5104116751a4
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-floating mt-3">
+<<<<<<< Updated upstream
                         <label for="floatingLname">Нэр</label>
                         <input type="text" name="lastname" class="form-control form-control-sm" id="floatingLname"
                           placeholder="Нэр" value="{{ lastName }}">
+<<<<<<< HEAD
+=======
+=======
+                        <label for="floatingInput">Нэр</label>
+                        <input type="name" name="lastname" class="form-control form-control-sm" id="floatingLname"
+                          >
+>>>>>>> Stashed changes
+>>>>>>> 6ebe5df7f8fefbf05baccdbc222c5104116751a4
                       </div>
                     </div>
                   </div>
@@ -195,45 +215,88 @@
                       <div class="form-floating mt-8">
                         <label for="floatingEmail">Имэйл хаяг</label>
                         <input type="email" name="email" class="form-control form-control-sm" id="floatingEmail"
+<<<<<<< HEAD
                           placeholder="Имэйл" value="{{ email }}">
+=======
+<<<<<<< Updated upstream
+                          placeholder="Имэйл" value="{{ email }}">
+=======
+                          >
+>>>>>>> Stashed changes
+>>>>>>> 6ebe5df7f8fefbf05baccdbc222c5104116751a4
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-8">
+<<<<<<< Updated upstream
                         <label for="floatingPassword">Нууц үг</label>
+                        <input type="password" name="password" class="form-control form-control-sm" autocomplete="false" readonly onfocus="this.removeAttribute('readonly');"
+                          id="floatingPassword" placeholder="Нууц үг">
+=======
+                        <label for="floatingInput">Нууц үг</label>
                         <input type="password" name="password" class="form-control form-control-sm"
-                          id="floatingPassword" placeholder="Нууц үг">
+                          id="floatingPassword">
+>>>>>>> Stashed changes
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-8">
+<<<<<<< Updated upstream
                         <label for="floatingPassword">Нууц үг солих</label>
-                        <input type="password" name="changepassword" class="form-control form-control-sm"
+                        <input type="password" name="changepassword" class="form-control form-control-sm" autocomplete="false" readonly onfocus="this.removeAttribute('readonly');"
                           id="floatingPassword" placeholder="Нууц үг">
+=======
+                        <label for="floatingInput">Нууц үг солих</label>
+                        <input type="password" name="changepassword" class="form-control form-control-sm"
+                          id="floatingPassword">
+>>>>>>> Stashed changes
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-8">
+<<<<<<< Updated upstream
                         <label for="floatingPassword">Шинэ нууц үг</label>
-                        <input type="password" name="newpassword" class="form-control form-control-sm"
+                        <input type="password" name="newpassword" class="form-control form-control-sm" autocomplete="false" readonly onfocus="this.removeAttribute('readonly');"
                           id="floatingPassword" placeholder="Нууц үг">
+=======
+                        <label for="floatingInput">Шинэ нууц үг</label>
+                        <input type="password" name="newpassword" class="form-control form-control-sm"
+                          id="floatingPassword">
+>>>>>>> Stashed changes
                       </div>
                     </div>
                   </div>
+<<<<<<< Updated upstream
                   <div class="row">
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-8">
                         <label for="floatingUsername">Хэрэглэгчийн нэр</label>
+<<<<<<< HEAD
                         <input type="text" name="username" class="form-control form-control-sm" id="floatingUsername"  autocomplete="off"
                           value="{{ username }}">
+=======
+                        <input type="text" name="username" class="form-control form-control-sm" id="floatingUsername"  autocomplete="false" 
+                          value="{{ userName }}">
+>>>>>>> 6ebe5df7f8fefbf05baccdbc222c5104116751a4
                       </div>
                     </div>
+=======
+                  
+
+              </div>
+              <div class="row">
+                <div class="col-sm-8 mt-3">
+                  <div class="form-floating mt-8">
+                    <label for="floatingInput">Хэрэглэгчийн нэр</label>
+                    <input type="username" name="username" class="form-control form-control-sm" id="floatingUsername"
+                    >
+>>>>>>> Stashed changes
                   </div>
                   <div class="row">
                     <div class="col-sm-12 mt-3 mb-4">
@@ -282,8 +345,8 @@
                       <div class="col-sm-5">
                         <div class="form-floating mt-3">
                           <label for="floatingInput">Регистерийн дугаар: </label>
-                          <input type="tel" name="phone-number" class="form-control" step="10" id="floatingNumber"
-                            placeholder="Регистерийн дугаар">
+                          <input type="text" name="phone-number" class="form-control" step="10" id="floatingNumber"
+                          >
                         </div>
                       </div>
                     </div>
@@ -292,19 +355,36 @@
                       <div class="col-sm-5">
                         <div class="form-floating mt-3">
                           <label for="floatingInput">Утасны дугаар: </label>
-                          <input type="tel" name="phone-number" class="form-control" step="10" id="floatingNumber"
-                            placeholder="дугаар">
+                          <input type="text" name="phone-number" class="form-control" step="10" id="floatingNumber"
+                          >
                         </div>
                       </div>
                     </div>
-
+                    <div class="row">
+                      <div class="col-sm-5">
+                        <div class="form-floating mt-3">
+                          <label for="floatingInput">Иргэншил: </label>
+                          <input type="text" name="per" class="form-control" step="10" id="floatingNumber"
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-5">
+                        <div class="form-floating mt-3">
+                          <label for="floatingInput">Яс үндэс: </label>
+                          <input type="text" name="ys" class="form-control" step="10" id="floatingNumber"
+                          >
+                        </div>
+                      </div>
+                    </div>
 
                     <div class="row">
                       <div class="col-sm-8 mt-3">
                         <div class="form-floating mt-3">
                           <label for="floatingInput">Миний тухай</label>
                           <input type="text" name="Address" class="form-control form-control-lg" id="floatingAddress"
-                            placeholder="Миний тухай">
+                            >
                         </div>
                       </div>
                     </div>
@@ -314,8 +394,8 @@
                       <div class="col-sm-8 mt-3">
                         <div class="form-floating mt-8">
                           <label for="floatingInput">Хот/аймаг</label>
-                          <input type="city" name="city" class="form-control form-control-sm" id="floatingCity"
-                            placeholder="Хот/аймаг">
+                          <input type="text" name="city" class="form-control form-control-sm" id="floatingCity"
+                            >
                         </div>
                       </div>
                     </div>
@@ -325,8 +405,8 @@
                       <div class="col-sm-8 mt-3">
                         <div class="form-floating mt-8">
                           <label for="floatingInput">Сум / дүүрэг</label>
-                          <input type="city" name="city" class="form-control form-control-sm" id="floatingCity"
-                            placeholder="Сум/дүүрэг">
+                          <input type="text" name="sum" class="form-control form-control-sm" id="floatingCity"
+                          >
                         </div>
                       </div>
                     </div>
@@ -335,8 +415,8 @@
                       <div class="col-sm-8 mt-3">
                         <div class="form-floating mt-8">
                           <label for="floatingInput">Баг / хороо</label>
-                          <input type="city" name="city" class="form-control form-control-sm" id="floatingCity"
-                            placeholder="Баг / хороо">
+                          <input type="text" name="bag" class="form-control form-control-sm" id="floatingCity"
+                          >
                         </div>
                       </div>
                     </div>
@@ -344,9 +424,9 @@
                     <div class="row">
                       <div class="col-sm-8 mt-3">
                         <div class="form-floating mt-3">
-                          <label for="floatingInput">Хаяг</label>
+                          <label for="floatingInput">Гэрийн хаяг</label>
                           <input type="text" name="Address" class="form-control form-control-lg" id="floatingAddress"
-                            placeholder="хаяг">
+                          >
                         </div>
                       </div>
                     </div>
@@ -382,18 +462,8 @@
                 <div class="headline">
                   <form id="cc-contact-2" class="form-group" action="" method="post">
                     <div class="Education">
-                      <h1>Гэр бүлийн мэдээлэл</h1>
-                      <table> <br><br>
-                        <tr>
-                          <td style="width: 100px; text-align: right;"> Таны хэн болох: </td>
-                          <td style="color: red; text-align: center; width: 20px;"> * </td>
-                          <td>
-                            <input type="text" name="lastname" size="30">
-                          </td>
-                        </tr>
-                      </table>
-
-                      <table> <br><br>
+                      <!-- <h1>Гэр бүлийн мэдээлэл</h1> -->
+                      <table>
                         <tr>
                           <td style="width: 100px; text-align: right;"> Гэр бүлийн байдал: </td>
                           <td style="color: red; text-align: center; width: 20px;"> * </td>
@@ -406,36 +476,54 @@
                           </td>
                         </tr>
                       </table>
-                      <br><br>
-                      
-                      <table>
-                        <tr>
-                          <td style="width: 100px; text-align: right;"> Гишүүдийн тоо: </td>
-                          <td style="color: red; text-align: center; width: 20px;"> * </td>
-                          <td>
-                            <input type="text" name="lastname" size="30">
-                          </td>
-                        </tr>
-                      </table>
-                      <br> <br>
+                      <br>
 
-                      <table>
-                        <tr>
-                          <td style="width: 100px; text-align: right;"> Албан тушаал: </td>
-                          <td style="color: red; text-align: center; width: 20px;"> * </td>
-                          <td> <input type="text" name="lastname" size="30"> </td>
-                        </tr>
-                      </table>
-                      <br><br>
-                      <table>
-                        <tr>
-                          <td style="width: 100px; text-align: right;"> Албан байгууллагын
-                            нэр:
-                          </td>
-                          <td style="color: red; text-align: center; width: 20px;"> * </td>
-                          <td> <input type="text" name="lastname" size="30"> </td>
-                        </tr>
-                      </table>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <div class="form-floating mt-3">
+                            <label for="floatingInput">Таны хэн болох: </label>
+                            <input type="text" name="who" class="form-control" step="10" id="floatingNumber">
+                          </div>
+                        </div>
+                        <br>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <div class="form-floating mt-3">
+                            <label for="floatingInput"> Нэр: </label>
+                            <input type="text" name="name" lass="form-control" step="10" id="floatingNumber">
+                          </div>
+                        </div>
+                      </div>
+
+                      <br>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <div class="form-floating mt-3">
+                            <label for="floatingInput"> Гишүүдийн тоо: </label>
+                            <input type="text" name="num" class="form-control" step="10" id="floatingNumber">
+                          </div>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <div class="form-floating mt-3">
+                            <label for="floatingInput">Албан тушаал: </label>
+                            <input type="text" name="alba" class="form-control" step="10" id="floatingNumber">
+                          </div>
+                        </div>
+                      </div>
+                        <br>
+                        <div class="row">
+                          <div class="col-sm-5">
+                            <div class="form-floating mt-3">
+                              <label for="floatingInput">Албан байгууллагын
+                                нэр: </label>
+                              <input type="text" name="aname" class="form-control" step="10" id="floatingNumber">
+                            </div>
+                          </div>
+                        </div>
                      <input type="button" style="font-size: 20px;" name="save" value="Хадгалах">
                     </div>
                   </form>
@@ -447,8 +535,8 @@
                 <div class="headline">
                   <form id="cc-contact-2" class="form-group" action="" method="post">
                     <div class="Education">
-                      <h1>Боловсрол</h1>
-                      <table> <br><br>
+                      <!-- <h1>Боловсрол</h1> -->
+                      <table> 
                         <tr>
                           <td style="width: 100px; text-align: right;"> Боловсрол: </td>
                           <td style="color: red; text-align: center; width: 20px;"> * </td>
@@ -475,33 +563,33 @@
                           <td style="width: 100px;">
                             <select>
                               <option>-/-</option>
-                              <option> Магистр </option>
-                              <option> Доктор </option>
-                              <option> Профессор</option>
-                              <option> Бакалавр </option>
+                              <option> Бакалавр</option>
+                              <option>Магистр </option>
+                              <option> Доктор  </option>
+                              <option>  Профессор </option>
                             </select>
                           </td>
                         </tr>
                       </table>
-                      <br> <br>
-
-                      <table>
-                        <tr>
-                          <td style="width: 100px; text-align: right;"> Албан тушаал: </td>
-                          <td style="color: red; text-align: center; width: 20px;"> * </td>
-                          <td> <input type="text" name="lastname" size="30"> </td>
-                        </tr>
-                      </table>
-                      <br><br>
-                      <table>
-                        <tr>
-                          <td style="width: 100px; text-align: right;"> Албан байгууллагын
-                            нэр:
-                          </td>
-                          <td style="color: red; text-align: center; width: 20px;"> * </td>
-                          <td> <input type="text" name="lastname" size="30"> </td>
-                        </tr>
-                      </table>
+                      <br>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <div class="form-floating mt-3">
+                            <label for="floatingInput">Албан тушаал: </label>
+                            <input type="text" name="alba" class="form-control" step="10" id="floatingNumber">
+                          </div>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <div class="form-floating mt-3">
+                            <label for="floatingInput">Албан байгууллагын
+                              нэр: </label>
+                            <input type="text" name="aname" class="form-control" step="10" id="floatingNumber">
+                          </div>
+                        </div>
+                      </div>
 
                      <input type="button" style="font-size: 20px;" name="save" value="Хадгалах">
                     </div>
@@ -514,8 +602,8 @@
                 <div class="headline">
                   <form id="cc-contact-2" class="form-group" action="" method="post">
                     <div class="Education">
-                      <h1>Туршлага</h1>
-                      <table> <br><br>
+                      <!-- <h1>Туршлага</h1> -->
+                      <table>
                         <tr>
                           <td style="width: 100px; text-align: right;"> Ажил эрхлэлтийн байдал: </td>
                           <td style="color: red; text-align: center; width: 20px;"> * </td>
@@ -529,37 +617,37 @@
                             </select>
                           </td>
                         </tr>
-                      </table>
+                      </table><br>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <div class="form-floating mt-3">
+                            <label for="floatingInput">Ажиллаж байсан жилүүд: </label>
+                            <input type="text" name="aname" class="form-control" step="10" id="floatingNumber">
+                          </div>
+                        </div>
+                      </div>
 
-                      <table> <br><br>
-                        <tr>
-                          <td style="width: 100px; text-align: right;"> Ажиллаж байсан жилүүд: </td>
-                          <td style="color: red; text-align: center; width: 20px;"> * </td>
-                          <td >
-                            <input type="text" name="lastname" size="30"> 
-                          </td>
-                        </tr>
-                      </table>
-                      <br><br>
-                    
-
-                      <table>
-                        <tr>
-                          <td style="width: 100px; text-align: right;"> Албан тушаал: </td>
-                          <td style="color: red; text-align: center; width: 20px;"> * </td>
-                          <td> <input type="text" name="lastname" size="30"> </td>
-                        </tr>
-                      </table>
-                      <br><br>
-                      <table>
-                        <tr>
-                          <td style="width: 100px; text-align: right;"> Албан байгууллагын
-                            нэр:
-                          </td>
-                          <td style="color: red; text-align: center; width: 20px;"> * </td>
-                          <td> <input type="text" name="lastname" size="30"> </td>
-                        </tr>
-                      </table>
+                      
+                      <br>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <div class="form-floating mt-3">
+                            <label for="floatingInput">Албан тушаал: </label>
+                            <input type="text" name="alba" class="form-control" step="10" id="floatingNumber">
+                          </div>
+                        </div>
+                      </div>
+    
+                      <br>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <div class="form-floating mt-3">
+                            <label for="floatingInput">Албан байгууллагын
+                              нэр: </label>
+                            <input type="text" name="aname" class="form-control" step="10" id="floatingNumber">
+                          </div>
+                        </div>
+                      </div>
                      
 
 
@@ -573,7 +661,7 @@
               <div class="panel">
                 <div class="headline">
                   <form id="cc-contact" class="form-group" action="" method="post">
-                    <h1>Чадвар</h1>
+                    <!-- <h1>Чадвар</h1> -->
 
                     <div class="form-check mt-3">
                       <textarea name="Message" cols="80" rows="10">{{ userId }}</textarea>
@@ -583,6 +671,74 @@
                 </div>
               </div>
                       <!-- ################################################# -->
+                      <!-- ################## сошиал ########################## -->
+                      <form id="cc-contact" class="form-group" action="" method="post">
+                        <div class="row">
+                          <div class="col-sm-5">
+                            <div class="form-floating mt-3">
+                              <label for="floatingInput">Инстаграм хаяг: </label>
+                              <input type="text" name="ig" class="form-control" step="10" id="floatingNumber"
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-5">
+                            <div class="form-floating mt-3">
+                              <label for="floatingInput">Фэйсбүүк хаяг: </label>
+                              <input type="text" name="face" class="form-control" step="10" id="floatingNumber"
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-5">
+                            <div class="form-floating mt-3">
+                              <label for="floatingInput">Имэйл хаяг: </label>
+                              <input type="text" name="email" class="form-control" step="10" id="floatingNumber"
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-5">
+                            <div class="form-floating mt-3">
+                              <label for="floatingInput">Github: </label>
+                              <input type="text" name="git" class="form-control" step="10" id="floatingNumber"
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-5">
+                            <div class="form-floating mt-3">
+                              <label for="floatingInput">Telegram: </label>
+                              <input type="text" name="tel" class="form-control" step="10" id="floatingNumber"
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-5">
+                            <div class="form-floating mt-3">
+                              <label for="floatingInput"> Tinder: </label>
+                              <input type="text" name="tin" class="form-control" step="10" id="floatingNumber"
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        
+                    <div class="row">
+                      <div class="col-sm-12 mt-3 mb-4" class="col-sm-2">
+                        <div class="btn-group mr-2 " role="group" aria-label="First group">
+                          <input type="button" style="font-size: 20px;" name="save" value="Хадгалах">
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  <!-- ############################################################### -->
+
+                  
             </div>
           </div>
         </div>
