@@ -8,35 +8,27 @@ from    django.http                  import HttpResponse
 
 
 def profileViews(request):
-    # checkSession(request)  
-    # if request.session['beegii'] ==0:        
-    #     return redirect("homeView")    
-    # htmlRuuDataDamjuulah = {}
-    # htmlRuuDataDamjuulah = request.session['userData']
-    return render(request, "Profile/1.html") #htmlRuuDataDamjuulah
+    checkSession(request)  
+    if request.session['beegii'] ==0:        
+        return redirect("homeView")    
+    baas = {}
+    baas["userId"] = request.session['userId']
 
-def userInfoShows(request, user_id):
-    if not user_id:
-        response = {
-            "responseCode": 550,
-            "responseText": "User ID is missing"
-        }
-        return render(request, "Profile/1.html", context=response)
+    requestJSON = {
+        "id": request.session['userId']
+    }
 
-    url = f"http://whoisb.mandakh.org/userInfoShow/?id={user_id}"
-    response = requests.get(url)
+    r = requests.get("http://whoisb.mandakh.org/userInfoShow/",
+                    data=json.dumps(requestJSON),
+                    headers={'Content-Type': 'application/json'})
+    response_json = r.json()
+    response_json = response_json[0]
+    baas["userName"] = response_json.get('userName')
+    baas["firstName"] = response_json.get('firstName')
+    baas["lastName"] = response_json.get('lastName')
+    baas["email"] = response_json.get('email')
+    
+    return render(request, "Profile/1.html",baas)
 
-    if response.status_code == 200:
-        user_info = response.json()
-        context = {
-            "user_info": user_info
-        }
-        return render(request, "Profile/1.html", context)
-    else: 
-        response = {
-            "responseCode": response.status_code,
-            "responseText": "Request failed"
-        }
-        return render(request, "Profile/1.html", context=response)
 
 
