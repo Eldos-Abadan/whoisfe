@@ -15,7 +15,7 @@
 
   <link href="{% static '/css/dashboard/bootstrap.min.css'%}" rel="stylesheet" />
   <link href="{% static '/css/Profile/1.css' %}" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="{% static '/css/ae.css'%}">
+
 
   <link href="{% static '/css/dashboard/animate.min.css'%}" rel="stylesheet" />
 
@@ -28,8 +28,6 @@
   <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css" />
   <link href="{% static '/css/dashboard/pe-icon-7-stroke.css'%}" rel="stylesheet" />
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <style>
-  </style>
 </head>
 
 <body>
@@ -68,52 +66,44 @@
               <form id="cc-contact" class="form-group" action="" method="POST" name="userFamilyIns">
                 {% csrf_token %}
                 <div class="FamilyInfo">
-                  <div class="add">
-                    <div class="add__container">
-                      <div class="add__henBoloh">
-                        <div class="row">
-                          <div class="col-sm-5">
-                            <div class="form-floating mt-3">
-                              <label for="floatingInput">Таны хэн болох:</label>
-                              <input list="henBoloh" name="henBoloh" class="form-control" step="10" id="floatingNumber">
-                              <datalist id="henBoloh">
-                                <option name="henBolohN" value="Uwuu"></option>
-                                <option name="henBolohN" value="Emee"></option>
-                                <option name="henBolohN" value="Aaw"></option>
-                                <option name="henBolohN" value="Eej"></option>
-                                <option name="henBolohN" value="Ah"></option>
-                                <option name="henBolohN" value="Egch"></option>
-                                <option name="henBolohN" value="Dvv"></option>
-                                <option name="henBolohN" value="Naiz"></option>
-                                <option name="henBolohN" value="Nuhur"></option>
-                                <option name="henBolohN" value="Ehner"></option>
-                              </datalist>
-                            </div>
-                          </div>
-                        </div>
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <div class="form-floating mt-3">
+                        <label for="floatingInput">Таны хэн болох:</label>
+                        <input list="henBoloh" name="henBoloh" class="form-control" step="10" id="floatingNumber">
+                        <datalist id="henBoloh">
+                          <option name="henBolohN" value="Uwuu"></option>
+                          <option name="henBolohN" value="Emee"></option>
+                          <option name="henBolohN" value="Aaw"></option>
+                          <option name="henBolohN" value="Eej"></option>
+                          <option name="henBolohN" value="Ah"></option>
+                          <option name="henBolohN" value="Egch"></option>
+                          <option name="henBolohN" value="Dvv"></option>
+                          <option name="henBolohN" value="Naiz"></option>
+                          <option name="henBolohN" value="Nuhur"></option>
+                          <option name="henBolohN" value="Ehner"></option>
+                        </datalist>
                       </div>
-                      <br>
-                      <div class="add__ner">
-                        <div class="row">
-                          <div class="col-sm-5">
-                            <div class="form-floating mt-3">
-                              <label for="floatingInput"> Нэр: </label>
-                              <input type="text" name="ner" lass="form-control" step="10" id="floatingNumber">
-                            </div>
-                          </div>
-                        </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <div class="form-floating mt-3">
+                        <label for="floatingInput"> Нэр: </label>
+                        <input type="text" name="ner" lass="form-control" step="10" id="floatingNumber">
                       </div>
-                      <div class="add__dugaar">
-                        <div class="row">
-                          <div class="col-sm-5">
-                            <div class="form-floating mt-3">
-                              <label for="floatingInput">Утасны дугаар: </label>
-                              <input type="text" name="dugaar" class="form-control" step="10" id="floatingNumber">
-                            </div>
-                          </div>
-                        </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <div class="form-floating mt-3">
+                        <label for="floatingInput">Утасны дугаар: </label>
+                        <input type="text" name="dugaar" class="form-control" step="10" id="floatingNumber">
                       </div>
-                      <!-- <br>
+                    </div>
+                  </div>
+                  <!-- <br>
                   <div class="row">
                     <div class="col-sm-5">
                       <div class="form-floating mt-3">
@@ -132,31 +122,20 @@
                       </div>
                     </div>
                   </div> -->
-                  <button class="add__btn" name="userFamilyIns">Nemeh</button>
-                      
-                    </div>
-                  </div>
-              </form>
-              <div class="container clearfix">
-                <div class="FamilyInfo">
-                  <h2 class="FamilyInfo__title">Гэр бүлийн мэдээлэл</h2>
-
-                  <div class="FamilyInfo__list">
-                  </div>
+                  <input type="submit" id="userFamilyIns" name="userFamilyIns" value="Хадгалах">
                 </div>
-                <br><br><br><br><br>
-                <input type="button" class="add__btn" id="userFamilyIns" name="userFamilyIns" value="Хадгалах">
-              </div>
+              </form>
             </div>
           </div>
-
-          <!-- ################################## -->
-
-
-
         </div>
       </div>
+      <!-- ################################## -->
+
+
+
     </div>
+  </div>
+  </div>
   </div>
   <div class="wrapper2">
     <div class="footer">
@@ -170,10 +149,13 @@
 
 <script src="{% static '/js/dashboard/jquery.3.2.1.min.js'%}" type="text/javascript"></script>
 <script src="{% static '/js/dashboard/bootstrap.min.js'%}" type="text/javascript"></script>
-<script src="{% static '/js/ae.js'%}"></script>
+
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+
 <script src="{% static '/js/dashboard/light-bootstrap-dashboard.js'%}"></script>
+
 <script src="{% static '/js/dashboard/demo.js'%}"></script>
+
 <script type="text/javascript">
   $(document).ready(function () {
     $("#profileMenuItem").addClass("active");
