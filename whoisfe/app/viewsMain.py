@@ -47,10 +47,51 @@ def homeView(request):
 
 
 def walletView(request): 
-  return render(request, "wallet/wallet.html")
+  # getTransactionLog
+  serviceZam = "http://whoisb.mandakh.org/getTransactionLog/"
+  id = request.session['userId']
+  print(dict(request.session))
+  requestJSON = {
+     "user_id" : str(id)
+  }
+  r = requests.get(serviceZam,
+                            data=json.dumps(requestJSON),
+                            headers={'Content-Type': 'application/json'} )
+  data = r.json()
+  htmlRuu = {}
+  htmlRuu["vldegdel"] = data["dansniiUldegdel"]
+  print(data["dansniiUldegdel"])
+  return render(request, "wallet/wallet.html", htmlRuu)
 
 def wallet1View(request): 
-  return render(request, "wallet/wallet1.html")
+    htmlRuu = {}
+    userName = "Magnai"
+  # makeTransaction
+    if request.method == "POST":
+        utga = request.POST.get("utga")
+        hend = request.POST.get("hend")
+        amount = request.POST.get("amount")
+        serviceZam = "http://whoisb.mandakh.org/makeTransaction/"
+        utga = request.POST.get("utga")
+        hend = request.POST.get("hend")
+        amount = request.POST.get("amount")
+        requestJSON = {
+          "from": userName,
+          "target": hend,
+          "amount": str(amount),
+          "utga": utga
+        }
+
+        r = requests.post(serviceZam,
+                                  data=json.dumps(requestJSON),
+                                  headers={'Content-Type': 'application/json'} )
+        data = r.json()
+        print(data)
+    if(data["responseCode"] == 200):
+       htmlRuu["responseText"] = data["responseText"]
+    else:
+       htmlRuu["aldaa"] = data["responseText"]
+    return render(request, "wallet/wallet1.html", htmlRuu)
 
 def justCVViews(request): 
   return render(request, "templates/just.html")
