@@ -119,13 +119,15 @@ def profileFamily(request):
     requestJSON = {
         "user_id": request.session['userId']
     }
-    r = requests.get("http://whoisb.mandakh.org/userSocial/",
+    r = requests.get("http://whoisb.mandakh.org/userFamilyIns/",
                      data=json.dumps(requestJSON),
                      headers={'Content-Type': 'application/json'},)
     response_json = r.json()
     htmlRuuDamjuulahUtguud['henBoloh'] = response_json.get('henBoloh')
     htmlRuuDamjuulahUtguud['ner'] = response_json.get('ner')
     htmlRuuDamjuulahUtguud['dugaar'] = response_json.get('dugaar')
+
+    
     return render(request, "Profile/4.html", htmlRuuDamjuulahUtguud)
 
 
