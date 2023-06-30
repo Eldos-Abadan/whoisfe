@@ -108,23 +108,44 @@ def profileSkill(request):
     return render(request, "Profile/6.html",)
 
 def profileSocial(request):
+    #  Энэ хуудасруу орохтой холбоотой заавал байх шалгалт
     checkSession(request)  
     if request.session['beegii'] == 0:        
         return redirect("homeView")    
-    
+    htmlRuuDamjuulahUtguud = {}
+    htmlRuuDamjuulahUtguud["responseText"] = ""
+    htmlRuuDamjuulahUtguud["textColor"] = "#00FF00"
+    #######################################################
     if request.method == "POST":
-        name = request.POST.get("name")
-        site = request.POST.get("site")
+        serviceHayag = "http://whoisb.mandakh.org/userSocialIn/"
+        app = request.POST.get("app")
+        site = request.POST.get("name")
+        requestJSON = {
+            'id': request.session['userId'],
+            'app': app,
+            'site': site
+        }
+        r = requests.get(serviceHayag,
+                        data=json.dumps(requestJSON),
+                        headers={'Content-Type': 'application/json'})
+        responseJson = r.json()                        
+        htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
+        if responseJson["responseCode"] == 200:
+            htmlRuuDamjuulahUtguud["textColor"] = "#00ff00"
+        else:
+            htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
 
-        request_data = {
-            "ner": name,
-            "site": site,
-            }
+    htmlRuuDamjuulahUtguud["userId"] = request.session['userId']
     requestJSON = {
-        "id": request.session['userId']
+        "user_id": request.session['userId']
     }
-    r = requests.get("http://whoisb.mandakh.org/userSocialIn/",
+    r = requests.get("http://whoisb.mandakh.org/userSocial/",
                     data=json.dumps(requestJSON),
-                    headers={'Content-Type': 'application/json'})
-    
-    return render(request, "Profile/7.html",)
+                    headers={'Content-Type': 'application/json'},)
+    response_json = r.json()
+    htmlRuuDamjuulahUtguud['app'] = response_json.get('app')
+    htmlRuuDamjuulahUtguud['name'] = response_json.get('ner')
+
+    return render(request, "Profile/7.html", htmlRuuDamjuulahUtguud)               
+    #######################################################################
+

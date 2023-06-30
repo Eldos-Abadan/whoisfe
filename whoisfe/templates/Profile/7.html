@@ -47,21 +47,25 @@
     </div>
     <div class="container">
       <div class="wrapper">
-        <form id="cc-contact" class="form-group" action="" method="post">
+        <span style="color:#0000FF;">
+          {{ responseText }}
+        </span>
+        {{app}} -> {{name}}
+        <form id="cc-contact" class="form-group" action="" method="POST">
           {%csrf_token%}
           <div class="row">
             <div class="col-sm-5">
               <div class="form-floating mt-3">
                 <label for="floatingInput">Апп</label>
-                <input list="apps" name="site" class="form-control" step="10" id="floatingNumber">
+                <input list="apps" name="app" class="form-control" step="10" id="floatingNumber">
                 <datalist id="apps">
-                  <option value="Facebook"></option>
-                  <option value="Instagram"></option>
-                  <option value="Twitter"></option>
-                  <option value="Github"></option>
-                  <option value="LinkedIn"></option>
-                  <option value="Youtube"></option>
-                  <option value="Wechat"></option>
+                  <option name="appn" value="Facebook"></option>
+                  <option name="appn" value="Instagram"></option>
+                  <option name="appn" value="Twitter"></option>
+                  <option name="appn" value="Github"></option>
+                  <option name="appn" value="LinkedIn"></option>
+                  <option name="appn" value="Youtube"></option>
+                  <option name="appn" value="Wechat"></option>
                 </datalist>
               </div>
             </div>
@@ -92,14 +96,7 @@
     <div class="footer">
       {% include "../includes/footer.html" %}
     </div>
-    {% if userSocial %}
-    <ul>
-      {% for userSocial in userSocials %}
-      <li>{{userSocial.ner}} -> {{userSocial.app}}</li>
-      {%endfor%}
-    </ul>
-    {%endif%}
-    </div>
+  </div>
 </body>
 
 <script src="{% static '/js/dashboard/jquery.3.2.1.min.js'%}" type="text/javascript"></script>
