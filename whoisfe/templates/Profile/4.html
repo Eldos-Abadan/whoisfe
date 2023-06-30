@@ -41,8 +41,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-            {% include "../includes/logout.html" %}
-            <li class="separator hidden-lg"></li>
+          {% include "../includes/logout.html" %}
+          <li class="separator hidden-lg"></li>
           </ul>
         </div>
       </div>
@@ -54,104 +54,95 @@
     </div>
     <div class="container">
       <div class="wrapper">
-    <!-- ####### Гэр бүлийн мэдээллийн хэсэг ######## -->
-    <div class="wrapper">
-      <div class="wrapper2">
-        <div class="headline">
-          <form id="cc-contact-2" class="form-group" action="" method="post" name="userFamilyIns">
-            {% csrf_token %}
-            <div class="FamilyInfo">
-              <!-- <h1>Гэр бүлийн мэдээлэл</h1> -->
-              <table>
-                <tr>
-                  <td style="width: 100px; text-align: right;"> Гэр бүлийн байдал: </td>
-                  <td style="color: red; text-align: center; width: 20px;"> * </td>
-                  <td style="width: 100px;">
-                    <select name="gerBuliinBaidal">
-                      <option>-/-</option>
-                      <option value="">гэрлэсэн</option>
-                      <option> гэрлээгүй</option>
-                    </select>
-                  </td>
-                </tr>
-              </table>
-              <br>
-
-              <div class="row">
-                <div class="col-sm-5">
-                  <div class="form-floating mt-3">
-                    <label for="floatingInput">Таны хэн болох: </label>
-                    <input type="text" name="henBoloh" class="form-control" step="10" id="floatingNumber">
+        <!-- ####### Гэр бүлийн мэдээллийн хэсэг ######## -->
+        <div class="wrapper">
+          <div class="wrapper2">
+            <h1>Гэр бүлийн мэдээлэл</h1>
+            <span style="color:#0000FF;">
+              {{ responseText }}
+            </span>
+            {{app}} -> {{name}}
+            <div class="headline">
+              <form id="cc-contact" class="form-group" action="" method="POST" name="userFamilyIns">
+                {% csrf_token %}
+                <div class="FamilyInfo">
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <div class="form-floating mt-3">
+                        <label for="floatingInput">Таны хэн болох:</label>
+                        <input list="apps" name="henBoloh" class="form-control" step="10" id="floatingNumber">
+                        <datalist id="apps">
+                          <option name="henBolohN" value="Uwuu"></option>
+                          <option name="henBolohN" value="Emee"></option>
+                          <option name="henBolohN" value="Aaw"></option>
+                          <option name="henBolohN" value="Eej"></option>
+                          <option name="henBolohN" value="Ah"></option>
+                          <option name="henBolohN" value="Egch"></option>
+                          <option name="henBolohN" value="Dvv"></option>
+                          <option name="henBolohN" value="Naiz"></option>
+                          <option name="henBolohN" value="Nuhur"></option>
+                          <option name="henBolohN" value="Ehner"></option>
+                        </datalist>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <br>
-              </div>
-              <div class="row">
-                <div class="col-sm-5">
-                  <div class="form-floating mt-3">
-                    <label for="floatingInput"> Нэр: </label>
-                    <input type="text" name="ner" lass="form-control" step="10" id="floatingNumber">
+                  <br>
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <div class="form-floating mt-3">
+                        <label for="floatingInput"> Нэр: </label>
+                        <input type="text" name="ner" lass="form-control" step="10" id="floatingNumber">
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-5">
-                  <div class="form-floating mt-3">
-                    <label for="floatingInput">Утасны дугаар: </label>
-                    <input type="text" name="phone-number" class="form-control" step="10" id="floatingNumber"
-                    >
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <div class="form-floating mt-3">
+                        <label for="floatingInput">Утасны дугаар: </label>
+                        <input type="text" name="dugaar" class="form-control" step="10" id="floatingNumber">
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <br>
-              <div class="row">
-                <div class="col-sm-5">
-                  <div class="form-floating mt-3">
-                    <label for="floatingInput"> Гишүүдийн тоо: </label>
-                    <input type="text" name="amBul" class="form-control" step="10" id="floatingNumber">
+                  <!-- <br>
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <div class="form-floating mt-3">
+                        <label for="floatingInput">Албан тушаал: </label>
+                        <input type="text" name="albanTushaal" class="form-control" step="10" id="floatingNumber">
+                      </div>
+                    </div>
                   </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <div class="form-floating mt-3">
+                        <label for="floatingInput">Албан байгууллагын
+                          нэр: </label>
+                        <input type="text" name="baiguulgaNer" class="form-control" step="10" id="floatingNumber">
+                      </div>
+                    </div>
+                  </div> -->
+                  <input type="submit" id="userFamilyIns" name="userFamilyIns" value="Хадгалах">
                 </div>
-              </div>
-              <br>
-              <div class="row">
-                <div class="col-sm-5">
-                  <div class="form-floating mt-3">
-                    <label for="floatingInput">Албан тушаал: </label>
-                    <input type="text" name="albanTushaal" class="form-control" step="10" id="floatingNumber">
-                  </div>
-                </div>
-              </div>
-              <br>
-              <div class="row">
-                <div class="col-sm-5">
-                  <div class="form-floating mt-3">
-                    <label for="floatingInput">Албан байгууллагын
-                      нэр: </label>
-                    <input type="text" name="baiguulgaNer" class="form-control" step="10" id="floatingNumber">
-                  </div>
-                </div>
-              </div>
-              <input type="submit" id="userFamilyIns" name="userFamilyIns" value="Хадгалах">
+              </form>
             </div>
-          </form>
+          </div>
         </div>
       </div>
+      <!-- ################################## -->
+
+
+
     </div>
   </div>
-  <!-- ################################## -->
-  
-
-                  
-</div>
-</div>
-</div>
-</div>
-<div class="wrapper2">
-<div class="footer">
-{% include "../includes/footer.html" %}
-</div>
-</div>
-</div>
+  </div>
+  </div>
+  <div class="wrapper2">
+    <div class="footer">
+      {% include "../includes/footer.html" %}
+    </div>
+  </div>
+  </div>
 
 
 </body>
@@ -166,32 +157,32 @@
 <script src="{% static '/js/dashboard/demo.js'%}"></script>
 
 <script type="text/javascript">
-$(document).ready(function() {
-$("#profileMenuItem").addClass("active");
-demo.initChartist();
+  $(document).ready(function () {
+    $("#profileMenuItem").addClass("active");
+    demo.initChartist();
 
-$.notify({
-  icon: "pe-7s-gift",
-  message: "Welcome to WhoIs Dashboard</b>"
-}, {
-  type: "info",
-  timer: 4000
-});
-});
-$(document).ready(function () {
-demo.initChartist();
+    $.notify({
+      icon: "pe-7s-gift",
+      message: "Welcome to WhoIs Dashboard</b>"
+    }, {
+      type: "info",
+      timer: 4000
+    });
+  });
+  $(document).ready(function () {
+    demo.initChartist();
 
-$.notify(
-{
-icon: "pe-7s-gift",
-message: "Welcome to WhoIs Dashboard</b>",
-},
-{
-type: "info",
-timer: 4000,
-}
-);
-});
+    $.notify(
+      {
+        icon: "pe-7s-gift",
+        message: "Welcome to WhoIs Dashboard</b>",
+      },
+      {
+        type: "info",
+        timer: 4000,
+      }
+    );
+  });
 </script>
 
 </html>
