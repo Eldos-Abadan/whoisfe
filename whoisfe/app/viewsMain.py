@@ -83,7 +83,7 @@ def wallet1View(request):
                                   data=json.dumps(requestJSON),
                                   headers={'Content-Type': 'application/json'} )
         data = r.json()
-        # print(data['data']['gvilgee'])
+        print(data['data']['gvilgee'])
         htmlRuu["responseText"] = data["responseText"]
         htmlRuu["userData"] = data['data']['gvilgee'] 
         if data["responseCode"] == 200:
