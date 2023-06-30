@@ -6,7 +6,6 @@ from django.contrib import messages
 from whoisfe.settings import *
 
 
-
 def registerViews(request):
     if request.method == 'POST':
         try:
@@ -43,7 +42,7 @@ def registerViews(request):
 
             # Hash the password
             hashed_password = mandakhHash(password)
-
+           
             # Prepare the request JSON data
             request_data = {
                 "firstName": first_name,
@@ -52,7 +51,6 @@ def registerViews(request):
                 "pass": hashed_password,
                 "userName": user_name
             }
-
             # Make the request to userRegisterView service
             response = requests.post("http://whoisb.mandakh.org/userRegister/",
                                      data=json.dumps(request_data),
@@ -62,7 +60,7 @@ def registerViews(request):
                 # Registration success
                 response_data = response.json()
                 messages.success(request, response_data['responseText'])
-                return redirect('EmailVerView')
+                return redirect('loginViews')
             else:
                 # Registration failed
                 error_message = 'Registration failed: ' + response.content.decode()
@@ -73,5 +71,4 @@ def registerViews(request):
             error_message = 'Error occurred: ' + str(e)
             messages.error(request, error_message)
             return render(request, 'register/register.html')
-
     return render(request, 'register/register.html')

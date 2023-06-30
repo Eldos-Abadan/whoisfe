@@ -5,32 +5,31 @@ import json
 import hashlib
     
 
-def mandakhHash(password):
-    return hashlib.md5(password.encode('utf-8')).hexdigest()
+
     
 def homeLogoutView(request): 
     checkSession(request)    
     request.session['beegii'] = 0
     return redirect("loginViews")
-#   homeLogoutView
 
 def loginViews(request):
     checkSession(request)
     if request.session.get('beegii') != 0:
         return redirect("dashboardViews")
-    
+
     zahia = {}
     aldaaniiMedegdel = ""
 
     if request.method == "POST":
         myName = request.POST.get("myName")
         myPass = request.POST.get("myPass")
-        passs = mandakhHash(myPass)
+        passs = mandakhHash(mandakhHash(myPass))
 
         requestJSON = {
             "name": myName,
             "pass": passs
         }
+        print(requestJSON)
 
         required_fields = ["name", "pass"]
         if not reqValidation(requestJSON, required_fields):
@@ -40,11 +39,12 @@ def loginViews(request):
 
         try:
             r = requests.get("http://whoisb.mandakh.org/userLogin/",
-                            data=json.dumps(requestJSON),
-                            headers={'Content-Type': 'application/json'})
+                             data=json.dumps(requestJSON),
+                             headers={'Content-Type': 'application/json'})
             response_json = r.json()
             resultCode = response_json.get('responseCode')
             resultMessage = response_json.get('responseText')
+            print(response_json)
 
             if resultCode == 200:
                 request.session['beegii'] = 1
