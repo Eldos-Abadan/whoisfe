@@ -68,25 +68,24 @@ def wallet1View(request):
     userName = "Magnai"
   # makeTransaction
     if request.method == "POST":
-        utga = request.POST.get("utga")
-        hend = request.POST.get("hend")
-        amount = request.POST.get("amount")
         serviceZam = "http://whoisb.mandakh.org/makeTransaction/"
         utga = request.POST.get("utga")
         hend = request.POST.get("hend")
         amount = request.POST.get("amount")
+
         requestJSON = {
-          "from": userName,
+          "from": request.session['userId'],
           "target": hend,
           "amount": str(amount),
           "utga": utga
         }
-
         r = requests.post(serviceZam,
                                   data=json.dumps(requestJSON),
                                   headers={'Content-Type': 'application/json'} )
         data = r.json()
+        # print(data['data']['gvilgee'])
         htmlRuu["responseText"] = data["responseText"]
+        htmlRuu["userData"] = data['data']['gvilgee'] 
         if data["responseCode"] == 200:
             htmlRuu["responseText"] = data["responseText"]
         else:
