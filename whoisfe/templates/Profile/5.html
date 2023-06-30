@@ -37,9 +37,6 @@
       </div>
     </nav>
   </div>
-  <div class="main-panel">
-    <h1>Туршлага</h1>
-  </div>
   <div class="wrapper">
     <div class="sidebar" data-color="purple" data-image="{% static '/images/sidebar-5.jpg'%}">
       {% include "../includes/menu.html" %}
@@ -47,6 +44,7 @@
     <div class="container">
       <div class="wrapper">
                         <!-- ############ Туршлага ############## -->
+                        <h1> Ажлын туршлага</h1>
                   <form id="cc-contact-2" class="form-group" action="" method="POST">
                     <div class="Education">
                       <!-- <h1>Туршлага</h1> -->
@@ -54,15 +52,7 @@
                         <div class="col-sm-5">
                           <div class="form-floating mt-3">
                             <label for="floatingInput"> Байгууллагын нэр :</label>
-                            <input list="apps" name="site" class="form-control" step="10" id="floatingNumber">
-                            <datalist id="apps">
-                              <option value="Мандах сургууль"></option>
-                              <option value="Монголын үндэсний их телевиз"></option>
-                              <option value="Эмнэлэг"></option>
-                              <option value="Хөгжим бүжгийн коллеж"></option>
-                              <option value="CU"></option>
-                              <option value="GS25"></option>
-                            </datalist>
+                            <input type="text" name="name" class="form-control" step="10" id="floatingNumber">
                           </div>
                         </div>
                       </div>

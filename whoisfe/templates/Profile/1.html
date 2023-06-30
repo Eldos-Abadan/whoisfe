@@ -36,9 +36,6 @@
       </div>
     </nav>
   </div>
-  <div class="main-panel">
-    <h1>Үндсэн мэдээлэл</h1>
-  </div>
   <div class="wrapper">
     <div class="sidebar" data-color="purple" data-image="{% static '/images/sidebar-5.jpg'%}">
       {% include "../includes/menu.html" %}
@@ -46,9 +43,10 @@
     </div>
   <div class="container">
     <div class="wrapper">
-
+            <div class="main">
           <!-- ###### Үндсэн мэдээллийн хэсэг ###### -->
               <form id="cc-contact" class="form-group" action="" method="post" name="userInfoUpdateForm">
+                <h1>Үндсэн мэдээлэл</h1>
                 {% csrf_token %}
                 <div class="row">
                   <div class="col-sm-3">
@@ -67,8 +65,8 @@
                         placeholder="Овог" value="{{ firstName }}">
                     </div>
                   </div>
-
-
+                
+                
                   <div class="col-sm-3">
                     <div class="form-floating mt-3">
                       <label for="floatingLname">Нэр</label>
@@ -150,8 +148,9 @@
                   </div>
                 </div>
               </form>
-            </div>     <!-- ###############################################-->
-          </div>
+            </div>
+          </div>     <!-- ###############################################-->
+        </div>
     <div class="wrapper2">
       <div class="footer">
         {% include "../includes/footer.html" %}

@@ -57,6 +57,8 @@
             max-width: 500px;
             margin: 0 auto;
             padding: 20px;
+            border: 3px solid rgb(138, 20, 138);
+      border-radius: 20px;
         }
 
         h2 {
@@ -87,15 +89,17 @@
             border-radius: 4px;
             box-sizing: border-box;
             margin-bottom: 10px;
+            border: 1px solid #ebb704;
         }
 
         .form-container input[type="submit"] {
-            background-color: #4CAF50;
+            background-color: rgb(138, 20, 138);
             color: #ffffff;
             border: none;
             padding: 10px 20px;
             border-radius: 4px;
             cursor: pointer;
+            
         }
 
         .transaction-table {
@@ -108,10 +112,11 @@
             padding: 10px;
             text-align: left;
             border-bottom: 1px solid #dddddd;
+            
         }
 
         .transaction-table th {
-            background-color: #4CAF50;
+            background-color: rgb(138, 20, 138);
             color: #ffffff;
         }
 
@@ -186,14 +191,14 @@
         </nav>
         {% include "../includes/banner.html" %}
         <h1>Wallet</h1>
-
+<!-- -------------------------------------------------------------------------------------- -->
         <div class="container">
             <h2>Орлого, зарлагын түрийвч</h2>
     
             <div class="form-container">
-                <h2>Гүйлгээ нэмэх</h2>
+                <h2>Гүйлгээ хийх</h2>
                 <form id="transaction-form">
-                    <label for="description">Тодорхойлолт:</label>
+                    <label for="description">Утга:</label>
                     <input type="text" id="description" name="description" required><br>
     
                     <label for="description">Хэнд:</label>
@@ -202,11 +207,11 @@
                     <label for="amount">Дүн:</label>
                     <input type="number" id="amount" name="amount" required><br>
     
-                    <label for="type">Төрөл:</label>
+                    <!-- <label for="type">Төрөл:</label>
                     <select id="type" name="type" required>
                         <option value="Орлого">Орлого</option>
                         <option value="Зардал">Зарлага</option>
-                    </select><br>
+                    </select><br> -->
     
                     <input type="submit" value="Гүйлгээ хийх">
                 </form>
@@ -216,7 +221,7 @@
                 <h2>Гүйлгээний түүх</h2>
                 <table class="transaction-table" id="transaction-table">
                     <tr>
-                        <th>Тодорхойлолт</th>
+                        <th>Утга</th>
                         <th>Дүн</th>
                         <th>Төрөл</th>
                     </tr>
