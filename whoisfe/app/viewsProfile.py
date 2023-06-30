@@ -6,19 +6,18 @@ from django.http import HttpResponse
 
 
 def profileMain(request):
-    #  Энэ хуудасруу орохтой холбоотой заавал байх шалгалт
+    # Check session
     checkSession(request)
     if request.session['beegii'] == 0:
         return redirect("homeView")
+    
     htmlRuuDamjuulahUtguud = {}
     htmlRuuDamjuulahUtguud["responseText"] = ""
     htmlRuuDamjuulahUtguud["textColor"] = "#00FF00"
-    #######################################################
-
+    
     if request.method == "POST":
-        if ("userInfoUpdateSubmit" in request.POST):
-            # start userInfoUpdateSubmit
-
+        if "userInfoUpdateSubmit" in request.POST:
+            # Start userInfoUpdateSubmit
             serviceHayag = "http://whoisb.mandakh.org/userInfoUpdate/"
             userName = request.POST.get("userName")
             firstName = request.POST.get("firstName")
@@ -29,19 +28,18 @@ def profileMain(request):
                 "firstName": firstName,
                 "lastName": lastName
             }
-
             r = requests.get(serviceHayag,
                              data=json.dumps(requestJSON),
                              headers={'Content-Type': 'application/json'})
-
             responseJson = r.json()
             htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
-            if (responseJson["responseCode"] == 200):
+            if responseJson["responseCode"] == 200:
                 htmlRuuDamjuulahUtguud["textColor"] = "#00ff00"
             else:
                 htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
-            # end userInfoUpdateSubmit
-        if ("changePassSubmit" in request.POST):
+            # End userInfoUpdateSubmit
+            
+        if "changePassSubmit" in request.POST:
             if request.POST.get("new") == request.POST.get("new2"):
                 serviceHayag = "http://whoisb.mandakh.org/changePass/"
                 requestJSON = {
@@ -57,8 +55,7 @@ def profileMain(request):
             else:
                 htmlRuuDamjuulahUtguud["responseText"] = "zailnovsho"
 
-    #  Энэ хуудасруу ороход харуулах мэдээллүүдээ авч, дамжуулах хэсэг
-    htmlRuuDamjuulahUtguud["userId"] = request.session['userId']
+    # Get user information
     serviceHayag = "http://whoisb.mandakh.org/userInfoShow/"
     requestJSON = {
         "id": request.session['userId']
@@ -66,16 +63,21 @@ def profileMain(request):
     r = requests.get(serviceHayag,
                      data=json.dumps(requestJSON),
                      headers={'Content-Type': 'application/json'})
-    response_json = r.json()
+    responseJson = r.json()
 
-    response_json = response_json[0]
-    htmlRuuDamjuulahUtguud["lastName"] = response_json["lastName"]
-    htmlRuuDamjuulahUtguud["firstName"] = response_json["firstName"]
-    htmlRuuDamjuulahUtguud["email"] = response_json["email"]
-    htmlRuuDamjuulahUtguud["userName"] = response_json["userName"]
-    #######################################################################
+    if responseJson["responseCode"] == 200:
+        userData = responseJson["data"]
+        htmlRuuDamjuulahUtguud["userId"] = userData["id"]
+        htmlRuuDamjuulahUtguud["lastName"] = userData["lastName"]
+        htmlRuuDamjuulahUtguud["firstName"] = userData["firstName"]
+        htmlRuuDamjuulahUtguud["email"] = userData["email"]
+        htmlRuuDamjuulahUtguud["userName"] = userData["userName"]
+    else:
+        htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
+        htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
 
     return render(request, "Profile/1.html", htmlRuuDamjuulahUtguud)
+
 
 
 def profileAdd(request):
