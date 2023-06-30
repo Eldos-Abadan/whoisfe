@@ -257,7 +257,7 @@ section {
 .cctabs .headline .lead {
   font-family: "Lato", sans-serif;
   font-weight: 300;
-  line-height: 1.9;
+  line-height: 1.9;   
   margin: 5px 0;
   text-align: center;
 }
@@ -411,7 +411,7 @@ section {
   color: black;
   background: none;
   border: solid 2px rgb(206, 49, 101);
-  border-radius: 5px;
+  border-radius: 4px;
   text-align: justify;
   width: 90px;
   height: 40px;
@@ -421,7 +421,7 @@ section {
   color: black;
   background: none;
   border: solid 2px rgb(206, 49, 101);
-  border-radius: 5px;
+  border-radius: 4px;
   align-items: center;
   width: 100px;
   height: 35px;
@@ -431,7 +431,7 @@ section {
   color: rgb(206, 49, 101);
   background: none;
   border: solid 2px black;
-  border-radius: 5px;
+  border-radius: 4px;
   text-align: justify;
   width: 100px;
   height: 35px;
@@ -441,7 +441,7 @@ section {
   color: rgb(206, 49, 101);
   background: none;
   border: solid 2px black;
-  border-radius: 5px;
+  border-radius: 4px;
   text-align: justify;
   width: 90px;
   height: 40px;
@@ -451,7 +451,7 @@ section {
   color: black;
   background: none;
   border: solid 2px rgb(206, 49, 101);
-  border-radius: 5px;
+  border-radius: 4px;
   text-align: justify;
   width: 120px;
   height: 40px;
@@ -461,7 +461,7 @@ section {
   color: rgb(206, 49, 101);
   background: none;
   border: solid 2px black;
-  border-radius: 5px;
+  border-radius: 4px;
   text-align: justify;
   width: 120px;
   height: 40px;
@@ -470,20 +470,3 @@ label{
  font-size: 15px;
 }
 .exp{display: flex;}
-h1{
-  padding-left: 20px;
-}
-/* .wrapper{
-  display: block;
-  margin: auto;
-} */
-
-
- .main{
-  border: 3px solid rgb(138, 20, 138);
-  border-radius: 20px;
-  width: 70%;
-  height: 640px;
-  margin-top: 60px;
-  padding-left: 30px;
-} 

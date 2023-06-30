@@ -17,7 +17,6 @@ urlpatterns = [
     ##############################################################################
     path("home/"     ,   viewsMain.homeLogoutView,        name="homeLogoutView") ,
     path("wallet/"   ,   viewsMain.walletView,            name="wallet"        ) ,
-    path("wallet/1/"   ,   viewsMain.wallet1View,            name="wallet1"        ) ,
     path("myCV/"     ,   viewsMyCV.myCVViews,             name="myCV"          ) ,
     path("famInfo/" ,   viewsFamInfo.FamInfoView,      name="FamInfoView"  ) ,
     ]   
