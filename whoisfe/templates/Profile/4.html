@@ -43,8 +43,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          {% include "../includes/logout.html" %}
-          <li class="separator hidden-lg"></li>
+            {% include "../includes/logout.html" %}
+            <li class="separator hidden-lg"></li>
           </ul>
         </div>
       </div>
@@ -175,32 +175,32 @@
 <script src="{% static '/js/dashboard/light-bootstrap-dashboard.js'%}"></script>
 <script src="{% static '/js/dashboard/demo.js'%}"></script>
 <script type="text/javascript">
-  $(document).ready(function () {
-    $("#profileMenuItem").addClass("active");
-    demo.initChartist();
+$(document).ready(function() {
+$("#profileMenuItem").addClass("active");
+demo.initChartist();
 
-    $.notify({
-      icon: "pe-7s-gift",
-      message: "Welcome to WhoIs Dashboard</b>"
-    }, {
-      type: "info",
-      timer: 4000
-    });
-  });
-  $(document).ready(function () {
-    demo.initChartist();
+$.notify({
+  icon: "pe-7s-gift",
+  message: "Welcome to WhoIs Dashboard</b>"
+}, {
+  type: "info",
+  timer: 4000
+});
+});
+$(document).ready(function () {
+demo.initChartist();
 
-    $.notify(
-      {
-        icon: "pe-7s-gift",
-        message: "Welcome to WhoIs Dashboard</b>",
-      },
-      {
-        type: "info",
-        timer: 4000,
-      }
-    );
-  });
+$.notify(
+{
+icon: "pe-7s-gift",
+message: "Welcome to WhoIs Dashboard</b>",
+},
+{
+type: "info",
+timer: 4000,
+}
+);
+});
 </script>
 
 </html>

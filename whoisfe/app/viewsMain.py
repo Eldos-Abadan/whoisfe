@@ -49,9 +49,6 @@ def homeView(request):
 def walletView(request): 
   return render(request, "wallet/wallet.html")
 
-def wallet1View(request): 
-  return render(request, "wallet/wallet1.html")
-
 def justCVViews(request): 
   return render(request, "templates/just.html")
 
