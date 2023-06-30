@@ -47,15 +47,17 @@
           <div class="panel">
             <div class="headline">
               <form id="cc-contact" class="form-group" action="" method="post">
+                {% csrf_token %}
                 <h1>Чадвар</h1>
                 <div class="form-check mt-3">
-                  <textarea name="Message" cols="80" rows="10">{{ userId }}</textarea>
+                  <textarea name="Message" cols="80" rows="10">{{ medeelelel }} {{ aldaa }}</textarea>
+                  
                 </div>
-                <input type="submit" style="font-size: 20px ;" name="save" value="Хадгалах">
+                <input type="submit" style="font-size: 20px ;"  id="skillInfoUpdateSubmit" name="skillInfoUpdateSubmit" value="Хадгалах">
               </form>
             </div>
           </div>
-        </div>
+        </div>  
       </div>
     </div>
     <div class="wrapper2">
