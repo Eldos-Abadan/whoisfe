@@ -23,14 +23,13 @@ def loginViews(request):
     if request.method == "POST":
         myName = request.POST.get("myName")
         myPass = request.POST.get("myPass")
-        passs = mandakhHash(mandakhHash(myPass))
+        passs = mandakhHash(myPass)
 
         requestJSON = {
             "name": myName,
             "pass": passs
         }
-        print(requestJSON)
-
+    
         required_fields = ["name", "pass"]
         if not reqValidation(requestJSON, required_fields):
             error_message = 'Fields are missing or invalid'
@@ -44,8 +43,7 @@ def loginViews(request):
             response_json = r.json()
             resultCode = response_json.get('responseCode')
             resultMessage = response_json.get('responseText')
-            print(response_json)
-
+       
             if resultCode == 200:
                 request.session['beegii'] = 1
                 request.session['userId'] = response_json.get('userData')["id"]

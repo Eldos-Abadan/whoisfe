@@ -41,7 +41,7 @@ def registerViews(request):
                 return render(request, 'register/register.html')
 
             # Hash the password
-            hashed_password = mandakhHash(password)
+            hashed_password = password
            
             # Prepare the request JSON data
             request_data = {
