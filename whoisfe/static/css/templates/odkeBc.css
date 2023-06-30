@@ -1,0 +1,118 @@
+
+* { box-sizing: border-box; }
+
+body { background: white; overflow-x: hidden; }
+.bc {
+    letter-spacing: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 400px;
+    border-radius: 20px;
+}
+.card {
+    width: 700px;
+    height: 400px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);  
+    transform-style: preserve-3d;
+    transition: 0.6s; 
+    border-radius: 20px;
+}
+.bcBack, .bcFront {
+    border-radius: 20px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotate(0deg) translateZ(1px);
+    background-color: gold;
+}
+.bc:hover .card,
+.bcBack {
+    transform: rotateY(-180deg) translateZ(1px);
+}
+
+.bcBack {
+    display: block;
+    margin: auto;
+    padding: auto;
+    width: 700px;
+    height: 400px;
+    border-radius: 20px;
+    background-color:aliceblue;
+    display: flex   ;
+}
+
+@media (max-width:700px) {
+.card { transform: scale(.5); }
+.container:hover .card { transform: scale(.5) rotateY(-180deg) translateZ(1px); }
+}
+.content{
+    display: block;
+    margin: auto;
+    padding: auto;
+    width: 200px;
+    height: 230px;
+    text-align: center;
+    padding-top:10%;
+} 
+.name{
+    border: double black;
+}
+.footer{
+    background-color: rgb(59, 59, 59);
+    border-radius: 20px;
+    color: aliceblue;
+    width: 700px;
+    height: 70px;
+    text-align: center;
+    margin-top: 100px;
+}
+.footer p{
+    padding-top: 20px;
+}
+.saaral{
+    width: 40%;
+    height: 400px;
+    background-color: rgb(59, 59, 59);
+    border-radius: 20px;
+    text-align: center;
+    color: gold;
+
+}
+.tsagaan{
+    width: 60%;
+    height: 400px;
+    text-align: center;
+}
+.saaral img{
+    display: block;
+    margin: auto;
+    padding: auto;
+}
+.name1{
+    display: block;
+    margin: auto;
+    padding: auto;
+    border: double gold;
+    width: 150px;
+}
+.tsagaan1{
+    text-align: start;
+    margin: 20%;
+}
+.saaral1{
+    padding: 20%;
+}
+a{
+    text-decoration: none;
+    border: solid black 2px;
+    border-radius: 5px;
+    padding: 6px;
+}
+a:hover{
+    background-color: blueviolet;
+}
+

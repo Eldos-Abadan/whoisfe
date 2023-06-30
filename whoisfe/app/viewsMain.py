@@ -54,3 +54,6 @@ def justCVViews(request):
 
 def justNCViews(request): 
   return render(request, "templates/bc.html")
+
+def odkeBcViews(request): 
+  return render(request, "templates/odkeBc.html")
