@@ -282,8 +282,8 @@ section {
 }
 
 #cc-contact textarea {
-  height: 147px;
-  max-width: 100%;
+  height: 200px;
+  max-width: 95%;
 }
 
 #cc-contact button[type="submit"] {
@@ -485,5 +485,13 @@ h1{
   width: 70%;
   height: 640px;
   margin-top: 60px;
+  padding-left: 30px;
+} 
+.main1{
+  border: 3px solid rgb(138, 20, 138);
+  border-radius: 20px;
+  width: 90%;
+  height: 400px;
+  margin-top: 90px;
   padding-left: 30px;
 } 
