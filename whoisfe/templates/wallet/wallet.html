@@ -2,9 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="{% static ''%}" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Dashboard WhoIs</title>
 
     <meta
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
@@ -42,106 +44,62 @@
       href="{% static '/css/dashboard/pe-icon-7-stroke.css'%}"
       rel="stylesheet"
     />
-    <style>
-      * {
-        font-family: "Poppins", sans-serif;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        outline: none;
-        border: none;
-        text-transform: capitalize;
-        transition: all 0.2s linear;
-      }
-
-      .container {
-        display: flex;
-        justify-content: right;
-        align-items: center;
-        padding: 150px;
-        min-height: 100vh;
-        background: linear-gradient(90deg, #2ecc71 60%, #27ae60 40.1%);
-      }
-
-      .container form {
-        padding: 20px;
-        width: 700px;
-        background: #fff;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        border-radius: 8%;
-      }
-
-      .container form .row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-      }
-
-      .container form .row .col {
-        flex: 1 1 250px;
-      }
-
-      .container form .row .col .title {
-        font-size: 20px;
-        color: #333;
-        padding-bottom: 5px;
-        text-transform: uppercase;
-      }
-
-      .container form .row .col .inputBox {
-        margin: 15px 0;
-      }
-
-      .container form .row .col .inputBox span {
-        margin-bottom: 10px;
-        display: block;
-      }
-
-      .container form .row .col .inputBox input {
-        width: 100%;
-        border: 1px solid #ccc;
-        padding: 10px 15px;
-        font-size: 15px;
-        text-transform: none;
-      }
-
-      .container form .row .col .inputBox input:focus {
-        border: 1px solid #000;
-      }
-
-      .container form .row .col .flex {
-        display: flex;
-        gap: 15px;
-      }
-
-      .container form .row .col .flex .inputBox {
-        margin-top: 5px;
-      }
-
-      .container form .row .col .inputBox img {
-        height: 34px;
-        margin-top: 5px;
-        filter: drop-shadow(0 0 1px #000);
-      }
-
-      .container form .submit-btn {
-        width: 100%;
-        padding: 12px;
-        font-size: 17px;
-        background: #45a049;
-        color: #fff;
-        margin-top: 5px;
-        cursor: pointer;
-      }
-
-      .container form .submit-btn:hover {
-        background: #3e8e41;
-      }
-    </style>
   </head>
+  <style>
+      body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .wallet-container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .balance {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      margin: 0 10px;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+
+    .btn:active {
+      background-color: #3e8e41;
+    }
+  </style>
 
   <body>
-    <div class="container">
+    <div class="wrapper">
       <div
         class="sidebar"
         data-color="purple"
@@ -149,82 +107,72 @@
       >
         {% include "../includes/menu.html" %}
       </div>
+      <div class="main-panel">
+        <nav class="navbar navbar-default navbar-fixed">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button
+                type="button"
+                class="navbar-toggle"
+                data-toggle="collapse"
+                data-target="#navigation-example-2"
+              >
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Dashboard</a>
+            </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav navbar-left">
+                <li>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-dashboard"></i>
+                    <p class="hidden-lg hidden-md">Dashboard</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <i class="fa fa-search"></i>
+                    <p class="hidden-lg hidden-md">Search</p>
+                  </a>
+                </li>
+              </ul>
 
-      <form action="">
-        <div class="row">
-          <div class="col">
-            <h3 class="title">төлбөрийн хаяг</h3>
-
-            <div class="inputBox">
-              <span>бүтэн нэр :</span>
-              <input type="text" placeholder="" />
-            </div>
-            <div class="inputBox">
-              <span>имэйл :</span>
-              <input type="email" placeholder="" />
-            </div>
-            <div class="inputBox">
-              <span>хаяг :</span>
-              <input type="text" placeholder="" />
-            </div>
-            <div class="inputBox">
-              <span>хот :</span>
-              <input type="text" placeholder="" />
-            </div>
-
-            <div class="flex">
-              <div class="inputBox">
-                <span>дүүрэг :</span>
-                <input type="text" placeholder="" />
-              </div>
-              <div class="inputBox">
-                <span>zip code :</span>
-                <input type="text" placeholder="" />
-              </div>
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <a href="{% url 'profileMain'%}">
+                    <p>Account</p>
+                  </a>
+                </li>
+                {% include "../includes/logout.html" %}
+                <li class="separator hidden-lg"></li>
+              </ul>
             </div>
           </div>
+        </nav>
+        {% include "../includes/banner.html" %}
+        <h1>Wallet</h1>
 
-          <div class="col">
-            <h3 class="title">төлбөр</h3>
-
-            <div class="inputBox">
-              <span>картуудыг хүлээн авсан :</span>
-              <img src="{% static '/images/card_img.png'%}" alt="" />
-            </div>
-            <div class="inputBox">
-              <span>карт дээрх нэр :</span>
-              <input type="text" placeholder="" />
-            </div>
-            <div class="inputBox">
-              <span>зээлийн картын дугаар :</span>
-              <input type="number" placeholder="" />
-            </div>
-            <div class="inputBox">
-              <span>дуусах сар :</span>
-              <input type="text" placeholder="" />
-            </div>
-
-            <div class="flex">
-              <div class="inputBox">
-                <span>дуусах жил :</span>
-                <input type="number" placeholder="" />
-              </div>
-              <div class="inputBox">
-                <span>CVV :</span>
-                <input type="text" placeholder="" />
-              </div>
-            </div>
+        <div class="wallet-container">
+          <h2>Миний түрийвч</h2>
+          <div class="balance">
+            Үлдэгдэл: $100.00
+          </div>
+          <div class="btn-container">
+            <a href="{% url 'wallet1' %}" class="btn">Цэнэглэх</a>
+            <a href="{% url 'wallet1' %}" class="btn">Татаж авах</a>
           </div>
         </div>
 
-        <input
-          type="submit"
-          value="тооцоогоо үргэлжлүүлнэ үү"
-          class="submit-btn"
-        />
-      </form>
+   
+
+        {% include "../includes/footer.html" %}
+      </div>
     </div>
   </body>
+
   <script
     src="{% static '/js/dashboard/jquery.3.2.1.min.js'%}"
     type="text/javascript"
@@ -242,21 +190,11 @@
   <script src="{% static '/js/dashboard/light-bootstrap-dashboard.js'%}"></script>
 
   <script src="{% static '/js/dashboard/demo.js'%}"></script>
+
   <script type="text/javascript">
     $(document).ready(function () {
       $("#WalletMenuItem").addClass("active");
       demo.initChartist();
-
-      $.notify(
-        {
-          icon: "pe-7s-gift",
-          message: "Welcome to WhoIs Dashboard</b>",
-        },
-        {
-          type: "info",
-          timer: 4000,
-        }
-      );
     });
     $(document).ready(function () {
       demo.initChartist();

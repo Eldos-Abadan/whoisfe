@@ -77,11 +77,7 @@ def profileMain(request):
 
     return render(request, "Profile/1.html", htmlRuuDamjuulahUtguud)
 
-def profileAdd (request):
-    checkSession(request)  
-    if request.session['beegii'] == 0:        
-        return redirect("homeView")    
-    
+
 def profileAdd(request):
     checkSession(request)
     if request.session['beegii'] == 0:
@@ -149,50 +145,11 @@ def profileExp(request):
     return render(request, "Profile/5.html",)
 
 
-# Chadvar uurchluh bolon hadgalah hrauulah function
 def profileSkill(request):
-    checkSession(request)  
-    if request.session['beegii'] == 0:        
+    checkSession(request)
+    if request.session['beegii'] == 0:
         return redirect("homeView")
-    chadwar = {}
-    chadwar["responseText"] = ""
-    chadwar["textColor"] = "#00FF00"
-    chadwar["userId"] = request.session['userId']
-    requestJSON = {
-        'id': request.session['userId']
-    }
-    # setSkill duudan ajillana.
-    if request.method=="POST":
-        serviceHayag ="http://whoisb.mandakh.org/setSkill/"
-
-        if("skillInfoUpdateSubmit" in request.POST):
-            requestJSON = {
-                "id" : request.session['userId'],
-                "skill": request.POST.get("Message")
-            }
-            r = requests.get(serviceHayag,
-                            data=json.dumps(requestJSON),
-                            headers={'Content-Type': 'application/json'})
-        responseJson = r.json()
-        if responseJson["responseCode"] != 200:
-            chadwar["aldaa"] =  responseJson["responseText"]
-            return render(request, "Profile/6.html", chadwar)
-    # end getSkill
-    
-    # getSkill duudan ajillana.
-    serviceHayag ="http://whoisb.mandakh.org/getSkill/"
-    r = requests.get(serviceHayag,
-                    data=json.dumps(requestJSON),
-                    headers={'Content-Type': 'application/json'})
-    responseJson = r.json()
-    if responseJson["responseCode"] == 200:
-        chadwar["medeelelel"] = responseJson["skill"] 
-    else:    
-        chadwar["aldaa"] =  responseJson["responseText"]
-    return render(request, "Profile/6.html", chadwar)
-    # end setSkill.
-#####################################
-
+    return render(request, "Profile/6.html",)
 
 
 def profileSocial(request):
@@ -234,6 +191,5 @@ def profileSocial(request):
     htmlRuuDamjuulahUtguud['app'] = response_json.get('app')
     htmlRuuDamjuulahUtguud['name'] = response_json.get('ner')
 
-
-    return render(request, "Profile/7.html", htmlRuuDamjuulahUtguud)  
+    return render(request, "Profile/7.html", htmlRuuDamjuulahUtguud)
     #######################################################################
