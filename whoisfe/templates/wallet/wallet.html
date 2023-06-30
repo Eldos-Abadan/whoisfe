@@ -164,20 +164,22 @@
             </div>
           </div>
         </nav>
+        <form id="cc-contact" class="form-group" action="" method="post" name="vldegdel">
+          {% csrf_token %}
         {% include "../includes/banner.html" %}
         <h1>Wallet</h1>
 
         <div class="wallet-container">
           <h2>Миний түрийвч</h2>
           <div class="balance">
-            Үлдэгдэл: $100.00
+            Үлдэгдэл: {{ vldegdel }}
           </div>
           <div class="btn-container">
             <a href="{% url 'wallet1' %}" class="btn">Гүйлгээ хийх</a>
             <a href="{% url 'wallet1' %}" class="btn">Татаж авах</a>
           </div>
         </div>
-
+        </form>
    
 
         {% include "../includes/footer.html" %}
