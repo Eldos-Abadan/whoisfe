@@ -58,7 +58,8 @@
     <div class="wrapper">
       <div class="wrapper2">
         <div class="headline">
-          <form id="cc-contact-2" class="form-group" action="" method="post">
+          <form id="cc-contact-2" class="form-group" action="" method="post" name="userFamilyIns">
+            {% csrf_token %}
             <div class="FamilyInfo">
               <!-- <h1>Гэр бүлийн мэдээлэл</h1> -->
               <table>
@@ -66,7 +67,7 @@
                   <td style="width: 100px; text-align: right;"> Гэр бүлийн байдал: </td>
                   <td style="color: red; text-align: center; width: 20px;"> * </td>
                   <td style="width: 100px;">
-                    <select>
+                    <select name="gerBuliinBaidal">
                       <option>-/-</option>
                       <option value="">гэрлэсэн</option>
                       <option> гэрлээгүй</option>
@@ -80,7 +81,7 @@
                 <div class="col-sm-5">
                   <div class="form-floating mt-3">
                     <label for="floatingInput">Таны хэн болох: </label>
-                    <input type="text" name="who" class="form-control" step="10" id="floatingNumber">
+                    <input type="text" name="henBoloh" class="form-control" step="10" id="floatingNumber">
                   </div>
                 </div>
                 <br>
@@ -89,7 +90,7 @@
                 <div class="col-sm-5">
                   <div class="form-floating mt-3">
                     <label for="floatingInput"> Нэр: </label>
-                    <input type="text" name="name" lass="form-control" step="10" id="floatingNumber">
+                    <input type="text" name="ner" lass="form-control" step="10" id="floatingNumber">
                   </div>
                 </div>
               </div>
@@ -107,7 +108,7 @@
                 <div class="col-sm-5">
                   <div class="form-floating mt-3">
                     <label for="floatingInput"> Гишүүдийн тоо: </label>
-                    <input type="text" name="num" class="form-control" step="10" id="floatingNumber">
+                    <input type="text" name="amBul" class="form-control" step="10" id="floatingNumber">
                   </div>
                 </div>
               </div>
@@ -116,7 +117,7 @@
                 <div class="col-sm-5">
                   <div class="form-floating mt-3">
                     <label for="floatingInput">Албан тушаал: </label>
-                    <input type="text" name="alba" class="form-control" step="10" id="floatingNumber">
+                    <input type="text" name="albanTushaal" class="form-control" step="10" id="floatingNumber">
                   </div>
                 </div>
               </div>
@@ -126,11 +127,11 @@
                   <div class="form-floating mt-3">
                     <label for="floatingInput">Албан байгууллагын
                       нэр: </label>
-                    <input type="text" name="aname" class="form-control" step="10" id="floatingNumber">
+                    <input type="text" name="baiguulgaNer" class="form-control" step="10" id="floatingNumber">
                   </div>
                 </div>
               </div>
-              <input type="button" id="save" name="save" value="Хадгалах">
+              <input type="submit" id="userFamilyIns" name="userFamilyIns" value="Хадгалах">
             </div>
           </form>
         </div>

@@ -86,7 +86,29 @@ def profileAdd(request):
 def profileFamily(request):
     checkSession(request)  
     if request.session['beegii'] == 0:        
-        return redirect("homeView")    
+        return redirect("homeView") 
+    if request.method == "POST":
+        ner = request.POST.get("ner")
+        gerBuliinBaidal = request.POST.get("gerBuliinBaidal")
+        henBoloh = request.POST.get("henBoloh")
+        amBul = request.POST.get("amBul")
+        albanTushaal = request.POST.get("albanTushaal")
+        baiguulgaNer = request.POST.get("baiguulgaNer")
+
+        request_data = {
+            "henBoloh": henBoloh,
+            "gerBuliinBaidal": gerBuliinBaidal,
+            "amBul": amBul,
+            "ner": ner,
+            "albanTushaal": albanTushaal,
+            "baiguulgaNer": baiguulgaNer
+            }
+    requestJSON = {
+        "id": request.session['userId']
+    }
+    r = requests.get("http://whoisb.mandakh.org/userFamilyIns/",
+                    data=json.dumps(requestJSON),
+                    headers={'Content-Type': 'application/json'})   
     return render(request, "Profile/4.html",)
 
 def profileEdu(request):
