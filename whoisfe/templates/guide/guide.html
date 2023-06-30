@@ -1,11 +1,94 @@
+{% load static%}
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guide</title>
-</head>
-<body>
-    <h1>хүлээгдэж байна </h1>
-</body>
+    <title> Guide </title>
+    <link href="{% static '/css/guide/guide.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="wrapper">
+
+      <input type="radio" name="slider" checked id="home">
+      <nav>
+      <div class="butt1"> 
+        <label for="home" class="home"  style="color:blueviolet"> Who is заавар </label>
+      </div> 
+      </nav>
+
+      <input type="radio" name="slider" id="blog">
+      <nav>
+        <button class="butt2"> 
+          <label for="blog" class="blog">  Who is бүргүүлэх заавар &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+            <i class="fas fa-arrow-down"></i> 
+          </label>
+        </button> 
+      </nav>
+      <section>
+        <div class="content content-2">
+          <div class="te1"> 
+            &nbsp; 1.Бүртгүүлэх товчин дээр дарна.
+            <p>  
+              &nbsp; 2.Бүртгэлийн хуудсыг бөглөн нэвтрэх нэр, нууц үгээ үүсгэнэ.
+            </p>
+            <p>
+              &nbsp; 3.Нэвтрэх товчин дээр дарна нэвтрэх хуудас руу шилжин. 
+            </p>
+        </div>
+      </section>
+
+
+      <input type="radio" name="slider" id="code">
+      <nav>
+      <button class="butt3"> 
+        <label for="code" class="code"> Нууц үг сэргээх заавар &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
+          <i class="fas fa-arrow-down"></i> 
+        </label> 
+      </button> 
+      </nav>
+      <section>
+        <div class="content content-3">
+          <div class="te2">  
+            &nbsp; 1.Нууц үг мартсан товчин дээр дарна.
+            <p>&nbsp; 2. Бүртгэлтэй имэйл хаягаа оруулна.</p>
+            <p>&nbsp; 3.Шинэ нууц үгээ үүсгэнэ</p>
+            <p>&nbsp; 4.Шинэ нууц үгээ давтан хийнэ</p>
+            <p>&nbsp; 5.Баталгаажуулах код авах товчин дээр дарна.</p>
+            <p>&nbsp; 6.Имэйл хаягт ирсэн кодоо баталгаажуулах код хэсэгт бичнэ.</p>
+            <p>&nbsp; 7.Нууц үг өөрчлөх товчин дээр дарснаар таны нууц үг шинэчлэгдэнэ.</p>
+            <p>&nbsp; 8.Буцах товчин дээр дарна нэвтрэх хуудас руу шилжинэ.</p>
+          </div>
+        </div>
+      </section>
+
+      <input type="radio" name="slider" id="help">
+      <nav>
+        <button class="butt4">
+          <label for="help" class="help">Бусад заавар &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="fas fa-arrow-down"></i> 
+          </label>
+        </button> 
+      </nav>
+      <section>
+        <div class="content content-4">
+          <div class="te1">Тун удахгүй..</div>
+        </div>
+      </section>
+
+        <!-- <input type="radio" name="slider" id="about"> 
+        <nav>
+          <button class="butt5">
+            <label for="about" class="about">About</label> 
+          </button>
+        </nav>
+        <section>
+          <div class="content content-5">
+            <div class="te1">This is a About content</div>
+          </div> 
+        </section> -->
+    </div>
+  </body>
 </html>
