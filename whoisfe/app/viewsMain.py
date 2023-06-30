@@ -86,10 +86,11 @@ def wallet1View(request):
                                   data=json.dumps(requestJSON),
                                   headers={'Content-Type': 'application/json'} )
         data = r.json()
-    if(data["responseCode"] == 200):
         htmlRuu["responseText"] = data["responseText"]
-    else:
-        htmlRuu["aldaa"] = data["responseText"]
+        if data["responseCode"] == 200:
+            htmlRuu["responseText"] = data["responseText"]
+        else:
+            htmlRuu["aldaa"] = data["responseText"]
     return render(request, "wallet/wallet1.html", htmlRuu)
 
 def justCVViews(request): 

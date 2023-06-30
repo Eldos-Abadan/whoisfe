@@ -133,6 +133,14 @@
             text-align: right;
             margin-top: 10px;
         }
+        .alert {
+         padding: 10px;
+         background-color: yellow;
+         border: 1px solid black;
+         font-weight: bold;
+         border-radius: 20px;
+         width: 300px
+         }
   </style>
 
   <body>
@@ -198,7 +206,6 @@
             <div class="form-container">
               <form id="transaction-form" method="post" name="uldegdel">
                 {% csrf_token %}
-                <h3>{{ aldaa }}</h3>
                 <h3>{{ responseText }}</h3>
                 <h2>Гүйлгээ хийх</h2>
                     <label for="description">Утга:</label>
@@ -209,14 +216,16 @@
     
                     <label for="amount">Дүн:</label>
                     <input type="number" id="amount" name="amount" required><br>
-    
+                    
                     <!-- <label for="type">Төрөл:</label>
                     <select id="type" name="type" required>
                         <option value="Орлого">Орлого</option>
                         <option value="Зардал">Зарлага</option>
                     </select><br> -->
-    
-                    <input type="submit" value="Гүйлгээ хийх" name="gvilgeeSubmit">
+                    
+                    <input type="submit" value="Гүйлгээ хийх" name="gvilgeeSubmit" onclick="showAlert()">
+                    <label for="amount">Дүн:</label>
+                    
                 </form>
             </div>
     
