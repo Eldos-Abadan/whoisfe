@@ -84,7 +84,86 @@ def profileAdd(request):
     checkSession(request)
     if request.session['beegii'] == 0:
         return redirect("homeView")
-    return render(request, "Profile/2.html",)
+    nemelt={}
+    nemelt["responseText"] = ""
+    nemelt["textColor"] = "#00FF00"
+    if request.method == "POST":
+        if ("userNemeltUpdateSubmit" in request.POST):
+            # start userNemeltUpdateSubmit
+
+            serviceHayag = "http://whoisb.mandakh.org/userNemeltUp/"
+            huis = request.POST.get("gender")
+            torsonOgnoo = request.POST.get("bornDate")
+            regDug = request.POST.get("register")
+            dugaar = request.POST.get("phoneNumber")
+            irgenshil = request.POST.get("citizenship")
+            ysUndes = request.POST.get("nationality")
+            hayg = request.POST.get("homeAddress")
+            hobby = request.POST.get("hobby")
+            def debugFunciton():
+                print(huis)
+                print(torsonOgnoo)
+                print(dugaar)
+                print(irgenshil)
+                print(ysUndes)
+                print("sdakfjsdalhfkdsjh")
+                print(hayg)
+                print(hobby)
+            if(len(huis) == 5):
+                huis = "1"
+            if(len(hobby) == 0):
+                hobby = " "
+            if(len(torsonOgnoo) == 0):
+                torsonOgnoo = "07/01/2023"
+            requestJSON = {
+                "user_id": request.session['userId'],
+                "regDug": regDug,
+                "torsonOgnoo": torsonOgnoo,
+                "dugaar": dugaar,
+                "huis": huis,   
+                "irgenshil": irgenshil,
+                "ysUndes": ysUndes,
+                "hayg": hayg,
+                "hobby": hobby 
+            }
+            r = requests.post(serviceHayag,
+                             data=json.dumps(requestJSON),
+                             headers={'Content-Type': 'application/json'})
+            responseJson = r.json()
+            nemelt["responseText"] = responseJson["responseText"]
+            if (responseJson["responseCode"] == 200):
+                nemelt["textColor"] = "#00ff00"
+            else:
+                nemelt["textColor"] = "#ff0000"
+
+    if request.method == "GET":   #  Энэ хуудасруу ороход харуулах мэдээллүүдээ авч, дамжуулах хэсэг
+        nemelt["userId"] = request.session['userId']
+        serviceHayag = "http://whoisb.mandakh.org/userNemelt/"
+        requestJSON = {
+            "user_id": request.session['userId']
+        }
+        r = requests.get(serviceHayag,
+                        data=json.dumps(requestJSON),
+                        headers={'Content-Type': 'application/json'})
+        responseJson = r.json()
+
+        if responseJson["responseCode"] == 200:
+            userData = responseJson["data"]
+            nemelt["userId"] = userData["user_id"]
+            nemelt["gender"] = userData["huis"]
+            nemelt["bornDate"] = userData["torsonOgnoo"]
+            nemelt["register"] = userData["regDug"]
+            nemelt["phoneNumber"] = userData["dugaar"]
+            nemelt["homeAddress"] = userData["hayg"]
+            nemelt["nationality"] = userData["ysUndes"]
+            nemelt["hobby"] = userData["hobby"]
+            nemelt["citizenship"] = userData["irgenshil"]
+        else:
+            nemelt["responseText"] = responseJson["responseText"]
+            nemelt["textColor"] = "#ff0000"
+        # #######################################################################
+    
+    return render(request, "Profile/2.html",nemelt)
 
 
 def profileFamily(request):
