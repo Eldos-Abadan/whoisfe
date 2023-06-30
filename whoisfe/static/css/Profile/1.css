@@ -422,9 +422,19 @@ section {
   background: none;
   border: solid 2px rgb(206, 49, 101);
   border-radius: 4px;
+  align-items: center;
+  width: 100px;
+  height: 35px;
+}
+#save:hover{
+  font-size: 15px;
+  color: rgb(206, 49, 101);
+  background: none;
+  border: solid 2px black;
+  border-radius: 4px;
   text-align: justify;
-  width: 90px;
-  height: 30px;
+  width: 100px;
+  height: 35px;
 }
 #userInfoUpdateSubmit:hover{
   font-size: 15px;
