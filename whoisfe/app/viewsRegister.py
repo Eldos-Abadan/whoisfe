@@ -51,7 +51,6 @@ def registerViews(request):
                 "pass": hashed_password,
                 "userName": user_name
             }
-            print(request_data)
             # Make the request to userRegisterView service
             response = requests.post("http://whoisb.mandakh.org/userRegister/",
                                      data=json.dumps(request_data),
