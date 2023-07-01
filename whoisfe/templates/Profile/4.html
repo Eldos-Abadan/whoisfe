@@ -28,7 +28,6 @@
       border: 5px solid #FFAB33;
       width: 200px;
       text-align: center;
-      padding: 10px;
       font-size: 30px;
       cursor: pointer;
       margin: auto;
@@ -64,57 +63,59 @@
         <!-- ####### Гэр бүлийн мэдээллийн хэсэг ######## -->
         <div class="wrapper">
           <div class="wrapper2">
-            <h1>Гэр бүлийн мэдээлэл</h1>
             <div class="headline">
               <form id="cc-contact" class="form-group" action="" method="POST" name="userFamilyIns">
                 {% csrf_token %}
                 <div class="FamilyInfo">
-                  <div class="add">
-                    <div class="add__container">
-                      <div class="add__henBoloh">
-                        <div class="row">
-                          <div class="col-sm-5">
-                            <div class="form-floating mt-3">
-                              <label for="floatingInput">Таны хэн болох:</label>
-                              <input list="henBoloh" name="henBoloh" class="form-control" step="10" id="floatingNumber">
-                              <datalist id="henBoloh">
-                                <option name="henBolohN" value="Uwuu"></option>
-                                <option name="henBolohN" value="Emee"></option>
-                                <option name="henBolohN" value="Aaw"></option>
-                                <option name="henBolohN" value="Eej"></option>
-                                <option name="henBolohN" value="Ah"></option>
-                                <option name="henBolohN" value="Egch"></option>
-                                <option name="henBolohN" value="Dvv"></option>
-                                <option name="henBolohN" value="Naiz"></option>
-                                <option name="henBolohN" value="Nuhur"></option>
-                                <option name="henBolohN" value="Ehner"></option>
-                              </datalist>
+                  <div class="FamilyInfoBorder">
+                    <h1>Гэр бүлийн мэдээлэл</h1>
+                    <div class="add">
+                      <div class="add__container">
+                        <div class="add__henBoloh">
+                          <div class="row">
+                            <div class="col-sm-5">
+                              <div class="form-floating mt-3">
+                                <label for="floatingInput">Таны хэн болох:</label>
+                                <input list="henBoloh" name="henBoloh" class="form-control" step="10"
+                                  id="floatingNumber">
+                                <datalist id="henBoloh">
+                                  <option name="henBolohN" value="Uwuu"></option>
+                                  <option name="henBolohN" value="Emee"></option>
+                                  <option name="henBolohN" value="Aaw"></option>
+                                  <option name="henBolohN" value="Eej"></option>
+                                  <option name="henBolohN" value="Ah"></option>
+                                  <option name="henBolohN" value="Egch"></option>
+                                  <option name="henBolohN" value="Dvv"></option>
+                                  <option name="henBolohN" value="Naiz"></option>
+                                  <option name="henBolohN" value="Nuhur"></option>
+                                  <option name="henBolohN" value="Ehner"></option>
+                                </datalist>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <br>
-                      <div class="add__ner">
-                        <div class="row">
-                          <div class="col-sm-5">
-                            <div class="form-floating mt-3">
-                              <label for="floatingLname">Нэр</label>
-                              <input type="text" name="ner" class="form-control" id="ner">
+                        <br>
+                        <div class="add__ner">
+                          <div class="row">
+                            <div class="col-sm-5">
+                              <div class="form-floating mt-3">
+                                <label for="floatingLname">Нэр</label>
+                                <input type="text" name="ner" class="form-control" id="ner">
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="add__dugaar">
-                        <div class="row">
-                          <div class="col-sm-5">
-                            <div class="form-floating mt-3">
-                              <label for="floatingInput">Утасны дугаар: </label>
-                              <input type="text" name="dugaar" class="form-control" step="10" id="floatingNumber">
+                        <div class="add__dugaar">
+                          <div class="row">
+                            <div class="col-sm-5">
+                              <div class="form-floating mt-3">
+                                <label for="floatingInput">Утасны дугаар: </label>
+                                <input type="text" name="dugaar" class="form-control" step="10" id="floatingNumber">
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <!-- <br>
+                        <!-- <br>
                   <div class="row">
                     <div class="col-sm-5">
                       <div class="form-floating mt-3">
@@ -133,15 +134,16 @@
                       </div>
                     </div>
                   </div> -->
-                      <div id="button">
-                        <button class="add__btn" name="userFamilyIns">Nemeh</button>
-                      </div>
-                      <h5 id="text" style="color: green;"></h5>
-                      <script>
-                        document.getElementById("button").addEventListener("click", function(){
-                        document.getElementById("text").innerText = "Ger buliin medeelel amjilttai nemegdlee";
-                    });
+                        <div id="button">
+                          <button class="add__btn" name="userFamilyIns">Nemeh</button>
+                        </div>
+                        <h5 id="text" style="color: green;"></h5>
+                        <script>
+                          document.getElementById("button").addEventListener("click", function () {
+                            document.getElementById("text").innerText = "Ger buliin medeelel amjilttai nemegdlee";
+                          });
                         </script>
+                      </div>
                     </div>
                   </div>
               </form>
@@ -151,7 +153,7 @@
                   <div class="FamilyInfo__list">
                   </div>
                 </div>
-                <br><br><br><br><br>
+                <br><br><br><br><br><br><br><br><br><br>
                 <input type="button" class="add__btn" id="userFamilyIns" name="userFamilyIns" value="Хадгалах">
               </div>
             </div>
