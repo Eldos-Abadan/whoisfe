@@ -273,8 +273,120 @@ def profileSkill(request):
 
 
 
+# def profileSocial(request):
+#     # Check if the user is logged in
+#     checkSession(request)
+#     if request.session['beegii'] == 0:
+#         return redirect("homeView")
+
+#     htmlRuuDamjuulahUtguud = {}
+#     htmlRuuDamjuulahUtguud["responseText"] = ""
+#     htmlRuuDamjuulahUtguud["textColor"] = "#00FF00"
+
+#     # Handle the POST request
+#     if request.method == "POST":
+#         app = request.POST.get("platForm")
+#         site = request.POST.get("userName")
+#         try:
+#             requestJSON = {
+#                 "id": request.session['userId'],
+#                 "app": app,
+#                 "site": site
+#             }
+#             serviceHayag = "http://whoisb.mandakh.org/userSocial/"
+#             r = requests.get(serviceHayag,
+#                              data=json.dumps(requestJSON),
+#                              headers={'Content-Type': 'application/json'})
+#             responseJson = r.json()
+#             htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
+#             if responseJson["responseCode"] == 200:
+#                 htmlRuuDamjuulahUtguud["textColor"] = "#00FF00"
+#             else:
+#                 htmlRuuDamjuulahUtguud["textColor"] = "#FF0000"
+#         except json.decoder.JSONDecodeError as e:
+#             print("Error decoding JSON response:", e)
+#             htmlRuuDamjuulahUtguud["responseText"] = "Error decoding JSON response"
+#             htmlRuuDamjuulahUtguud["textColor"] = "#FF0000"
+
+#     htmlRuuDamjuulahUtguud["userId"] = request.session['userId']
+
+#     # Retrieve data from the API
+#     requestJSON = {
+#         "user_id": request.session['userId']
+#     }
+#     serviceHayag = "http://whoisb.mandakh.org/userSocial/"
+#     r = requests.get(serviceHayag,
+#                      data=json.dumps(requestJSON),
+#                      headers={'Content-Type': 'application/json'})
+#     try:
+#         response_json = r.json()
+#         if response_json.get("socialData"):
+#             response_data = response_json["socialData"]
+#             htmlRuuDamjuulahUtguud["app"] = response_data.get("app", "")
+#             htmlRuuDamjuulahUtguud["site"] = response_data.get("site", "")
+#         else:
+#             htmlRuuDamjuulahUtguud["app"] = ""
+#             htmlRuuDamjuulahUtguud["site"] = ""
+#     except json.decoder.JSONDecodeError as e:
+#         print("Error decoding JSON response:", e)
+#         htmlRuuDamjuulahUtguud["app"] = ""
+#         htmlRuuDamjuulahUtguud["site"] = ""
+
+#     return render(request, "Profile/7.html", htmlRuuDamjuulahUtguud)
+# def profileSocial(request):
+#     # Check session
+#     checkSession(request)
+#     if request.session['beegii'] == 0:
+#         return redirect("homeView")
+
+#     htmlRuuDamjuulahUtguud = {}
+#     htmlRuuDamjuulahUtguud["responseText"] = ""
+#     htmlRuuDamjuulahUtguud["textColor"] = "#00FF00"
+
+#     if request.method == "POST":
+#         # Start userInfoUpdateSubmit
+#         serviceHayag = "http://whoisb.mandakh.org/userSocialin/"
+#         app = request.POST.get("platForm")
+#         site = request.POST.get("userName")
+#         requestJSON = {
+#             "id": request.session['userId'],
+#             "app": app,
+#             "site": site
+#         }
+#         r = requests.get(serviceHayag,
+#                          data=json.dumps(requestJSON),
+#                          headers={'Content-Type': 'application/json'})
+#         responseJson = r.json()
+#         htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
+#         if responseJson["responseCode"] == 200:
+#             htmlRuuDamjuulahUtguud["textColor"] = "#00ff00"
+#         else:
+#             htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
+#         # End userInfoUpdateSubmit
+#     # Get user information
+#     serviceHayag = "http://whoisb.mandakh.org/userSocial/"
+#     requestJSON = {
+#         "id": request.session['userId']
+#     }
+#     r = requests.get(serviceHayag,
+#                      data=json.dumps(requestJSON),
+#                      headers={'Content-Type': 'application/json'})
+#     responseJson = r.json()
+#     if responseJson["responseCode"] == 200:
+#         userData = responseJson["socialData"]
+#         htmlRuuDamjuulahUtguud["userId"] = userData[0].get("id")
+#         htmlRuuDamjuulahUtguud["app"] = userData[0].get("app")
+#         htmlRuuDamjuulahUtguud["site"] = userData[0].get("site")
+
+#     else:
+#         htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
+#         htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
+
+#     return render(request, "Profile/7.html", htmlRuuDamjuulahUtguud)
+
+
 def profileSocial(request):
-    # Check if the user is logged in
+    # Check session
     checkSession(request)
     if request.session['beegii'] == 0:
         return redirect("homeView")
@@ -283,53 +395,41 @@ def profileSocial(request):
     htmlRuuDamjuulahUtguud["responseText"] = ""
     htmlRuuDamjuulahUtguud["textColor"] = "#00FF00"
 
-    # Handle the POST request
     if request.method == "POST":
-        app = request.POST.get("app")
-        site = request.POST.get("name")
-        try:
-            requestJSON = {
-                "id": request.session['userId'],
-                "app": app,
-                "site": site
-            }
-            serviceHayag = "http://whoisb.mandakh.org/userSocial/"
-            r = requests.get(serviceHayag,
-                             data=json.dumps(requestJSON),
-                             headers={'Content-Type': 'application/json'})
-            responseJson = r.json()
-            htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
-            if responseJson["responseCode"] == 200:
-                htmlRuuDamjuulahUtguud["textColor"] = "#00FF00"
-            else:
-                htmlRuuDamjuulahUtguud["textColor"] = "#FF0000"
-        except json.decoder.JSONDecodeError as e:
-            print("Error decoding JSON response:", e)
-            htmlRuuDamjuulahUtguud["responseText"] = "Error decoding JSON response"
-            htmlRuuDamjuulahUtguud["textColor"] = "#FF0000"
+        serviceHayag = "http://whoisb.mandakh.org/userSocialIn/"
+        app = request.POST.get("platForm")
+        site = request.POST.get("userName")
+        requestJSON = {
+            "id": request.session['userId'],
+            "app": app,
+            "site": site,
+        }
+        r = requests.get(serviceHayag,
+                         data=json.dumps(requestJSON),
+                         headers={'Content-Type': 'application/json'})
+        responseJson = r.json()
+        htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
+        if responseJson["responseCode"] == 200:
+            htmlRuuDamjuulahUtguud["textColor"] = "#00ff00"
+        else:
+            htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
 
-    htmlRuuDamjuulahUtguud["userId"] = request.session['userId']
-
-    # Retrieve data from the API
-    requestJSON = {
-        "user_id": request.session['userId']
-    }
     serviceHayag = "http://whoisb.mandakh.org/userSocial/"
+    requestJSON = {
+        "id": request.session['userId']
+    }
     r = requests.get(serviceHayag,
                      data=json.dumps(requestJSON),
                      headers={'Content-Type': 'application/json'})
-    try:
-        response_json = r.json()
-        if response_json.get("socialData"):
-            response_data = response_json["socialData"]
-            htmlRuuDamjuulahUtguud["app"] = response_data.get("app", "")
-            htmlRuuDamjuulahUtguud["site"] = response_data.get("site", "")
-        else:
-            htmlRuuDamjuulahUtguud["app"] = ""
-            htmlRuuDamjuulahUtguud["site"] = ""
-    except json.decoder.JSONDecodeError as e:
-        print("Error decoding JSON response:", e)
-        htmlRuuDamjuulahUtguud["app"] = ""
-        htmlRuuDamjuulahUtguud["site"] = ""
+    responseJson = r.json()
 
+    if responseJson["responseCode"] == 200:
+        userData = responseJson["socialData"]
+        htmlRuuDamjuulahUtguud['app'] = [data['app'] for data in userData]
+        htmlRuuDamjuulahUtguud['site'] = [data['site'] for data in userData]
+    else:
+        htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
+        htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
+    print()
     return render(request, "Profile/7.html", htmlRuuDamjuulahUtguud)
+
