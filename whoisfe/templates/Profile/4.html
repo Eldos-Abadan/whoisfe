@@ -58,19 +58,14 @@
         <div class="wrapper">
           <div class="wrapper2">
             <h1>Гэр бүлийн мэдээлэл</h1>
-            <span style="color:#0000FF;">
-              {{ responseText }}
-            </span>
-            {{app}} -> {{name}}
             <div class="headline">
               <form id="cc-contact" class="form-group" action="" method="POST" name="userFamilyIns">
-                {% csrf_token %}
                 <div class="FamilyInfo">
                   <div class="row">
                     <div class="col-sm-5">
                       <div class="form-floating mt-3">
                         <label for="floatingInput">Таны хэн болох:</label>
-                        <input list="henBoloh" name="henBoloh" class="form-control" step="10" id="floatingNumber">
+                        <input list="henBoloh" name="henBoloh" class="form-control" step="10" id="floatingNumber" placeholder="Jichee:Aaw">
                         <datalist id="henBoloh">
                           <option name="henBolohN" value="Uwuu"></option>
                           <option name="henBolohN" value="Emee"></option>
@@ -88,10 +83,10 @@
                   </div>
                   <br>
                   <div class="row">
-                    <div class="col-sm-5">
+                    <div class="col-sm-3">
                       <div class="form-floating mt-3">
-                        <label for="floatingInput"> Нэр: </label>
-                        <input type="text" name="ner" lass="form-control" step="10" id="floatingNumber">
+                        <label for="floatingLname">Нэр</label>
+                        <input type="text" name="ner" class="form-control form-control-sm" id="ner" placeholder="Нэр">
                       </div>
                     </div>
                   </div>
@@ -99,7 +94,7 @@
                     <div class="col-sm-5">
                       <div class="form-floating mt-3">
                         <label for="floatingInput">Утасны дугаар: </label>
-                        <input type="text" name="dugaar" class="form-control" step="10" id="floatingNumber">
+                        <input type="text" name="dugaar" class="form-control" step="10" id="dugaar">
                       </div>
                     </div>
                   </div>
