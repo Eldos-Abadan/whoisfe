@@ -41,7 +41,7 @@ def registerViews(request):
                 return render(request, 'register/register.html')
 
             # Hash the password
-            hashed_password = password
+            hashed_password =  mandakhHash(password) 
            
             # Prepare the request JSON data
             request_data = {
@@ -51,6 +51,7 @@ def registerViews(request):
                 "pass": hashed_password,
                 "userName": user_name
             }
+            print(request_data)
             # Make the request to userRegisterView service
             response = requests.post("http://whoisb.mandakh.org/userRegister/",
                                      data=json.dumps(request_data),
