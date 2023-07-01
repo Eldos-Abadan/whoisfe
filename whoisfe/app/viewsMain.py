@@ -106,3 +106,6 @@ def odkeBcViews(request):
 
 def mainNCViews(request): 
   return render(request, "templates/main.html")
+
+def enkuCVViews(request): 
+  return render(request, "templates/enku.html")
