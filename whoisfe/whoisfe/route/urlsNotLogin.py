@@ -14,5 +14,6 @@ urlpatterns = [
     path("BC/",                         viewsMain.odkeBcViews,              name="BC"),
     path("mainNC/",                     viewsMain.mainNCViews,              name="mainnc"),
     path("enkuCV/",                     viewsMain.enkuCVViews,              name="enkucv"),
+    path("enku2CV/",                     viewsMain.enku2CVViews,              name="enku2cv"),
     #####################################################################################################
     ]   

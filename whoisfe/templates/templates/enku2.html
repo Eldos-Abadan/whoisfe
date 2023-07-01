@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/templates/enku2.css'%}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My cv</title>
+</head>
+
+<body>
+    <div class="container">
+        <img src="{% static 'images/week1/zurag/'%}" class="wave">
+        <!-- <img src="wave.png" class="wave"> -->
+
+        <!-- profile section stare -->
+        <div class="profilesection">
+            <h1 class="name">Enkhzul Ganbaatar</h1><br>
+            <span id="so">Front-End & Developer</span><br><br>
+            <h2 style="font-size: 30px;">Profile :-</h2>
+            <p class="para">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello! I am Enkhzul Ganbaatar.
+                Creative CV is a HTML resume <br>template for professionals. Built with Bootstrap 4, Now UI Kit and <br> FontAwesome, 
+                this modern and responsive design template is perfect to  <br>showcase your portfolio, skills and experience.
+            </p>
+        </div>
+        <!-- profile section End-->
+
+        <div class="backshado"></div>
+
+
+        <!-- left section par  -->
+        <div class="mainbox">
+
+            <div class="box Exprience">
+                <h2 class="hed">Experience</h2><br><br><br>
+                <h3 class="litelhed">Name of work title:-</h3>
+                <span id="so">Company Name</span><br><br>
+                <p class="para a">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creative CV is a HTML resume template for professionals.
+                </p>
+                <br>
+                <h3 class="litelhed">Name of work title:-</h3>
+                <span id="so">Company Name</span><br><br>
+                <p class="para a">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creative CV is a HTML resume template for professionals.
+                </p>
+            </div>
+
+            <div class="box educaion">
+                <h2 class="hed">Education</h2><br><br><br>
+                <h3 class="litelhed">Degree</h3>
+                <div class="degree">
+                    <div class="deg a">
+                        <p>University Name<br><br>-----------------</p>
+                    </div>
+                    <div class="deg b">
+                        <p>Collage Name<br>---------------------<br>2019-2023</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="litelhed">Any Extra Qualifiction</h3><br>
+                    <p class="deg">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add here ----------------------------------------------------------</p>
+                </div>
+
+            </div>
+
+            <div class="box contact">
+                <h3 class="hed a">Contact:-</h3><br>
+                <table cellspacing="10px">
+                    <tr>
+                        <td>Phone No</td>
+                        <td>:123654789</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>:gmail@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td>: 140, City Center, New York, U.S.A </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- left section par  End-->
+
+
+        <!-- right section start -->
+        <div class="mainright">
+            <div class="right a">
+                <h2 class="hed c">Skills :-</h2><br>
+                <table class="table" cellspacing="10px">
+                    <tr>
+                        <td id="tex">HTML</td>
+                        <td> <progress max="100" value="69" min=0></progress><br></td>
+                    </tr>
+                    <tr>
+                        <td id="tex">CSS</td>
+                        <td> <progress max="100" value="55" min=0></progress><br></td>
+                    </tr>
+                    <tr>
+                        <td id="tex">PYTHON</td>
+                        <td> <progress max="100" value="65" min=0></progress><br></td>
+                    </tr>
+                    <tr>
+                        <td id="tex">Communication</td>
+                        <td> <progress max="100" value="85" min=0></progress><br></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="right b">
+                <h2 class="hed c">Languages :-</h2><br>
+                <p id="tex" style="margin-top: 30px;">1) Mongolian <br> 2) English <br> 3) Korean </p>
+            </div>
+            <div class="right c ">
+                <h2 class="hed c">Awards :-</h2><br><br><br>
+                <P id="tex">1) --------------------<br> <br>2) -----------------</P>
+            </div>
+            <div class="right d ">
+                <h2 class="hed c">Certificate :-</h2><br><br><br>
+                <p id="tex">1)  <br><br> 2)  <br><br> 3)  <br><br> 4) </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

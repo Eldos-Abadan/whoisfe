@@ -109,3 +109,6 @@ def mainNCViews(request):
 
 def enkuCVViews(request): 
   return render(request, "templates/enku.html")
+
+def enku2CVViews(request): 
+  return render(request, "templates/enku2.html")
