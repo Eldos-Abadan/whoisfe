@@ -29,7 +29,6 @@ def loginViews(request):
             "name": myName,
             "pass": passs
         }
-        print(requestJSON)
     
         required_fields = ["name", "pass"]
         if not reqValidation(requestJSON, required_fields):
