@@ -18,6 +18,78 @@
     <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css" />
     <link href="{% static '/css/dashboard/pe-icon-7-stroke.css'%}" rel="stylesheet" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="edu.css">
+    <style>
+        .form-div {
+            margin-top: 30px;
+            padding: 10px;
+            box-shadow: 0px 0px 5px black;
+        }
+
+        .button {
+            height: 40px;
+            width: 200px;
+        }
+
+        .table {
+            margin-top: 30px;
+            box-shadow: 0px 0px 5px black;
+        }
+
+        .table thead tr {
+            background-color: darkviolet;
+            box-shadow: 0px 0px 5px darkviolet;
+            outline: darkviolet;
+            border: 1px solid white;
+            color: white;
+        }
+
+        .table th,
+        .table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .table tbody tr:hover {
+            background-color: #8080804a;
+        }
+
+        .table tbody tr:active {
+            box-shadow: 0px 0px 5px black;
+        }
+
+        .remove-row {
+            background-color: darkviolet;
+            border: 1px solid white;
+            outline: darkviolet;
+            color: white;
+            widows: 200px;
+            height: 40px;
+            box-shadow: 0px 0px 5px darkviolet;
+        }
+
+        .remove-row:active {
+            border: 1px solid white;
+            outline: darkviolet !important;
+            width: 195px !important;
+            height: 38px !important;
+        }
+
+        .fadetext {
+            animation: fadetext 1s ease;
+        }
+
+        @keyframes fadetext {
+            0% {
+                opacity: 0.1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -39,815 +111,133 @@
             </div>
         </nav>
     </div>
-    <div class="main-panel">
-        <h1>Education Information</h1>
-    </div>
     <div class="wrapper">
         <div class="sidebar" data-color="purple" data-image="{% static '/images/sidebar-5.jpg'%}">
             {% include "../includes/menu.html" %}
         </div>
         <div class="container">
             <div class="wrapper">
-                <!-- ################################## -->
-                <!-- ######## Боловсрол ########## -->
-                <div class="panel">
-                    <div class="headline">
-                        <form id="cc-contact-2" class="form-group" action="" method="post">
-                            <div class="Education">
-                                <!-- <h1>Боловсрол</h1> -->
-                                <legend style="font-size: 25px;"> Ерөнхий Боловсрол: </legend>
-                                <table>
-                                    <tr>
-                                        <td style="width: 100px; text-align: right;"> Сургуулийн нэр: </td>
-                                        <td style="color: red; text-align: center; width: 20px;"> * </td>
-                                        <td style="width: 100px;">
-                                            <select>
-                                                <option> -/- </option>
-                                                <option> ХААИС </option>
-                                                <option> ШУТИС </option>
-                                                <option> Санхүү Эдийн Засгийн Дээд Сургууль </option>
-                                                <option> Батлан хамгаалахын их сургууль </option>
-                                                <option> Боловсролын их сургууль </option>
-                                                <option> Монгол улсын их сургууль </option>
-                                                <option> Соёл урлагийн их сургууль </option>
-                                                <option> Их засаг ОУИС </option>
-                                                <option> Орхон их сургууль </option>
-                                                <option> Отгонтэнгэр их сургууль </option>
-                                                <option> Хүмүүнлэгийн ухааны их сургууль </option>
-                                                <option> Ач АУИС </option>
-                                                <option> Билиг дээд сургууль </option>
-                                                <option> Зохиомж дээд сургууль </option>
-                                                <option> Идэр дээд сургууль </option>
-                                                <option> Мандах бүртгэл дээд сургууль </option>
-                                                <option> Монос дээд сургууль </option>
-                                                <option> Нийгмийн ухааны дээд сургууль </option>
-                                                <option> Олон улсын эдийн засаг, бизнесийн дээд сургууль </option>
-                                                <option> Санхүү Эдийн Засгийн Их сургууль </option>
-                                                <option> Улаанбаатар дээд сургууль </option>
-                                                <option> Улаанбаатар-Эрдэм-Оюу дээд сургууль </option>
-                                                <option> Урлах эрдмийн дээд сургууль </option>
-                                                <option> Үндэсний биеийн тамирын дээд сургууль </option>
-                                                <option> Хангай дээд сургууль </option>
-                                                <option> Хүрээ дээд сургууль </option>
-                                                <option> Хан-Уул дээд сургууль </option>
-                                                <option> 13-р сургууль </option>
-                                                <option> 28-р сургууль </option>
-                                                <option> 43-р сургууль </option>
-                                                <option> 51-р сургууль </option>
-                                                <option> 70-р сургууль </option>
-                                                <option> 78-р сургууль </option>
-                                                <option> 19-р сургууль </option>
-                                                <option> 38-р сургууль </option>
-                                                <option> 46-р сургууль </option>
-                                                <option> 54-р сургууль </option>
-                                                <option> 73-р сургууль </option>
-                                                <option> 93-р сургууль </option>
-                                                <option> Оюуны ундраа цогцолбор </option>
-                                                <option> 20-р сургууль </option>
-                                                <option> 40-р сургууль </option>
-                                                <option> 47-р сургууль </option>
-                                                <option> 56-р сургууль </option>
-                                                <option> 77-р сургууль </option>
-                                                <option> 111-р сургууль </option>
-                                                <option> 33-р сургууль </option>
-                                                <option> 48-р сургууль </option>
-                                                <option> 68-р сургууль </option>
-                                                <option> 92-р сургууль </option>
-                                                <option> 14-р сургууль </option>
-                                                <option> 37-р сургууль </option>
-                                                <option> 53-р сургууль </option>
-                                                <option> 69-р сургууль </option>
-                                                <option> 97-р сургууль </option>
-                                                <option> 13-р сургууль </option>
-                                                <option> Эрэл дунд сургууль </option>
-                                                <option> 105-р сургууль </option>
-                                                <option> 67-р сургууль </option>
-                                                <option> Ирээдүй цогцолбор </option>
-                                                <option> 62-р сургууль </option>
-                                                <option> 76-р сургууль </option>
-                                                <option> 2-р сургууль </option>
-                                                <option> Нийслэлийн тэргүүний 65-р сургууль </option>
-                                                <option> 5-р сургууль </option>
-                                                <option> 49-р сургууль </option>
-                                                <option> 57-р сургууль </option>
-                                                <option> 41-р сургууль </option>
-                                                <option> Русская гимназия </option>
-                                                <option> 24-р сургууль </option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <table>
-                                    <br>
-                                    <tr>
-                                        <td style="width: 100px; text-align: right;"> Боловсрол: </td>
-                                        <td style="color: red; text-align: center; width: 20px;"> * </td>
-                                        <td style="width: 100px;">
-                                            <select>
-                                                <option> -/- </option>
-                                                <option> Бага </option>
-                                                <option> Бүрэн Дунд </option>
-                                                <option> Суурь </option>
-                                                <option> Боловсролгүй </option>
-                                                <option> Дээд </option>
-                                                <option> Техник мэргэжлийн </option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <br>
-                                <table>
-                                    <tr>
-                                        <td style="width: 100px; text-align: right;"> Элссэн он: </td>
-                                        <td style="color: red; text-align: center; width: 20px;"> * </td>
-                                        <td style="width: 100px;">
-                                            <select>
-                                                <option> -/- </option>
-                                                <option> 1998 он </option>
-                                                <option> 1997 он</option>
-                                                <option> 1996 он</option>
-                                                <option> 1995 он</option>
-                                                <option> 1994 он</option>
-                                                <option> 1951 он</option>
-                                                <option> 1950 он</option>
-                                                <option> 1951 он</option>
-                                                <option> 1949 он</option>
-                                                <option> 1941 он</option>
-                                                <option> 1940 он</option>
-                                                <option> 1936 он</option>
-                                                <option> 1993 он</option>
-                                                <option> 1992 он</option>
-                                                <option> 1991 он</option>
-                                                <option> 1990 он</option>
-                                                <option> 1989 он</option>
-                                                <option> 1982 он</option>
-                                                <option> 1981 он</option>
-                                                <option> 1980 он</option>
-                                                <option> 1979 он</option>
-                                                <option> 1978 он</option>
-                                                <option> 1977 он</option>
-                                                <option> 1970 он</option>
-                                                <option> 1969 он</option>
-                                                <option> 1968 он</option>
-                                                <option> 1967 он</option>
-                                                <option> 1966 он</option>
-                                                <option> 1965 он</option>
-                                                <option> 1942 он</option>
-                                                <option> 1939 он</option>
-                                                <option> 1938 он</option>
-                                                <option> 1937 он</option>
-                                                <option> 1933 он</option>
-                                                <option> 1951 он</option>
-                                                <option> 1932 он</option>
-                                                <option> 1931 он</option>
-                                                <option> 1930 он</option>
-                                                <option> 1988 он</option>
-                                                <option> 1987 он</option>
-                                                <option> 1986 он</option>
-                                                <option> 1985 он</option>
-                                                <option> 1984 он</option>
-                                                <option> 1983 он</option>
-                                                <option> 1976 он</option>
-                                                <option> 1975 он</option>
-                                                <option> 1974 он</option>
-                                                <option> 1973 он</option>
-                                                <option> 1972 он</option>
-                                                <option> 1971 он</option>
-                                                <option> 1964 он</option>
-                                                <option> 1963 он</option>
-                                                <option> 1962 он</option>
-                                                <option> 1961 он</option>
-                                                <option> 1960 он</option>
-                                                <option> 1959 он</option>
-                                                <option> 1958 он</option>
-                                                <option> 1957 он</option>
-                                                <option> 1956 он</option>
-                                                <option> 1955 он</option>
-                                                <option> 1954 он</option>
-                                                <option> 1953 он</option>
-                                                <option> 1952 он</option>
-                                                <option> 1974 он</option>
-                                                <option> 1948 он</option>
-                                                <option> 1947 он</option>
-                                                <option> 1945 он</option>
-                                                <option> 1943 он</option>
-                                                <option> 1935 он</option>
-                                                <option> 1934 он</option>
-                                                <option> 2021 он</option>
-                                                <option> 2020 он</option>
-                                                <option> 2025 он</option>
-                                                <option> 2024 он</option>
-                                                <option> 2023 он</option>
-                                                <option> 2022 он</option>
-                                                <option> 2019 он</option>
-                                                <option> 2018 он</option>
-                                                <option> 2013 он</option>
-                                                <option> 2012 он</option>
-                                                <option> 2011 он</option>
-                                                <option> 2010 он</option>
-                                                <option> 2009 он</option>
-                                                <option> 2008 он</option>
-                                                <option> 2007 он</option>
-                                                <option> 2006 он</option>
-                                                <option> 2005 он</option>
-                                                <option> 2004 он</option>
-                                                <option> 2003 он</option>
-                                                <option> 2002 он</option>
-                                                <option> 2000 он</option>
-                                                <option> 1999 он</option>
-                                                <option> 2016 он</option>
-                                                <option> 2015 он</option>
-                                                <option> 2014 он</option>
+                <!-- ############################################################### -->
 
+                <h1>Education Information</h1>
+                <script>
+                    $(document).ready(function () {
+                        // add new row
+                        $("#add-row").click(function () {
+                            var education = $("#education").val();
+                            var direction = $("#direction").val();
+                            var elssenOn = $("#elssenOn").val();
+                            var tugssunOn = $("#tugssunOn").val();
+                            $(".table tbody tr").last().after(
+                                '<tr class="fadetext">' +
+                                '<td><input type="checkbox" id="select-row"></td>' +
+                                '<td>' + education + '</td>' +
+                                '<td>' + direction + '</td>' +
+                                '<td>' + elssenOn + '</td>' +
+                                '<td>' + tugssunOn + '</td>' +
+                                '</tr>'
+                            );
+                        })
 
-                                            </select>
-                                        </td>
-                                    </tr>
-                                </table>
+                        // select all checkbox
+                        $("#select-all").click(function () {
+                            var isSelected = $(this).is(":checked");
+                            if (isSelected) {
+                                $(".table tbody tr").each(function () {
+                                    $(this).find('input[type="checkbox"]').prop('checked', true);
+                                })
+                            } else {
+                                $(".table tbody tr").each(function () {
+                                    $(this).find('input[type="checkbox"]').prop('checked', false);
+                                })
+                            }
+                        });
 
-                                <br>
-                                <table>
-                                    <tr>
-                                        <td style="width: 100px; text-align: right;"> Төгссөн он: </td>
-                                        <td style="color: red; text-align: center; width: 20px;"> * </td>
-                                        <td style="width: 100px;">
-                                            <select>
-                                                <option> -/- </option>
-                                                <option> 1998 он </option>
-                                                <option> 1997 он</option>
-                                                <option> 1996 он</option>
-                                                <option> 1995 он</option>
-                                                <option> 1994 он</option>
-                                                <option> 1951 он</option>
-                                                <option> 1950 он</option>
-                                                <option> 1951 он</option>
-                                                <option> 1949 он</option>
-                                                <option> 1941 он</option>
-                                                <option> 1940 он</option>
-                                                <option> 1936 он</option>
-                                                <option> 1993 он</option>
-                                                <option> 1992 он</option>
-                                                <option> 1991 он</option>
-                                                <option> 1990 он</option>
-                                                <option> 1989 он</option>
-                                                <option> 1982 он</option>
-                                                <option> 1981 он</option>
-                                                <option> 1980 он</option>
-                                                <option> 1979 он</option>
-                                                <option> 1978 он</option>
-                                                <option> 1977 он</option>
-                                                <option> 1970 он</option>
-                                                <option> 1969 он</option>
-                                                <option> 1968 он</option>
-                                                <option> 1967 он</option>
-                                                <option> 1966 он</option>
-                                                <option> 1965 он</option>
-                                                <option> 1942 он</option>
-                                                <option> 1939 он</option>
-                                                <option> 1938 он</option>
-                                                <option> 1937 он</option>
-                                                <option> 1933 он</option>
-                                                <option> 1951 он</option>
-                                                <option> 1932 он</option>
-                                                <option> 1931 он</option>
-                                                <option> 1930 он</option>
-                                                <option> 1988 он</option>
-                                                <option> 1987 он</option>
-                                                <option> 1986 он</option>
-                                                <option> 1985 он</option>
-                                                <option> 1984 он</option>
-                                                <option> 1983 он</option>
-                                                <option> 1976 он</option>
-                                                <option> 1975 он</option>
-                                                <option> 1974 он</option>
-                                                <option> 1973 он</option>
-                                                <option> 1972 он</option>
-                                                <option> 1971 он</option>
-                                                <option> 1964 он</option>
-                                                <option> 1963 он</option>
-                                                <option> 1962 он</option>
-                                                <option> 1961 он</option>
-                                                <option> 1960 он</option>
-                                                <option> 1959 он</option>
-                                                <option> 1958 он</option>
-                                                <option> 1957 он</option>
-                                                <option> 1956 он</option>
-                                                <option> 1955 он</option>
-                                                <option> 1954 он</option>
-                                                <option> 1953 он</option>
-                                                <option> 1952 он</option>
-                                                <option> 1974 он</option>
-                                                <option> 1948 он</option>
-                                                <option> 1947 он</option>
-                                                <option> 1945 он</option>
-                                                <option> 1943 он</option>
-                                                <option> 1935 он</option>
-                                                <option> 1934 он</option>
-                                                <option> 2021 он</option>
-                                                <option> 2020 он</option>
-                                                <option> 2025 он</option>
-                                                <option> 2024 он</option>
-                                                <option> 2023 он</option>
-                                                <option> 2022 он</option>
-                                                <option> 2019 он</option>
-                                                <option> 2018 он</option>
-                                                <option> 2013 он</option>
-                                                <option> 2012 он</option>
-                                                <option> 2011 он</option>
-                                                <option> 2010 он</option>
-                                                <option> 2009 он</option>
-                                                <option> 2008 он</option>
-                                                <option> 2007 он</option>
-                                                <option> 2006 он</option>
-                                                <option> 2005 он</option>
-                                                <option> 2004 он</option>
-                                                <option> 2003 он</option>
-                                                <option> 2002 он</option>
-                                                <option> 2000 он</option>
-                                                <option> 1999 он</option>
-                                                <option> 2016 он</option>
-                                                <option> 2015 он</option>
-                                                <option> 2014 он</option>
+                        //Remove selected rows
+                        $("#remove-row").click(function () {
+                            $(".table tbody tr").each(function () {
+                                var isChecked = $(this).find('input[type="checkbox"]').is(":checked");
+                                var tableSize = $(".table tbody tr").length;
+                                if (tableSize == 1) {
+                                    alert('all rows cannot be deleted.');
+                                } else if (isChecked) {
+                                    $(this).remove();
 
+                                }
+                            });
+                        });
+                    })
+                </script>
+                </head>
 
-                                            </select>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <br>
-
-                                <!-- ############## University ################## -->
-                                <legend style="font-size: 25px;"> Их дээд сургууль: </legend>
-                                <table>
-                                    <tr>
-                                        <td style="width: 100px; text-align: right;"> Сургуулийн нэр: </td>
-                                        <td style="color: red; text-align: center; width: 20px;"> * </td>
-                                        <td style="width: 100px;">
-                                            <select>
-                                                <option> -/- </option>
-                                                <option> ХААИС </option>
-                                                <option> ШУТИС </option>
-                                                <option> Санхүү Эдийн Засгийн Дээд Сургууль </option>
-                                                <option> Батлан хамгаалахын их сургууль </option>
-                                                <option> Боловсролын их сургууль </option>
-                                                <option> Монгол улсын их сургууль </option>
-                                                <option> Соёл урлагийн их сургууль </option>
-                                                <option> Их засаг ОУИС </option>
-                                                <option> Орхон их сургууль </option>
-                                                <option> Отгонтэнгэр их сургууль </option>
-                                                <option> Хүмүүнлэгийн ухааны их сургууль </option>
-                                                <option> Ач АУИС </option>
-                                                <option> Билиг дээд сургууль </option>
-                                                <option> Зохиомж дээд сургууль </option>
-                                                <option> Идэр дээд сургууль </option>
-                                                <option> Мандах бүртгэл дээд сургууль </option>
-                                                <option> Монос дээд сургууль </option>
-                                                <option> Нийгмийн ухааны дээд сургууль </option>
-                                                <option> Олон улсын эдийн засаг, бизнесийн дээд сургууль </option>
-                                                <option> Санхүү Эдийн Засгийн Их сургууль </option>
-                                                <option> Улаанбаатар дээд сургууль </option>
-                                                <option> Улаанбаатар-Эрдэм-Оюу дээд сургууль </option>
-                                                <option> Урлах эрдмийн дээд сургууль </option>
-                                                <option> Үндэсний биеийн тамирын дээд сургууль </option>
-                                                <option> Хангай дээд сургууль </option>
-                                                <option> Хүрээ дээд сургууль </option>
-                                                <option> Хан-Уул дээд сургууль </option>
-                                                <option> 13-р сургууль </option>
-                                                <option> 28-р сургууль </option>
-                                                <option> 43-р сургууль </option>
-                                                <option> 51-р сургууль </option>
-                                                <option> 70-р сургууль </option>
-                                                <option> 78-р сургууль </option>
-                                                <option> 19-р сургууль </option>
-                                                <option> 38-р сургууль </option>
-                                                <option> 46-р сургууль </option>
-                                                <option> 54-р сургууль </option>
-                                                <option> 73-р сургууль </option>
-                                                <option> 93-р сургууль </option>
-                                                <option> Оюуны ундраа цогцолбор </option>
-                                                <option> 20-р сургууль </option>
-                                                <option> 40-р сургууль </option>
-                                                <option> 47-р сургууль </option>
-                                                <option> 56-р сургууль </option>
-                                                <option> 77-р сургууль </option>
-                                                <option> 111-р сургууль </option>
-                                                <option> 33-р сургууль </option>
-                                                <option> 48-р сургууль </option>
-                                                <option> 68-р сургууль </option>
-                                                <option> 92-р сургууль </option>
-                                                <option> 14-р сургууль </option>
-                                                <option> 37-р сургууль </option>
-                                                <option> 53-р сургууль </option>
-                                                <option> 69-р сургууль </option>
-                                                <option> 97-р сургууль </option>
-                                                <option> 13-р сургууль </option>
-                                                <option> Эрэл дунд сургууль </option>
-                                                <option> 105-р сургууль </option>
-                                                <option> 67-р сургууль </option>
-                                                <option> Ирээдүй цогцолбор </option>
-                                                <option> 62-р сургууль </option>
-                                                <option> 76-р сургууль </option>
-                                                <option> 2-р сургууль </option>
-                                                <option> Нийслэлийн тэргүүний 65-р сургууль </option>
-                                                <option> 5-р сургууль </option>
-                                                <option> 49-р сургууль </option>
-                                                <option> 57-р сургууль </option>
-                                                <option> 41-р сургууль </option>
-                                                <option> Русская гимназия </option>
-                                                <option> 24-р сургууль </option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                </table>
-
-                                <table>
-                                    <tr>
-                                        <td style="width: 100px; text-align: right;"> Эрдмийн зэрэг: </td>
-                                        <td style="color:red; text-align: center; width: 20px;"> * </td>
-                                        <td>
-                                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Mongolia">
-                                            <label for="vehicle1"> Бакалавр </label><br>
-                                            <input type="checkbox" id="vehicle2" name="vehicle2" value="China">
-                                            <label for="vehicle2"> Магистр </label><br>
-                                            <input type="checkbox" id="vehicle3" name="vehicle3" value="korea">
-                                            <label for="vehicle3"> Доктор </label><br>
-                                            <input type="checkbox" id="vehicle3" name="vehicle3" value="korea">
-                                            <label for="vehicle3"> Профессор </label><br>
-                                            <input type="checkbox" id="vehicle3" name="vehicle3" value="korea">
-                                            <label for="vehicle3"> Дэд профессор </label><br>
-                                            <input type="checkbox" id="vehicle3" name="vehicle3" value="korea">
-                                            <label for="vehicle3"> Академич </label><br>
-                                        </td>
-                                    </tr>
-                                </table>
-
-                                <table>
-                                    <tr>
-                                        <td style="width: 100px; text-align: right;"> Мэргэжил: </td>
-                                        <td style="color: red; text-align: center; width: 20px;"> * </td>
-                                        <td> <input type="text" name="year" size="30"> </td>
-                                    </tr>
-                                </table>
-
-                                <br>
-                                <table>
-                                    <tr>
-                                        <td style="width: 100px; text-align: right;"> Элссэн он: </td>
-                                        <td style="color: red; text-align: center; width: 20px;"> * </td>
-                                        <td style="width: 100px;">
-                                            <select>
-                                                <option> -/- </option>
-                                                <option> 1998 он </option>
-                                                <option> 1997 он</option>
-                                                <option> 1996 он</option>
-                                                <option> 1995 он</option>
-                                                <option> 1994 он</option>
-                                                <option> 1951 он</option>
-                                                <option> 1950 он</option>
-                                                <option> 1951 он</option>
-                                                <option> 1949 он</option>
-                                                <option> 1941 он</option>
-                                                <option> 1940 он</option>
-                                                <option> 1936 он</option>
-                                                <option> 1993 он</option>
-                                                <option> 1992 он</option>
-                                                <option> 1991 он</option>
-                                                <option> 1990 он</option>
-                                                <option> 1989 он</option>
-                                                <option> 1982 он</option>
-                                                <option> 1981 он</option>
-                                                <option> 1980 он</option>
-                                                <option> 1979 он</option>
-                                                <option> 1978 он</option>
-                                                <option> 1977 он</option>
-                                                <option> 1970 он</option>
-                                                <option> 1969 он</option>
-                                                <option> 1968 он</option>
-                                                <option> 1967 он</option>
-                                                <option> 1966 он</option>
-                                                <option> 1965 он</option>
-                                                <option> 1942 он</option>
-                                                <option> 1939 он</option>
-                                                <option> 1938 он</option>
-                                                <option> 1937 он</option>
-                                                <option> 1933 он</option>
-                                                <option> 1951 он</option>
-                                                <option> 1932 он</option>
-                                                <option> 1931 он</option>
-                                                <option> 1930 он</option>
-                                                <option> 1988 он</option>
-                                                <option> 1987 он</option>
-                                                <option> 1986 он</option>
-                                                <option> 1985 он</option>
-                                                <option> 1984 он</option>
-                                                <option> 1983 он</option>
-                                                <option> 1976 он</option>
-                                                <option> 1975 он</option>
-                                                <option> 1974 он</option>
-                                                <option> 1973 он</option>
-                                                <option> 1972 он</option>
-                                                <option> 1971 он</option>
-                                                <option> 1964 он</option>
-                                                <option> 1963 он</option>
-                                                <option> 1962 он</option>
-                                                <option> 1961 он</option>
-                                                <option> 1960 он</option>
-                                                <option> 1959 он</option>
-                                                <option> 1958 он</option>
-                                                <option> 1957 он</option>
-                                                <option> 1956 он</option>
-                                                <option> 1955 он</option>
-                                                <option> 1954 он</option>
-                                                <option> 1953 он</option>
-                                                <option> 1952 он</option>
-                                                <option> 1974 он</option>
-                                                <option> 1948 он</option>
-                                                <option> 1947 он</option>
-                                                <option> 1945 он</option>
-                                                <option> 1943 он</option>
-                                                <option> 1935 он</option>
-                                                <option> 1934 он</option>
-                                                <option> 2021 он</option>
-                                                <option> 2020 он</option>
-                                                <option> 2025 он</option>
-                                                <option> 2024 он</option>
-                                                <option> 2023 он</option>
-                                                <option> 2022 он</option>
-                                                <option> 2019 он</option>
-                                                <option> 2018 он</option>
-                                                <option> 2013 он</option>
-                                                <option> 2012 он</option>
-                                                <option> 2011 он</option>
-                                                <option> 2010 он</option>
-                                                <option> 2009 он</option>
-                                                <option> 2008 он</option>
-                                                <option> 2007 он</option>
-                                                <option> 2006 он</option>
-                                                <option> 2005 он</option>
-                                                <option> 2004 он</option>
-                                                <option> 2003 он</option>
-                                                <option> 2002 он</option>
-                                                <option> 2000 он</option>
-                                                <option> 1999 он</option>
-                                                <option> 2016 он</option>
-                                                <option> 2015 он</option>
-                                                <option> 2014 он</option>
-
-
-                                            </select>
-                                        </td>
-                                    </tr>
-                                </table>
-
-                                <br>
-                                <table>
-                                    <tr>
-                                        <td style="width: 100px; text-align: right;"> Төгссөн он: </td>
-                                        <td style="color: red; text-align: center; width: 20px;"> * </td>
-                                        <td style="width: 100px;">
-                                            <select>
-                                                <option> -/- </option>
-                                                <option> 1998 он </option>
-                                                <option> 1997 он</option>
-                                                <option> 1996 он</option>
-                                                <option> 1995 он</option>
-                                                <option> 1994 он</option>
-                                                <option> 1951 он</option>
-                                                <option> 1950 он</option>
-                                                <option> 1951 он</option>
-                                                <option> 1949 он</option>
-                                                <option> 1941 он</option>
-                                                <option> 1940 он</option>
-                                                <option> 1936 он</option>
-                                                <option> 1993 он</option>
-                                                <option> 1992 он</option>
-                                                <option> 1991 он</option>
-                                                <option> 1990 он</option>
-                                                <option> 1989 он</option>
-                                                <option> 1982 он</option>
-                                                <option> 1981 он</option>
-                                                <option> 1980 он</option>
-                                                <option> 1979 он</option>
-                                                <option> 1978 он</option>
-                                                <option> 1977 он</option>
-                                                <option> 1970 он</option>
-                                                <option> 1969 он</option>
-                                                <option> 1968 он</option>
-                                                <option> 1967 он</option>
-                                                <option> 1966 он</option>
-                                                <option> 1965 он</option>
-                                                <option> 1942 он</option>
-                                                <option> 1939 он</option>
-                                                <option> 1938 он</option>
-                                                <option> 1937 он</option>
-                                                <option> 1933 он</option>
-                                                <option> 1951 он</option>
-                                                <option> 1932 он</option>
-                                                <option> 1931 он</option>
-                                                <option> 1930 он</option>
-                                                <option> 1988 он</option>
-                                                <option> 1987 он</option>
-                                                <option> 1986 он</option>
-                                                <option> 1985 он</option>
-                                                <option> 1984 он</option>
-                                                <option> 1983 он</option>
-                                                <option> 1976 он</option>
-                                                <option> 1975 он</option>
-                                                <option> 1974 он</option>
-                                                <option> 1973 он</option>
-                                                <option> 1972 он</option>
-                                                <option> 1971 он</option>
-                                                <option> 1964 он</option>
-                                                <option> 1963 он</option>
-                                                <option> 1962 он</option>
-                                                <option> 1961 он</option>
-                                                <option> 1960 он</option>
-                                                <option> 1959 он</option>
-                                                <option> 1958 он</option>
-                                                <option> 1957 он</option>
-                                                <option> 1956 он</option>
-                                                <option> 1955 он</option>
-                                                <option> 1954 он</option>
-                                                <option> 1953 он</option>
-                                                <option> 1952 он</option>
-                                                <option> 1974 он</option>
-                                                <option> 1948 он</option>
-                                                <option> 1947 он</option>
-                                                <option> 1945 он</option>
-                                                <option> 1943 он</option>
-                                                <option> 1935 он</option>
-                                                <option> 1934 он</option>
-                                                <option> 2021 он</option>
-                                                <option> 2020 он</option>
-                                                <option> 2025 он</option>
-                                                <option> 2024 он</option>
-                                                <option> 2023 он</option>
-                                                <option> 2022 он</option>
-                                                <option> 2019 он</option>
-                                                <option> 2018 он</option>
-                                                <option> 2013 он</option>
-                                                <option> 2012 он</option>
-                                                <option> 2011 он</option>
-                                                <option> 2010 он</option>
-                                                <option> 2009 он</option>
-                                                <option> 2008 он</option>
-                                                <option> 2007 он</option>
-                                                <option> 2006 он</option>
-                                                <option> 2005 он</option>
-                                                <option> 2004 он</option>
-                                                <option> 2003 он</option>
-                                                <option> 2002 он</option>
-                                                <option> 2000 он</option>
-                                                <option> 1999 он</option>
-                                                <option> 2016 он</option>
-                                                <option> 2015 он</option>
-                                                <option> 2014 он</option>
-
-
-                                            </select>
-                                        </td>
-                                    </tr>
-                                </table>
-                              <br>
-
-                                <!-- ############## LANGUAGE SKILLS ################## -->
-
-                                <legend style="font-size: 25px;"> Хэлний мэдлэг: </legend>
-                                <table>
-                                    <tr>
-                                        <td style="width: 100px; text-align: right;"> Гадаад хэлний нэр: </td>
-                                        <td style="color:red; text-align: center; width: 20px;"> * </td>
-                                        <td>
-                                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Mongolia">
-                                            <label for="vehicle1"> Солонгос хэл </label><br>
-                                            <input type="checkbox" id="vehicle2" name="vehicle2" value="China">
-                                            <label for="vehicle2"> Хятад хэл </label><br>
-                                            <input type="checkbox" id="vehicle3" name="vehicle3" value="korea">
-                                            <label for="vehicle3"> Япон хэл </label><br>
-                                            <input type="checkbox" id="vehicle3" name="vehicle3" value="korea">
-                                            <label for="vehicle3"> Турк хэл </label><br>
-                                            <input type="checkbox" id="vehicle3" name="vehicle3" value="korea">
-                                            <label for="vehicle3"> Герман хэл </label><br>
-                                            <input type="checkbox" id="vehicle3" name="vehicle3" value="korea">
-                                            <label for="vehicle3"> Монгол хэл </label><br>
-                                            <input type="checkbox" id="vehicle3" name="vehicle3" value="korea">
-                                            <label for="vehicle3"> Монгол хэл </label><br>
-                                            <input type="checkbox" id="vehicle3" name="vehicle3" value="korea">
-                                            <label for="vehicle3"> Англи хэл </label><br>
-                                            <input type="checkbox" id="vehicle3" name="vehicle3" value="korea">
-                                            <label for="vehicle3"> Орос хэл </label><br>
-                                            <input type="checkbox" id="vehicle3" name="vehicle3" value="korea">
-                                            <label for="vehicle3"> Итали хэл </label><br>
-                                        </td>
-                                    </tr>
-                                </table>
-
-                                <br>
-                                <table>
-                                    <tr>
-                                        <td style="width: 100px; text-align: right;"> Бичих: </td>
-                                        <td style="color: red; text-align: center; width: 20px;"> * </td>
-                                        <td style="width: 100px;">
-                                            <select>
-                                                <option> -/- </option>
-                                                <option> Муу </option>
-                                                <option> Дунд </option>
-                                                <option> Сайн </option>
-                                                <option> Онц </option>
-                                                <option> Хангалттай </option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                </table>
-
-                                <br>
-                                <table>
-                                    <tr>
-                                        <td style="width: 100px; text-align: right;"> Сонсох: </td>
-                                        <td style="color: red; text-align: center; width: 20px;"> * </td>
-                                        <td style="width: 100px;">
-                                            <select>
-                                                <option> -/- </option>
-                                                <option> Муу </option>
-                                                <option> Дунд </option>
-                                                <option> Сайн </option>
-                                                <option> Онц </option>
-                                                <option> Хангалттай </option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                </table>
-
-                                <br>
-                                <table>
-                                    <tr>
-                                        <td style="width: 100px; text-align: right;"> Ярих: </td>
-                                        <td style="color: red; text-align: center; width: 20px;"> * </td>
-                                        <td style="width: 100px;">
-                                            <select>
-                                                <option> -/- </option>
-                                                <option> Муу </option>
-                                                <option> Дунд </option>
-                                                <option> Сайн </option>
-                                                <option> Онц </option>
-                                                <option> Хангалттай </option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                </table>
-
-                                <br>
-                                <div class="row">
-                                    <div class="col-sm-5">
-                                        <div class="form-floating mt-3">
-                                            <label for="floatingInput">Албан тушаал: </label>
-                                            <input type="text" name="alba" class="form-control" step="10"
-                                                id="floatingNumber">
-                                        </div>
-                                    </div>
+                <body>
+                    <div class="container">
+                        <div class="form-div">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" id="education" placeholder="Сургуулийн нэр">
                                 </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-sm-5">
-                                        <div class="form-floating mt-3">
-                                            <label for="floatingInput">Албан байгууллагын
-                                                нэр: </label>
-                                            <input type="text" name="aname" class="form-control" step="10"
-                                                id="floatingNumber">
-                                        </div>
-                                    </div>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" id="direction"
+                                        placeholder="Ямар чиглэлээр суралцсан бэ?">
                                 </div>
-
-                                <div class="row">
-                                    <div class="col-sm-12 mt-3 mb-4" class="col-sm-2">
-                                        <div class="btn-group mr-2 " role="group" aria-label="First group">
-                                            <input type="submit" style="font-size: 20px;" name="save" value="Хадгалах">
-                                        </div>
-                                    </div>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" id="elssenOn"
+                                        placeholder="Суралцаж эхэлсэн он">
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" id="tugssunOn"
+                                        placeholder="Суралцаж төгссөн он">
+                                </div>
+                                <div class="col-md-3" style="text-align: left; margin-top: 5px;">
+                                    <button class="btn btn-primary" id="add-row">Add</button>
                                 </div>
                             </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="wrapper2">
-                    <div class="footer">
-                        {% include "../includes/footer.html" %}
-                    </div>
-                </div>
-            </div>
+                        </div>
 
+                        <div class="container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>All <input type="checkbox" id="select-all"></th>
+                                        <th>Сургууль</th>
+                                        <th>Чиглэл</th>
+                                        <th>Элссэн он</th>
+                                        <th>Төгссөн он</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" id="select-row"></td>
+                                        <td>Example</td>
+                                        <td>Example</td>
+                                        <td>Example</td>
+                                        <td>Example</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button class="remove-row" id="remove-row">Remove row</button>
+                        </div>
+                    </div>
+                </body>
+
+</html>
+<!-- ############################################################### -->
+</div>
+</div>
+</div>
+<div class="wrapper2">
+    <div class="footer">
+        {% include "../includes/footer.html" %}
+    </div>
+</div>
 
 </body>
-
 <script src="{% static '/js/dashboard/jquery.3.2.1.min.js'%}" type="text/javascript"></script>
 <script src="{% static '/js/dashboard/bootstrap.min.js'%}" type="text/javascript"></script>
-
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-
 <script src="{% static '/js/dashboard/light-bootstrap-dashboard.js'%}"></script>
-
 <script src="{% static '/js/dashboard/demo.js'%}"></script>
-
 <script type="text/javascript">
     $(document).ready(function () {
         $("#profileMenuItem").addClass("active");
@@ -875,6 +265,3 @@
             }
         );
     });
-</script>
-
-</html>
