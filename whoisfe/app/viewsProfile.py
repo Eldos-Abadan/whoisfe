@@ -3,6 +3,8 @@ import json
 import requests
 from whoisfe.settings import *
 from django.http import HttpResponse
+import json.decoder
+
 
 
 def profileMain(request):
@@ -10,11 +12,11 @@ def profileMain(request):
     checkSession(request)
     if request.session['beegii'] == 0:
         return redirect("homeView")
-    
+
     htmlRuuDamjuulahUtguud = {}
     htmlRuuDamjuulahUtguud["responseText"] = ""
     htmlRuuDamjuulahUtguud["textColor"] = "#00FF00"
-    
+
     if request.method == "POST":
         if "userInfoUpdateSubmit" in request.POST:
             # Start userInfoUpdateSubmit
@@ -38,7 +40,7 @@ def profileMain(request):
             else:
                 htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
             # End userInfoUpdateSubmit
-            
+
         if "changePassSubmit" in request.POST:
             if request.POST.get("new") == request.POST.get("new2"):
                 serviceHayag = "http://whoisb.mandakh.org/changePass/"
@@ -79,12 +81,11 @@ def profileMain(request):
     return render(request, "Profile/1.html", htmlRuuDamjuulahUtguud)
 
 
-
 def profileAdd(request):
     checkSession(request)
     if request.session['beegii'] == 0:
         return redirect("homeView")
-    nemelt={}
+    nemelt = {}
     nemelt["responseText"] = ""
     nemelt["textColor"] = "#00FF00"
     if request.method == "POST":
@@ -100,6 +101,7 @@ def profileAdd(request):
             ysUndes = request.POST.get("nationality")
             hayg = request.POST.get("homeAddress")
             hobby = request.POST.get("hobby")
+
             def debugFunciton():
                 print(huis)
                 print(torsonOgnoo)
@@ -109,22 +111,22 @@ def profileAdd(request):
                 print("sdakfjsdalhfkdsjh")
                 print(hayg)
                 print(hobby)
-            if(len(huis) == 5):
+            if (len(huis) == 5):
                 huis = "1"
-            if(len(hobby) == 0):
+            if (len(hobby) == 0):
                 hobby = " "
-            if(len(torsonOgnoo) == 0):
+            if (len(torsonOgnoo) == 0):
                 torsonOgnoo = "07/01/2023"
             requestJSON = {
                 "user_id": request.session['userId'],
                 "regDug": regDug,
                 "torsonOgnoo": torsonOgnoo,
                 "dugaar": dugaar,
-                "huis": huis,   
+                "huis": huis,
                 "irgenshil": irgenshil,
                 "ysUndes": ysUndes,
                 "hayg": hayg,
-                "hobby": hobby 
+                "hobby": hobby
             }
             r = requests.post(serviceHayag,
                              data=json.dumps(requestJSON),
@@ -136,7 +138,7 @@ def profileAdd(request):
             else:
                 nemelt["textColor"] = "#ff0000"
 
-    if request.method == "GET":   #  Энэ хуудасруу ороход харуулах мэдээллүүдээ авч, дамжуулах хэсэг
+    if request.method == "GET":  # Энэ хуудасруу ороход харуулах мэдээллүүдээ авч, дамжуулах хэсэг
         nemelt["userId"] = request.session['userId']
         serviceHayag = "http://whoisb.mandakh.org/userNemelt/"
         requestJSON = {
@@ -162,8 +164,8 @@ def profileAdd(request):
             nemelt["responseText"] = responseJson["responseText"]
             nemelt["textColor"] = "#ff0000"
         # #######################################################################
-    
-    return render(request, "Profile/2.html",nemelt)
+
+    return render(request, "Profile/2.html", nemelt)
 
 
 def profileFamily(request):
@@ -208,7 +210,6 @@ def profileFamily(request):
     htmlRuuDamjuulahUtguud['ner'] = response_json.get('ner')
     htmlRuuDamjuulahUtguud['dugaar'] = response_json.get('dugaar')
 
-    
     return render(request, "Profile/4.html", htmlRuuDamjuulahUtguud)
 
 
@@ -228,8 +229,8 @@ def profileExp(request):
 
 # Chadvar uurchluh bolon hadgalah hrauulah function
 def profileSkill(request):
-    checkSession(request)  
-    if request.session['beegii'] == 0:        
+    checkSession(request)
+    if request.session['beegii'] == 0:
         return redirect("homeView")
     chadwar = {}
     chadwar["responseText"] = ""
@@ -239,12 +240,12 @@ def profileSkill(request):
         'id': request.session['userId']
     }
     # setSkill duudan ajillana.
-    if request.method=="POST":
-        serviceHayag ="http://whoisb.mandakh.org/setSkill/"
+    if request.method == "POST":
+        serviceHayag = "http://whoisb.mandakh.org/setSkill/"
 
-        if("skillInfoUpdateSubmit" in request.POST):
+        if ("skillInfoUpdateSubmit" in request.POST):
             requestJSON = {
-                "id" : request.session['userId'],
+                "id": request.session['userId'],
                 "skill": request.POST.get("Message")
             }
             r = requests.get(serviceHayag,
@@ -252,63 +253,83 @@ def profileSkill(request):
                             headers={'Content-Type': 'application/json'})
         responseJson = r.json()
         if responseJson["responseCode"] != 200:
-            chadwar["aldaa"] =  responseJson["responseText"]
+            chadwar["aldaa"] = responseJson["responseText"]
             return render(request, "Profile/6.html", chadwar)
     # end getSkill
-    
+
     # getSkill duudan ajillana.
-    serviceHayag ="http://whoisb.mandakh.org/getSkill/"
+    serviceHayag = "http://whoisb.mandakh.org/getSkill/"
     r = requests.get(serviceHayag,
                     data=json.dumps(requestJSON),
                     headers={'Content-Type': 'application/json'})
     responseJson = r.json()
     if responseJson["responseCode"] == 200:
-        chadwar["medeelelel"] = responseJson["skill"] 
-    else:    
-        chadwar["aldaa"] =  responseJson["responseText"]
+        chadwar["medeelelel"] = responseJson["skill"]
+    else:
+        chadwar["aldaa"] = responseJson["responseText"]
     return render(request, "Profile/6.html", chadwar)
     # end setSkill.
 #####################################
 
 
+
 def profileSocial(request):
-    #  Энэ хуудасруу орохтой холбоотой заавал байх шалгалт
+    # Check if the user is logged in
     checkSession(request)
     if request.session['beegii'] == 0:
         return redirect("homeView")
+
     htmlRuuDamjuulahUtguud = {}
     htmlRuuDamjuulahUtguud["responseText"] = ""
     htmlRuuDamjuulahUtguud["textColor"] = "#00FF00"
-    #######################################################
+
+    # Handle the POST request
     if request.method == "POST":
-        serviceHayag = "http://whoisb.mandakh.org/userSocialIn/"
         app = request.POST.get("app")
         site = request.POST.get("name")
-        requestJSON = {
-            'id': request.session['userId'],
-            'app': app,
-            'site': site
-        }
-        r = requests.get(serviceHayag,
-                         data=json.dumps(requestJSON),
-                         headers={'Content-Type': 'application/json'})
-        responseJson = r.json()
-        htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
-        if responseJson["responseCode"] == 200:
-            htmlRuuDamjuulahUtguud["textColor"] = "#00ff00"
-        else:
-            htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
+        try:
+            requestJSON = {
+                "id": request.session['userId'],
+                "app": app,
+                "site": site
+            }
+            serviceHayag = "http://whoisb.mandakh.org/userSocial/"
+            r = requests.get(serviceHayag,
+                             data=json.dumps(requestJSON),
+                             headers={'Content-Type': 'application/json'})
+            responseJson = r.json()
+            htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
+            if responseJson["responseCode"] == 200:
+                htmlRuuDamjuulahUtguud["textColor"] = "#00FF00"
+            else:
+                htmlRuuDamjuulahUtguud["textColor"] = "#FF0000"
+        except json.decoder.JSONDecodeError as e:
+            print("Error decoding JSON response:", e)
+            htmlRuuDamjuulahUtguud["responseText"] = "Error decoding JSON response"
+            htmlRuuDamjuulahUtguud["textColor"] = "#FF0000"
 
     htmlRuuDamjuulahUtguud["userId"] = request.session['userId']
+
+    # Retrieve data from the API
     requestJSON = {
         "user_id": request.session['userId']
     }
-    r = requests.get("http://whoisb.mandakh.org/userSocial/",
+    serviceHayag = "http://whoisb.mandakh.org/userSocial/"
+    r = requests.get(serviceHayag,
                      data=json.dumps(requestJSON),
-                     headers={'Content-Type': 'application/json'},)
-    response_json = r.json()
-    htmlRuuDamjuulahUtguud['app'] = response_json.get('app')
-    htmlRuuDamjuulahUtguud['name'] = response_json.get('ner')
+                     headers={'Content-Type': 'application/json'})
+    try:
+        response_json = r.json()
+        if response_json.get("socialData"):
+            response_data = response_json["socialData"]
+            htmlRuuDamjuulahUtguud["app"] = response_data.get("app", "")
+            htmlRuuDamjuulahUtguud["site"] = response_data.get("site", "")
+        else:
+            htmlRuuDamjuulahUtguud["app"] = ""
+            htmlRuuDamjuulahUtguud["site"] = ""
+    except json.decoder.JSONDecodeError as e:
+        print("Error decoding JSON response:", e)
+        htmlRuuDamjuulahUtguud["app"] = ""
+        htmlRuuDamjuulahUtguud["site"] = ""
 
     return render(request, "Profile/7.html", htmlRuuDamjuulahUtguud)
-    #######################################################################
