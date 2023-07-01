@@ -12,5 +12,6 @@ urlpatterns = [
     path("justCV/",                     viewsMain.justCVViews,              name="justcv"),
     path("justNC/",                     viewsMain.justNCViews,              name="justnc"),
     path("BC/",                         viewsMain.odkeBcViews,              name="BC"),
+    path("mainNC/",                     viewsMain.mainNCViews,              name="mainnc"),
     #####################################################################################################
     ]   

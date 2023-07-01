@@ -100,3 +100,9 @@ def justNCViews(request):
 
 def odkeBcViews(request): 
   return render(request, "templates/odkeBc.html")
+
+def odkeBcViews(request): 
+  return render(request, "templates/odkeBc.html")
+
+def mainNCViews(request): 
+  return render(request, "templates/main.html")
