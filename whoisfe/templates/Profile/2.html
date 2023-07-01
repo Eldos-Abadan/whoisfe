@@ -42,162 +42,163 @@
     </div>
     <div class="container">
       <div class="wrapper">
-        <!-- ######Хувийн мэдээллийн хэсэг###### -->
-        <form id="cc-contact" class="form-group" action="" method="post" name="userNemeltUpdateForm">
-          <h1>Үндсэн мэдээлэл</h1>
-          {% csrf_token %}
-          <div class="row">
-            <div class="col-sm-3">
-              <div class="form-floating mt-3">
-                <span style="color:#0000FF;">
-                  {{ responseText }}
-                </span>
+          <div class="main2">
+          <!-- ######Хувийн мэдээллийн хэсэг###### -->
+          <form id="cc-contact" class="form-group" action="" method="post" name="userNemeltUpdateForm">
+            <h1>Нэмэлт мэдээлэл</h1>
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-floating mt-3">
+                  <span style="color:#0000FF;">
+                    {{ responseText }}
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="panel">
-            <div class="example">
-              <div class="row">
-                <div class="col-sm-8 mt-3">
-                  <div class="form-floating mt-3">
-                    <label for="floatingInput"> Хүйс: </label>
-                  </div>
-                  <div class="form-check">
-                    <select id="gender" name="gender">
-                      <option>--/--</option>
-                      <option>Эр</option>
-                      <option>Эм</option>
-                      <option value="{{gender}}">бусад</option>
-                    </select>
-                  </div>
-                </div>
-
-
+            <div class="panel">
+              <div class="example">
                 <div class="row">
                   <div class="col-sm-8 mt-3">
                     <div class="form-floating mt-3">
-                      <label for="floatingInput">Төрсөн он,сар,өдөр: </label>
+                      <label for="floatingInput">Хүйс: </label>
                     </div>
-                    <div class="form">
-                      <input class="form-control" id="bornDate" name="bornDate" type="date" value="{{borndate}}" />
-                    </div>
-                  </div>
-                </div>
-                <br>
-                  <div class="row">
-                    <div class="col-sm-5">
-                      <div class="form-floating mt-3">
-                        <label for="floatingInput">Регистерийн дугаар: </label>
-                        <input type="text" name="register" class="form-control" step="10" id="register" value="{{register}}">
-                      </div>
+                    <div class="form-check">
+                      <select id="gender" name="gender" value="{{gender}}">
+                        <option>--/--</option>
+                        <option>Эр</option>
+                        <option>Эм</option>
+                        <option >бусад</option>
+                      </select>
                     </div>
                   </div>
 
-                  <div class="row">
-                    <div class="col-sm-5">
-                      <div class="form-floating mt-3">
-                        <label for="floatingInput">Утасны дугаар: </label>
-                        <input type="text" name="phoneNumber" class="form-control" step="10" id="phoneNumber" value="{{phoneNumber}}">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-5">
-                      <div class="form-floating mt-3">
-                        <label for="floatingInput">Иргэншил: </label>
-                        <input type="text" name="citizenship" class="form-control" step="10" id="citizenship" value="{{citizenship}}">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-5">
-                      <div class="form-floating mt-3">
-                        <label for="floatingInput">Яс үндэс: </label>
-                        <input type="text" name="nationality" class="form-control" step="10" id="nationality" value="{{nationality}}">
-                      </div>
-                    </div>
-                  </div>
 
-                  <!-- <div class="row">
+                  <div class="row">
+                    <div class="col-sm-8 mt-3">
+                      <div class="form-floating mt-3">
+                        <label for="floatingInput">Төрсөн он,сар,өдөр: </label>
+                      </div>
+                      <div class="form">
+                        <input class="form-control" id="bornDate" name="bornDate" type="date" value="{{bornDate}}" />
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                    <div class="row">
+                      <div class="col-sm-5">
+                        <div class="form-floating mt-3">
+                          <label for="floatingInput">Регистерийн дугаар: </label>
+                          <input type="text" name="register" class="form-control" step="10" id="register" value="{{register}}">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-5">
+                        <div class="form-floating mt-3">
+                          <label for="floatingInput">Утасны дугаар: </label>
+                          <input type="text" name="phoneNumber" class="form-control" step="10" id="phoneNumber" value="{{phoneNumber}}">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-5">
+                        <div class="form-floating mt-3">
+                          <label for="floatingInput">Иргэншил: </label>
+                          <input type="text" name="citizenship" class="form-control" step="10" id="citizenship" value="{{citizenship}}">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-5">
+                        <div class="form-floating mt-3">
+                          <label for="floatingInput">Яс үндэс: </label>
+                          <input type="text" name="nationality" class="form-control" step="10" id="nationality" value="{{nationality}}">
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- <div class="row">
+                        <div class="col-sm-8 mt-3">
+                          <div class="form-floating mt-3">
+                            <label for="floatingInput">Миний тухай</label>
+                            <input type="text" name="Address" class="form-control form-control-lg" id="floatingAddress"
+                              >
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="row">
+                        <div class="col-sm-8 mt-3">
+                          <div class="form-floating mt-8">
+                            <label for="floatingInput">Хот/аймаг</label>
+                            <input type="text" name="city" class="form-control form-control-sm" id="floatingCity"
+                              >
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="row">
+                        <div class="col-sm-8 mt-3">
+                          <div class="form-floating mt-8">
+                            <label for="floatingInput">Сум / дүүрэг</label>
+                            <input type="text" name="sum" class="form-control form-control-sm" id="floatingCity"
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-sm-8 mt-3">
+                          <div class="form-floating mt-8">
+                            <label for="floatingInput">Баг / хороо</label>
+                            <input type="text" name="bag" class="form-control form-control-sm" id="floatingCity"
+                            >
+                          </div>
+                        </div>
+                      </div> -->
+
+                    <div class="row">
                       <div class="col-sm-8 mt-3">
                         <div class="form-floating mt-3">
-                          <label for="floatingInput">Миний тухай</label>
-                          <input type="text" name="Address" class="form-control form-control-lg" id="floatingAddress"
-                            >
+                          <label for="floatingInput">Гэрийн хаяг</label>
+                          <input type="text" name="homeAddress" class="form-control form-control-lg" id="homeAddress" value="{{homeAddress}}">
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                    <div class="row">
+                      <div class="col-sm-8 mt-3">
+                        <div class="form-floating mt-3">
+                          <label for="floatingInput">Хобби</label>
+                          <div class="form-check mt-3">
+                            <textarea name="hobby" cols="80" rows="10" id="hobby" value="{{hobby}}"></textarea>
+                          </div>
                         </div>
                       </div>
                     </div>
 
 
                     <div class="row">
-                      <div class="col-sm-8 mt-3">
-                        <div class="form-floating mt-8">
-                          <label for="floatingInput">Хот/аймаг</label>
-                          <input type="text" name="city" class="form-control form-control-sm" id="floatingCity"
-                            >
+                      <div class="col-sm-12 mt-3 mb-4" class="col-sm-2">
+                        <div class="btn-group mr-2 " role="group" aria-label="First group">
+                          <input type="submit" id="userNemeltUpdateSubmit" name="userNemeltUpdateSubmit" value="Хадгалах">
                         </div>
                       </div>
                     </div>
-
-
-                    <div class="row">
-                      <div class="col-sm-8 mt-3">
-                        <div class="form-floating mt-8">
-                          <label for="floatingInput">Сум / дүүрэг</label>
-                          <input type="text" name="sum" class="form-control form-control-sm" id="floatingCity"
-                          >
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-sm-8 mt-3">
-                        <div class="form-floating mt-8">
-                          <label for="floatingInput">Баг / хороо</label>
-                          <input type="text" name="bag" class="form-control form-control-sm" id="floatingCity"
-                          >
-                        </div>
-                      </div>
-                    </div> -->
-
-                  <div class="row">
-                    <div class="col-sm-8 mt-3">
-                      <div class="form-floating mt-3">
-                        <label for="floatingInput">Гэрийн хаяг</label>
-                        <input type="text" name="homeAddress" class="form-control form-control-lg" id="homeAddress" value="{{homeAddress}}">
-                      </div>
-                    </div>
-                  </div>
-
-
-
-                  <div class="row">
-                    <div class="col-sm-8 mt-3">
-                      <div class="form-floating mt-3">
-                        <label for="floatingInput">Хобби</label>
-                        <div class="form-check mt-3">
-                          <textarea name="hobby" cols="80" rows="10" id="hobby" value="{{hobby}}"></textarea>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div class="row">
-                    <div class="col-sm-12 mt-3 mb-4" class="col-sm-2">
-                      <div class="btn-group mr-2 " role="group" aria-label="First group">
-                        <input type="submit" id="userNemeltUpdateSubmit" name="userNemeltUpdateSubmit" value="Хадгалах">
-                      </div>
-                    </div>
-                  </div>
-                </form>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
           <!-- ############################################################### -->
       </div>
     </div>
-  </div>
   </div>
   <div class="wrapper2">
     <div class="footer">
