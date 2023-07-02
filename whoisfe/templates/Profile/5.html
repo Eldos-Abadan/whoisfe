@@ -43,34 +43,34 @@
     </div>
     <div class="container">
       <div class="wrapper">
-                  <!-- ################## Ажлын туршлага ######################## -->
+                  <!-- ############################################################### -->
 
         
           <div class="main3">
           <h1>Ажлын туршлага</h1>
+          <form action="" method="post" name="insertButton">
           {% csrf_token %}
-          <form action="" method="POST"></form>
         <div class="form-div">
           <div class="row">
             <div class="col-md-3">
-              <input type="text"  name="exp" class="form-control" id="exp" placeholder="Байгууллагын нэр"> 
+              <input type="text"  name="companyNer" class="form-control" id="edu" placeholder="Байгууллагын нэр"> 
 
             </div>
             <div class="col-md-3">
-              <input type="text" name="direction" class="form-control" id="direction" placeholder="Эрхэлж байсан албан тушаал">
+              <input type="text" name="albanTushaal" class="form-control" id="direction" placeholder="Эрхэлж байсан албан тушаал">
             </div>
             <div class="col-md-3">
-              <input type="date" name="start-year" class="form-control" id="start-year" placeholder="Ажиллаж эхэлсэн он">
+              <input type="date" name="date1" class="form-control" id="start-year" placeholder="Ажиллаж эхэлсэн он">
             </div>
             <div class="col-md-3">
-              <input type="date" name="end-year" class="form-control" id="end-year" placeholder="Ажиллаж дууссан он">
+              <input type="date" name="date2" class="form-control" id="end-year" placeholder="Ажиллаж дууссан он">
             </div>
             <br><br>
             <div class="col-md-3" style="text-align: right;">
            </div>
           </div>
         </div>
-        <input type="submit" onclick="nemeh()"  value="Нэмэх" style="float: right;">
+        <input type="submit"  value="Нэмэх" id="insertButton" name="insertButton" style="float: right;">
         <table class="table">
           <thead>
             <tr>
@@ -82,13 +82,22 @@
             </tr>
           </thead>
           <tbody id="table">
+            {% comment %} <tr>
+              <td></td>
+              <td>{{myData.ajil}}</td>
+              <td>{{myData.company}}</td>
+              <td>{{myData.ehelsen}}</td>
+              <td>{{myData.duussan}}</td>
+            </tr> {% endcomment %}
+            {% for user in myData %}
             <tr>
               <td></td>
-              <td>Example</td>
-              <td>Example</td>
-              <td>Example</td>
-              <td>Example</td>
+              <td>{{ user.ajil }}</td>
+              <td>{{ user.company }}</td>
+              <td>{{ user.ehelsen }}</td>
+              <td>{{ user.duussan }}</td>
             </tr>
+            {% endfor %}          
           </tbody>
         </table>
         <div class="row">
@@ -99,9 +108,9 @@
           </div>
         </div>
         <!-- ############################################################### -->
-      </form>
       </div>
     </div>
+  </form>
   </div>
 </div>
 <div class="wrapper2">
@@ -145,7 +154,7 @@
     );
   });
     function nemeh() {
-        const nerInput = document.getElementById('exp');
+        const nerInput = document.getElementById('edu');
         const directionInput = document.getElementById('direction');
         const startYearInput = document.getElementById('start-year');
         const endYearInput = document.getElementById('end-year');

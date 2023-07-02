@@ -224,7 +224,49 @@ def profileExp(request):
     checkSession(request)
     if request.session['beegii'] == 0:
         return redirect("homeView")
-    return render(request, "Profile/5.html",)
+    ajil = request.POST.get("companyNer")
+    # print(ajil)
+    # print(request.POST)
+    if request.method == "POST":
+        if ("insertButton" in request.POST):
+            ajil = request.POST.get("companyNer")
+            company = request.POST.get("albanTushaal")
+            ehelsen = request.POST.get("date1")
+            duussan = request.POST.get("date2")
+            requestJSON = {
+                'id': request.session['userId'],
+                "ajil": ajil,
+                "company": company,
+                "ehelsen": ehelsen,
+                "duussan": duussan
+            }
+            serviceHayag = "http://whoisb.mandakh.org/userTurshlagaIn/"
+            r = requests.get(serviceHayag,
+                            data=json.dumps(requestJSON),
+                            headers={'Content-Type': 'application/json'})
+            responseJson = r.json()
+            print(responseJson)
+            
+    requestJSON = {
+        'id': request.session['userId']
+    }
+    serviceHayag = "http://whoisb.mandakh.org/userTurshlaga/"
+    
+    r = requests.get(serviceHayag,
+                    data=json.dumps(requestJSON),
+                    headers={'Content-Type': 'application/json'})
+    responseJson = r.json()
+    # print(responseJson)
+    print(responseJson['TurshlagaData'])
+    myData = responseJson['TurshlagaData']
+    htmlRuuDamjuulakh = {}
+    hi = []
+    hi.append(myData)
+    if responseJson['responseCode'] == 200:
+        htmlRuuDamjuulakh["myData"] = hi
+    else:
+        htmlRuuDamjuulakh["aldaaniiMedegdel"] = responseJson['responseText']
+    return render(request, "Profile/5.html",htmlRuuDamjuulakh)
 
 
 # Chadvar uurchluh bolon hadgalah hrauulah function
@@ -432,4 +474,3 @@ def profileSocial(request):
         htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
     print()
     return render(request, "Profile/7.html", htmlRuuDamjuulahUtguud)
-
