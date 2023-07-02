@@ -156,7 +156,7 @@
                         //Remove selected rows
                         $("#remove-row").click(function () {
                             $(".table tbody tr").each(function () {
-                                var isChecked = $(this).find('input[type="checkbox"]').is(":checked");
+                                 var isChecked = $(this).find('input[type="checkbox"]').is(":checked");
                                 var tableSize = $(".table tbody tr").length;
                                 if (tableSize == 1) {
                                     alert('all rows cannot be deleted.');
@@ -171,8 +171,10 @@
                 </head>
 
                 <body>
+                    <form action="" method="post" name="insertButton">
                     <div class="container">
                         <div class="form-div">
+                                {% csrf_token %}
                             <div class="row">
                                 <div class="col-md-3">
                                     <input type="text" class="form-control" id="education" placeholder="Сургуулийн нэр">
@@ -206,19 +208,20 @@
                                         <th>Төгссөн он</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="table">
                                     <tr>
                                         <td><input type="checkbox" id="select-row"></td>
-                                        <td>Example</td>
-                                        <td>Example</td>
-                                        <td>Example</td>
-                                        <td>Example</td>
+                                        <td>{{education}}</td>
+                                        <td>{{direction}}</td>
+                                        <td>{{elssenOn}}</td>
+                                        <td>{{tugssunOn}}</td>
                                     </tr>
                                 </tbody>
                             </table>
                             <button class="remove-row" id="remove-row">Remove row</button>
                         </div>
                     </div>
+                   </form>
                 </body>
 
 </html>
