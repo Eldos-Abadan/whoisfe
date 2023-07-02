@@ -248,3 +248,18 @@ def isEmailValid(email):
         return True
     return False
 ############################
+
+
+#### Odonkhuu
+def debugProfileAddFunciton():
+    # print(huis)
+    # print(torsonOgnoo)
+    # print(dugaar)
+    # print(irgenshil)
+    # print(ysUndes)
+    # print("sdakfjsdalhfkdsjh")
+    # print(hayg)
+    # print(hobby)
+    print(1)
+
+###################################
