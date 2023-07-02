@@ -202,53 +202,6 @@ def profileFamily(request):
     return render(request, "Profile/4.html", htmlRuuDamjuulahUtguud)
 
 
-def profileEdu(request):
-    checkSession(request)
-    if request.session['beegii'] == 0:
-        return redirect("homeView")
-
-    htmlRuuDamjuulahUtguud = {}
-    htmlRuuDamjuulahUtguud["responseText"] = ""
-    htmlRuuDamjuulahUtguud["textColor"] = "#00FF00"
-    if request.method == "POST":
-        education = request.POST.get("education")
-        direction = request.POST.get("direction")
-        elssenOn = request.POST.get("elssenOn")
-        tugssunOn = request.POST.get("tugssunOn")
-
-        request_data = {
-            "education": education,
-            "direction": direction,
-            "elssenOn": elssenOn,
-            "tugssunOn": tugssunOn,
-        }
-    requestJSON = {
-        "id": request.session['userId']
-    }
-    r = requests.get("http://whoisb.mandakh.org/userEduInsert/",
-                     data=json.dumps(requestJSON),
-                     headers={'Content-Type': 'application/json'})
-    responseJson = r.json()
-    htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
-    if responseJson["responseCode"] == 200:
-            htmlRuuDamjuulahUtguud["textColor"] = "#00ff00"
-    else:
-            htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
-
-    htmlRuuDamjuulahUtguud["userId"] = request.session['userId']
-    requestJSON = {
-        "user_id": request.session['userId']
-    }
-    r = requests.get("http://whoisb.mandakh.org/userEduGet/",
-                     data=json.dumps(requestJSON),
-                     headers={'Content-Type': 'application/json'},)
-    response_json = r.json()
-    htmlRuuDamjuulahUtguud['education'] = response_json.get('education')
-    htmlRuuDamjuulahUtguud['direction'] = response_json.get('direction')
-    htmlRuuDamjuulahUtguud['elssenOn'] = response_json.get('elssenOn')
-    htmlRuuDamjuulahUtguud['tugssunOn'] = response_json.get('tugssunOn')
-
-    return render(request, "Profile/3.html", htmlRuuDamjuulahUtguud)
 
 
 def profileExp(request):
@@ -413,3 +366,56 @@ def profileSocial(request):
     # Pass the zipped list to the template
     return render(request, "Profile/7.html", {'app_site_pairs': app_site_pairs,'responseText': htmlRuuDamjuulahUtguud['responseText'], 'textColor': htmlRuuDamjuulahUtguud['textColor']})
 #   profileSocial
+
+
+
+
+
+
+def profileEdu(request):
+    checkSession(request)
+    if request.session['beegii'] == 0:
+        return redirect("homeView")
+
+    htmlRuuDamjuulahUtguud = {}
+    htmlRuuDamjuulahUtguud["responseText"] = ""
+    htmlRuuDamjuulahUtguud["textColor"] = "#00FF00"
+    if request.method == "POST":
+        education = request.POST.get("education")
+        direction = request.POST.get("direction")
+        elssenOn = request.POST.get("elssenOn")
+        tugssunOn = request.POST.get("tugssunOn")
+
+        request_data = {
+            "education": education,
+            "direction": direction,
+            "elssenOn": elssenOn,
+            "tugssunOn": tugssunOn,
+        }
+    requestJSON = {
+        "id": request.session['userId']
+    }
+    r = requests.get("http://whoisb.mandakh.org/userEduInsert/",
+                     data=json.dumps(requestJSON),
+                     headers={'Content-Type': 'application/json'})
+    responseJson = r.json()
+    htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
+    if responseJson["responseCode"] == 200:
+            htmlRuuDamjuulahUtguud["textColor"] = "#00ff00"
+    else:
+            htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
+
+    htmlRuuDamjuulahUtguud["userId"] = request.session['userId']
+    requestJSON = {
+        "user_id": request.session['userId']
+    }
+    r = requests.get("http://whoisb.mandakh.org/userEduGet/",
+                     data=json.dumps(requestJSON),
+                     headers={'Content-Type': 'application/json'},)
+    response_json = r.json()
+    htmlRuuDamjuulahUtguud['education'] = response_json.get('education')
+    htmlRuuDamjuulahUtguud['direction'] = response_json.get('direction')
+    htmlRuuDamjuulahUtguud['elssenOn'] = response_json.get('elssenOn')
+    htmlRuuDamjuulahUtguud['tugssunOn'] = response_json.get('tugssunOn')
+
+    return render(request, "Profile/3.html", htmlRuuDamjuulahUtguud)
