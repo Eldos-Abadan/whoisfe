@@ -325,24 +325,42 @@ def profileSocial(request):
     htmlRuuDamjuulahUtguud["textColor"] = "#00FF00"
 
     if request.method == "POST":
-        serviceHayag = "http://whoisb.mandakh.org/userSocialIn/"
-        app = request.POST.get("platForm")
-        site = request.POST.get("userName")
-        requestJSON = {
-            "id": request.session['userId'],
-            "app": app,
-            "site": site,
-        }
-        r = requests.get(serviceHayag,
-                         data=json.dumps(requestJSON),
-                         headers={'Content-Type': 'application/json'})
-        responseJson = r.json()
-        htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
-        if responseJson["responseCode"] == 200:
-            htmlRuuDamjuulahUtguud["textColor"] = "#00ff00"
-        else:
-            htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
-
+        if "addSave" in request.POST:
+            serviceHayag = "http://whoisb.mandakh.org/userSocialIn/"
+            app = request.POST.get("platForm")
+            site = request.POST.get("userName")
+            requestJSON = {
+                "id": request.session['userId'],
+                "app": app,
+                "site": site,
+            }
+            r = requests.get(serviceHayag,
+                             data=json.dumps(requestJSON),
+                             headers={'Content-Type': 'application/json'})
+            responseJson = r.json()
+            htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
+            if responseJson["responseCode"] == 200:
+                htmlRuuDamjuulahUtguud["textColor"] = "#00ff00"
+            else:
+                htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
+        # if "editSave" in request.POST:
+        #     serviceHayag = "http://whoisb.mandakh.org/userSocialUp/"
+        #     app = request.POST.get("editapp")
+        #     site = request.POST.get("editsite")
+        #     requestJSON = {
+        #         "id": request.session['userId'],
+        #         "app": app,
+        #         "newsite": site,
+        #     }
+        #     r = requests.get(serviceHayag,
+        #                      data=json.dumps(requestJSON),
+        #                      headers={'Content-Type': 'application/json'})
+        #     responseJson = r.json()
+        #     htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
+        #     if responseJson["responseCode"] == 200:
+        #         htmlRuuDamjuulahUtguud["textColor"] = "#00ff00"
+        #     else:
+        #         htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
     serviceHayag = "http://whoisb.mandakh.org/userSocial/"
     requestJSON = {
         "id": request.session['userId']
@@ -362,5 +380,5 @@ def profileSocial(request):
     # Zip the app and site lists together
     app_site_pairs = zip(htmlRuuDamjuulahUtguud['app'], htmlRuuDamjuulahUtguud['site'])
     # Pass the zipped list to the template
-    return render(request, "Profile/7.html", {'app_site_pairs': app_site_pairs})
+    return render(request, "Profile/7.html", {'app_site_pairs': app_site_pairs,'responseText': htmlRuuDamjuulahUtguud['responseText'], 'textColor': htmlRuuDamjuulahUtguud['textColor']})
 #   profileSocial
