@@ -43,7 +43,7 @@
     </div>
     <div class="container">
       <div class="wrapper">
-                  <!-- ############################################################### -->
+                  <!-- ################## Ажлын туршлага ######################## -->
 
         
           <div class="main3">
@@ -53,17 +53,17 @@
         <div class="form-div">
           <div class="row">
             <div class="col-md-3">
-              <input type="text"  name="ner" class="form-control" id="edu" placeholder="Байгууллагын нэр"> 
+              <input type="text"  name="exp" class="form-control" id="exp" placeholder="Байгууллагын нэр"> 
 
             </div>
             <div class="col-md-3">
-              <input type="text" class="form-control" id="direction" placeholder="Эрхэлж байсан албан тушаал">
+              <input type="text" name="direction" class="form-control" id="direction" placeholder="Эрхэлж байсан албан тушаал">
             </div>
             <div class="col-md-3">
-              <input type="date" class="form-control" id="start-year" placeholder="Ажиллаж эхэлсэн он">
+              <input type="date" name="start-year" class="form-control" id="start-year" placeholder="Ажиллаж эхэлсэн он">
             </div>
             <div class="col-md-3">
-              <input type="date" class="form-control" id="end-year" placeholder="Ажиллаж дууссан он">
+              <input type="date" name="end-year" class="form-control" id="end-year" placeholder="Ажиллаж дууссан он">
             </div>
             <br><br>
             <div class="col-md-3" style="text-align: right;">
@@ -145,7 +145,7 @@
     );
   });
     function nemeh() {
-        const nerInput = document.getElementById('edu');
+        const nerInput = document.getElementById('exp');
         const directionInput = document.getElementById('direction');
         const startYearInput = document.getElementById('start-year');
         const endYearInput = document.getElementById('end-year');
