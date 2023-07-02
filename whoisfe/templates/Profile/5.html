@@ -82,16 +82,9 @@
             </tr>
           </thead>
           <tbody id="table">
-            {% comment %} <tr>
-              <td></td>
-              <td>{{myData.ajil}}</td>
-              <td>{{myData.company}}</td>
-              <td>{{myData.ehelsen}}</td>
-              <td>{{myData.duussan}}</td>
-            </tr> {% endcomment %}
             {% for user in myData %}
             <tr>
-              <td></td>
+              <td>{{ user.dugaar }}</td>
               <td>{{ user.ajil }}</td>
               <td>{{ user.company }}</td>
               <td>{{ user.ehelsen }}</td>

@@ -224,9 +224,9 @@ def profileExp(request):
     checkSession(request)
     if request.session['beegii'] == 0:
         return redirect("homeView")
-    ajil = request.POST.get("companyNer")
-    # print(ajil)
-    # print(request.POST)
+    htmlRuuDamjuulakh = {}
+    htmlRuuDamjuulakh["aldaaniiMedegdel"] = ""
+    # medeelel nemeh ehleh
     if request.method == "POST":
         if ("insertButton" in request.POST):
             ajil = request.POST.get("companyNer")
@@ -246,28 +246,28 @@ def profileExp(request):
                             headers={'Content-Type': 'application/json'})
             responseJson = r.json()
             print(responseJson)
-            
+    # medeelel nemeh duusah
+
     requestJSON = {
         'id': request.session['userId']
     }
-    serviceHayag = "http://whoisb.mandakh.org/userTurshlaga/"
-    
+    serviceHayag = "http://whoisb.mandakh.org/userTurshlaga/"    
     r = requests.get(serviceHayag,
                     data=json.dumps(requestJSON),
                     headers={'Content-Type': 'application/json'})
-    responseJson = r.json()
-    # print(responseJson)
-    print(responseJson['TurshlagaData'])
-    myData = responseJson['TurshlagaData']
-    htmlRuuDamjuulakh = {}
-    hi = []
-    hi.append(myData)
+    responseJson = r.json()    
+    
+    myData = responseJson['TurshlagaData']    
+
+    for i in range(0,len(myData)):
+        myData[i]["dugaar"] = i+1
+
     if responseJson['responseCode'] == 200:
-        htmlRuuDamjuulakh["myData"] = hi
+        htmlRuuDamjuulakh["myData"] = myData        
     else:
         htmlRuuDamjuulakh["aldaaniiMedegdel"] = responseJson['responseText']
     return render(request, "Profile/5.html",htmlRuuDamjuulakh)
-
+#   profileExp
 
 # Chadvar uurchluh bolon hadgalah hrauulah function
 def profileSkill(request):
@@ -310,7 +310,7 @@ def profileSkill(request):
     else:
         chadwar["aldaa"] = responseJson["responseText"]
     return render(request, "Profile/6.html", chadwar)
-    # end setSkill.
+# end setSkill.
 #####################################
 
 
@@ -363,3 +363,4 @@ def profileSocial(request):
     app_site_pairs = zip(htmlRuuDamjuulahUtguud['app'], htmlRuuDamjuulahUtguud['site'])
     # Pass the zipped list to the template
     return render(request, "Profile/7.html", {'app_site_pairs': app_site_pairs})
+#   profileSocial
