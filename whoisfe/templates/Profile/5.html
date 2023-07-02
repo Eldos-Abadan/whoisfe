@@ -45,7 +45,11 @@
       <div class="wrapper">
                   <!-- ############################################################### -->
 
-        <h1>Ажлын туршлага</h1>
+        
+          <div class="main3">
+          <h1>Ажлын туршлага</h1>
+          {% csrf_token %}
+          <form action="" method="POST"></form>
         <div class="form-div">
           <div class="row">
             <div class="col-md-3">
@@ -87,8 +91,17 @@
             </tr>
           </tbody>
         </table>
+        <div class="row">
+          <div class="col-sm-12 mt-3 mb-4" class="col-sm-2">
+            <div class="btn-group mr-2 " role="group" aria-label="First group">
+              <input type="submit" id="save" name="save" value="Хадгалах">
+            </div>
+          </div>
+        </div>
         <!-- ############################################################### -->
+      </form>
       </div>
+    </div>
   </div>
 </div>
 <div class="wrapper2">
