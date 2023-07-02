@@ -7,7 +7,7 @@
   <title>Хувийн мэдээлэл</title>
   <meta name="viewport" content="width=device-width" />
   <link href="{% static '/css/dashboard/bootstrap.min.css'%}" rel="stylesheet" />
-  <link href="{% static '/css/Profile/1.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static '/css/Profile/2.css' %}" rel="stylesheet" type="text/css">
   <link href="{% static '/css/dashboard/animate.min.css'%}" rel="stylesheet" />
   <link href="{% static '/css/dashboard/light-bootstrap-dashboard.css'%}" rel="stylesheet" />
   <link href="{% static '/css/dashboard/demo.css'%}" rel="stylesheet" />
@@ -64,8 +64,8 @@
                       <label for="floatingInput">Хүйс: </label>
                     </div>
                     <div class="form-check">
-                      <select id="gender" name="gender" value="{{gender}}">
-                        <option>--/--</option>
+                      <select id="gender" name="gender">
+                        <option>{{gender}}</option>
                         <option>Эр</option>
                         <option>Эм</option>
                         <option >бусад</option>
@@ -89,7 +89,7 @@
                       <div class="col-sm-5">
                         <div class="form-floating mt-3">
                           <label for="floatingInput">Регистерийн дугаар: </label>
-                          <input type="text" name="register" class="form-control" step="10" id="register" value="{{register}}">
+                          <input type="text" name="register" class="form-control" id="register" value="{{register}}">
                         </div>
                       </div>
                     </div>
@@ -114,7 +114,7 @@
                       <div class="col-sm-5">
                         <div class="form-floating mt-3">
                           <label for="floatingInput">Яс үндэс: </label>
-                          <input type="text" name="nationality" class="form-control" step="10" id="nationality" value="{{nationality}}">
+                          <input type="text" name="nationality" class="form-control form-control-lg" step="10" id="nationality" value="{{nationality}}">
                         </div>
                       </div>
                     </div>
@@ -177,7 +177,7 @@
                         <div class="form-floating mt-3">
                           <label for="floatingInput">Хобби</label>
                           <div class="form-check mt-3">
-                            <textarea name="hobby" cols="80" rows="10" id="hobby" value="{{hobby}}"></textarea>
+                            <textarea name="hobby" cols="80" rows="10" id="hobby">{{hobby}}</textarea>
                           </div>
                         </div>
                       </div>
