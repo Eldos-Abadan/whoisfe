@@ -33,6 +33,7 @@
     border-radius: 4px;
     resize: vertical;
     background-color: #edd6f8;
+    color: #480f71;
   }
 
   label {
@@ -76,10 +77,12 @@
     content: "";
     display: table;
     clear: both;
-    margin-bottom: 1%;
-    margin-left: 45%;
-    width: 10%;
-    height: 3%;
+    width: 50%;
+    height: auto;
+    margin-left: 2rem;
+    margin-right: 8rem;
+    margin-top: 1rem;
+
   }
 
   /* Clear floats after the columns */
@@ -89,7 +92,7 @@
     clear: both;
   }
 
-  .main2 {
+  .m2 {
     border: 3px solid #b85ee6;
     border-radius: 20px;
     width: auto;
@@ -99,7 +102,35 @@
     text-align: center;
   }
 
-  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  .m2 h1 {
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+  }
+
+  .addlink {
+    background-color: #e8c7f7;
+    border-radius: 10px;
+    color: purple;
+    font-size: 1.9rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    margin-right: 5%;
+    margin-left: 2%;
+
+  }
+
+  .addlink a {
+    color: purple;
+    margin: 1rem;
+  }
+
+
   @media screen and (max-width: 600px) {
 
     .col-25,
@@ -111,16 +142,19 @@
   }
 
   @media only screen and (max-width: 600px) {
-    .main2 {
-      margin-top: 30px;
+    .m2 {
+      margin-top: 10rem;
       padding: 10px;
+      width: auto;
     }
   }
 
   @media only screen and (min-width: 601px) and (max-width: 1024px) {
-    .main2 {
+    .m2 {
       margin-top: 60px;
       padding: 20px;
+      height: auto;
+      width: auto;
     }
   }
 </style>
@@ -137,8 +171,6 @@
             <span class="icon-bar"></span>
           </button>
           {% include "../includes/logout.html" %}
-          <li class="separator hidden-lg"></li>
-          </ul>
         </div>
       </div>
     </nav>
@@ -148,20 +180,17 @@
     <div class="sidebar" data-color="purple" data-image="{% static '/images/sidebar-5.jpg'%}">
       {% include "../includes/menu.html" %}
     </div>
-
     <div class="container">
       <div class="wrapper">
-        <div class="main2">
+        <div class="m2">
           <h1>Вебсайт & цахим хаяг</h1>
           {{responseText}}
-          <div
-            style="background-color:#edd6f8; width: 25%; border-radius: 10px; text-align: center; margin-left: 35%; margin-bottom: 2%;">
-            <a href="#" style="color: purple; font-size: 20px; margin-right: 5%;" onclick="displayForm()"><i
-                class="fa fa-plus" style="font-size: 16px;"></i>Холбоос нэмэх</a>
+          <div class="addlink">
+            <a href="#" onclick="displayForm()"><i class="fa fa-plus" style="font-size: 16px;"></i>Холбоос нэмэх</a>
           </div>
           <!-- <input type="" value="{{app}}"> -> <input type="" value="{{site}}"> -->
 
-          <form action="" id="myForm" style="display: none;" method="POST">
+          <form action="" id="myForm" style="display: none; padding: 1rem" method="POST">
             {% csrf_token%}
             <div class="row">
               <div class="col-25">
@@ -199,9 +228,19 @@
             </div>
           </form>
         </div>
+        <div class="m2">
+          <form action="">
+            {% for app, site in app_site_pairs %}
+            <input type="text" name="app" value="{{ app }}"
+              style="height: 3rem; width: auto; margin: 1rem; background-color: #b85ee6;">->
+            <input type="text" name="site" value="{{ site }}"
+              style="height: 3rem; width: auto; margin: 1rem; background-color: #b85ee6;"><br>
+            {% endfor %}
+            <br>
+          </form>
+        </div>
       </div>
     </div>
-
     <div class="wrapper2">
       <div class="footer">
         {% include "../includes/footer.html" %}
