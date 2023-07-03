@@ -368,10 +368,6 @@ def profileSocial(request):
 #   profileSocial
 
 
-
-
-
-
 def profileEdu(request):
     checkSession(request)
     if request.session['beegii'] == 0:
@@ -380,42 +376,56 @@ def profileEdu(request):
     htmlRuuDamjuulahUtguud = {}
     htmlRuuDamjuulahUtguud["responseText"] = ""
     htmlRuuDamjuulahUtguud["textColor"] = "#00FF00"
+
+    # Medeelel nemeh
     if request.method == "POST":
-        education = request.POST.get("education")
-        direction = request.POST.get("direction")
-        elssenOn = request.POST.get("elssenOn")
-        tugssunOn = request.POST.get("tugssunOn")
+        if "insertButton" in request.POST:
+            education = request.POST.get("education")
+            direction = request.POST.get("direction")
+            elssenOn = request.POST.get("elssenOn")
+            tugssunOn = request.POST.get("tugssunOn")
+            request_data = {
+                'user_id': request.session['userId'],
+                "education": education,
+                "direction": direction,
+                "elssenOn": elssenOn,
+                "tugssunOn": tugssunOn
+            }
 
-        request_data = {
-            "education": education,
-            "direction": direction,
-            "elssenOn": elssenOn,
-            "tugssunOn": tugssunOn,
-        }
-    requestJSON = {
-        "id": request.session['userId']
-    }
-    r = requests.get("http://whoisb.mandakh.org/userEduInsert/",
-                     data=json.dumps(requestJSON),
-                     headers={'Content-Type': 'application/json'})
-    responseJson = r.json()
-    htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
-    if responseJson["responseCode"] == 200:
-            htmlRuuDamjuulahUtguud["textColor"] = "#00ff00"
-    else:
-            htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
-
+            r = requests.post("http://whoisb.mandakh.org/userEduInsert/",
+                              data=json.dumps(request_data),
+                              headers={'Content-Type': 'application/json'})
+            responseJson = r.json()
+            htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
+            if responseJson["responseCode"] == 200:
+                
+                htmlRuuDamjuulahUtguud["textColor"] = request_data
+                htmlRuuDamjuulahUtguud["textColor"] = "#00ff00"
+            else:
+                htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
+    
     htmlRuuDamjuulahUtguud["userId"] = request.session['userId']
     requestJSON = {
         "user_id": request.session['userId']
     }
-    r = requests.get("http://whoisb.mandakh.org/userEduGet/",
-                     data=json.dumps(requestJSON),
-                     headers={'Content-Type': 'application/json'},)
+    r = requests.post("http://whoisb.mandakh.org/userEduGet/",
+                      data=json.dumps(requestJSON),
+                      headers={'Content-Type': 'application/json'})
     response_json = r.json()
-    htmlRuuDamjuulahUtguud['education'] = response_json.get('education')
-    htmlRuuDamjuulahUtguud['direction'] = response_json.get('direction')
-    htmlRuuDamjuulahUtguud['elssenOn'] = response_json.get('elssenOn')
-    htmlRuuDamjuulahUtguud['tugssunOn'] = response_json.get('tugssunOn')
-
+    print(response_json)
+    # Medeelel haruulah
+    if request.method == "GET":
+        requestJSON = {
+            "id": request.session['userId']
+        }
+        r = requests.post("http://whoisb.mandakh.org/userEduGet/",
+                          data=json.dumps(requestJSON),
+                          headers={'Content-Type': 'application/json'})
+        response_json = r.json()
+        htmlRuuDamjuulahUtguud['education'] = response_json.get('education')
+        htmlRuuDamjuulahUtguud['direction'] = response_json.get('direction')
+        htmlRuuDamjuulahUtguud['elssenOn'] = response_json.get('elssenOn')
+        htmlRuuDamjuulahUtguud['tugssunOn'] = response_json.get('tugssunOn')
+        print(htmlRuuDamjuulahUtguud)
     return render(request, "Profile/3.html", htmlRuuDamjuulahUtguud)
+
