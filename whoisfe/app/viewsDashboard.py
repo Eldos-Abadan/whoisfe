@@ -63,7 +63,14 @@ def dashboardViews(request):
                         else:
                             htmlData["userData"][element] = data[element]
                             continue
-            if i == 0: htmlData["userData"]["garchig"] = "Нэмэлт мэдээлэл"
+            if i == 0: 
+                htmlData["userData"]["garchig"] = "Нэмэлт мэдээлэл"
+                if htmlData["userData"]["huis"] == 1:
+                    htmlData["userData"]["huis"] = "Эрэгтэй"
+                elif htmlData["userData"]["huis"] == 2:
+                    htmlData["userData"]["huis"] = "Эмэгтэй"
+                else:
+                    htmlData["userData"]["huis"] = "Бусад"
             if i == 1: htmlData["userData"]["garchig"] = "Гэр бүлийн мэдээлэл"
             if i == 2: htmlData["userData"]["garchig"] = "Боловсрол"
             if i == 3: htmlData["userData"]["garchig"] = "Туршлага"
