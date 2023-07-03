@@ -483,7 +483,7 @@ h1{
  .main{
   border: 3px solid rgb(138, 20, 138);
   border-radius: 20px;
-  width: 130%;
+  width: 1000px;
   height: cover;
   margin-top: 80px;
   padding-left: 30px;
@@ -491,7 +491,7 @@ h1{
 .main1{
   border: 3px solid rgb(138, 20, 138);
   border-radius: 20px;
-  width: 130%;
+  width: 1000px;
   height: cover;
   margin-top: 90px;
   padding-left: 30px;
@@ -500,7 +500,7 @@ h1{
 .main2{
   border: 3px solid rgb(138, 20, 138);
   border-radius: 20px;
-  width: 130%;
+  width:1000px;
   height: cover;
   margin-top: 90px;
   padding-left: 30px;
@@ -508,7 +508,7 @@ h1{
 .main3{
   border: 3px solid rgb(138, 20, 138);
   border-radius: 20px;
-  width: 130%;
+  width: 1000px;
   height: cover;
   margin-top: 90px;
   padding-left: 10px;
@@ -517,14 +517,14 @@ h1{
 .main4{
   border: 3px solid rgb(138, 20, 138);
   border-radius: 20px;
-  width: 130%;
+  width: 1000px;
   height: cover;
   padding: 10px;
 }
 .FamilyInfoBorder{
   border: 5px solid rgb(138, 20, 138);
   border-radius: 20px;
-  width: 150%;
+  width: 1000px;
   height: 480px;
   margin-top: 20px;
   padding-left: 20px;
