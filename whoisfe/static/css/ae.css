@@ -44,7 +44,7 @@ body {
     text-align: center;
 }
 
-.add__type {
+.add__henBoloh {
     width: 55px;
     border: 1px solid #e7e7e7;
     height: 44px;
@@ -56,8 +56,8 @@ body {
     transition: border 0.3s;
 }
 
-.add__description,
-.add__value {
+.add__ner,
+.add__dugaar {
     border: 1px solid #e7e7e7;
     background-color: #fff;
     color: inherit;
@@ -69,8 +69,8 @@ body {
     transition: border 0.3s;
 }
 
-.add__description { width: 400px;}
-.add__value { width: 100px;}
+.add__ner { width: 400px;}
+.add__dugaar { width: 100px;}
 
 .add__btn {
     font-size: 35px;
@@ -86,9 +86,9 @@ body {
 
 .add__btn:active { transform: translateY(2px); }
 
-.add__type:focus,
-.add__description:focus,
-.add__value:focus {
+.add__henBoloh:focus,
+.add__ner:focus,
+.add__dugaar:focus {
     outline: none;
     border: 1px solid #28B9B5;
 }
@@ -123,25 +123,13 @@ h2 {
 .item:first-child { border-top: 1px solid #e7e7e7; }
 .item:nth-child(even) { background-color: #f7f7f7; }
 
-.item__description {
+.item__ner {
     float: left;
 }
 
-.item__value {
+.item__dugaar {
     float: left;
     transition: transform 0.3s;
-}
-
-.item__percentage {
-    float: left;
-    margin-left: 20px;
-    transition: transform 0.3s;
-    font-size: 11px;
-    background-color: #FFDAD9;
-    padding: 3px;
-    border-radius: 3px;
-    width: 32px;
-    text-align: center;
 }
 
 .FamilyInfo .item__value,
@@ -168,5 +156,4 @@ h2 {
 .item__delete--btn:active { transform: translateY(2px); }
 
 .item:hover .item__delete--btn { display: block; }
-.item:hover .item__value { transform: translateX(-20px); }
-.item:hover .item__percentage { transform: translateX(-20px); }
+.item:hover .item__dugaar { transform: translateX(-20px); }

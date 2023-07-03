@@ -161,45 +161,54 @@ def profileFamily(request):
     checkSession(request)
     if request.session['beegii'] == 0:
         return redirect("homeView")
-    htmlRuuDamjuulahUtguud = {}
-    htmlRuuDamjuulahUtguud["responseText"] = ""
-    htmlRuuDamjuulahUtguud["textColor"] = "#00FF00"
+    nemelt = {}
+    nemelt["responseText"] = ""
+    nemelt["textColor"] = "#00FF00"
     if request.method == "POST":
-        henBoloh = request.POST.get("henBoloh")
-        ner = request.POST.get("ner")
-        dugaar = request.POST.get("dugaar")
+        if ("userFamilyIns" in request.POST):
 
-        request_data = {
-            "henBoloh": henBoloh,
-            "ner": ner,
-            "dugaar": dugaar
+            serviceHayag = "http://whoisb.mandakh.org/userFamilyIns/"
+            henBoloh = request.POST.get("henBoloh")
+            ner = request.POST.get("ner")
+            dugaar = request.POST.get("dugaar")
+
+            
+            requestJSON = {
+                "user_id": request.session['userId'],
+                "henBoloh": henBoloh,
+                "ner": ner,
+                "dugaar": dugaar,
+            }
+            r = requests.post(serviceHayag,
+                             data=json.dumps(requestJSON),
+                             headers={'Content-Type': 'application/json'})
+            responseJson = r.json()
+            nemelt["responseText"] = responseJson["responseText"]
+            if (responseJson["responseCode"] == 200):
+                nemelt["textColor"] = "#00ff00"
+            else:
+                nemelt["textColor"] = "#ff0000"
+
+        nemelt["userId"] = request.session['userId']
+        serviceHayag = "http://whoisb.mandakh.org/userFamily/"
+        requestJSON = {
+            "user_id": request.session['userId']
         }
-    requestJSON = {
-        "id": request.session['userId']
-    }
-    r = requests.get("http://whoisb.mandakh.org/userFamilyIns/",
-                     data=json.dumps(requestJSON),
-                     headers={'Content-Type': 'application/json'})
-    responseJson = r.json()
-    htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
-    if responseJson["responseCode"] == 200:
-            htmlRuuDamjuulahUtguud["textColor"] = "#00ff00"
-    else:
-            htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
+        r = requests.get(serviceHayag,
+                        data=json.dumps(requestJSON),
+                        headers={'Content-Type': 'application/json'})
+        responseJson = r.json()
 
-    htmlRuuDamjuulahUtguud["userId"] = request.session['userId']
-    requestJSON = {
-        "user_id": request.session['userId']
-    }
-    r = requests.get("http://whoisb.mandakh.org/userFamilyIns/",
-                     data=json.dumps(requestJSON),
-                     headers={'Content-Type': 'application/json'},)
-    response_json = r.json()
-    htmlRuuDamjuulahUtguud['henBoloh'] = response_json.get('henBoloh')
-    htmlRuuDamjuulahUtguud['ner'] = response_json.get('ner')
-    htmlRuuDamjuulahUtguud['dugaar'] = response_json.get('dugaar')
-
-    return render(request, "Profile/4.html", htmlRuuDamjuulahUtguud)
+        if responseJson["responseCode"] == 200:
+            userData = responseJson["data"]
+            nemelt["userId"] = userData["user_id"]
+            nemelt["henBoloh"] = userData["henBoloh"]
+            nemelt["ner"] = userData["ner"]
+            nemelt["dugaar"] = userData["dugaar"]
+        else:
+            nemelt["responseText"] = responseJson["responseText"]
+            nemelt["textColor"] = "#ff0000"
+    return render(request, "Profile/4.html", nemelt)
 
 
 

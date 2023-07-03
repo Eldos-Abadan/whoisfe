@@ -25,14 +25,34 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <style>
     #button {
-      border: 5px solid purple;
-      width: 200px;
-      text-align: center;
-      font-size: 30px;
-      cursor: pointer;
-      margin: auto;
-      margin-top: 10px;
-      background: darkviolet;
+      content: "";
+      display: table;
+      clear: both;
+      width: 70%;
+      height: auto;
+      margin-left: 2rem;
+      margin-right: 8rem;
+      margin-top: 1rem;
+    }
+
+    input[type=submit]:hover {
+      background-color: #b85ee6;
+    }
+
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+    @media screen and (max-width: 600px) {
+
+      .col-25,
+      .col-75,
+      input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+      }
     }
   </style>
 </head>
@@ -78,18 +98,18 @@
                               <div class="form-floating mt-3">
                                 <label for="floatingInput">Таны хэн болох:</label>
                                 <input list="henBoloh" name="henBoloh" class="form-control" step="10"
-                                  id="floatingNumber">
+                                  id="henBoloh"  value="{{henBoloh}}">
                                 <datalist id="henBoloh">
-                                  <option name="henBolohN" value="Uwuu"></option>
-                                  <option name="henBolohN" value="Emee"></option>
-                                  <option name="henBolohN" value="Aaw"></option>
-                                  <option name="henBolohN" value="Eej"></option>
-                                  <option name="henBolohN" value="Ah"></option>
-                                  <option name="henBolohN" value="Egch"></option>
-                                  <option name="henBolohN" value="Dvv"></option>
-                                  <option name="henBolohN" value="Naiz"></option>
-                                  <option name="henBolohN" value="Nuhur"></option>
-                                  <option name="henBolohN" value="Ehner"></option>
+                                  <option id="henBoloh" name="henBoloh" value="Uwuu"></option>
+                                  <option id="henBoloh" name="henBoloh" value="Emee"></option>
+                                  <option id="henBoloh" name="henBoloh" value="Aaw"></option>
+                                  <option id="henBoloh" name="henBoloh" value="Eej"></option>
+                                  <option id="henBoloh" name="henBoloh" value="Ah"></option>
+                                  <option id="henBoloh" name="henBoloh" value="Egch"></option>
+                                  <option id="henBoloh" name="henBoloh" value="Dvv"></option>
+                                  <option id="henBoloh" name="henBoloh" value="Naiz"></option>
+                                  <option id="henBoloh" name="henBoloh" value="Nuhur"></option>
+                                  <option id="henBoloh" name="henBoloh" value="Ehner"></option>
                                 </datalist>
                               </div>
                             </div>
@@ -100,8 +120,8 @@
                           <div class="row">
                             <div class="col-sm-5">
                               <div class="form-floating mt-3">
-                                <label for="floatingLname">Нэр</label>
-                                <input type="text" name="ner" class="form-control" id="ner">
+                                <label for="floatingLname" >Нэр</label>
+                                <input type="text" name="ner" class="form-control" id="ner" value="{{ner}}">
                               </div>
                             </div>
                           </div>
@@ -111,32 +131,15 @@
                             <div class="col-sm-5">
                               <div class="form-floating mt-3">
                                 <label for="floatingInput">Утасны дугаар: </label>
-                                <input type="text" name="dugaar" class="form-control" step="10" id="floatingNumber">
+                                <input type="text" name="dugaar" class="form-control" step="10" id="dugaar"  value="{{dugaar}}">
                               </div>
                             </div>
                           </div>
                         </div>
-                        <!-- <br>
-                  <div class="row">
-                    <div class="col-sm-5">
-                      <div class="form-floating mt-3">
-                        <label for="floatingInput">Албан тушаал: </label>
-                        <input type="text" name="albanTushaal" class="form-control" step="10" id="floatingNumber">
-                      </div>
-                    </div>
-                  </div>
-                  <br>
-                  <div class="row">
-                    <div class="col-sm-5">
-                      <div class="form-floating mt-3">
-                        <label for="floatingInput">Албан байгууллагын
-                          нэр: </label>
-                        <input type="text" name="baiguulgaNer" class="form-control" step="10" id="floatingNumber">
-                      </div>
-                    </div>
-                  </div> -->
                         <div id="button">
-                          <button class="add__btn" name="userFamilyIns">Nemeh</button>
+                          <input type="submit" id="userFamilyIns" name="userFamilyIns" value="Нэмэх">     
+                          
+                          {{ responseText }}
                         </div>
                         <h5 id="text" style="color: green;"></h5>
                         <script>
@@ -150,12 +153,9 @@
               </form>
               <div class="container clearfix">
                 <div class="FamilyInfo">
-                  <h2 class="FamilyInfo__title">Гэр бүлийн мэдээлэл</h2>
                   <div class="FamilyInfo__list">
                   </div>
                 </div>
-                <br><br><br><br><br><br><br><br><br><br>
-                <input type="button" class="add__btn" id="userFamilyIns" name="userFamilyIns" value="Хадгалах">
               </div>
             </div>
           </div>
