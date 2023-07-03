@@ -110,6 +110,19 @@
     text-align: center;
   }
 
+  .m3{
+    border-radius: 20px;
+    width: auto;
+    height: auto;
+    text-align: center;
+    padding-left: 40%;
+  }
+  .m3 h1 {
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
   .m2 h1 {
     font-size: 1.7rem;
     font-weight: bold;
@@ -197,194 +210,139 @@
       <div class="wrapper">
         <div class="m2">
           <h1>Вебсайт & цахим хаяг</h1>
-          {{responseText}}
           <div class="addlink">
             <a href="#" onclick="displayForm()"><i class="fa fa-plus" style="font-size: 16px;"></i>Холбоос нэмэх</a>
+            <form action="" id="myForm" style="display: none; padding: 1rem" method="POST">
+              {% csrf_token%}
+              <div class="row">
+                <div class="col-25">
+                  <label for="platForm">Social platform</label>
+                </div>
+                <div class="col-75">
+                  <select name="platForm" required>
+                    <option value="" disabled selected>Select platform</option>
+                    <option value="Facebook">Facebook</option>
+                    <option value="Instagram">Instagram</option>
+                    <option value="Youtube">YouTube</option>
+                    <option value="Github">GitHub</option>
+                    <option value="LinkedIn">LinkedIn</option>
+                    <option value="Twitter">Twitter</option>
+                    <option value="Snapchat">Snapchat</option>
+                    <option value="WhatsApp">WhatsApp</option>
+                    <option value="Ask.fm">Ask.fm</option>
+                    <option value="SoundCloud">SoundCloud</option>
+                    <option value="Spotify">Spotify</option>
+                  </select>
+  
+                  <br><br>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="fname">Username</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="fname" name="userName" placeholder="Your social account's name.." required>
+                </div>
+              </div>
+              <div class="subm">
+                <input type="submit" name="addSave" value="Нэмэх">
+              </div>
+            </form>
           </div>
-          <form action="" id="myForm" style="display: none; padding: 1rem" method="POST">
-            {% csrf_token%}
-            <div class="row">
-              <div class="col-25">
-                <label for="platForm">Social platform</label>
-              </div>
-              <div class="col-75">
-                <select name="platForm" required>
-                  <option value="" disabled selected>Select platform</option>
-                  <option value="Facebook">Facebook</option>
-                  <option value="Instagram">Instagram</option>
-                  <option value="Youtube">YouTube</option>
-                  <option value="Github">GitHub</option>
-                  <option value="LinkedIn">LinkedIn</option>
-                  <option value="Twitter">Twitter</option>
-                  <option value="Snapchat">Snapchat</option>
-                  <option value="WhatsApp">WhatsApp</option>
-                  <option value="Ask.fm">Ask.fm</option>
-                  <option value="SoundCloud">SoundCloud</option>
-                  <option value="Spotify">Spotify</option>
-                </select>
-
-                <br><br>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-25">
-                <label for="fname">Username</label>
-              </div>
-              <div class="col-75">
-                <input type="text" id="fname" name="userName" placeholder="Your social account's name.." required>
-              </div>
-            </div>
-            <div class="subm">
-              <input type="submit" name="addSave" value="Нэмэх">
-            </div>
-          </form>
-        </div>
-        <div class="m2" style="text-align: left;">
-          <table>
-
-            <tbody>
-              {% for app, site in app_site_pairs %}
-              <tr>
-                <td>
-                  {% if app == 'Facebook' %}
-                  <i class="fa fa-facebook"></i>
-                  {% elif app == 'Instagram' %}
-                  <i class="fa fa-instagram"></i>
-                  {% elif app == 'Youtube' %}
-                  <i class="fa fa-youtube-play"></i>
-                  {% elif app == 'Github' %}
-                  <i class="fa fa-github"></i>
-                  {% elif app == 'LinkedIn' %}
-                  <i class="fa fa-linkedin"></i>
-                  {% elif app == 'Twitter' %}
-                  <i class="fa fa-twitter"></i>
-                  {% elif app == 'WhatsApp' %}
-                  <i class="fa fa-whatsapp"></i>
-                  {% elif app == 'SoundCloud' %}
-                  <i class="fa fa-soundcloud"></i>
-                  {% elif app == 'Spotify' %}
-                  <i class="fa fa-spotify"></i>
-                  {% elif app == 'Snapchat' %}
-                  <i class="fa fa-snapchat"></i>
-                  {% elif app == 'Ask.fm' %}
-                  <i class="fa fa-askfm"></i>
-                  {% endif %}
-                </td>
-                <td>
-                  {% if app == 'Facebook' %}
-                  <a style="color: #480f71;" href="https://www.facebook.com/{{ site }}" target="_blank">{{ site }}</a>
-                  {% elif app == 'Instagram' %}
-                  <a style="color: #480f71;" href="https://www.instagram.com/{{ site }}" target="_blank">{{ site }}</a>
-                  {% elif app == 'Youtube' %}
-                  <a style="color: #480f71;" href="https://www.youtube.com/@{{ site }}" target="_blank">{{ site }}</a>
-                  {% elif app == 'Github' %}
-                  <a style="color: #480f71;" href="https://www.github.com/{{ site }}" target="_blank">{{ site }}</a>
-                  {% elif app == 'LinkedIn' %}
-                  <a style="color: #480f71;" href="https://www.linkedin.com/in/{{ site }}" target="_blank">{{ site }}</a>
-                  {% elif app == 'Twitter' %}
-                  <a style="color: #480f71;" href="https://www.twitter.com/{{ site }}" target="_blank">{{ site }}</a>
-                  {% elif app == 'WhatsApp' %}
-                  <a style="color: #480f71;" href="https://www.whatsapp.com/{{ site }}" target="_blank">{{ site }}</a>
-                  {% elif app == 'SoundCloud' %}
-                  <a style="color: #480f71;" href="https://www.soundcloud.com/{{ site }}" target="_blank">{{ site }}</a>
-                  {% elif app == 'Spotify' %}
-                  <a style="color: #480f71;" href="https://www.spotify.com/{{ site }}" target="_blank">{{ site }}</a>
-                  {% elif app == 'Snapchat' %}
-                  <a style="color: #480f71;" href="https://www.snapchat.com/{{ site }}" target="_blank">{{ site }}</a>
-                  {% elif app == 'Ask.fm' %}
-                  <a style="color: #480f71;" href="https://www.ask.fm/{{ site }}" target="_blank">{{ site }}</a>
-                  {% endif %}
-                </td>
-                <td><a href="#" onclick="updateForm()"><i class="fa fa-edit" style="font-size: 17px; color:#b85ee6"></i></a></td>
-                <td> <form action="" id="editForm" style="display: none;" method="POST">
-                  {% csrf_token %}
-                  <div class="row">
-                    <div class="col-75">
-                      <select name="editapp" required>
-                        <option value="Facebook" {% if app == 'Facebook' %}selected{% endif %}>Facebook</option>
-                        <option value="Instagram" {% if app == 'Instagram' %}selected{% endif %}>Instagram</option>
-                        <option value="Youtube" {% if app == 'Youtube' %}selected{% endif %}>YouTube</option>
-                        <option value="Github" {% if app == 'Github' %}selected{% endif %}>GitHub</option>
-                        <option value="LinkedIn" {% if app == 'LinkedIn' %}selected{% endif %}>LinkedIn</option>
-                        <option value="Twitter" {% if app == 'Twitter' %}selected{% endif %}>Twitter</option>
-                        <option value="Snapchat" {% if app == 'Snapchat' %}selected{% endif %}>Snapchat</option>
-                        <option value="WhatsApp" {% if app == 'WhatsApp' %}selected{% endif %}>WhatsApp</option>
-                        <option value="Ask.fm" {% if app == 'Ask.fm' %}selected{% endif %}>Ask.fm</option>
-                        <option value="SoundCloud" {% if app == 'SoundCloud' %}selected{% endif %}>SoundCloud</option>
-                        <option value="Spotify" {% if app == 'Spotify' %}selected{% endif %}>Spotify</option>
-                      </select>
-                      <br><br>
+          <h1>Миний цахим хаяг</h1>
+          <div class="m3">
+            <table>
+              <tbody>
+                {% for app, site in app_site_pairs %}
+                <tr>
+                  <td>
+                    {% if app == 'Facebook' %}
+                    <i class="fa fa-facebook"></i>
+                    {% elif app == 'Instagram' %}
+                    <i class="fa fa-instagram"></i>
+                    {% elif app == 'Youtube' %}
+                    <i class="fa fa-youtube-play"></i>
+                    {% elif app == 'Github' %}
+                    <i class="fa fa-github"></i>
+                    {% elif app == 'LinkedIn' %}
+                    <i class="fa fa-linkedin"></i>
+                    {% elif app == 'Twitter' %}
+                    <i class="fa fa-twitter"></i>
+                    {% elif app == 'WhatsApp' %}
+                    <i class="fa fa-whatsapp"></i>
+                    {% elif app == 'SoundCloud' %}
+                    <i class="fa fa-soundcloud"></i>
+                    {% elif app == 'Spotify' %}
+                    <i class="fa fa-spotify"></i>
+                    {% elif app == 'Snapchat' %}
+                    <i class="fa fa-snapchat"></i>
+                    {% elif app == 'Ask.fm' %}
+                    <i class="fa fa-askfm"></i>
+                    {% endif %}
+                  </td>
+                  <td>
+                    {% if app == 'Facebook' %}
+                    <a style="color: #480f71;" href="https://www.facebook.com/{{ site }}" target="_blank">{{ site }}</a>
+                    {% elif app == 'Instagram' %}
+                    <a style="color: #480f71;" href="https://www.instagram.com/{{ site }}" target="_blank">{{ site }}</a>
+                    {% elif app == 'Youtube' %}
+                    <a style="color: #480f71;" href="https://www.youtube.com/@{{ site }}" target="_blank">{{ site }}</a>
+                    {% elif app == 'Github' %}
+                    <a style="color: #480f71;" href="https://www.github.com/{{ site }}" target="_blank">{{ site }}</a>
+                    {% elif app == 'LinkedIn' %}
+                    <a style="color: #480f71;" href="https://www.linkedin.com/in/{{ site }}" target="_blank">{{ site }}</a>
+                    {% elif app == 'Twitter' %}
+                    <a style="color: #480f71;" href="https://www.twitter.com/{{ site }}" target="_blank">{{ site }}</a>
+                    {% elif app == 'WhatsApp' %}
+                    <a style="color: #480f71;" href="https://www.whatsapp.com/{{ site }}" target="_blank">{{ site }}</a>
+                    {% elif app == 'SoundCloud' %}
+                    <a style="color: #480f71;" href="https://www.soundcloud.com/{{ site }}" target="_blank">{{ site }}</a>
+                    {% elif app == 'Spotify' %}
+                    <a style="color: #480f71;" href="https://www.spotify.com/{{ site }}" target="_blank">{{ site }}</a>
+                    {% elif app == 'Snapchat' %}
+                    <a style="color: #480f71;" href="https://www.snapchat.com/{{ site }}" target="_blank">{{ site }}</a>
+                    {% elif app == 'Ask.fm' %}
+                    <a style="color: #480f71;" href="https://www.ask.fm/{{ site }}" target="_blank">{{ site }}</a>
+                    {% endif %}
+                  </td>
+                  <td><a href="#" onclick="updateForm()"><i class="fa fa-edit" style="font-size: 17px; color:#b85ee6"></i></a>
+                    <a href="" onclick="if (!confirm('Are you sure?')) { return false }"><i class="fa fa-trash" style="font-size: 17px; color:#b85ee6"></i></a>
+                  </td>
+                  <td> <form action="" id="editForm" style="display: none;" method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                      <div class="col-75">
+                        <select name="editapp" required>
+                          <option value="Facebook" {% if app == 'Facebook' %}selected{% endif %}>Facebook</option>
+                          <option value="Instagram" {% if app == 'Instagram' %}selected{% endif %}>Instagram</option>
+                          <option value="Youtube" {% if app == 'Youtube' %}selected{% endif %}>YouTube</option>
+                          <option value="Github" {% if app == 'Github' %}selected{% endif %}>GitHub</option>
+                          <option value="LinkedIn" {% if app == 'LinkedIn' %}selected{% endif %}>LinkedIn</option>
+                          <option value="Twitter" {% if app == 'Twitter' %}selected{% endif %}>Twitter</option>
+                          <option value="Snapchat" {% if app == 'Snapchat' %}selected{% endif %}>Snapchat</option>
+                          <option value="WhatsApp" {% if app == 'WhatsApp' %}selected{% endif %}>WhatsApp</option>
+                          <option value="Ask.fm" {% if app == 'Ask.fm' %}selected{% endif %}>Ask.fm</option>
+                          <option value="SoundCloud" {% if app == 'SoundCloud' %}selected{% endif %}>SoundCloud</option>
+                          <option value="Spotify" {% if app == 'Spotify' %}selected{% endif %}>Spotify</option>
+                        </select>
+                        <br><br>
+                      </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-75">
-                      <input type="text" id="editUsername" name="editsite" value="{{ site }}" required>
+                    <div class="row">
+                      <div class="col-75">
+                        <input type="text" id="editUsername" name="editsite" value="{{ site }}" required>
+                      </div>
                     </div>
-                  </div>
-                  <div class="subm">
-                    <input type="submit" name="editSave" value="Save">
-                  </div>
-                </form></td>
-                {%endfor%}
-                </tr>
-                </tbody>
-                </table>
-
-            <!-- {% for app, site in app_site_pairs %}
-            {% if app == 'Facebook' %}
-            <i class="fa fa-facebook"></i>
-            {% elif app == 'Instagram'%}
-            <i class="fa fa-instagram"></i>
-            {% elif app == 'Youtube'%}
-            <i class="fa fa-youtube-play"></i>
-            {% elif app == 'Github'%}
-            <i class="fa fa-github"></i>
-            {% elif app == 'LinkedIn'%}
-            <i class="fa fa-linkedin"></i>
-            {% elif app == 'Twitter'%}
-            <i class="fa fa-twitter"></i>
-            {% elif app == 'WhatsApp'%}
-            <i class="fa fa-whatsapp"></i>
-            {% elif app == 'SoundCloud'%}
-            <i class="fa fa-soundcloud"></i>
-            {% elif app == 'Spotify'%}
-            <i class="fa fa-spotify"></i>
-            {% elif app == 'Snapchat'%}
-            <i class="fa fa-snapchat"></i>
-            {% elif app == 'Ask.fm'%}
-            <i class="fa fa-askfm"></i>
-            {% endif %}
-            {% if app == 'Facebook' %}
-            <a href="https://www.facebook.com/{{site}}" target="_blank">{{ site }} </a>
-            {% elif app == 'Instagram'%}
-            <a href="https://www.instagram.com/{{site}}" target="_blank">{{ site }} </a>
-            {% elif app == 'Youtube'%}
-            <a href="https://www.youtube.com/@{{site}}" target="_blank">{{ site }} </a>
-            {% elif app == 'Github'%}
-            <a href="https://www.github.com/{{site}}" target="_blank">{{ site }} </a>
-            {% elif app == 'LinkedIn'%}
-            <a href="https://www.linkedin.com/in/{{site}}" target="_blank">{{ site }} </a>
-            {% elif app == 'Twitter'%}
-            <a href="https://www.twitter.com/{{site}}" target="_blank">{{ site }} </a>
-            {% elif app == 'WhatsApp'%}
-            <a href="https://www.whatsapp.com/{{site}}" target="_blank">{{ site }} </a>
-            {% elif app == 'SoundCloud'%}
-            <a href="https://www.soundcloud.com/{{site}}" target="_blank">{{ site }} </a>
-            {% elif app == 'Spotify'%}
-            <a href="https://www.spotify.com/{{site}}" target="_blank">{{ site }} </a>
-            {% elif app == 'Snapchat'%}
-            <a href="https://www.snapchat.com/{{site}}" target="_blank">{{ site }} </a>
-            {% elif app == 'Ask.fm'%}
-            <a href="https://www.ask.fm/{{site}}" target="_blank">{{ site }} </a>
-            {% endif %}
-            <div class="update">
-              <a href="#" onclick="updateForm()"><i class="fa fa-edit" style="font-size: 17px;"></i></a>
-            </div>
-            {% endfor %}
-            <br>  -->
-
-           
-            
+                    <div class="subm">
+                      <input type="submit" name="editSave" value="Save">
+                    </div>
+                  </form></td>
+                  {%endfor%}
+                  </tr>
+                  </tbody>
+                  </table>
+          </div>
         </div>
       </div>
     </div>
