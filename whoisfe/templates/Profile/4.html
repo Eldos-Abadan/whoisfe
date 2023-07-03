@@ -24,35 +24,8 @@
   <link href="{% static '/css/dashboard/pe-icon-7-stroke.css'%}" rel="stylesheet" />
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <style>
-    #button {
-      content: "";
-      display: table;
-      clear: both;
-      width: 70%;
-      height: auto;
-      margin-left: 2rem;
-      margin-right: 8rem;
-      margin-top: 1rem;
-    }
-
     input[type=submit]:hover {
       background-color: #b85ee6;
-    }
-
-    .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-    @media screen and (max-width: 600px) {
-
-      .col-25,
-      .col-75,
-      input[type=submit] {
-        width: 100%;
-        margin-top: 0;
-      }
     }
   </style>
 </head>
@@ -92,61 +65,54 @@
                     <h1>Гэр бүлийн мэдээлэл</h1>
                     <div class="add">
                       <div class="add__container">
-                        <div class="add__henBoloh">
                           <div class="row">
                             <div class="col-sm-5">
                               <div class="form-floating mt-3">
                                 <label for="floatingInput">Таны хэн болох:</label>
-                                <input list="henBoloh" name="henBoloh" class="form-control" step="10"
-                                  id="henBoloh"  value="{{henBoloh}}">
-                                <datalist id="henBoloh">
-                                  <option id="henBoloh" name="henBoloh" value="Uwuu"></option>
-                                  <option id="henBoloh" name="henBoloh" value="Emee"></option>
-                                  <option id="henBoloh" name="henBoloh" value="Aaw"></option>
-                                  <option id="henBoloh" name="henBoloh" value="Eej"></option>
-                                  <option id="henBoloh" name="henBoloh" value="Ah"></option>
-                                  <option id="henBoloh" name="henBoloh" value="Egch"></option>
-                                  <option id="henBoloh" name="henBoloh" value="Dvv"></option>
-                                  <option id="henBoloh" name="henBoloh" value="Naiz"></option>
-                                  <option id="henBoloh" name="henBoloh" value="Nuhur"></option>
-                                  <option id="henBoloh" name="henBoloh" value="Ehner"></option>
+                                <input list="henBoloh" name="henBoloh" class="form-control" step="10">
+                                <datalist>
+                                  <option name="henBoloh" value="Uwuu"></option>
+                                  <option name="henBoloh" value="Emee"></option>
+                                  <option name="henBoloh" value="Aaw"></option>
+                                  <option name="henBoloh" value="Eej"></option>
+                                  <option name="henBoloh" value="Ah"></option>
+                                  <option name="henBoloh" value="Egch"></option>
+                                  <option name="henBoloh" value="Dvv"></option>
+                                  <option name="henBoloh" value="Naiz"></option>
+                                  <option name="henBoloh" value="Nuhur"></option>
+                                  <option name="henBoloh" value="Ehner"></option>
                                 </datalist>
                               </div>
                             </div>
                           </div>
-                        </div>
                         <br>
-                        <div class="add__ner">
                           <div class="row">
                             <div class="col-sm-5">
                               <div class="form-floating mt-3">
                                 <label for="floatingLname" >Нэр</label>
-                                <input type="text" name="ner" class="form-control" id="ner" value="{{ner}}">
+                                <input type="text" name="ner" class="form-control">
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="add__dugaar">
+                    
                           <div class="row">
                             <div class="col-sm-5">
                               <div class="form-floating mt-3">
                                 <label for="floatingInput">Утасны дугаар: </label>
-                                <input type="text" name="dugaar" class="form-control" step="10" id="dugaar"  value="{{dugaar}}">
+                                <input type="text" name="dugaar" class="form-control" step="10">
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div id="button">
-                          <input type="submit" id="userFamilyIns" name="userFamilyIns" value="Нэмэх">     
-                          
-                          {{ responseText }}
-                        </div>
-                        <h5 id="text" style="color: green;"></h5>
-                        <script>
-                          document.getElementById("button").addEventListener("click", function () {
-                            document.getElementById("text").innerText = "Ger buliin medeelel amjilttai nemegdlee";
-                          });
-                        </script>
+                          <input type="submit" id="userFamilyIns" name="userFamilyIns" value="Нэмэх">
+                          <div class="row">
+                            <div class="col-sm-3">
+                              <div class="form-floating mt-3">
+                                <span style="color:#0000FF;">
+                                  {{ responseText }}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
                       </div>
                     </div>
                   </div>
