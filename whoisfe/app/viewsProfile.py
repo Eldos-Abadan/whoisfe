@@ -102,15 +102,6 @@ def profileAdd(request):
             hayg = request.POST.get("homeAddress")
             hobby = request.POST.get("hobby")
 
-            def debugFunciton():
-                print(huis)
-                print(torsonOgnoo)
-                print(dugaar)
-                print(irgenshil)
-                print(ysUndes)
-                print("sdakfjsdalhfkdsjh")
-                print(hayg)
-                print(hobby)
             if (len(huis) == 5):
                 huis = "1"
             if (len(hobby) == 0):
@@ -138,32 +129,30 @@ def profileAdd(request):
             else:
                 nemelt["textColor"] = "#ff0000"
 
-    if request.method == "GET":  # Энэ хуудасруу ороход харуулах мэдээллүүдээ авч, дамжуулах хэсэг
-        nemelt["userId"] = request.session['userId']
-        serviceHayag = "http://whoisb.mandakh.org/userNemelt/"
-        requestJSON = {
-            "user_id": request.session['userId']
-        }
-        r = requests.get(serviceHayag,
-                        data=json.dumps(requestJSON),
-                        headers={'Content-Type': 'application/json'})
-        responseJson = r.json()
+    nemelt["userId"] = request.session['userId']
+    serviceHayag = "http://whoisb.mandakh.org/userNemelt/"
+    requestJSON = {
+        "user_id": request.session['userId']
+    }
+    r = requests.get(serviceHayag,
+                    data=json.dumps(requestJSON),
+                    headers={'Content-Type': 'application/json'})
+    responseJson = r.json()
 
-        if responseJson["responseCode"] == 200:
-            userData = responseJson["data"]
-            nemelt["userId"] = userData["user_id"]
-            nemelt["gender"] = userData["huis"]
-            nemelt["bornDate"] = userData["torsonOgnoo"]
-            nemelt["register"] = userData["regDug"]
-            nemelt["phoneNumber"] = userData["dugaar"]
-            nemelt["homeAddress"] = userData["hayg"]
-            nemelt["nationality"] = userData["ysUndes"]
-            nemelt["hobby"] = userData["hobby"]
-            nemelt["citizenship"] = userData["irgenshil"]
-        else:
-            nemelt["responseText"] = responseJson["responseText"]
-            nemelt["textColor"] = "#ff0000"
-        # #######################################################################
+    if responseJson["responseCode"] == 200:
+        userData = responseJson["data"]
+        nemelt["userId"] = userData["user_id"]
+        nemelt["gender"] = userData["huis"]
+        nemelt["bornDate"] = userData["torsonOgnoo"]
+        nemelt["register"] = userData["regDug"]
+        nemelt["phoneNumber"] = userData["dugaar"]
+        nemelt["homeAddress"] = userData["hayg"]
+        nemelt["nationality"] = userData["ysUndes"]
+        nemelt["hobby"] = userData["hobby"]
+        nemelt["citizenship"] = userData["irgenshil"]
+    else:
+        nemelt["responseText"] = responseJson["responseText"]
+        nemelt["textColor"] = "#ff0000"
 
     return render(request, "Profile/2.html", nemelt)
 
