@@ -84,7 +84,7 @@ def wallet1View(request):
         amount = request.POST.get("amount")
 
         requestJSON = {
-          "from": "usuhuu",
+          "from": request.session['userId'],
           "target": hend,
           "amount": str(amount),
           "utga": utga
