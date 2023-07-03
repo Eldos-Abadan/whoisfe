@@ -46,11 +46,17 @@ def homeView(request):
     return render(request, "home/home.html",zahia)
 
 
+# balance kharakh
 def walletView(request): 
+  # Check session
+  checkSession(request)
+  if request.session['beegii'] == 0:
+      return redirect("homeView")
   # getTransactionLog
+  htmlRuu = {}
+  htmlRuu["aldaa"] = ""
   serviceZam = "http://whoisb.mandakh.org/getTransactionLog/"
   id = request.session['userId']
-  print(dict(request.session))
   requestJSON = {
      "user_id" : str(id)
   }
@@ -58,15 +64,19 @@ def walletView(request):
                             data=json.dumps(requestJSON),
                             headers={'Content-Type': 'application/json'} )
   data = r.json()
-  htmlRuu = {}
   htmlRuu["vldegdel"] = data["dansniiUldegdel"]
-  print(data["dansniiUldegdel"])
   return render(request, "wallet/wallet.html", htmlRuu)
+##############################################################
 
+# Gvilgee khiikhed
 def wallet1View(request): 
+    # Check session
+    checkSession(request)
+    if request.session['beegii'] == 0:
+        return redirect("homeView")
     htmlRuu = {}
-    userName = "Magnai"
-  # makeTransaction
+    htmlRuu["aldaa"] = ""
+    # makeTransaction
     if request.method == "POST":
         serviceZam = "http://whoisb.mandakh.org/makeTransaction/"
         utga = request.POST.get("utga")
@@ -74,7 +84,7 @@ def wallet1View(request):
         amount = request.POST.get("amount")
 
         requestJSON = {
-          "from": request.session['userId'],
+          "from": "Magnai",
           "target": hend,
           "amount": str(amount),
           "utga": utga
@@ -83,14 +93,25 @@ def wallet1View(request):
                                   data=json.dumps(requestJSON),
                                   headers={'Content-Type': 'application/json'} )
         data = r.json()
-        print(data['data']['gvilgee'])
-        htmlRuu["responseText"] = data["responseText"]
-        htmlRuu["userData"] = data['data']['gvilgee'] 
         if data["responseCode"] == 200:
             htmlRuu["responseText"] = data["responseText"]
         else:
             htmlRuu["aldaa"] = data["responseText"]
+        print(htmlRuu["responseText"])
+    #  end makeTransaction
+    serviceZam = "http://whoisb.mandakh.org/getTransactionLog/"
+    id = request.session['userId']
+    requestJSON = {
+      "user_id" : str(id)
+    }
+    r = requests.get(serviceZam,
+                              data=json.dumps(requestJSON),
+                              headers={'Content-Type': 'application/json'} )
+    data = r.json()
+    htmlRuu["vldegdel"] = data["dansniiUldegdel"]
+    htmlRuu["userData"] = data["guilgee"]
     return render(request, "wallet/wallet1.html", htmlRuu)
+##########################################################
 
 def justCVViews(request): 
   return render(request, "templates/just.html")

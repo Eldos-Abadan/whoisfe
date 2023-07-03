@@ -84,7 +84,7 @@
     .btn {
       padding: 10px 20px;
       font-size: 16px;
-      background-color: #4CAF50;
+      background-color: rgb(138, 20, 138);
       color: #fff;
       border: none;
       border-radius: 3px;
@@ -168,7 +168,7 @@
           {% csrf_token %}
         {% include "../includes/banner.html" %}
         <h1>Хэтэвч</h1>
-
+<!-- ----------------------------------- -->
         <div class="wallet-container">
           <h2>Миний түрийвч</h2>
           <div class="balance">
@@ -176,11 +176,11 @@
           </div>
           <div class="btn-container">
             <a href="{% url 'wallet1' %}" class="btn">Гүйлгээ хийх</a>
-            <a href="{% url 'wallet1' %}" class="btn">Татаж авах</a>
+            <a href="" class="btn">Татаж авах</a>
           </div>
         </div>
         </form>
-   
+   <!-- ----------------------------------- -->
 
         {% include "../includes/footer.html" %}
       </div>
