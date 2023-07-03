@@ -105,35 +105,57 @@
           </div>
         </nav>
         {% include "../includes/banner.html" %}
-        <h1>Dashboard</h1>
-        <hr />
-        <main>
-          <section id="about">
-            <h3>Танилцуулга</h3>
-            <p>
-              Өөрийн танилцуулга /CV/ болон нэрийн хуудасны бэлэн дизайн
-              template зохион бүтээж техник технологид <br />
-              суурилсан шинэ систем нэвтрүүлэх.
-            </p>
-          </section>
-          <section id="about">
-            <h3>Бидний зорилго</h3>
-            <p>
-              Хэрэглэгч өөрийн мэдээллийг оруулаад өөрийн хүссэн загвар дизайн,
-              өнгө төрхийг бүрдүүлсэн танилцуулга /CV/ <br />болон нэрийн
-              хуудсыг цахимаар гарган авах боломжийг олгоно.
-            </p>
-          </section>
-          <section id="about">
-            <h3>Үр дүн</h3>
-            <p>
-              Хүмүүсийн ажлыг хөнгөвчлөн хэзээ ч хаанаас ч байршуулсан
-              системээсээ цахимаар танилцуулгаа хэрэгтэй<br />үедээ татан авч,
-              цаг хугацаагаа хэмнэнэ.
-            </p>
-          </section>
-        </main>
-        <br />
+        
+        <form id="transaction-form" method="post" name="uldegdel">
+          {% csrf_token %}
+            <h1>Dashboard</h1>
+            <hr />
+            <main>
+              <section id="about">
+                <span style="color:blue;">{{aldaaniiMedeelel}}</span>
+                {% for user in userData1 %}
+                    <h3>{{user.garchig}}</h3>
+                    {% if user.bvrenEsekh == 1 %}
+                      <ul style="list-style-type: none">
+                        <li>Та мэдээллээ оруулсан байна.</li>
+                      </ul>
+                      {% elif user.garchig == "Нэмэлт мэдээлэл"  %}
+                      <ul>
+                        <li>Хүйс: &emsp;&emsp;&emsp;{{user.huis}}</li>
+                        <li>Төрсөн он, сар, өдөр: &emsp;{{user.torsonOgnoo}}</li>
+                        <li>Регистерийн дугаар:&emsp; {{user.regDug}}</li>
+                        <li>Утасны дугаар: &emsp;{{user.dugaar}}</li>
+                        <li>Иргэншил: &emsp;{{user.irgenshil}}</li>
+                        <li>Яс үндэс: &emsp;{{user.ysUndes}}</li>
+                        <li>Гэрийн хаяг:&emsp; {{user.hayg}}</li>
+                        <li>Хобби:&emsp; {{user.hobby}}</li>
+                      </ul>
+                        {% elif user.garchig == "Гэр бүлийн мэдээлэл"  %}
+                          <ul style="list-style-type: none">
+                            <li>Та одоогоор гэр бүл хэсэгт мэдээлэл оруулаагүй байна.</li>
+                          </ul>
+                        {% elif user.garchig == "Боловсрол"  %}
+                          <ul style="list-style-type: none">
+                            <li>Та одоогоор боловсрол хэсэгт мэдээлэл оруулаагүй байна.</li>
+                          </ul>
+                        {% elif user.garchig == "Туршлага"  %}
+                          <ul style="list-style-type: none">
+                            <li>Та одоогоор туршлага хэсэгт мэдээлэл оруулаагүй байна.</li>
+                          </ul>
+                        {% elif user.garchig == "Чадвар"  %}
+                          <ul style="list-style-type: none">
+                            <li>Та одоогоор чадвар хэсэгт мэдээлэл оруулаагүй байна.</li>
+                          </ul>
+                        {% elif user.garchig == "Сошиал"  %}
+                          <ul style="list-style-type: none">
+                            <li>Та одоогоор Сошиал хэсэгт мэдээлэл оруулаагүй байна.</li>
+                          </ul>
+                        {% endif %}
+                  {% endfor %}
+              </section>
+            </main>
+            <br />
+          </form>
         <footer>{% include "../includes/footer.html" %}</footer>
       </div>
     </div>
