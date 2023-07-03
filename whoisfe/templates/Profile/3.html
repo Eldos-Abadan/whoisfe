@@ -21,60 +21,36 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="edu.css">
     <style>
-        .form-div{
-  margin-top: 30px;
-  padding: 10px;
-  box-shadow: 0px 0px 5px black;
-}
+        .form-div {
+            margin-top: 30px;
+            padding: 10px;
+            box-shadow: 0px 0px 5px black;
+        }
 
-.button{
-  height: 40px;
-  width: 200px;
-}
+        .button {
+            height: 40px;
+            width: 200px;
+        }
 
-.table{
-  margin-top: 30px;
-  box-shadow: 0px 0px 5px black;
-}
+        .table {
+            margin-top: 30px;
+            box-shadow: 0px 0px 5px black;
+        }
 
-.table thead th{
-  background-color: darkviolet;
-  box-shadow: 0px 0px 5px darkviolet;
-  outline: darkviolet;
-  border: 1px solid white;
-  margin-left: 10px;
-  margin-right: 10px;
-}
+        .table thead tr {
+            background-color: darkviolet;
+            box-shadow: 0px 0px 5px darkviolet;
+            outline: darkviolet;
+            border: 1px solid white;
+            color: white;
+        }
 
-.table th td{
-  padding: 10px;
-}
+        .table th,
+        .table td {
+            padding: 10px;
+            text-align: center;
+        }
 
-.table tbody tr:hover{
-  background-color: silver;
-}
-
-.table tbody tr:active{
-  box-shadow: 0px 0px 5px black;
-}
-.row input{
-  border: 1px solid #ebb704;
-}
-input{
-  background-color: rgb(146, 12, 146);
-  color: white;
-  border-radius: 5px;
- 
-}
-.main4{
-  border: 3px solid rgb(138, 20, 138);
-  border-radius: 20px;
-  width: 1000px;
-  height: cover;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-top: 10px;
-}
         .table tbody tr:hover {
             background-color: #8080804a;
         }
@@ -120,7 +96,7 @@ input{
     <div class="main-panel">
         <nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">
-                <div class="navbar-header">
+                {% comment %} <div class="navbar-header"> {% endcomment %}
                     <button type="button" class="navbar-toggle" data-toggle="collapse"
                         data-target="#navigation-example-2">
                         <span class="sr-only">Toggle navigation</span>
@@ -144,50 +120,46 @@ input{
                     <div class="main4">
                     <!-- ############################################################### -->
 
-                    <h1 style="text-align: center;">Боловсрол </h1>
+                    <h1>Education Information </h1>
                     <b>{{aldaaniiMedegdel}}</b>
                     </head>
 
                     <body>
                         <form action="" method="post" name="userEduInsertForm">
-                       
+                        <div class="container">
                             <div class="form-div">
                                     {% csrf_token %}
                                 <div class="row">
-                                    <div class="col-md-3"> 
-                                        <label >Сургуулийн нэр</label>
+                                    <div class="col-md-3">
                                         <input type="text" name="education" class="form-control" id="education" placeholder="Сургуулийн нэр">
                                     </div>
                                     <div class="col-md-3">
-                                        <label >Чиглэл</label>
                                         <input type="text" name="direction" class="form-control" id="direction"
                                             placeholder="Ямар чиглэлээр суралцсан бэ?">
                                     </div>
                                     <div class="col-md-3">
-                                        <label >Элссэн он</label>
-                                        <input type="date" name="elssenOn" class="form-control" id="elssenOn"
+                                        <input type="text" name="elssenOn" class="form-control" id="elssenOn"
                                             placeholder="Суралцаж эхэлсэн он">
                                     </div>
                                     <div class="col-md-3">
-                                        <label >он</label>
-                                        <input type="date" name="tugssunOn" class="form-control" id="tugssunOn"
+                                        <input type="text" name="tugssunOn" class="form-control" id="tugssunOn"
                                             placeholder="Суралцаж төгссөн он">
                                     </div>
-                                    <div class="col-md-3" style="text-align: left; margin-top: 5px;float:left;">
-                                        <input type="submit" name="userEduInsertSubmit"  class="btn btn-primary" id="add-row" value="Нэмэх">
+                                    <div class="col-md-3" style="text-align: left; margin-top: 5px;">
+                                        <input type="submit" name="userEduInsertSubmit"  class="btn btn-primary" id="add-row">
                                     </div>
                                 </div>
                             </div>
 
-                           
+                            <div class="container">
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th style="color: black; width: 50px;">All <input type="checkbox" id="select-all"></th>
-                                            <th style="color: black;">Сургууль</th>
-                                            <th style="color: black;">Чиглэл</th>
-                                            <th style="color: black;">Элссэн он</th>
-                                            <th style="color: black;">Төгссөн он</th>
+                                            <th>All <input type="checkbox" id="select-all"></th>
+                                            <th>Сургууль</th>
+                                            <th>Чиглэл</th>
+                                            <th>Элссэн он</th>
+                                            <th>Төгссөн он</th>
                                         </tr>
                                     </thead>
                                     <tbody id="table">
@@ -202,10 +174,14 @@ input{
                                         {% endfor %}          
                                 </table>
                                 <button class="remove-row" id="remove-row">Remove row</button>
-                            </form>
+                            </div>
                         </div>
+                    </form>
                     </body>
-                             <!-- ############################################################### -->
+
+    </html>
+    <!-- ############################################################### -->
+    </div>
     </div>
     </div>
     <div class="wrapper2">
