@@ -97,7 +97,6 @@ def wallet1View(request):
             htmlRuu["responseText"] = data["responseText"]
         else:
             htmlRuu["aldaa"] = data["responseText"]
-        print(htmlRuu["responseText"])
     #  end makeTransaction
     serviceZam = "http://whoisb.mandakh.org/getTransactionLog/"
     id = request.session['userId']
