@@ -121,31 +121,32 @@
                     <!-- ############################################################### -->
 
                     <h1>Education Information </h1>
+                    <b>{{aldaaniiMedegdel}}</b>
                     </head>
 
                     <body>
-                        <form action="" method="post" name="insertButton">
+                        <form action="" method="post" name="userEduInsertForm">
                         <div class="container">
                             <div class="form-div">
                                     {% csrf_token %}
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <input type="text" class="form-control" id="education" placeholder="Сургуулийн нэр">
+                                        <input type="text" name="education" class="form-control" id="education" placeholder="Сургуулийн нэр">
                                     </div>
                                     <div class="col-md-3">
-                                        <input type="text" class="form-control" id="direction"
+                                        <input type="text" name="direction" class="form-control" id="direction"
                                             placeholder="Ямар чиглэлээр суралцсан бэ?">
                                     </div>
                                     <div class="col-md-3">
-                                        <input type="text" class="form-control" id="elssenOn"
+                                        <input type="text" name="elssenOn" class="form-control" id="elssenOn"
                                             placeholder="Суралцаж эхэлсэн он">
                                     </div>
                                     <div class="col-md-3">
-                                        <input type="text" class="form-control" id="tugssunOn"
+                                        <input type="text" name="tugssunOn" class="form-control" id="tugssunOn"
                                             placeholder="Суралцаж төгссөн он">
                                     </div>
                                     <div class="col-md-3" style="text-align: left; margin-top: 5px;">
-                                        <button class="btn btn-primary" id="add-row">Add</button>
+                                        <input type="submit" name="userEduInsertSubmit"  class="btn btn-primary" id="add-row">
                                     </div>
                                 </div>
                             </div>
@@ -162,14 +163,15 @@
                                         </tr>
                                     </thead>
                                     <tbody id="table">
+                                        {% for user in myData %}
                                         <tr>
-                                            <td><input type="checkbox" id="select-row"></td>
-                                            <td>{{education}}</td>
-                                            <td>{{direction}}</td>
-                                            <td>{{elssenOn}}</td>
-                                            <td>{{tugssunOn}}</td>
+                                          <td>{{ user.dugaar }}</td>
+                                          <td>{{ user.education }}</td>
+                                          <td>{{ user.direction }}</td>
+                                          <td>{{ user.elssenOn }}</td>
+                                          <td>{{ user.duussanOn }}</td>
                                         </tr>
-                                    </tbody>
+                                        {% endfor %}          
                                 </table>
                                 <button class="remove-row" id="remove-row">Remove row</button>
                             </div>
