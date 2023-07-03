@@ -120,55 +120,7 @@
                     <div class="main4">
                     <!-- ############################################################### -->
 
-                    <h1>Education Information</h1>
-                    <script>
-                        $(document).ready(function () {
-                            // add new row
-                            $("#add-row").click(function () {
-                                var education = $("#education").val();
-                                var direction = $("#direction").val();
-                                var elssenOn = $("#elssenOn").val();
-                                var tugssunOn = $("#tugssunOn").val();
-                                $(".table tbody tr").last().after(
-                                    '<tr class="fadetext">' +
-                                    '<td><input type="checkbox" id="select-row"></td>' +
-                                    '<td>' + education + '</td>' +
-                                    '<td>' + direction + '</td>' +
-                                    '<td>' + elssenOn + '</td>' +
-                                    '<td>' + tugssunOn + '</td>' +
-                                    '</tr>'
-                                );
-                            })
-
-                            // select all checkbox
-                            $("#select-all").click(function () {
-                                var isSelected = $(this).is(":checked");
-                                if (isSelected) {
-                                    $(".table tbody tr").each(function () {
-                                        $(this).find('input[type="checkbox"]').prop('checked', true);
-                                    })
-                                } else {
-                                    $(".table tbody tr").each(function () {
-                                        $(this).find('input[type="checkbox"]').prop('checked', false);
-                                    })
-                                }
-                            });
-
-                            //Remove selected rows
-                            $("#remove-row").click(function () {
-                                $(".table tbody tr").each(function () {
-                                    var isChecked = $(this).find('input[type="checkbox"]').is(":checked");
-                                    var tableSize = $(".table tbody tr").length;
-                                    if (tableSize == 1) {
-                                        alert('all rows cannot be deleted.');
-                                    } else if (isChecked) {
-                                        $(this).remove();
-
-                                    }
-                                });
-                            });
-                        })
-                    </script>
+                    <h1>Education Information </h1>
                     </head>
 
                     <body>
