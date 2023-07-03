@@ -34,7 +34,6 @@ def dashboardViews(request):
                                 data=json.dumps(requestJSON),
                                 headers={'Content-Type': 'application/json'} )
             jsonsData = r.json()
-            # print(jsonsData)
             # responseCode шалгах
             # if(jsonsData["responseCode"]) != 555:
             if(jsonsData["responseCode"]) != 200:
@@ -56,16 +55,20 @@ def dashboardViews(request):
                 data = data[0]
             htmlData["userData"] = {}
             bvrenEsekh = 1
-            if(length[i] == 1):
-                for element in data:
-                    if not ((str(element) == "id") or (str(element) == "user_id")):
-                        element = str(element)
-                        if ((data[element] is None) or (data[element] == "None")):
-                            bvrenEsekh = 0
-                            htmlData["userData"][element] = " дутуу байна."
-                        else:
-                            htmlData["userData"][element] = data[element]
-                            continue
+            if(len(data) == 0 or len(data) == 1):
+                bvrenEsekh = 0
+                htmlData["userData"][element] = " дутуу байна."
+            else:
+                if(length[i] == 1):
+                    for element in data:
+                        if not ((str(element) == "id") or (str(element) == "user_id")):
+                            element = str(element)
+                            if ((data[element] is None) or (data[element] == "None")):
+                                bvrenEsekh = 0
+                                htmlData["userData"][element] = " дутуу байна."
+                            else:
+                                htmlData["userData"][element] = data[element]
+                                continue
             if i == 0: 
                 htmlData["userData"]["garchig"] = "Нэмэлт мэдээлэл"
                 if htmlData["userData"]["huis"] == 1:
@@ -84,6 +87,6 @@ def dashboardViews(request):
     except Exception as e:
         htmlData["aldaaniiMedeelel"] = "Уучлаарай, одоогоор энэ хуудсан дээрх мэдээллийг харуулах боломжгүй байна."
         # htmlData["userData1"] = ""
-        return render(request, "dashboard/dashboard.html", htmlData)
+        # return render(request, "dashboard/dashboard.html", htmlData)
     return render(request, "dashboard/dashboard.html", htmlData)
 ##############################################################################

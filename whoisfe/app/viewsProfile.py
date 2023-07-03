@@ -197,7 +197,7 @@ def profileFamily(request):
             data = responseJson['data']    
 
             for i in range(0,len(data)):
-                data[i]["dugaar"] = i+1
+                data[i]["dugaarS"] = i+1
             htmlRuuDamjuulahUtguud["data"] = data       
             print(data)
         else:
