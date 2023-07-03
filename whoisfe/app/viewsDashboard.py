@@ -37,8 +37,8 @@ def dashboardViews(request):
             # responseCode шалгах
             if(jsonsData["responseCode"]) != 200:
                 htmlData["aldaaniiMedeelel"] = jsonsData["responseText"]
-                htmlData["userData1"] = ""
-                return render(request, "dashboard/dashboard.html", htmlData)
+                # htmlData["userData1"] = ""
+                # return render(request, "dashboard/dashboard.html", htmlData)
             # data гэх хувьсагчид мэдээллээ авч байна.
             data = jsonsData[str(list(jsonsData)[2])]
             array = []
@@ -80,7 +80,7 @@ def dashboardViews(request):
             htmlData["userData1"].append(htmlData["userData"])
     except Exception as e:
         htmlData["aldaaniiMedeelel"] = "Уучлаарай, одоогоор энэ хуудсан дээрх мэдээллийг харуулах боломжгүй байна."
-        htmlData["userData1"] = ""
-        return render(request, "dashboard/dashboard.html", htmlData)
+        # htmlData["userData1"] = ""
+        # return render(request, "dashboard/dashboard.html", htmlData)
     return render(request, "dashboard/dashboard.html", htmlData)
 ##############################################################################

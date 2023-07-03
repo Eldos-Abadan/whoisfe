@@ -74,29 +74,29 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Dashboard</a>
+              {% comment %} <a class="navbar-brand" href="#">Dashboard</a> {% endcomment %}
             </div>
             <div class="collapse navbar-collapse">
               <ul class="nav navbar-nav navbar-left">
                 <li>
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-dashboard"></i>
-                    <p class="hidden-lg hidden-md">Dashboard</p>
+                    {% comment %} <i class="fa fa-dashboard"></i> {% endcomment %}
+                    {% comment %} <p class="hidden-lg hidden-md">Dashboard</p> {% endcomment %}
                   </a>
                 </li>
                 <li>
                   <a href="">
-                    <i class="fa fa-search"></i>
-                    <p class="hidden-lg hidden-md">Search</p>
+                    {% comment %} <i class="fa fa-search"></i>
+                    <p class="hidden-lg hidden-md">Search</p> {% endcomment %}
                   </a>
                 </li>
               </ul>
 
               <ul class="nav navbar-nav navbar-right">
                 <li>
-                  <a href="{% url 'profileMain'%}">
-                    <p>Account</p>
-                  </a>
+                  {% comment %} <a href="{% url 'profileMain'%}">
+                    <p>Account</p> {% endcomment %}
+                  {% comment %} </a> {% endcomment %}
                 </li>
                 {% include "../includes/logout.html" %}
                 <li class="separator hidden-lg"></li>
@@ -108,11 +108,11 @@
         
         <form id="transaction-form" method="post" name="uldegdel">
           {% csrf_token %}
-            <h1>Dashboard</h1>
+            <h1>&emsp;&emsp;&emsp;&emsp;&emsp;Хэрэглэгчийн самбар</h1>
             <hr />
             <main>
               <section id="about">
-                <span style="color:blue;">{{aldaaniiMedeelel}}</span>
+                {% comment %} <span style="color:blue;">{{aldaaniiMedeelel}}</span> {% endcomment %}
                 {% for user in userData1 %}
                     <h3>{{user.garchig}}</h3>
                     {% if user.bvrenEsekh == 1 %}
