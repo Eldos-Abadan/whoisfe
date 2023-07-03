@@ -42,47 +42,60 @@
         
           <div class="main3">
           <h1>Ажлын туршлага</h1>
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="form-floating mt-3">
+                <span style="color:#0000FF;">
+                  {{ responseText }}
+                  {{aldaaniiMedeglel}}
+                </span>
+              </div>
+            </div>
+          </div>
           <form action="" method="post" name="insertButton">
           {% csrf_token %}
         <div class="form-div">
           <div class="row">
             <div class="col-md-3">
+              <label style="padding-left: 40px;">Байгууллагын нэр</label>
               <input type="text"  name="companyNer" class="form-control" id="edu" placeholder="Байгууллагын нэр"> 
-
             </div>
             <div class="col-md-3">
+              <label style="padding-left: 60px;">Албан тушаал</label>
               <input type="text" name="albanTushaal" class="form-control" id="direction" placeholder="Эрхэлж байсан албан тушаал">
             </div>
             <div class="col-md-3">
+              <label style="padding-left: 60px;">Эхэлсэн он</label>
               <input type="date" name="date1" class="form-control" id="start-year" placeholder="Ажиллаж эхэлсэн он">
             </div>
             <div class="col-md-3">
+              <label style="padding-left: 60px;">Дууссан он</label>
               <input type="date" name="date2" class="form-control" id="end-year" placeholder="Ажиллаж дууссан он">
             </div>
-            <br><br>
-            <div class="col-md-3" style="text-align: right;">
-           </div>
           </div>
         </div>
-        <input type="submit"  value="Нэмэх" id="insertButton" name="insertButton" style="float: right;">
+        <input type="submit"  value="Нэмэх" id="insertButton" name="insertButton" style="float: right;margin-top: 5px;">
+        <h4 style="margin-bottom:-30px ;">Ажлын туршлагын жагсаалт</h4>
         <table class="table">
           <thead>
             <tr>
-              <th>S.Nu</th>
-              <th>Байгууллага</th>
-              <th>Албан тушаал</th>
-              <th>Эхэлсэн огноо</th>
-              <th>Дууссан огноо</th>
+              <th style="color: black;text-align: center;">S.Nu</th>
+              <th style="color: black;">Байгууллага</th>
+              <th style="color: black;">Албан тушаал</th>
+              <th style="color: black;">Эхэлсэн огноо</th>
+              <th style="color: black;">Дууссан огноо</th>
+              <th style="color: black;">Устгах</th>
             </tr>
           </thead>
           <tbody id="table">
             {% for user in myData %}
             <tr>
-              <td>{{ user.dugaar }}</td>
+              <td style="text-align: center;">{{ user.dugaar }}</td>
               <td>{{ user.ajil }}</td>
               <td>{{ user.company }}</td>
               <td>{{ user.ehelsen }}</td>
               <td>{{ user.duussan }}</td>
+              <td><a href="" onclick="if (!confirm('Та итгэлтэй байна уу?')) { return false }"><i class="fa fa-trash" style="font-size: 17px; color:#b85ee6;padding-left: 34px;"></i></a></td>
             </tr>
             {% endfor %}          
           </tbody>
