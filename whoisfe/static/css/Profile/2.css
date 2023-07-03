@@ -362,16 +362,7 @@ section {
   height: 30px;
   border-radius: 5px;
 }
-#userInfoUpdateSubmit{
-  font-size: 15px;
-  color: black;
-  background: none;
-  border: solid 2px rgb(206, 49, 101);
-  border-radius: 5px;
-  text-align: justify;
-  width: 90px;
-  height: 40px;
-}
+
 #save{
   font-size: 15px;
   color: black;
@@ -392,35 +383,7 @@ section {
   width:80px;
   height: 35px;
 }
-#userInfoUpdateSubmit:hover{
-  font-size: 15px;
-  color: rgb(206, 49, 101);
-  background: none;
-  border: solid 2px black;
-  border-radius: 5px;
-  text-align: justify;
-  width: 90px;
-  height: 40px;
-}
-#changePassSubmit, #userNemeltUpdateSubmit{
-  background-color: #ad57ea;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-}
-#changePassSubmit, #userNemeltUpdateSubmit:hover{
-  font-size: 15px;
-  color: rgb(206, 49, 101);
-  background: none;
-  border: solid 2px black;
-  border-radius: 5px;
-  text-align: justify;
-  width: 120px;
-  height: 40px;
-}
+
 label{
  font-size: 15px;
 }
@@ -522,12 +485,22 @@ input{
   background-color: rgb(146, 12, 146);
   color: white;
   border-radius: 5px;
- 
 }
 .gender{
   width: 200px;
 }
 h1{
   text-align: center;
+}
+input[type=submit] {
+  background-color: #ad57ea;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+}
+
+input[type=submit]:hover {
+  background-color: #b85ee6;
 }
 
