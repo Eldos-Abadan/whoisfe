@@ -61,7 +61,7 @@
       border-radius: 20px;
         }
 
-        h1 {
+        h2 {
             text-align: center;
             color: #333333;
         }
@@ -89,7 +89,7 @@
             border-radius: 4px;
             box-sizing: border-box;
             margin-bottom: 10px;
-            border: 1px solid rgb(138, 20, 138);
+            border: 1px solid #ebb704;
         }
 
         .form-container input[type="submit"] {
@@ -201,7 +201,7 @@
               <form id="transaction-form" method="post" name="uldegdel">
                 {% csrf_token %}
                 <h3>{{ responseText }}</h3>
-                <h1>Гүйлгээ хийх</h1>
+                <h2>Гүйлгээ хийх</h2>
                     <label for="description">Утга:</label>
                     <input type="text" id="description" name="utga" required><br>
     
@@ -219,7 +219,7 @@
                     
                     <input type="submit" value="Гүйлгээ хийх" name="gvilgeeSubmit">
 
-                    <span style="color: #ff0000"> {{ aldaa }} </span>
+                   
                     
                   </div>
                   
