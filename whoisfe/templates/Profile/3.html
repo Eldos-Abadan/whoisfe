@@ -82,21 +82,23 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th style="color: black;width: 50px;">S.Nu</th>
-                                            <th style="color: black;">Сургууль</th>
-                                            <th style="color: black;">Чиглэл</th>
-                                            <th style="color: black;">Элссэн он</th>
-                                            <th style="color: black;">Төгссөн он</th>
+                                            <th style="color: white;width: 50px;">S.Nu</th>
+                                            <th style="color: white; text-align: center; ">Сургууль</th>
+                                            <th style="color: white; text-align: center; ">Чиглэл</th>
+                                            <th style="color: white; text-align: center; ">Элссэн он</th>
+                                            <th style="color: white; text-align: center; ">Төгссөн он</th>
+                                            <th style="color: white; text-align: center; ">Устгах</th>
                                         </tr>
                                     </thead>
                                     <tbody id="table">
                                         {% for user in myData %}
                                         <tr>
-                                          <td>{{ user.dugaar }}</td>
+                                        <td style="text-align: center;">{{ user.dugaar }}</td>
                                           <td>{{ user.education }}</td>
                                           <td>{{ user.direction }}</td>
                                           <td>{{ user.elssenOn }}</td>
                                           <td>{{ user.duussanOn }}</td>
+                                          <td><a href="{% url 'profileEduDel' id=user.id %}" onclick="if (!confirm('Та устгахдаа итгэлтэй байна уу?')) { return false }"><i class="fa fa-trash" style="font-size: 17px; color:#b85ee6;padding-left: 34px;"></i></a></td>
                                         </tr>
                                         {% endfor %}          
                                 </table>

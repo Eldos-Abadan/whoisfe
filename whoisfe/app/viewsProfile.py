@@ -506,3 +506,45 @@ def profileEdu(request):
 
     return render(request, "Profile/3.html", htmlRuuDamjuulahUtguud)
 #   profileEdu
+
+#del edu
+def profileEduDel(request,id):
+    checkSession(request)
+    if request.session['beegii'] == 0:
+        return redirect("homeView")
+    htmlRuuDamjuulahUtguud = {}
+    htmlRuuDamjuulahUtguud["responseText"] = ""
+    htmlRuuDamjuulahUtguud["textColor"] = "#00FF00"
+    # bolowsrol ustgah start
+    requestJSON = {
+        "id": id           
+    }
+    r = requests.get("http://whoisb.mandakh.org/userEduDel/",
+                        data=json.dumps(requestJSON),
+                        headers={'Content-Type': 'application/json'})
+    responseJson = r.json()
+    htmlRuuDamjuulahUtguud["responseText"] = htmlRuuDamjuulahUtguud["responseText"]+"|"+responseJson['responseText']
+    # Medeelel ustgah end    
+    # Medeelel haruulah start
+    requestJSON = {
+        "user_id": request.session['userId']            
+    }
+    r = requests.post("http://whoisb.mandakh.org/userEduGet/",
+                        data=json.dumps(requestJSON),
+                        headers={'Content-Type': 'application/json'})
+    try:
+        responseJson = r.json()
+        if responseJson['responseCode'] == 200:
+            myData = responseJson['eduData']    
+
+            for i in range(0,len(myData)):
+                myData[i]["dugaar"] = i+1
+            htmlRuuDamjuulahUtguud["myData"] = myData        
+            print(myData)
+        else:
+            htmlRuuDamjuulahUtguud["aldaaniiMedegdel"] = responseJson['responseText']
+    except:
+        htmlRuuDamjuulahUtguud["aldaaniiMedegdel"] = "Ямар 1 балай алдаа"
+
+
+    return render(request, "Profile/3.html", htmlRuuDamjuulahUtguud)
