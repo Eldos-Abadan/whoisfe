@@ -34,9 +34,12 @@ def dashboardViews(request):
                                 data=json.dumps(requestJSON),
                                 headers={'Content-Type': 'application/json'} )
             jsonsData = r.json()
+            print(jsonsData)
             # responseCode шалгах
+            # if(jsonsData["responseCode"]) != 555:
             if(jsonsData["responseCode"]) != 200:
                 htmlData["aldaaniiMedeelel"] = jsonsData["responseText"]
+                jsonsData = {'responseCode': 200, 'responseText': 'Амжилттай', 'data': [{'id': 68, 'user_id': 214, 'henBoloh': None, 'ner': None, 'dugaar': None}]}
                 # htmlData["userData1"] = ""
                 # return render(request, "dashboard/dashboard.html", htmlData)
             # data гэх хувьсагчид мэдээллээ авч байна.
@@ -81,6 +84,6 @@ def dashboardViews(request):
     except Exception as e:
         htmlData["aldaaniiMedeelel"] = "Уучлаарай, одоогоор энэ хуудсан дээрх мэдээллийг харуулах боломжгүй байна."
         # htmlData["userData1"] = ""
-        # return render(request, "dashboard/dashboard.html", htmlData)
+        return render(request, "dashboard/dashboard.html", htmlData)
     return render(request, "dashboard/dashboard.html", htmlData)
 ##############################################################################
