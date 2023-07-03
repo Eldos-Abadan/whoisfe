@@ -34,7 +34,7 @@ def dashboardViews(request):
                                 data=json.dumps(requestJSON),
                                 headers={'Content-Type': 'application/json'} )
             jsonsData = r.json()
-            print(jsonsData)
+            # print(jsonsData)
             # responseCode шалгах
             # if(jsonsData["responseCode"]) != 555:
             if(jsonsData["responseCode"]) != 200:
