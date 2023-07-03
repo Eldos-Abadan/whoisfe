@@ -272,8 +272,9 @@ button {
   #cc-contact input[type="email"],
   #cc-contact input[type="tel"],
   #cc-contact input[type="password"],
+  #cc-contact input[type="date"],
   #cc-contact textarea {
-    width: 500px;
+    width: 100%;
     border: 1px solid #ebb704;
     margin: 0 0 5px;
     padding: 10px;
@@ -501,7 +502,7 @@ button {
   .main2{
     border: 3px solid rgb(138, 20, 138);
     border-radius: 20px;
-    width: 90%;
+    width: 1000px;
     height: cover;
     margin-top: 90px;
     padding-left: 30px;

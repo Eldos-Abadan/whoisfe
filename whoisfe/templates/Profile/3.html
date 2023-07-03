@@ -114,121 +114,78 @@
     <div class="wrapper">
         <div class="sidebar" data-color="purple" data-image="{% static '/images/sidebar-5.jpg'%}">
             {% include "../includes/menu.html" %}
-        </div>
+        </div> <br> <br> <br><br>
         <div class="container">
             <div class="wrapper">
-                <!-- ############################################################### -->
+                    <div class="main4">
+                    <!-- ############################################################### -->
 
-                <h1>Education Information</h1>
-                <script>
-                    $(document).ready(function () {
-                        // add new row
-                        $("#add-row").click(function () {
-                            var education = $("#education").val();
-                            var direction = $("#direction").val();
-                            var elssenOn = $("#elssenOn").val();
-                            var tugssunOn = $("#tugssunOn").val();
-                            $(".table tbody tr").last().after(
-                                '<tr class="fadetext">' +
-                                '<td><input type="checkbox" id="select-row"></td>' +
-                                '<td>' + education + '</td>' +
-                                '<td>' + direction + '</td>' +
-                                '<td>' + elssenOn + '</td>' +
-                                '<td>' + tugssunOn + '</td>' +
-                                '</tr>'
-                            );
-                        })
+                    <h1>Education Information </h1>
+                    </head>
 
-                        // select all checkbox
-                        $("#select-all").click(function () {
-                            var isSelected = $(this).is(":checked");
-                            if (isSelected) {
-                                $(".table tbody tr").each(function () {
-                                    $(this).find('input[type="checkbox"]').prop('checked', true);
-                                })
-                            } else {
-                                $(".table tbody tr").each(function () {
-                                    $(this).find('input[type="checkbox"]').prop('checked', false);
-                                })
-                            }
-                        });
-
-                        //Remove selected rows
-                        $("#remove-row").click(function () {
-                            $(".table tbody tr").each(function () {
-                                var isChecked = $(this).find('input[type="checkbox"]').is(":checked");
-                                var tableSize = $(".table tbody tr").length;
-                                if (tableSize == 1) {
-                                    alert('all rows cannot be deleted.');
-                                } else if (isChecked) {
-                                    $(this).remove();
-
-                                }
-                            });
-                        });
-                    })
-                </script>
-                </head>
-
-                <body>
-                    <div class="container">
-                        <div class="form-div">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <input type="text" class="form-control" id="education" placeholder="Сургуулийн нэр">
-                                </div>
-                                <div class="col-md-3">
-                                    <input type="text" class="form-control" id="direction"
-                                        placeholder="Ямар чиглэлээр суралцсан бэ?">
-                                </div>
-                                <div class="col-md-3">
-                                    <input type="text" class="form-control" id="elssenOn"
-                                        placeholder="Суралцаж эхэлсэн он">
-                                </div>
-                                <div class="col-md-3">
-                                    <input type="text" class="form-control" id="tugssunOn"
-                                        placeholder="Суралцаж төгссөн он">
-                                </div>
-                                <div class="col-md-3" style="text-align: left; margin-top: 5px;">
-                                    <button class="btn btn-primary" id="add-row">Add</button>
+                    <body>
+                        <form action="" method="post" name="insertButton">
+                        <div class="container">
+                            <div class="form-div">
+                                    {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" id="education" placeholder="Сургуулийн нэр">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" id="direction"
+                                            placeholder="Ямар чиглэлээр суралцсан бэ?">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" id="elssenOn"
+                                            placeholder="Суралцаж эхэлсэн он">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" id="tugssunOn"
+                                            placeholder="Суралцаж төгссөн он">
+                                    </div>
+                                    <div class="col-md-3" style="text-align: left; margin-top: 5px;">
+                                        <button class="btn btn-primary" id="add-row">Add</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="container">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>All <input type="checkbox" id="select-all"></th>
-                                        <th>Сургууль</th>
-                                        <th>Чиглэл</th>
-                                        <th>Элссэн он</th>
-                                        <th>Төгссөн он</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><input type="checkbox" id="select-row"></td>
-                                        <td>Example</td>
-                                        <td>Example</td>
-                                        <td>Example</td>
-                                        <td>Example</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <button class="remove-row" id="remove-row">Remove row</button>
+                            <div class="container">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>All <input type="checkbox" id="select-all"></th>
+                                            <th>Сургууль</th>
+                                            <th>Чиглэл</th>
+                                            <th>Элссэн он</th>
+                                            <th>Төгссөн он</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="table">
+                                        <tr>
+                                            <td><input type="checkbox" id="select-row"></td>
+                                            <td>{{education}}</td>
+                                            <td>{{direction}}</td>
+                                            <td>{{elssenOn}}</td>
+                                            <td>{{tugssunOn}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button class="remove-row" id="remove-row">Remove row</button>
+                            </div>
                         </div>
-                    </div>
-                </body>
+                    </form>
+                    </body>
 
-</html>
-<!-- ############################################################### -->
-</div>
-</div>
-</div>
-<div class="wrapper2">
-    <div class="footer">
-        {% include "../includes/footer.html" %}
+    </html>
+    <!-- ############################################################### -->
+    </div>
+    </div>
+    </div>
+    <div class="wrapper2">
+        <div class="footer">
+            {% include "../includes/footer.html" %}
+        </div>
     </div>
 </div>
 
