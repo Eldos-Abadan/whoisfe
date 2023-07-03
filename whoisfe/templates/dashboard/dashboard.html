@@ -121,14 +121,30 @@
                       </ul>
                       {% elif user.garchig == "Нэмэлт мэдээлэл"  %}
                       <ul>
+                        {% if user.huis == " дутуу байна."  %}
                         <li>Хүйс: &emsp;&emsp;&emsp;{{user.huis}}</li>
+                        {%endif%}
+                        {% if user.torsonOgnoo == " дутуу байна."  %}
                         <li>Төрсөн он, сар, өдөр: &emsp;{{user.torsonOgnoo}}</li>
-                        <li>Регистерийн дугаар:&emsp; {{user.regDug}}</li>
+                        {%endif%}
+                        {% if user.regDug == " дутуу байна."  %}
+                        <li>Регистерийн дугаар: &emsp; {{user.regDug}}</li>
+                        {%endif%}
+                        {% if user.dugaar == " дутуу байна."  %}
                         <li>Утасны дугаар: &emsp;{{user.dugaar}}</li>
+                        {%endif%}
+                        {% if user.irgenshil == " дутуу байна."  %}
                         <li>Иргэншил: &emsp;{{user.irgenshil}}</li>
+                        {%endif%}
+                        {% if user.ysUndes == " дутуу байна."  %}
                         <li>Яс үндэс: &emsp;{{user.ysUndes}}</li>
+                        {%endif%}
+                        {% if user.hayg == " дутуу байна."  %}
                         <li>Гэрийн хаяг:&emsp; {{user.hayg}}</li>
+                        {%endif%}
+                        {% if user.hobby == " дутуу байна."  %}
                         <li>Хобби:&emsp; {{user.hobby}}</li>
+                        {%endif%}
                       </ul>
                         {% elif user.garchig == "Гэр бүлийн мэдээлэл"  %}
                           <ul style="list-style-type: none">
