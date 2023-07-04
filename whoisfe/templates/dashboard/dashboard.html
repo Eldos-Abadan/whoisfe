@@ -14,6 +14,15 @@
       #cor{
         color:red;
       }
+      #about{
+        border: 3px solid rgb(138, 20, 138);
+        border-radius: 20px;
+        width: 1000px;
+        height: cover;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 10px;
+      }
     </style>
 
     <meta
@@ -128,30 +137,30 @@
                         <li><span id = "correct">✔</span>Та мэдээллээ оруулсан байна.</li>
                       </ul>
                       {% elif user.garchig == "Нэмэлт мэдээлэл"  %}
-                      <ul>
+                      <ul style="list-style-type: none">
                         {% if user.huis == " дутуу байна."  %}
-                        <li>Хүйс: &emsp;&emsp;&emsp;{{user.huis}}</li>
+                        <li><span id = "cor">✖</span>Хүйс: &emsp;&emsp;&emsp;{{user.huis}}</li>
                         {%endif%}
                         {% if user.torsonOgnoo == " дутуу байна."  %}
-                        <li>Төрсөн он, сар, өдөр: &emsp;{{user.torsonOgnoo}}</li>
+                        <li><span id = "cor">✖</span>Төрсөн он, сар, өдөр: &emsp;{{user.torsonOgnoo}}</li>
                         {%endif%}
                         {% if user.regDug == " дутуу байна."  %}
-                        <li>Регистерийн дугаар: &emsp; {{user.regDug}}</li>
+                        <li><span id = "cor">✖</span>Регистерийн дугаар: &emsp; {{user.regDug}}</li>
                         {%endif%}
                         {% if user.dugaar == " дутуу байна."  %}
-                        <li>Утасны дугаар: &emsp;{{user.dugaar}}</li>
+                        <li><span id = "cor">✖</span>Утасны дугаар: &emsp;{{user.dugaar}}</li>
                         {%endif%}
                         {% if user.irgenshil == " дутуу байна."  %}
-                        <li>Иргэншил: &emsp;{{user.irgenshil}}</li>
+                        <li><span id = "cor">✖</span>Иргэншил: &emsp;{{user.irgenshil}}</li>
                         {%endif%}
                         {% if user.ysUndes == " дутуу байна."  %}
-                        <li>Яс үндэс: &emsp;{{user.ysUndes}}</li>
+                        <li><span id = "cor">✖</span>Яс үндэс: &emsp;{{user.ysUndes}}</li>
                         {%endif%}
                         {% if user.hayg == " дутуу байна."  %}
-                        <li>Гэрийн хаяг:&emsp; {{user.hayg}}</li>
+                        <li><span id = "cor">✖</span>Гэрийн хаяг:&emsp; {{user.hayg}}</li>
                         {%endif%}
                         {% if user.hobby == " дутуу байна."  %}
-                        <li>Хобби:&emsp; {{user.hobby}}</li>
+                        <li><span id = "cor">✖</span>Хобби:&emsp; {{user.hobby}}</li>
                         {%endif%}
                       </ul>
                         {% elif user.garchig == "Гэр бүлийн мэдээлэл"  %}

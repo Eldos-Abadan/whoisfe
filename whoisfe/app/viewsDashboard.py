@@ -44,6 +44,11 @@ def dashboardViews(request):
             # data гэх хувьсагчид мэдээллээ авч байна.
             data = jsonsData[str(list(jsonsData)[2])]
             array = []
+            if serviceHayag[i] == "/getSkill/":
+                if (len(data) == 1) or (len(data) == 0):
+                    data =  [{'id': 68, 'user_id': 214, 'henBoloh': None, 'ner': None, 'dugaar': None}]
+                else:
+                    data =  {'responseCode': 200, 'responseText': 'Амжилттай', 'data': [{'id': 68, 'user_id': 214, 'henBoloh': "sdf", 'ner': "sdf", 'dugaar': "sdf"}]}
             # Хэрэв dict, болон list хэлбэрээр ирвэл нэг list болгон салгаж байна.
             if(type(data) != list):
                 array.append(data)
@@ -53,11 +58,6 @@ def dashboardViews(request):
                     length[i] = len(data)
             else:
                 data = data[0]
-            if serviceHayag[i] == "/getSkill/":
-                if (len(data) == 1) or (len(data) == 0):
-                    data =  {'responseCode': 200, 'responseText': 'Амжилттай', 'data': [{'id': 68, 'user_id': 214, 'henBoloh': None, 'ner': None, 'dugaar': None}]}
-                else:
-                    data =  {'responseCode': 200, 'responseText': 'Амжилттай', 'data': [{'id': 68, 'user_id': 214, 'henBoloh': "sdf", 'ner': "sdf", 'dugaar': "sdf"}]}
             htmlData["userData"] = {}
             bvrenEsekh = 1
             if(len(data) == 0 or len(data) == 1):
@@ -68,7 +68,7 @@ def dashboardViews(request):
                     for element in data:
                         if not ((str(element) == "id") or (str(element) == "user_id")):
                             element = str(element)
-                            if ((data[element] is None) or (data[element] == "None")):
+                            if ((data[element] is None) or (data[element] == "None") or (data[element] == "")):
                                 if(str(element) != "zurag"):
                                     bvrenEsekh = 0
                                 htmlData["userData"][element] = " дутуу байна."
