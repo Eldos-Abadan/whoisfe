@@ -15,7 +15,7 @@
 
   <link href="{% static '/css/dashboard/bootstrap.min.css'%}" rel="stylesheet" />
   <link href="{% static '/css/Profile/1.css' %}" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="{% static '/css/ae.css'%}">
+  <!-- <link rel="stylesheet" href="{% static '/css/ae.css'%}"> -->
   <link href="{% static '/css/dashboard/animate.min.css'%}" rel="stylesheet" />
   <link href="{% static '/css/dashboard/light-bootstrap-dashboard.css'%}" rel="stylesheet" />
   <link href="{% static '/css/dashboard/demo.css'%}" rel="stylesheet" />
@@ -53,6 +53,13 @@
 
     .table tbody tr:active {
       box-shadow: 0px 0px 5px black;
+    }
+
+    .FamilyInfo {
+      float: left;
+      width: 500px;
+      margin-right: 50px;
+      margin-left: -70px;
     }
 
     .FamilyInfoBorder2 {
@@ -93,55 +100,51 @@
                 <div class="FamilyInfoBorder2">
                   {% csrf_token %}
                   <h1>Гэр бүлийн мэдээлэл</h1>
-                  <div class="add">
-                    <div class="add__container">
-                      <div class="row">
-                        <div class="col-sm-5">
-                          <div class="form-floating mt-3">
-                            <label for="floatingInput">Таны хэн болох:</label>
-                            <input list="henBoloh" name="henBoloh" class="form-control" step="10">
-                            <datalist>
-                              <option name="henBoloh1" value="Өвөө"></option>
-                              <option name="henBoloh2" value="Эмээ"></option>
-                              <option name="henBoloh3" value="Аав"></option>
-                              <option name="henBoloh4" value="Ээж"></option>
-                              <option name="henBoloh5" value="Ах"></option>
-                              <option name="henBoloh6" value="Эгч"></option>
-                              <option name="henBoloh7" value="Дүү"></option>
-                              <option name="henBoloh8" value="Найз"></option>
-                              <option name="henBoloh9" value="Нөхөр"></option>
-                              <option name="henBoloh10" value="Эхнэр"></option>
-                            </datalist>
-                          </div>
-                        </div>
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <div class="form-floating mt-3">
+                        <label for="floatingInput">Таны хэн болох:</label>
+                        <input list="henBoloh" name="henBoloh" class="form-control" step="10">
+                        <datalist>
+                          <option name="henBoloh1" value="Өвөө"></option>
+                          <option name="henBoloh2" value="Эмээ"></option>
+                          <option name="henBoloh3" value="Аав"></option>
+                          <option name="henBoloh4" value="Ээж"></option>
+                          <option name="henBoloh5" value="Ах"></option>
+                          <option name="henBoloh6" value="Эгч"></option>
+                          <option name="henBoloh7" value="Дүү"></option>
+                          <option name="henBoloh8" value="Найз"></option>
+                          <option name="henBoloh9" value="Нөхөр"></option>
+                          <option name="henBoloh10" value="Эхнэр"></option>
+                        </datalist>
                       </div>
-                      <br>
-                      <div class="row">
-                        <div class="col-sm-5">
-                          <div class="form-floating mt-3">
-                            <label for="floatingLname">Нэр</label>
-                            <input type="text" name="ner" class="form-control">
-                          </div>
-                        </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <div class="form-floating mt-3">
+                        <label for="floatingLname">Нэр</label>
+                        <input type="text" name="ner" class="form-control">
                       </div>
+                    </div>
+                  </div>
 
-                      <div class="row">
-                        <div class="col-sm-5">
-                          <div class="form-floating mt-3">
-                            <label for="floatingInput">Утасны дугаар: </label>
-                            <input type="text" name="dugaar" class="form-control" step="10">
-                          </div>
-                        </div>
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <div class="form-floating mt-3">
+                        <label for="floatingInput">Утасны дугаар: </label>
+                        <input type="text" name="dugaar" class="form-control" step="10">
                       </div>
-                      <input type="submit" id="userFamilyIns" name="userFamilyIns" value="Нэмэх">
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <div class="form-floating mt-3">
-                            <span style="color:#0000FF;">
-                              {{ responseText }}
-                            </span>
-                          </div>
-                        </div>
+                    </div>
+                  </div>
+                  <input type="submit" id="userFamilyIns" name="userFamilyIns" value="Нэмэх">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <div class="form-floating mt-3">
+                        <span style="color:#0000FF;">
+                          {{ responseText }}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -162,7 +165,10 @@
                         <td>{{ user.henBoloh }}</td>
                         <td>{{ user.ner }}</td>
                         <td>{{ user.dugaar }}</td>
-                        <td><a href="{% url 'profileFamilyDel' id=user.id %}" onclick="if (!confirm('Та устгахдаа итгэлтэй байна уу?')) { return false }"><i class="fa fa-trash" style="font-size: 17px; color:#b85ee6;padding-left: 34px;"></i></a></td>
+                        <td><a href="{% url 'profileFamilyDel' id=user.id %}"
+                            onclick="if (!confirm('Та устгахдаа итгэлтэй байна уу?')) { return false }"><i
+                              class="fa fa-trash" style="font-size: 17px; color:#b85ee6;padding-left: 34px;"></i></a>
+                        </td>
                       </tr>
                       {% endfor %}
                   </table>

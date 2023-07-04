@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ger bul dahin</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="{% static '/css/blabla/bagshiin_dlgvr.css' %}" rel="stylesheet" type="text/css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="main-panel">
+        <nav class="navbar navbar-default navbar-fixed" style="width: 1200px;">
+            <div class="container-fluid">
+                {% include "../includes/logout.html" %}
+            </div>
+        </nav>
+    </div>
+    <div class="sidebar" data-color="purple" data-image="{% static '/images/sidebar-5.jpg'%}">
+        {% include "../includes/menu.html" %}
+    </div>
+    <div class="wrapper">
+        <form id="cc-contact" class="form-group" action="" method="POST" name="userFamilyIns">
+            <div class="FamilyInfo">
+                <div class="FamilyInfoBorder">
+                    {% csrf_token %}
+                    <h1>Гэр бүлийн мэдээлэл</h1>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="form-floating mt-3">
+                                <label for="floatingInput">Таны хэн болох:</label>
+                                <input list="henBoloh" name="henBoloh" class="form-control" step="10">
+                                <datalist>
+                                    <option name="henBoloh1" value="Өвөө"></option>
+                                    <option name="henBoloh2" value="Эмээ"></option>
+                                    <option name="henBoloh3" value="Аав"></option>
+                                    <option name="henBoloh4" value="Ээж"></option>
+                                    <option name="henBoloh5" value="Ах"></option>
+                                    <option name="henBoloh6" value="Эгч"></option>
+                                    <option name="henBoloh7" value="Дүү"></option>
+                                    <option name="henBoloh8" value="Найз"></option>
+                                    <option name="henBoloh9" value="Нөхөр"></option>
+                                    <option name="henBoloh10" value="Эхнэр"></option>
+                                </datalist>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="form-floating mt-3">
+                                <label for="floatingLname">Нэр</label>
+                                <input type="text" name="ner" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="form-floating mt-3">
+                                <label for="floatingInput">Утасны дугаар: </label>
+                                <input type="text" name="dugaar" class="form-control" step="10">
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" id="userFamilyIns" name="userFamilyIns" style="background-color: #b85ee6;"
+                        value="Нэмэх">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-floating mt-3">
+                                <span style="color:#0000FF;">
+                                    {{ responseText }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th style="color: white;">№</th>
+                                <th style="color: white;">Хэн болох</th>
+                                <th style="color: white;">Нэр</th>
+                                <th style="color: white;">Дугаар</th>
+                                <th style="color: white;"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="table">
+                            {% for user in data %}
+                            <tr>
+                                <td>{{ user.dugaarS }}</td>
+                                <td>{{ user.henBoloh }}</td>
+                                <td>{{ user.ner }}</td>
+                                <td>{{ user.dugaar }}</td>
+                                <td><a href="{% url 'profileFamilyDel' id=user.id %}"
+                                        onclick="if (!confirm('Та устгахдаа итгэлтэй байна уу?')) { return false }"><i
+                                            class="fa fa-trash"
+                                            style="font-size: 17px; color:#b85ee6;padding-left: 34px;"></i></a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="wrapper">
+        <div class="footer">
+            {% include "../includes/footer.html" %}
+        </div>
+    </div>
+
+
+</body>
+<script src="{% static '/js/blabla/bagshiin_dlgvr.js'%}" type="text/javascript"></script>
+
+</html>
