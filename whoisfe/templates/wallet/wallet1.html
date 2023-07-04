@@ -54,18 +54,19 @@
         }
 
         .container {
+          margin-left: 30px;
             
-            margin: 0 auto;
             padding: 20px;
             border: 3px solid rgb(138, 20, 138);
             border-radius: 20px;
-            width: 1000px;
+            width: auto;
             height: cover;
         }
 
         h1 {
             text-align: center;
             color: #333333;
+            
         }
 
         .form-container {
@@ -121,6 +122,7 @@
         .transaction-table th {
             background-color: rgb(138, 20, 138);
             color: #ffffff;
+            border:solid 1px#ffffff;
             
         }
 
@@ -158,7 +160,7 @@
         {% include "../includes/menu.html" %}
       </div>
       <div class="main-panel">
-        <nav class="navbar navbar-default navbar-fixed">
+        <nav class="navbar navbar-default navbar-fixed" style="width: auto;">
           <div class="container-fluid">
             <div class="navbar-header">
               <button
@@ -235,18 +237,18 @@
                 <h2>Гүйлгээний хуулга</h2>
                 <table class="transaction-table" id="transaction-table">
                       <tr>
-                        <th>Нэр</th>
-                        <th>Үлдэгдэл</th>
-                        <th>Мөнгө</th>
+                        <th>Дугаар</th>
+                        <th>Хэнээс</th>
+                        <th>Мөнгөн дүн</th>
                         <th>Огноо</th>
                       </tr>
                       <tbody>
                       {% for user in userData %}
                       <tr>
-                        <td>{{ user.userName }}</td>
-                        <td>{{ user.balance }}</td>
-                        <td>{{ user.amount }}</td>
-                        <td>{{ user.date }}</td>
+                        <td style="width: 30px; font-weight: bold;"><center> {{ user.dugaar }}</center></td>
+                        <td style="font-weight: bold;">{{ user.from }}</td>
+                        <td style="font-weight: bold;">{{ user.amount }}</td>
+                        <td style="font-weight: bold;">{{ user.date }}</td>
                       </tr>
                       {% endfor %}
                     </tbody>
