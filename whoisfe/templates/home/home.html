@@ -1,71 +1,164 @@
-{%load static %}
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Home</title>
-    <link rel="stylesheet" href="{% static '/css/home/home.css'%}">
+  <link rel="stylesheet" href="{% static '/css/home/style.css'%}">
+  <title>Who is</title>
 </head>
-<body>
-<div class="bd">
-    <header>
-        <div class="head1">
-            <img src="{% static '/images/week1/Mandakh.jpg'%}" alt="">
-            <img src="{% static '/images/week1/Sandbox.jpg'%}" alt="">
-            <img src="{% static '/images/week1/l.png'%}" alt="">
-            <h1>Who is</h1>
+<body onload="startTime()">
+    
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <!-- <img src="{% static '/images/week1/l.png'%}" width="10px"> -->
+          <a href="#hero">
+            <h1><span>W</span>ho <span>I</span>s</h1>
+          </a>
         </div>
-        <div class="button">
-            <input type="button" value="Нэвтрэх" onclick="myFunction()">
-            <input type="button" value="Бүртгүүлэх" onclick="myFunctionSignup()">
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <div>
+            <input class="dar" type="button" value="Нэвтрэх" onclick="myFunction()">
+            <input class="dar" type="button" value="Бүртгүүлэх" onclick="myFunctionSignup()">
+          <div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+
+
+  <!-- Hero Section  -->
+  <section id="hero">
+    <div class="hero container">
+      <div>
+        <h1> WHOIS <span></span></h1>
+        <h1>  төслийн баг хамт олон <span></span></h1>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero Section  -->
+
+  <!-- Service Section -->
+  <section id="hero">
+    <div class="hero container">
+      <div>
+        <h1>Манай сайтад тавтай морил</h1>
+      </div>
+    </div>
+  </section>
+  
+  <section id="services">
+    <div class="service-bottom">
+      <div class="service-item">
+        <img src="{% static '/images/week1/l.png'%}" width="120px" height="100">
+        <h2>Танилцуулга</h2>
+        <p> Өөрийн танилцуулга /CV/ болон нэрийн хуудасны бэлэн дизайн template зохион бүтээж техник технологид суурилсан шинэ систем нэвтрүүлэх.</p>
+      </div>
+      <div class="service-item">
+        <!-- <img src="l.png" width="120px" height="100"> -->
+        <h2>Бидний зорилго</h2>
+        <p>Хэрэглэгч өөрийн мэдээллийг оруулаад өөрийн хүссэн загвар дизайн, өнгө төрхийг бүрдүүлсэн танилцуулга /CV/ болон нэрийн хуудсыг цахимаар гарган авах боломжийг олгоно.</p>
+      </div>
+      <div class="service-item">	
+        <img src="{% static '/images/week1/l.png'%}" width="120px" height="100">
+        <h2>Үр дүн</h2>
+        <p> Хүмүүсийн ажлыг хөнгөвчлөн хэзээ ч хаанаас ч байршуулсан системээсээ цахимаар танилцуулгаа хэрэгтэй үедээ татан авч, цаг хугацаагаа хэмнэнэ. </p>
+      </div>
+    </div>
+</section>
+  <!-- End Service Section -->
+
+  <!-- Projects Section -->
+  
+  <section id="projects">
+    
+    <main class="cv">
+      <a href="{% url 'justcv'%}"><img style="max-height: 500px; width: auto;" src="{%static 'images/temp/cvss.png'%}"
+                                         alt=""></a>
+      <a href="{% url 'enku2cv'%}"><img style="max-height: 500px; width: auto;" src="{%static 'images/temp/enkucv2.png'%}"
+                                                      alt=""></a> 
+      <a href="{% url 'enku2cv'%}"><img style="max-height: 500px; width: auto;" src="{%static 'images/11.png'%}"
+                                                        alt=""></a> 
+    </main>
+    <main class="nc">
+      <a href="{% url 'justnc'%}">
+        <img style="max-width: 500px; height: auto;" src="{%static 'images/temp/ncss.png'%}" alt="">
+      </a>
+      <a href="{% url 'mainnc'%}">
+        <img style="max-width: 500px; height: auto;" src="{%static 'images/temp/enkhuss.png'%}" alt="">
+      </a>
+      <a href="{% url 'BC'%}">
+        <img style="max-width: 500px; height: auto;"src="{%static 'images/temp/odkeBc.png'%}" alt="">
+      </a>
+      <a href="{% url 'enkucv'%}">
+        <img style="max-width: 500px; height: 280px;" src="{%static 'images/temp/enkhusv.png'%}" alt="">
+      </a>
+    </main>
+  </section>
+  <!-- End Projects Section -->
+
+  <!-- tusliin gishuud -->
+  <section id="about">
+    <div class="about container">
+      <div class="col-left">
+        <div class="about-img">
+          <img src="{%static '/images/home.jpg'%}" alt="img">
+        </div>
+      </div>
+      <div class="col-right">
+        <h1 class="section-title">Төслийн баг<span> хамт олон </span></h1>
+        <input class="button" type="button" value="Дэлгэрэнгүй" onclick="document.querySelector('.col-right').classList.toggle('show-text')">
+        <p class="hidden-text">Төслийн удирдагч: Б.Өсөхбаяр <br> Backend зөвлөх: О.Төгсбаяр <br> Frontend зөвлөх: Үнэнхүү <br> <br>			
+          Back-End багийн гишүүд: Зандраарагчаа, Номин-Эрдэнэ, Д. Төгөлдөр, Одонхүү, Ха. Төгөлдөр, Билгүүн, Хүслэн <br> <br>
+          Front-End багийн гишүүд: Одонтунгалаг, Номин-Эрдэнэ, Сарнай, Магнай, Цэрэнбаатар, Елдосхажы, Энхзул.
+        </p>
+      </div>
+  </section>
+  <!-- End tusliin gishuud-->
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="contact container">
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="icon"><img src="{% static '/images/week1/Sandbox.jpg'%}" /></div>
+          <div class="contact-info">
+            <h2> <a href=""> Sandbox club</a></h2>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><img src="{% static '/images/week1/Mandakh.jpg'%}" /></div>
+          <div class="contact-info">
+            <h2><a href="https://mandakh.edu.mn/school-of-information-technology">МАНДАХ ИХ СУРГУУЛЬ МЭДЭЭЛЭЛ, ТЕХНОЛОГИЙН СУРГУУЛЬ</a></h2>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Contact Section -->
+
+
+  <!-- Footer -->
+  <section id="footer">
+    <div class="footer container">
+      
+      <div class="social-icon">
 
         </div>
-    </header>
-    <hr>
-    <main class="main">
-        <section id="about">
-            <h3>Танилцуулга</h3>
-            <p>Өөрийн танилцуулга /CV/ болон нэрийн хуудасны бэлэн дизайн template зохион бүтээж техник технологид
-                суурилсан шинэ систем нэвтрүүлэх.</p>
-        </section>
-        <section id="about">
-            <h3>Бидний зорилго</h3>
-            <p>Хэрэглэгч өөрийн мэдээллийг оруулаад өөрийн хүссэн загвар дизайн, өнгө  төрхийг
-                бүрдүүлсэн танилцуулга /CV/ болон нэрийн хуудсыг цахимаар гарган  авах боломжийг олгоно.</p>
-        </section>
-        <section id="about">
-            <h3>Үр дүн</h3>
-            <p>Хүмүүсийн ажлыг хөнгөвчлөн хэзээ ч хаанаас ч байршуулсан системээсээ
-                цахимаар танилцуулгаа хэрэгтэй үедээ татан авч, цаг хугацаагаа хэмнэнэ.</p>
-        </section>
-    </main>
-    <br>
-    <main class="main1">
-        <h1>"WHOIS" төслийн баг хамт олон</h1>
-    </main>
-    <br>
-    <main class="main1">
-        <a href="{% url 'justcv'%}"><img style="max-height: 300px; width: auto;" src="{%static 'images/temp/cvss.png'%}"
-                                           alt=""></a>
-        <a href="{% url 'justnc'%}"><img style="max-height: 300px; width: auto;" src="{%static 'images/temp/ncss.png'%}"
-                                           alt=""></a>
-        <a href="{% url 'BC'%}"><img style="max-height: 300px; width: auto;" src="{%static 'images/temp/odkeBc.png'%}"
-                                            alt=""></a>
-        <a href="{% url 'mainnc'%}"><img style="max-height: 300px; width: auto;" src="{%static 'images/temp/enkhuss.png'%}"
-                                                alt=""></a>
-        <a href="{% url 'enkucv'%}"><img style="max-height: 300px; width: auto;" src="{%static 'images/temp/enkhusv.png'%}"
-                                                    alt=""></a>
-        <a href="{% url 'enku2cv'%}"><img style="max-height: 300px; width: auto;" src="{%static 'images/temp/enkucv2.png'%}"
-                                                        alt=""></a>
-    </main>
-    <br>
-    <footer>
-        {% include "../includes/footer.html" %}
-    </footer>
+      </div>
+    </div>
+  </section>
+  <!-- End Footer -->
+  <span id="datetime"></span></p>
 
-</div>
-
-
-<script>
+  <script>
     function myFunction() {
         window.location.href = "{% url 'loginViews'%}";
     }
@@ -76,4 +169,5 @@
 </script>
 
 </body>
+
 </html>
