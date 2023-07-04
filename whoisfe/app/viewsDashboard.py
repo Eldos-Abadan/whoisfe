@@ -68,7 +68,7 @@ def dashboardViews(request):
                     for element in data:
                         if not ((str(element) == "id") or (str(element) == "user_id")):
                             element = str(element)
-                            if ((data[element] is None) or (data[element] == "None") or (data[element] == "")):
+                            if ((data[element] is None) or (data[element] == "None")):
                                 if(str(element) != "zurag"):
                                     bvrenEsekh = 0
                                 htmlData["userData"][element] = " дутуу байна."
@@ -77,20 +77,12 @@ def dashboardViews(request):
                                 continue
             if i == 0: 
                 htmlData["userData"]["garchig"] = "Нэмэлт мэдээлэл"
-                if type(htmlData["userData"]["huis"]) != str:
-                    if htmlData["userData"]["huis"] == 1:
-                        htmlData["userData"]["huis"] = "Эрэгтэй"
-                    elif htmlData["userData"]["huis"] == 2:
-                        htmlData["userData"]["huis"] = "Эмэгтэй"
-                    else:
-                        htmlData["userData"]["huis"] = "Бусад"
+                if htmlData["userData"]["huis"] == 1:
+                    htmlData["userData"]["huis"] = "Эрэгтэй"
+                elif htmlData["userData"]["huis"] == 2:
+                    htmlData["userData"]["huis"] = "Эмэгтэй"
                 else:
-                    if htmlData["userData"]["huis"] == "Эмэгтэй":
-                        htmlData["userData"]["huis"] = "Эмэгтэй"
-                    if htmlData["userData"]["huis"] == "Эрэгтэй":
-                        htmlData["userData"]["huis"] = "Эрэгтэй"
-                    else:
-                        htmlData["userData"]["huis"] = "Бусад"
+                    htmlData["userData"]["huis"] = "Бусад"
             if i == 1: htmlData["userData"]["garchig"] = "Гэр бүлийн мэдээлэл"
             if i == 2: htmlData["userData"]["garchig"] = "Боловсрол"
             if i == 3: htmlData["userData"]["garchig"] = "Туршлага"
