@@ -469,29 +469,23 @@ def profileSocialDel(request,id):
     # Medeelel ustgah end    
     # Medeelel haruulah start
     requestJSON = {
-        "id": request.session['userId']            
+        "id": request.session['userId']
     }
-    r = requests.post("http://whoisb.mandakh.org/userSocial/",
+    r = requests.get("http://whoisb.mandakh.org/userSocial/",
                         data=json.dumps(requestJSON),
-                        headers={'Content-Type': 'application/json'})
+                        headers={'Content-Type': 'application/json'})    
     try:
         responseJson = r.json()
+        print("ustgasnii daraa:",responseJson["socialData"],request.session['userId'])
         if responseJson["responseCode"] == 200:
-            userData = responseJson["socialData"]
-            htmlRuuDamjuulahUtguud['id'] = [data['id'] for data in userData]
-            htmlRuuDamjuulahUtguud['app'] = [data['app'] for data in userData]
-            htmlRuuDamjuulahUtguud['site'] = [data['site'] for data in userData]
+            htmlRuuDamjuulahUtguud['socialData'] = responseJson["socialData"]
         else:
             htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
             htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
-    # Zip the app and site lists together
-        app_site_pairs = zip(htmlRuuDamjuulahUtguud['app'], htmlRuuDamjuulahUtguud['site'])
-        app_site_pairs = app_site_pairs + zip(htmlRuuDamjuulahUtguud['id'])
-    # Pass the zipped list to the template
-#   profileSocial
     except:
         htmlRuuDamjuulahUtguud["responseText"] = "Ямар 1 балай алдаа"
     return render(request, 'Profile/7.html', htmlRuuDamjuulahUtguud)
+
 def profileEdu(request):
     checkSession(request)
     tooluur = 0
