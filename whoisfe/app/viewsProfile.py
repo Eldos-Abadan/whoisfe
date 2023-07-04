@@ -92,7 +92,7 @@ def profileAdd(request):
             # start userNemeltUpdateSubmit
 
             serviceHayag = "http://whoisb.mandakh.org/userNemeltUp/"
-            huis = request.POST.get("gender")
+            huis = request.POST.get("huis")
             torsonOgnoo = request.POST.get("bornDate")
             regDug = request.POST.get("register")
             dugaar = request.POST.get("phoneNumber")
@@ -141,7 +141,7 @@ def profileAdd(request):
     if responseJson["responseCode"] == 200:
         userData = responseJson["data"]
         nemelt["userId"] = userData["user_id"]
-        nemelt["gender"] = userData["huis"]
+        nemelt["huis"] = userData["huis"]
         nemelt["bornDate"] = userData["torsonOgnoo"]
         nemelt["register"] = userData["regDug"]
         nemelt["phoneNumber"] = userData["dugaar"]

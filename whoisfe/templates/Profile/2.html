@@ -56,10 +56,9 @@
                         <label for="floatingInput">Хүйс: </label>
                       </div>
                       <div class="form-check">
-                        <select id="gender" name="gender">
-                          <option>{{gender}}</option>
-                          <option>Эр</option>
-                          <option>Эм</option>
+                        <select id="gender" name="huis">                          
+                          <option value="1" {% if huis == 1 %} selected {% endif %}>Эр</option>
+                          <option value="2" {% if huis == 2 %} selected {% endif %}>Эм</option>
                         </select>
                       </div>
                     </div>
