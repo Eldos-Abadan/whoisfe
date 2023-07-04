@@ -27,32 +27,43 @@
     input[type=submit]:hover {
       background-color: #b85ee6;
     }
+
     .table {
-            margin-top: 30px;
-            box-shadow: 0px 0px 5px black;
-        }
+      margin-top: 30px;
+      box-shadow: 0px 0px 5px black;
+    }
 
-        .table thead tr {
-            background-color: darkviolet;
-            box-shadow: 0px 0px 5px darkviolet;
-            outline: darkviolet;
-            border: 1px solid white;
-            color: white;
-        }
+    .table thead tr {
+      background-color: darkviolet;
+      box-shadow: 0px 0px 5px darkviolet;
+      outline: darkviolet;
+      border: 1px solid white;
+      color: white;
+    }
 
-        .table th,
-        .table td {
-            padding: 10px;
-            text-align: center;
-        }
+    .table th,
+    .table td {
+      padding: 10px;
+      text-align: center;
+    }
 
-        .table tbody tr:hover {
-            background-color: #8080804a;
-        }
+    .table tbody tr:hover {
+      background-color: #8080804a;
+    }
 
-        .table tbody tr:active {
-            box-shadow: 0px 0px 5px black;
-        }
+    .table tbody tr:active {
+      box-shadow: 0px 0px 5px black;
+    }
+
+    .FamilyInfoBorder2 {
+      border: 3px solid #b85ee6;
+      border-radius: 20px;
+      width: 1000px;
+      height: auto;
+      margin-top: 20px;
+      padding-left: 10px;
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -61,12 +72,12 @@
     <nav class="navbar navbar-default navbar-fixed" style="width: 1200px;">
       <div class="container-fluid">
         <!-- <div class="navbar-header"> -->
-          {% include "../includes/logout.html" %}
-          <li class="separator hidden-lg"></li>
-          </ul>
-        </div>
+        {% include "../includes/logout.html" %}
+        <li class="separator hidden-lg"></li>
+        </ul>
       </div>
-    </nav>
+  </div>
+  </nav>
   </div>
   <div class="wrapper">
     <div class="sidebar" data-color="purple" data-image="{% static '/images/sidebar-5.jpg'%}">
@@ -76,97 +87,92 @@
       <div class="wrapper">
         <!-- ####### Гэр бүлийн мэдээллийн хэсэг ######## -->
         <div class="wrapper">
-          <div class="wrapper2">
-            <div class="headline">
-              <form id="cc-contact" class="form-group" action="" method="POST" name="userFamilyIns">
-                <div class="FamilyInfo">
-                  <div class="FamilyInfoBorder">
-                    {% csrf_token %}
-                    <h1>Гэр бүлийн мэдээлэл</h1>
-                    <div class="add">
-                      <div class="add__container">
-                        <div class="row">
-                          <div class="col-sm-5">
-                            <div class="form-floating mt-3">
-                              <label for="floatingInput">Таны хэн болох:</label>
-                              <input list="henBoloh" name="henBoloh" class="form-control" step="10">
-                              <datalist>
-                                <option name="henBolohOpt" value="Өвөө"></option>
-                                <option name="henBolohOpt" value="Эмээ"></option>
-                                <option name="henBolohOpt" value="Аав"></option>
-                                <option name="henBolohOpt" value="Ээж"></option>
-                                <option name="henBolohOpt" value="Ах"></option>
-                                <option name="henBolohOpt" value="Эгч"></option>
-                                <option name="henBolohOpt" value="Дүү"></option>
-                                <option name="henBolohOpt" value="Найз"></option>
-                                <option name="henBolohOpt" value="Нөхөр"></option>
-                                <option name="henBolohOpt" value="Эхнэр"></option>
-                              </datalist>
-                            </div>
+          <div class="headline">
+            <form id="cc-contact" class="form-group" action="" method="POST" name="userFamilyIns">
+              <div class="FamilyInfo">
+                <div class="FamilyInfoBorder">
+                  {% csrf_token %}
+                  <h1>Гэр бүлийн мэдээлэл</h1>
+                  <div class="add">
+                    <div class="add__container">
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <div class="form-floating mt-3">
+                            <label for="floatingInput">Таны хэн болох:</label>
+                            <input list="henBoloh" name="henBoloh" class="form-control" step="10">
+                            <datalist>
+                              <option name="henBoloh1" value="Өвөө"></option>
+                              <option name="henBoloh2" value="Эмээ"></option>
+                              <option name="henBoloh3" value="Аав"></option>
+                              <option name="henBoloh4" value="Ээж"></option>
+                              <option name="henBoloh5" value="Ах"></option>
+                              <option name="henBoloh6" value="Эгч"></option>
+                              <option name="henBoloh7" value="Дүү"></option>
+                              <option name="henBoloh8" value="Найз"></option>
+                              <option name="henBoloh9" value="Нөхөр"></option>
+                              <option name="henBoloh10" value="Эхнэр"></option>
+                            </datalist>
                           </div>
                         </div>
-                        <br>
-                        <div class="row">
-                          <div class="col-sm-5">
-                            <div class="form-floating mt-3">
-                              <label for="floatingLname">Нэр</label>
-                              <input type="text" name="ner" class="form-control">
-                            </div>
+                      </div>
+                      <br>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <div class="form-floating mt-3">
+                            <label for="floatingLname">Нэр</label>
+                            <input type="text" name="ner" class="form-control">
                           </div>
                         </div>
+                      </div>
 
-                        <div class="row">
-                          <div class="col-sm-5">
-                            <div class="form-floating mt-3">
-                              <label for="floatingInput">Утасны дугаар: </label>
-                              <input type="text" name="dugaar" class="form-control" step="10">
-                            </div>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <div class="form-floating mt-3">
+                            <label for="floatingInput">Утасны дугаар: </label>
+                            <input type="text" name="dugaar" class="form-control" step="10">
                           </div>
                         </div>
-                        <input type="submit" id="userFamilyIns" name="userFamilyIns" value="Нэмэх">
-                        <div class="row">
-                          <div class="col-sm-3">
-                            <div class="form-floating mt-3">
-                              <span style="color:#0000FF;">
-                                {{ responseText }}
-                              </span>
-                            </div>
+                      </div>
+                      <input type="submit" id="userFamilyIns" name="userFamilyIns" value="Нэмэх">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <div class="form-floating mt-3">
+                            <span style="color:#0000FF;">
+                              {{ responseText }}
+                            </span>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="container">
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th>№</th>
-                          <th>Хэн болох</th>
-                          <th>Нэр</th>
-                          <th>Дугаар</th>
-                        </tr>
-                      </thead>
-                      <tbody id="table">
-                        {% for user in data %}
-                        <tr>
-                          <td>{{ user.dugaarS }}</td>
-                          <td>{{ user.henBoloh }}</td>
-                          <td>{{ user.ner }}</td>
-                          <td>{{ user.dugaar }}</td>
-                        </tr>
-                        {% endfor %}
-                    </table>
-                  </div>
                 </div>
-              </form>
-              <div class="container clearfix">
-                <div class="FamilyInfo">
-                  <div class="FamilyInfo__list">
-                  </div>
+                <div class="FamilyInfoBorder2">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>№</th>
+                        <th>Хэн болох</th>
+                        <th>Нэр</th>
+                        <th>Дугаар</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody id="table">
+                      {% for user in data %}
+                      <tr>
+                        <td>{{ user.dugaarS }}</td>
+                        <td>{{ user.henBoloh }}</td>
+                        <td>{{ user.ner }}</td>
+                        <td>{{ user.dugaar }}</td>
+                        <td><i class="fa fa-trash" style="color: red;" aria-hidden="true"></i></td>
+                      </tr>
+                      {% endfor %}
+                  </table>
                 </div>
               </div>
-            </div>
+            </form>
           </div>
+
 
           <!-- ################################## -->
 
