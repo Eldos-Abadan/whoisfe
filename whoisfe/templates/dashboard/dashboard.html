@@ -7,6 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
     <title>Dashboard WhoIs</title>
+    <style>
+      #correct{
+        color:green;
+      }
+      #cor{
+        color:red;
+      }
+    </style>
 
     <meta
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
@@ -108,16 +116,16 @@
         
         <form id="transaction-form" method="post" name="uldegdel">
           {% csrf_token %}
-            <h1>&emsp;&emsp;&emsp;&emsp;&emsp;Хэрэглэгчийн самбар</h1>
-            <hr />
-            <main>
-              <section id="about">
+          <hr />
+          <main>
+            <section id="about">
+                <h1 style="text-align: center;">Хэрэглэгчийн самбар</h1>
                 {% comment %} <span style="color:blue;">{{aldaaniiMedeelel}}</span> {% endcomment %}
                 {% for user in userData1 %}
                     <h3>{{user.garchig}}</h3>
                     {% if user.bvrenEsekh == 1 %}
                       <ul style="list-style-type: none">
-                        <li>Та мэдээллээ оруулсан байна.</li>
+                        <li><span id = "correct">✔</span>Та мэдээллээ оруулсан байна.</li>
                       </ul>
                       {% elif user.garchig == "Нэмэлт мэдээлэл"  %}
                       <ul>
@@ -148,23 +156,23 @@
                       </ul>
                         {% elif user.garchig == "Гэр бүлийн мэдээлэл"  %}
                           <ul style="list-style-type: none">
-                            <li>Та одоогоор гэр бүл хэсэгт мэдээлэл оруулаагүй байна.</li>
+                            <li><span id = "cor">✖</span>Та одоогоор гэр бүл хэсэгт мэдээлэл оруулаагүй байна.</li>
                           </ul>
                         {% elif user.garchig == "Боловсрол"  %}
                           <ul style="list-style-type: none">
-                            <li>Та одоогоор боловсрол хэсэгт мэдээлэл оруулаагүй байна.</li>
+                            <li><span id = "cor">✖</span>Та одоогоор боловсрол хэсэгт мэдээлэл оруулаагүй байна.</li>
                           </ul>
                         {% elif user.garchig == "Туршлага"  %}
                           <ul style="list-style-type: none">
-                            <li>Та одоогоор туршлага хэсэгт мэдээлэл оруулаагүй байна.</li>
+                            <li><span id = "cor">✖</span>Та одоогоор туршлага хэсэгт мэдээлэл оруулаагүй байна.</li>
                           </ul>
                         {% elif user.garchig == "Чадвар"  %}
                           <ul style="list-style-type: none">
-                            <li>Та одоогоор чадвар хэсэгт мэдээлэл оруулаагүй байна.</li>
+                            <li><span id = "cor">✖</span>Та одоогоор чадвар хэсэгт мэдээлэл оруулаагүй байна.</li>
                           </ul>
                         {% elif user.garchig == "Сошиал"  %}
                           <ul style="list-style-type: none">
-                            <li>Та одоогоор Сошиал хэсэгт мэдээлэл оруулаагүй байна.</li>
+                            <li><span id = "cor">✖</span>Та одоогоор Сошиал хэсэгт мэдээлэл оруулаагүй байна.</li>
                           </ul>
                         {% endif %}
                   {% endfor %}

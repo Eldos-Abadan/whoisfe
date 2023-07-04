@@ -53,6 +53,11 @@ def dashboardViews(request):
                     length[i] = len(data)
             else:
                 data = data[0]
+            if serviceHayag[i] == "/getSkill/":
+                if (len(data) == 1) or (len(data) == 0):
+                    data =  {'responseCode': 200, 'responseText': 'Амжилттай', 'data': [{'id': 68, 'user_id': 214, 'henBoloh': None, 'ner': None, 'dugaar': None}]}
+                else:
+                    data =  {'responseCode': 200, 'responseText': 'Амжилттай', 'data': [{'id': 68, 'user_id': 214, 'henBoloh': "sdf", 'ner': "sdf", 'dugaar': "sdf"}]}
             htmlData["userData"] = {}
             bvrenEsekh = 1
             if(len(data) == 0 or len(data) == 1):
@@ -64,7 +69,8 @@ def dashboardViews(request):
                         if not ((str(element) == "id") or (str(element) == "user_id")):
                             element = str(element)
                             if ((data[element] is None) or (data[element] == "None")):
-                                bvrenEsekh = 0
+                                if(str(element) != "zurag"):
+                                    bvrenEsekh = 0
                                 htmlData["userData"][element] = " дутуу байна."
                             else:
                                 htmlData["userData"][element] = data[element]
