@@ -10,6 +10,7 @@ urlpatterns = [
     path("profile/main/"  ,   viewsProfile.profileMain,      name="profileMain"  ) ,
     path("profile/add/"   ,   viewsProfile.profileAdd,       name="profileAdd"   ) ,
     path("profile/family/",   viewsProfile.profileFamily,    name="profileFamily") ,
+    path("profile/family/del/<int:id>/",   viewsProfile.profileFamilyDel,    name="profileFamilyDel") ,
     path("profile/edu/"   ,   viewsProfile.profileEdu,       name="profileEdu"   ) ,
     path("profile/exp/"   ,   viewsProfile.profileExp,       name="profileExp"   ) ,
     path("profile/skill/" ,   viewsProfile.profileSkill,     name="profileSkill" ) ,

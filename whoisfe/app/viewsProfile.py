@@ -205,7 +205,46 @@ def profileFamily(request):
     except:
         htmlRuuDamjuulahUtguud["aldaaniiMedegdel"] = "Ямар 1 балай алдаа"
     return render(request, "Profile/4.html", htmlRuuDamjuulahUtguud)
+#   profileFamily
 
+def profileFamilyDel(request,id):
+    checkSession(request)
+    if request.session['beegii'] == 0:
+        return redirect("homeView")
+    htmlRuuDamjuulahUtguud = {}
+    htmlRuuDamjuulahUtguud["responseText"] = ""
+    htmlRuuDamjuulahUtguud["textColor"] = "#00FF00"
+    # Medeelel ustgah start
+    requestJSON = {
+        "familyId": id           
+    }
+    r = requests.get("http://whoisb.mandakh.org/userFamilyDel/",
+                        data=json.dumps(requestJSON),
+                        headers={'Content-Type': 'application/json'})
+    responseJson = r.json()
+    htmlRuuDamjuulahUtguud["responseText"] = htmlRuuDamjuulahUtguud["responseText"]+"|"+responseJson['responseText']
+    # Medeelel ustgah end    
+    # Medeelel haruulah start
+    requestJSON = {
+        "user_id": request.session['userId']            
+    }
+    r = requests.get("http://whoisb.mandakh.org/userFamily/",
+                        data=json.dumps(requestJSON),
+                        headers={'Content-Type': 'application/json'})
+    try:
+        responseJson = r.json()
+        if responseJson['responseCode'] == 200:
+            data = responseJson['data']    
+
+            for i in range(0,len(data)):
+                data[i]["dugaarS"] = i+1
+            htmlRuuDamjuulahUtguud["data"] = data       
+            print(data)
+        else:
+            htmlRuuDamjuulahUtguud["responseText"] = htmlRuuDamjuulahUtguud["responseText"]+"|"+responseJson['responseText']
+    except:
+        htmlRuuDamjuulahUtguud["responseText"] = "Ямар 1 балай алдаа"
+    return render(request, "Profile/4.html", htmlRuuDamjuulahUtguud)
 
 
 
