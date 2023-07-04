@@ -79,6 +79,7 @@ p {
 	top: 0;
 	width: 100vw;
 	height: auto;
+	background-color: rgba(244, 252, 252, 0.728);
 }
 #header .header {
 	min-height: 8vh;
@@ -211,11 +212,11 @@ p {
 
 /* Hero Section */
 #hero {
-	background-image: url(web.jpeg);
+	background-image: url(1.png);
 	background-size: cover;
-	background-position: top center;
+	background-position: 100% 90%;
 	position: relative;
-	z-index: 1;
+
 }
 #hero::after {
 	content: '';
@@ -502,7 +503,7 @@ p {
 
 /* Footer */
 #footer {
-	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);	
+	/* background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);	 */
 	display: block;
 	position: fixed;
 	z-index: 1000;
@@ -510,10 +511,10 @@ p {
 	bottom: 0;
 	width: 100vw;
 	height: 5vw;
-	color: white;
+	background-color: rgba(244, 252, 252, 0.728);
 }
 p{
-	color: white;
+	color: rgb(9, 8, 8);
 	margin-top: -10px;
 }
 #footer .footer {
@@ -521,7 +522,7 @@ p{
 	flex-direction: column;
 	padding: 50px;
 	text-align: center;
-	color: white;
+	color: rgb(131, 11, 145);
 }
 #footer h2 {
 	color: white;
@@ -543,8 +544,8 @@ p{
 
 
 #footer p {
-	color: white;
-	font-size: 1.3rem;
+	color: rgb(5, 5, 5);
+	font-size: 1.4rem;
 }
 /* End Footer */
 
@@ -571,7 +572,7 @@ p{
 }
 @keyframes text_reveal {
 	100% {
-		color: white;
+		color: rgb(241, 125, 218);
 	}
 }
 @keyframes text_reveal_name {
@@ -778,6 +779,21 @@ a{
 }
 #contact{
     margin-top: -300px;
+}
+
+input[type=button] {
+	border: none;
+	text-decoration: none;
+	color: purple;
+	padding: 10px 10px;
+	margin: 10px 10px;
+	border-radius: 5%;
+	font-size: 15px;
+  }
+
+input[type=button]:hover,
+input[type=button].active {
+  background-color: rgb(208, 41, 250);
 }
 /* End  Media Query For Desktop */
   
