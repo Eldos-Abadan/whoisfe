@@ -510,6 +510,8 @@ def profileEdu(request):
             direction = request.POST.get("direction")
             elssenOn = request.POST.get("elssenOn")
             tugssunOn = request.POST.get("tugssunOn")
+            if not tugssunOn: 
+                tugssunOn = "Суралцаж байгаа"
             request_data = {
                 'id': request.session['userId'],
                 "education": education,
