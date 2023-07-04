@@ -82,7 +82,7 @@ p {
 }
 #header .header {
 	min-height: 8vh;
-	background-color: rgba(31, 30, 30, 0.24);
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);	
 	transition: 0.3s ease;
 	
 	
@@ -211,7 +211,7 @@ p {
 
 /* Hero Section */
 #hero {
-	background-image: url(Web.gif);
+	background-image: url(web.jpeg);
 	background-size: cover;
 	background-position: top center;
 	position: relative;
@@ -502,24 +502,26 @@ p {
 
 /* Footer */
 #footer {
-	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-	
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);	
 	display: block;
-	
 	position: fixed;
 	z-index: 1000;
 	left: 0;
 	bottom: 0;
 	width: 100vw;
 	height: 5vw;
-	
-	
+	color: white;
+}
+p{
+	color: white;
+	margin-top: -10px;
 }
 #footer .footer {
 	min-height: 200px;
 	flex-direction: column;
-	padding-top: 50px;
-	padding-bottom: 10px;
+	padding: 50px;
+	text-align: center;
+	color: white;
 }
 #footer h2 {
 	color: white;
