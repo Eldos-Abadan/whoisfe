@@ -60,7 +60,7 @@
       background-color: #fff;
       border: 3px solid rgb(138, 20, 138);
       border-radius: 20px;
-      width: 1000px;
+      width: auto;
       height: cover;
       margin-left: 30px;
     }
@@ -132,7 +132,7 @@
         {% include "../includes/menu.html" %}
       </div>
       <div class="main-panel">
-        <nav class="navbar navbar-default navbar-fixed">
+        <nav class="navbar navbar-default navbar-fixed" style="width: auto;">
           <div class="container-fluid">
             <div class="navbar-header">
               <button
@@ -183,6 +183,7 @@
           <div class="btn-container">
             <a href="{% url 'wallet1' %}" class="btn">Гүйлгээ хийх</a>
             <a  class="bt1">Татаж авах</a>
+            
           </div>
         </div>
         </form>

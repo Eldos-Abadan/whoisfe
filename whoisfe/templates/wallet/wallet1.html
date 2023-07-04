@@ -66,6 +66,7 @@
         h1 {
             text-align: center;
             color: #333333;
+            
         }
 
         .form-container {
@@ -159,7 +160,7 @@
         {% include "../includes/menu.html" %}
       </div>
       <div class="main-panel">
-        <nav class="navbar navbar-default navbar-fixed">
+        <nav class="navbar navbar-default navbar-fixed" style="width: auto;">
           <div class="container-fluid">
             <div class="navbar-header">
               <button
@@ -244,10 +245,10 @@
                       <tbody>
                       {% for user in userData %}
                       <tr>
-                        <td style="width: 30px;"><center> {{ user.dugaar }}</center></td>
-                        <td>{{ user.from }}</td>
-                        <td>{{ user.amount }}</td>
-                        <td>{{ user.date }}</td>
+                        <td style="width: 30px; font-weight: bold;"><center> {{ user.dugaar }}</center></td>
+                        <td style="font-weight: bold;">{{ user.from }}</td>
+                        <td style="font-weight: bold;">{{ user.amount }}</td>
+                        <td style="font-weight: bold;">{{ user.date }}</td>
                       </tr>
                       {% endfor %}
                     </tbody>
