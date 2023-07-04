@@ -41,7 +41,7 @@
         
           <div class="main3">
           <h1>Ажлын туршлага</h1>
-          <form action="" method="post" name="insertButton">
+          <form action="{% url 'profileExp' %}" method="post" name="insertButton">
           {% csrf_token %}
           {{responseText}}
         <div class="form-div">
