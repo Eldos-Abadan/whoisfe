@@ -109,6 +109,9 @@ def wallet1View(request):
     data = r.json()
     htmlRuu["vldegdel"] = data["dansniiUldegdel"]
     htmlRuu["userData"] = data["guilgee"]
+    for i in range(0, len(htmlRuu["userData"])):
+      #  htmlRuu["userData"]["dugaar"] = i + 1
+       htmlRuu["userData"][i]["dugaar"] = str(i + 1)
     return render(request, "wallet/wallet1.html", htmlRuu)
 ##########################################################
 

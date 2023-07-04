@@ -54,12 +54,12 @@
         }
 
         .container {
+          margin-left: 30px;
             
-            margin: 0 auto;
             padding: 20px;
             border: 3px solid rgb(138, 20, 138);
             border-radius: 20px;
-            width: 1000px;
+            width: 700px;
             height: cover;
         }
 
@@ -121,6 +121,7 @@
         .transaction-table th {
             background-color: rgb(138, 20, 138);
             color: #ffffff;
+            border:solid 1px#ffffff;
             
         }
 
@@ -235,16 +236,16 @@
                 <h2>Гүйлгээний хуулга</h2>
                 <table class="transaction-table" id="transaction-table">
                       <tr>
-                        <th>Нэр</th>
-                        <th>Үлдэгдэл</th>
-                        <th>Мөнгө</th>
+                        <th>Дугаар</th>
+                        <th>Хэнээс</th>
+                        <th>Мөнгөн дүн</th>
                         <th>Огноо</th>
                       </tr>
                       <tbody>
                       {% for user in userData %}
                       <tr>
-                        <td>{{ user.userName }}</td>
-                        <td>{{ user.balance }}</td>
+                        <td style="width: 30px;"><center> {{ user.dugaar }}</center></td>
+                        <td>{{ user.from }}</td>
                         <td>{{ user.amount }}</td>
                         <td>{{ user.date }}</td>
                       </tr>
