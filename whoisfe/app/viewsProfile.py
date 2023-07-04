@@ -262,7 +262,7 @@ def profileExp(request):
             ehelsen = request.POST.get("date1")
             duussan = request.POST.get("date2")
             if not duussan: 
-                duussan = "Амжилттай"
+                duussan = "Ажиллаж байгаа"
             requestJSON = {
                 'id': request.session['userId'],
                 "ajil": ajil,
