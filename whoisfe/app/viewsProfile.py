@@ -392,6 +392,7 @@ def profileSocial(request):
     htmlRuuDamjuulahUtguud["responseText"] = ""
     htmlRuuDamjuulahUtguud["textColor"] = "#00FF00"
 
+    # nemeh heseg start
     if request.method == "POST":
         if "addSave" in request.POST:
             serviceHayag = "http://whoisb.mandakh.org/userSocialIn/"
@@ -411,6 +412,7 @@ def profileSocial(request):
                 htmlRuuDamjuulahUtguud["textColor"] = "#00ff00"
             else:
                 htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
+        
         # if "editSave" in request.POST:
         #     serviceHayag = "http://whoisb.mandakh.org/userSocialUp/"
         #     app = request.POST.get("editapp")
@@ -433,22 +435,19 @@ def profileSocial(request):
     requestJSON = {
         "id": request.session['userId']
     }
+    # nemeh heseg end
     r = requests.get(serviceHayag,
                      data=json.dumps(requestJSON),
                      headers={'Content-Type': 'application/json'})
     responseJson = r.json()
 
-    if responseJson["responseCode"] == 200:
-        userData = responseJson["socialData"]
-        htmlRuuDamjuulahUtguud['app'] = [data['app'] for data in userData]
-        htmlRuuDamjuulahUtguud['site'] = [data['site'] for data in userData]
+    if responseJson["responseCode"] == 200:        
+        htmlRuuDamjuulahUtguud['socialData'] = responseJson["socialData"]
+        htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
     else:
         htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
         htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
-    # Zip the app and site lists together
-    app_site_pairs = zip(htmlRuuDamjuulahUtguud['app'], htmlRuuDamjuulahUtguud['site'])
-    # Pass the zipped list to the template
-    return render(request, "Profile/7.html", {'app_site_pairs': app_site_pairs,'responseText': htmlRuuDamjuulahUtguud['responseText'], 'textColor': htmlRuuDamjuulahUtguud['textColor']})
+    return render(request, "Profile/7.html", htmlRuuDamjuulahUtguud)
 #   profileSocial
 
 

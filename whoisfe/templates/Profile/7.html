@@ -253,61 +253,61 @@
           <div class="m3">
             <table>
               <tbody>
-                {% for app, site in app_site_pairs %}
+                {% for elem in socialData %}
                 <tr>
                   <td>
-                    {% if app == 'Facebook' %}
+                    {% if elem.app == 'Facebook' %}
                     <i class="fa fa-facebook"></i>
-                    {% elif app == 'Instagram' %}
+                    {% elif elem.app == 'Instagram' %}
                     <i class="fa fa-instagram"></i>
-                    {% elif app == 'Youtube' %}
+                    {% elif elem.app == 'Youtube' %}
                     <i class="fa fa-youtube-play"></i>
-                    {% elif app == 'Github' %}
+                    {% elif elem.app == 'Github' %}
                     <i class="fa fa-github"></i>
-                    {% elif app == 'LinkedIn' %}
+                    {% elif elem.app == 'LinkedIn' %}
                     <i class="fa fa-linkedin"></i>
-                    {% elif app == 'Twitter' %}
+                    {% elif elem.app == 'Twitter' %}
                     <i class="fa fa-twitter"></i>
-                    {% elif app == 'WhatsApp' %}
+                    {% elif elem.app == 'WhatsApp' %}
                     <i class="fa fa-whatsapp"></i>
-                    {% elif app == 'SoundCloud' %}
+                    {% elif elem.app == 'SoundCloud' %}
                     <i class="fa fa-soundcloud"></i>
-                    {% elif app == 'Spotify' %}
+                    {% elif elem.app == 'Spotify' %}
                     <i class="fa fa-spotify"></i>
-                    {% elif app == 'Snapchat' %}
+                    {% elif elem.app == 'Snapchat' %}
                     <i class="fa fa-snapchat"></i>
-                    {% elif app == 'Ask.fm' %}
+                    {% elif elem.app == 'Ask.fm' %}
                     <i class="fa fa-askfm"></i>
                     {% endif %}
                   </td>
                   <td>
-                    {% if app == 'Facebook' %}
+                    {% if elem.app == 'Facebook' %}
                     <a style="color: #480f71;" href="https://www.facebook.com/{{ site }}" target="_blank">{{ site }}</a>
-                    {% elif app == 'Instagram' %}
+                    {% elif elem.app == 'Instagram' %}
                     <a style="color: #480f71;" href="https://www.instagram.com/{{ site }}" target="_blank">{{ site }}</a>
-                    {% elif app == 'Youtube' %}
+                    {% elif elem.app == 'Youtube' %}
                     <a style="color: #480f71;" href="https://www.youtube.com/@{{ site }}" target="_blank">{{ site }}</a>
-                    {% elif app == 'Github' %}
+                    {% elif elem.app == 'Github' %}
                     <a style="color: #480f71;" href="https://www.github.com/{{ site }}" target="_blank">{{ site }}</a>
-                    {% elif app == 'LinkedIn' %}
+                    {% elif elem.app == 'LinkedIn' %}
                     <a style="color: #480f71;" href="https://www.linkedin.com/in/{{ site }}" target="_blank">{{ site }}</a>
-                    {% elif app == 'Twitter' %}
+                    {% elif elem.app == 'Twitter' %}
                     <a style="color: #480f71;" href="https://www.twitter.com/{{ site }}" target="_blank">{{ site }}</a>
-                    {% elif app == 'WhatsApp' %}
+                    {% elif elem.app == 'WhatsApp' %}
                     <a style="color: #480f71;" href="https://www.whatsapp.com/{{ site }}" target="_blank">{{ site }}</a>
-                    {% elif app == 'SoundCloud' %}
+                    {% elif elem.app == 'SoundCloud' %}
                     <a style="color: #480f71;" href="https://www.soundcloud.com/{{ site }}" target="_blank">{{ site }}</a>
-                    {% elif app == 'Spotify' %}
+                    {% elif elem.app == 'Spotify' %}
                     <a style="color: #480f71;" href="https://www.spotify.com/{{ site }}" target="_blank">{{ site }}</a>
-                    {% elif app == 'Snapchat' %}
+                    {% elif elem.app == 'Snapchat' %}
                     <a style="color: #480f71;" href="https://www.snapchat.com/{{ site }}" target="_blank">{{ site }}</a>
-                    {% elif app == 'Ask.fm' %}
+                    {% elif elem.app == 'Ask.fm' %}
                     <a style="color: #480f71;" href="https://www.ask.fm/{{ site }}" target="_blank">{{ site }}</a>
                     {% endif %}
                   </td>
                   <td>
                     <a href="#" onclick="updateForm()"><i class="fa fa-edit" style="font-size: 17px; color:#b85ee6"></i></a>
-                    <a href="{% url 'profileSocialDel' id=0 %}" onclick="if (!confirm('Та устгахдаа итгэлтэй байна уу?')) { return false }"><i class="fa fa-trash" style="font-size: 17px; color:#b85ee6;"></i></a>
+                    <a href="{% url 'profileSocialDel' id=elem.id %}" onclick="if (!confirm('Та устгахдаа итгэлтэй байна уу?')) { return false }"><i class="fa fa-trash" style="font-size: 17px; color:#b85ee6;"></i></a>
                   </td>
                   <td>
                     <form action="" id="editForm" style="display: none;" method="POST">
@@ -315,17 +315,17 @@
                       <div class="row">
                         <div class="col-75">
                           <select name="editapp" required>
-                            <option value="Facebook" {% if app == 'Facebook' %}selected{% endif %}>Facebook</option>
-                            <option value="Instagram" {% if app == 'Instagram' %}selected{% endif %}>Instagram</option>
-                            <option value="Youtube" {% if app == 'Youtube' %}selected{% endif %}>YouTube</option>
-                            <option value="Github" {% if app == 'Github' %}selected{% endif %}>GitHub</option>
-                            <option value="LinkedIn" {% if app == 'LinkedIn' %}selected{% endif %}>LinkedIn</option>
-                            <option value="Twitter" {% if app == 'Twitter' %}selected{% endif %}>Twitter</option>
-                            <option value="Snapchat" {% if app == 'Snapchat' %}selected{% endif %}>Snapchat</option>
-                            <option value="WhatsApp" {% if app == 'WhatsApp' %}selected{% endif %}>WhatsApp</option>
-                            <option value="Ask.fm" {% if app == 'Ask.fm' %}selected{% endif %}>Ask.fm</option>
-                            <option value="SoundCloud" {% if app == 'SoundCloud' %}selected{% endif %}>SoundCloud</option>
-                            <option value="Spotify" {% if app == 'Spotify' %}selected{% endif %}>Spotify</option>
+                            <option value="Facebook" {% if elem.app == 'Facebook' %}selected{% endif %}>Facebook</option>
+                            <option value="Instagram" {% if elem.app == 'Instagram' %}selected{% endif %}>Instagram</option>
+                            <option value="Youtube" {% if elem.app == 'Youtube' %}selected{% endif %}>YouTube</option>
+                            <option value="Github" {% if elem.app == 'Github' %}selected{% endif %}>GitHub</option>
+                            <option value="LinkedIn" {% if elem.app == 'LinkedIn' %}selected{% endif %}>LinkedIn</option>
+                            <option value="Twitter" {% if elem.app == 'Twitter' %}selected{% endif %}>Twitter</option>
+                            <option value="Snapchat" {% if elem.app == 'Snapchat' %}selected{% endif %}>Snapchat</option>
+                            <option value="WhatsApp" {% if elem.app == 'WhatsApp' %}selected{% endif %}>WhatsApp</option>
+                            <option value="Ask.fm" {% if elem.app == 'Ask.fm' %}selected{% endif %}>Ask.fm</option>
+                            <option value="SoundCloud" {% if elem.app == 'SoundCloud' %}selected{% endif %}>SoundCloud</option>
+                            <option value="Spotify" {% if elem.app == 'Spotify' %}selected{% endif %}>Spotify</option>
                           </select>
                           <br><br>
                         </div>
