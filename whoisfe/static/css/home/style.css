@@ -747,5 +747,35 @@ p {
     padding: 10px;
 }
 
+.main2{
+    margin-left: 200px;
+}
+.cv {
+    margin-right: 5%;
+    margin-left: 5%;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: solid 3px purple;   
+    border-radius: 5px;
+    margin-bottom: 30px;
+  }
+.nc {
+    margin-right: 5%;
+    margin-left: 5%;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: solid 3px purple;   
+    border-radius: 5px;
+  }
+a{
+    padding: 30px;
+}
+#contact{
+    margin-top: -300px;
+}
 /* End  Media Query For Desktop */
   
