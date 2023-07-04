@@ -62,23 +62,34 @@ p {
 	color: white;
 	background-color: blueviolet;
 }
+.head1 {
+	display: flex;
+	align-items: center;
+  }
+.zu1 {
+	width: 160px;
+	height: auto;
+	margin-top: 30px;
+	margin-left: -30px;
+}
 .brand h1 {
-	font-size: 3rem;
+	font-size: 3.5rem;
 	text-transform: uppercase;
-	color: white;
-}
-.brand h1 span {
 	color: blueviolet;
+	margin-left: -50px;
 }
+/* .brand h1 span {
+	color: blueviolet;
+} */
 
 /* Header section */
 #header {
 	position: fixed;
-	z-index: 1000;
+	z-index: 800;
 	left: 0;
 	top: 0;
 	width: 100vw;
-	height: auto;
+	height: 70px;
 	background-color: rgba(244, 252, 252, 0.728);
 }
 #header .header {
@@ -514,8 +525,9 @@ p {
 	background-color: rgba(244, 252, 252, 0.728);
 }
 p{
-	color: rgb(9, 8, 8);
+	color: black;
 	margin-top: -10px;
+	margin-left: -20px;
 }
 #footer .footer {
 	min-height: 200px;
@@ -776,6 +788,9 @@ p{
   }
 a{
     padding: 30px;
+	margin-left: -20px;
+	font-size: 17px;
+	margin-inline: -22px;
 }
 #contact{
     margin-top: -300px;
@@ -793,7 +808,7 @@ input[type=button] {
 
 input[type=button]:hover,
 input[type=button].active {
-  background-color: rgb(208, 41, 250);
+  background-color: rgb(179, 58, 210);
 }
 /* End  Media Query For Desktop */
   
