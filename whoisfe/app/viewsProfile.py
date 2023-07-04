@@ -296,6 +296,44 @@ def profileExp(request):
         htmlRuuDamjuulakh["aldaaniiMedegdel"] = responseJson['responseText']
     return render(request, "Profile/5.html",htmlRuuDamjuulakh)
 #   profileExp
+def profileExpDel(request,id):
+    checkSession(request)
+    if request.session['beegii'] == 0:
+        return redirect("homeView")
+    htmlRuuDamjuulahUtguud = {}
+    htmlRuuDamjuulahUtguud["responseText"] = ""
+    htmlRuuDamjuulahUtguud["textColor"] = "#00FF00"
+    # Medeelel ustgah start
+    requestJSON = {
+        "workId": id           
+    }
+    r = requests.get("http://whoisb.mandakh.org/userTurshlagaDel/",
+                        data=json.dumps(requestJSON),
+                        headers={'Content-Type': 'application/json'})
+    responseJson = r.json()
+    htmlRuuDamjuulahUtguud["responseText"] = htmlRuuDamjuulahUtguud["responseText"]+"|"+responseJson['responseText']
+    # Medeelel ustgah end    
+    # Medeelel haruulah start
+    requestJSON = {
+        'id': request.session['userId']
+    }
+    serviceHayag = "http://whoisb.mandakh.org/userTurshlaga/"    
+    r = requests.get(serviceHayag,
+                    data=json.dumps(requestJSON),
+                    headers={'Content-Type': 'application/json'})
+    responseJson = r.json()    
+    
+
+    if responseJson['responseCode'] == 200:
+        myData = responseJson['TurshlagaData']    
+
+        for i in range(0,len(myData)):
+            myData[i]["dugaar"] = i+1
+        htmlRuuDamjuulahUtguud["myData"] = myData        
+    else:
+        htmlRuuDamjuulahUtguud["aldaaniiMedegdel"] = responseJson['responseText']
+    return render(request, "Profile/5.html",htmlRuuDamjuulahUtguud)
+
 
 # Chadvar uurchluh bolon hadgalah hrauulah function
 def profileSkill(request):

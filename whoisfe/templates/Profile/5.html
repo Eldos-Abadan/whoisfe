@@ -43,10 +43,11 @@
           <h1>Ажлын туршлага</h1>
           <form action="" method="post" name="insertButton">
           {% csrf_token %}
+          {{responseText}}
         <div class="form-div">
           <div class="row">
             <div class="col-md-3">
-              <label style="padding-left: 40px;">Байгууллагын нэр {{responseText}}</label>
+              <label style="padding-left: 40px;">Байгууллагын нэр </label>
               <input type="text"  name="companyNer" class="form-control" id="edu" placeholder="Байгууллагын нэр"> 
             </div>
             <div class="col-md-3">
