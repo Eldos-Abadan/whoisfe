@@ -215,11 +215,11 @@
               {% csrf_token%}
               <div class="row">
                 <div class="col-25">
-                  <label for="platForm">Social platform</label>
+                  <label for="platForm">Цахим платформ</label>
                 </div>
                 <div class="col-75">
                   <select name="platForm" required>
-                    <option value="" disabled selected>Select platform</option>
+                    <option value="" disabled selected>Платформ сонгох</option>
                     <option value="Facebook">Facebook</option>
                     <option value="Instagram">Instagram</option>
                     <option value="Youtube">YouTube</option>
@@ -238,10 +238,10 @@
               </div>
               <div class="row">
                 <div class="col-25">
-                  <label for="fname">Username</label>
+                  <label for="fname">Хэрэглэгчийн нэр</label>
                 </div>
                 <div class="col-75">
-                  <input type="text" id="fname" name="userName" placeholder="Your social account's name.." required>
+                  <input type="text" id="fname" name="userName" placeholder="Цахим хаягийн нэр..." required>
                 </div>
               </div>
               <div class="subm">
@@ -282,27 +282,27 @@
                   </td>
                   <td>
                     {% if elem.app == 'Facebook' %}
-                    <a style="color: #480f71;" href="https://www.facebook.com/{{ site }}" target="_blank">{{ site }}</a>
+                    <a style="color: #480f71;" href="https://www.facebook.com/{{ elem.site }}" target="_blank">{{ elem.site }}</a>
                     {% elif elem.app == 'Instagram' %}
-                    <a style="color: #480f71;" href="https://www.instagram.com/{{ site }}" target="_blank">{{ site }}</a>
+                    <a style="color: #480f71;" href="https://www.instagram.com/{{ elem.site }}" target="_blank">{{ elem.site }}</a>
                     {% elif elem.app == 'Youtube' %}
-                    <a style="color: #480f71;" href="https://www.youtube.com/@{{ site }}" target="_blank">{{ site }}</a>
+                    <a style="color: #480f71;" href="https://www.youtube.com/@{{ elem.site }}" target="_blank">{{ elem.site }}</a>
                     {% elif elem.app == 'Github' %}
-                    <a style="color: #480f71;" href="https://www.github.com/{{ site }}" target="_blank">{{ site }}</a>
+                    <a style="color: #480f71;" href="https://www.github.com/{{ elem.site }}" target="_blank">{{ elem.site }}</a>
                     {% elif elem.app == 'LinkedIn' %}
-                    <a style="color: #480f71;" href="https://www.linkedin.com/in/{{ site }}" target="_blank">{{ site }}</a>
+                    <a style="color: #480f71;" href="https://www.linkedin.com/in/{{ elem.site }}" target="_blank">{{ elem.site }}</a>
                     {% elif elem.app == 'Twitter' %}
-                    <a style="color: #480f71;" href="https://www.twitter.com/{{ site }}" target="_blank">{{ site }}</a>
+                    <a style="color: #480f71;" href="https://www.twitter.com/{{ elem.site }}" target="_blank">{{ elem.site }}</a>
                     {% elif elem.app == 'WhatsApp' %}
-                    <a style="color: #480f71;" href="https://www.whatsapp.com/{{ site }}" target="_blank">{{ site }}</a>
+                    <a style="color: #480f71;" href="https://www.whatsapp.com/{{ elem.site }}" target="_blank">{{ elem.site }}</a>
                     {% elif elem.app == 'SoundCloud' %}
-                    <a style="color: #480f71;" href="https://www.soundcloud.com/{{ site }}" target="_blank">{{ site }}</a>
+                    <a style="color: #480f71;" href="https://www.soundcloud.com/{{ elem.site }}" target="_blank">{{ elem.site }}</a>
                     {% elif elem.app == 'Spotify' %}
-                    <a style="color: #480f71;" href="https://www.spotify.com/{{ site }}" target="_blank">{{ site }}</a>
+                    <a style="color: #480f71;" href="https://www.spotify.com/{{ elem.site }}" target="_blank">{{ elem.site }}</a>
                     {% elif elem.app == 'Snapchat' %}
-                    <a style="color: #480f71;" href="https://www.snapchat.com/{{ site }}" target="_blank">{{ site }}</a>
+                    <a style="color: #480f71;" href="https://www.snapchat.com/{{ elem.site }}" target="_blank">{{ elem.site }}</a>
                     {% elif elem.app == 'Ask.fm' %}
-                    <a style="color: #480f71;" href="https://www.ask.fm/{{ site }}" target="_blank">{{ site }}</a>
+                    <a style="color: #480f71;" href="https://www.ask.fm/{{ elem.site }}" target="_blank">{{ elem.site }}</a>
                     {% endif %}
                   </td>
                   <td>
@@ -332,7 +332,7 @@
                       </div>
                       <div class="row">
                         <div class="col-75">
-                          <input type="text" id="editUsername" name="editsite" value="{{ site }}" required>
+                          <input type="text" id="editUsername" name="editsite" value="{{ elem.site }}" required>
                         </div>
                       </div>
                       <div class="subm">

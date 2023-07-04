@@ -412,7 +412,7 @@ def profileSocial(request):
                 htmlRuuDamjuulahUtguud["textColor"] = "#00ff00"
             else:
                 htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
-        
+            return redirect('profileSocial')
         # if "editSave" in request.POST:
         #     serviceHayag = "http://whoisb.mandakh.org/userSocialUp/"
         #     app = request.POST.get("editapp")
@@ -491,7 +491,7 @@ def profileSocialDel(request,id):
 #   profileSocial
     except:
         htmlRuuDamjuulahUtguud["responseText"] = "Ямар 1 балай алдаа"
-    return render(request, "Profile/7.html", {'app_site_pairs': app_site_pairs,'responseText': htmlRuuDamjuulahUtguud['responseText'], 'textColor': htmlRuuDamjuulahUtguud['textColor']})
+    return render(request, 'Profile/7.html', htmlRuuDamjuulahUtguud)
 def profileEdu(request):
     checkSession(request)
     tooluur = 0
