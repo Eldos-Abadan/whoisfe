@@ -452,6 +452,47 @@ def profileSocial(request):
 #   profileSocial
 
 
+def profileSocialDel(request,id):
+    checkSession(request)
+    if request.session['beegii'] == 0:
+        return redirect("homeView")
+    htmlRuuDamjuulahUtguud = {}
+    htmlRuuDamjuulahUtguud["responseText"] = ""
+    htmlRuuDamjuulahUtguud["textColor"] = "#00FF00"
+    requestJSON = {
+        "socialId": id           
+    }
+    r = requests.get("http://whoisb.mandakh.org/userSocialDel/",
+                        data=json.dumps(requestJSON),
+                        headers={'Content-Type': 'application/json'})
+    responseJson = r.json()
+    htmlRuuDamjuulahUtguud["responseText"] = htmlRuuDamjuulahUtguud["responseText"]+"|"+responseJson['responseText']
+    # Medeelel ustgah end    
+    # Medeelel haruulah start
+    requestJSON = {
+        "id": request.session['userId']            
+    }
+    r = requests.post("http://whoisb.mandakh.org/userSocial/",
+                        data=json.dumps(requestJSON),
+                        headers={'Content-Type': 'application/json'})
+    try:
+        responseJson = r.json()
+        if responseJson["responseCode"] == 200:
+            userData = responseJson["socialData"]
+            htmlRuuDamjuulahUtguud['id'] = [data['id'] for data in userData]
+            htmlRuuDamjuulahUtguud['app'] = [data['app'] for data in userData]
+            htmlRuuDamjuulahUtguud['site'] = [data['site'] for data in userData]
+        else:
+            htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
+            htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
+    # Zip the app and site lists together
+        app_site_pairs = zip(htmlRuuDamjuulahUtguud['app'], htmlRuuDamjuulahUtguud['site'])
+        app_site_pairs = app_site_pairs + zip(htmlRuuDamjuulahUtguud['id'])
+    # Pass the zipped list to the template
+#   profileSocial
+    except:
+        htmlRuuDamjuulahUtguud["responseText"] = "Ямар 1 балай алдаа"
+    return render(request, "Profile/7.html", {'app_site_pairs': app_site_pairs,'responseText': htmlRuuDamjuulahUtguud['responseText'], 'textColor': htmlRuuDamjuulahUtguud['textColor']})
 def profileEdu(request):
     checkSession(request)
     tooluur = 0
