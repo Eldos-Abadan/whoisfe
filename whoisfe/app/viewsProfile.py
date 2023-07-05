@@ -253,7 +253,7 @@ def profileExp(request):
     if request.session['beegii'] == 0:
         return redirect("homeView")
     htmlRuuDamjuulakh = {}
-    htmlRuuDamjuulakh["aldaaniiMedegdel"] = ""
+    htmlRuuDamjuulakh["responseText"] = ""
     # medeelel nemeh ehleh
     if request.method == "POST":
         if ("insertButton" in request.POST):
@@ -275,7 +275,7 @@ def profileExp(request):
                             data=json.dumps(requestJSON),
                             headers={'Content-Type': 'application/json'})
             responseJson = r.json()
-            print(responseJson)
+            htmlRuuDamjuulakh["responseText"] = responseJson["responseText"]
     # medeelel nemeh duusah
 
     requestJSON = {
@@ -295,7 +295,7 @@ def profileExp(request):
             myData[i]["dugaar"] = i+1
         htmlRuuDamjuulakh["myData"] = myData        
     else:
-        htmlRuuDamjuulakh["aldaaniiMedegdel"] = responseJson['responseText']
+        htmlRuuDamjuulakh["responseText"] = responseJson['responseText']
     return render(request, "Profile/5.html",htmlRuuDamjuulakh)
 #   profileExp
 def profileExpDel(request,id):

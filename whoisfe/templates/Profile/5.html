@@ -43,7 +43,15 @@
           <h1>Ажлын туршлага</h1>
           <form action="{% url 'profileExp' %}" method="post" name="insertButton">
           {% csrf_token %}
-          {{responseText}}
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="form-floating mt-3">
+                <span style="color:#9726ad;">
+                  {{ responseText }}
+                </span>
+          </div>
+            </div>
+          </div>
         <div class="form-div">
           <div class="row">
             <div class="col-md-3">
@@ -69,12 +77,12 @@
         <table class="table">
           <thead>
             <tr>
-              <th style="color: black;text-align: center;">S.Nu</th>
-              <th style="color: black;">Байгууллага</th>
-              <th style="color: black;">Албан тушаал</th>
-              <th style="color: black;">Эхэлсэн огноо</th>
-              <th style="color: black;">Дууссан огноо</th>
-              <th style="color: black;">Устгах</th>
+              <th style="color: white;text-align: center;">S.Nu</th>
+              <th style="color: white;">Байгууллага</th>
+              <th style="color: white;">Албан тушаал</th>
+              <th style="color: white;">Эхэлсэн огноо</th>
+              <th style="color: white;">Дууссан огноо</th>
+              <th style="color: white;">Устгах</th>
             </tr>
           </thead>
           <tbody id="table">
@@ -85,7 +93,7 @@
               <td>{{ user.company }}</td>
               <td>{{ user.ehelsen }}</td>
               <td>{{ user.duussan }}</td>
-              <td><a href="{% url 'profileExpDel' id=user.id %}" onclick="if (!confirm('Та итгэлтэй байна уу?')) { return false }"><i class="fa fa-trash" style="font-size: 17px; color:#b85ee6;padding-left: 34px;"></i></a></td>
+              <td><a href="{% url 'profileExpDel' id=user.id %}" onclick="if (!confirm('Та устгахдаа итгэлтэй байна уу?')) { return false }"><i class="fa fa-trash" style="font-size: 17px; color:#b85ee6;padding-left: 34px;"></i></a></td>
             </tr>
             {% endfor %}          
           </tbody>
