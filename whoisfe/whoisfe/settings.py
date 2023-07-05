@@ -130,12 +130,15 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# тохируулга
+
 pgDbName   = "dbwhois"
 pgUser     = "uwhois"
 pgHost     = "202.131.254.138"
 pgPassword = "whoispass"
 pgPort     = "5938"
 
+templateErrorRenderHTML = "templates/error/index.html"
 
 # bidnii nemsen function
 

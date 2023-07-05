@@ -1,0 +1,68 @@
+<html>
+  <head> </head>
+  <body>
+    <b>Миний танилцуулга</b>
+    <br />
+    <br />
+    Овог:{{undsen.lastName}}
+    <br />
+    Нэр:{{undsen.firstName}}
+    <br />
+    Имэйл:{{undsen.email}}
+    <br />
+    Регистрийн дугаар:{{nemelt.regDug}}
+    <br />
+    Төрсөн он сар өдөр:{{nemelt.torsonOgnoo}}
+    <br />
+    Утасны дугаар:{{nemelt.dugaar}}
+    <br />
+    Чадвар:{{skill.chadvarNer}}
+    <br />
+    Хүйс:{% if nemelt.huis == 1 %} Эр {% endif %} {% if nemelt.huis == 2 %} Эм
+    {% endif %}
+    <br />
+    Иргэншил:{{nemelt.irgenshil}}
+    <br />
+    Яс үндэс:{{nemelt.ysUndes}}
+    <br />
+    Хаяг:{{nemelt.hayg}}
+    <br />
+    Хобби:{{nemelt.hobby}}
+    <br />
+    Гэр бүлийн мэдээлэл:
+    <br />
+    {% for elem in family %} Хэн болох: {{ elem.henBoloh }}
+    <br />
+    Нэр: {{ elem.ner }}
+    <br />
+    Утасны дугаар: {{ elem.dugaar }}
+    <br />
+    {% endfor %} Боловсрол:
+    <br />
+    {% for elem in education %} Сургуулийн нэр: {{ elem.education }}
+    <br />
+    Чиглэл: {{ elem.direction }}
+    <br />
+    Элссэн огноо: {{ elem.elssenOn }}
+    <br />
+    Дууссан огноо: {{ elem.duussanOn }}
+    <br />
+    {% endfor %} Туршлага:
+    <br />
+    {% for elem in work %} Байгууллага: {{ elem.ajil }}
+    <br />
+    Албан тушаал: {{ elem.company }}
+    <br />
+    Эхэлсэн огноо: {{ elem.ehelsen }}
+    <br />
+    Дууссан огноо: {{ elem.duussan }}
+    <br />
+    {% endfor %} ВЕБСАЙТ & ЦАХИМ ХАЯГ:
+    <br />
+    {% for elem in social %} Платформ: {{ elem.app }}
+    <br />
+    Хаяг: {{ elem.site }}
+    <br />
+    {% endfor %}
+  </body>
+</html>

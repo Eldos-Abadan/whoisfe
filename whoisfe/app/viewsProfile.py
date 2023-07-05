@@ -257,8 +257,8 @@ def profileExp(request):
     # medeelel nemeh ehleh
     if request.method == "POST":
         if ("insertButton" in request.POST):
-            ajil = request.POST.get("companyNer")
-            company = request.POST.get("albanTushaal")
+            ajil = request.POST.get("albanTushaal")
+            company = request.POST.get("companyNer")
             ehelsen = request.POST.get("date1")
             duussan = request.POST.get("date2")
             if not duussan: 
@@ -475,8 +475,7 @@ def profileSocialDel(request,id):
                         data=json.dumps(requestJSON),
                         headers={'Content-Type': 'application/json'})    
     try:
-        responseJson = r.json()
-        print("ustgasnii daraa:",responseJson["socialData"],request.session['userId'])
+        responseJson = r.json()        
         if responseJson["responseCode"] == 200:
             htmlRuuDamjuulahUtguud['socialData'] = responseJson["socialData"]
         else:
