@@ -6,7 +6,7 @@ from django.http import HttpResponse
 import json.decoder
 
 # Хэрэглэгчийн мэдээллээ бөглөсөн эсэхийг мэдэгдэх
-def dashboardTestViews(request): 
+def dashboardViews(request): 
     # Хэрэглэгч нэвтэрсэн эсэхийг шалгах
     checkSession(request)
     if request.session['beegii'] == 0:
@@ -96,7 +96,7 @@ def dashboardTestViews(request):
         # return render(request, "dashboard/dashboard.html", htmlData) 
     return render(request, "dashboard/dashboard.html", htmlData)
 ##############################################################################
-def dashboardViews(request): 
+def dashboardTestViews(request): 
     # Хэрэглэгч нэвтэрсэн эсэхийг шалгах
     checkSession(request)
     if request.session['beegii'] == 0:
