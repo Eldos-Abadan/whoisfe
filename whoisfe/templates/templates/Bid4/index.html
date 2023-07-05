@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tuguldur CV</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="path/to/jspdf.min.js"></script>
+    <link rel="stylesheet" href="{% static '/css/week1/Tudu/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" integrity="sha512-...your-integrity-hash-here..." crossorigin="anonymous" />
+    <link rel="icon" type="image/png" href="{% static '/images/week1/Tudu/icons8-about-16.png' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
+    <script src="{% static '/js/week1/Tudu/app.js' %}"></script>
+    <script src="https://kit.fontawesome.com/609039e62e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-user"></i> {{undsen.lastName}}</h1>
+        <img id="myImage" src="{% static 'images/week1/Tudu/image1.jpg' %}" alt="Tuguldur's photo" onclick="showImage()">
+
+        <div id="overlay">
+            <img id="overlayImg" src="" alt="">
+            <button id="closeButton" onclick="hideImage()">Close</button>
+          </div>
+        <div class="socials">
+            <a href="https://www.facebook.com/tuguldur.stn/" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://www.instagram.com/uiliin_ur/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+        </div>
+    </header>
+    <div class="container">
+        <section class="section">
+            <h2><i class="fas fa-info-circle"></i> About Me</h2>
+            <h3>First name: <span>{{undsen.firstName}}</span></h3>
+            <h3>Last name: <span>{{undsen.lastName}}</span></h3>
+            <h3>Birth Date: <span>{{nemelt.torsonOgnoo}}</span></h3>
+            <h3>Address</h3>
+            <p>{{nemelt.hayg}}</p>
+            
+        </section>
+        <section class="section">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            <h3>University</h3>
+            <p>{% for elem in education %}{{ elem.education }} </p>
+         
+        </section>
+        <section class="section">
+            <h2><i class="fa-solid fa-lightbulb"></i> Soft Skills</h2>
+            <ul>
+                <li><i class="fa-solid fa-clock"></i>{{nemelt.hobby}}</li>
+            </ul>
+        </section>
+        <section class="section">
+            <h2><i class="fas fa-heart"></i> Hobbies</h2>
+            <ul>
+                <li><i class="fas fa-star"></i>{{nemelt.hobby}}</li>
+                
+            </ul>
+        </section>
+        <section class="contact section">
+            <h2><i class="fas fa-envelope"></i> Contact</h2>
+            <p>Personal Email: <a href="mailto:apoxmn@gmail.com">{{undsen.email}}</a></p>
+           
+            <p>Phone number:{{nemelt.dugaar}}</p>
+        </section>
+        <button class="downloadButton" onclick="savePageAsPDF()">Download as PDF</button>
+    </div>
+    </body>
+</html>
