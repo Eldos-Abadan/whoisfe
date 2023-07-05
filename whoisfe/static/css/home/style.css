@@ -306,7 +306,7 @@ p {
 	margin-top: 50px;
 }
 #services .service-item {
-    flex-basis: 80%;
+    /* flex-basis: 80%; */
     padding: 30px;
     border-radius: 10px;
     margin: 10px 5%;
@@ -338,10 +338,14 @@ p {
     color: rgb(7, 7, 7);
     margin-bottom: 10px;
     text-transform: uppercase;
+	text-align: center;
+	
 }
 #services .service-item p {
 	color: rgb(3, 3, 3);
-	text-align: left;
+	text-align: justify;
+	padding: 5px;
+	padding: 20px;
 }
 /* End Services Section */
 
@@ -809,6 +813,12 @@ input[type=button] {
 input[type=button]:hover,
 input[type=button].active {
   background-color: rgb(179, 58, 210);
+}
+#services .service-item img{
+	margin-bottom: -30px;
+	margin-left: -30px;
+	margin-top: -20px;
+	width: 170px;
 }
 /* End  Media Query For Desktop */
   
