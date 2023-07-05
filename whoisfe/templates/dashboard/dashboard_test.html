@@ -180,12 +180,12 @@
                                         <div class="box12">
                                             <br>
                                             <br>
-                                            <h5>Дансны үлдэгдэл:</h5>
+                                            <h5>Дансны үлдэгдэл: <b>
                                             {% for user in userD %}
                                                 {% if user.balance is not None %}
-                                                    <h2>{{ user.balance }} ₮</h2>
+                                                    {{ user.balance }} ₮
                                                 {% endif %}
-                                            {% endfor %}
+                                            {% endfor %}</b></h5>
                                             {% for user in userD %}
                                                 {% if user.walletName %}
                                                     <h5>Дансны нэр: {{ user.walletName }}</h5>
@@ -202,7 +202,7 @@
                                         <div class="box2">
                                             {% if user.garchig == 'Нэмэлт мэдээлэл' %}
                                                 {% if user.bvrenEsekh == 1 %}
-                                                    <p>&emsp;Нэмэлт мэдээлэл 😊</p>
+                                                    <p>&emsp;Нэмэлт мэдээлэл </p>
                                                     <div class="container1">
                                                         <div class="skills add" style="width: 100%">100%</div>
                                                     </div> 
@@ -250,7 +250,7 @@
                                                 {% endif %}
                                             {% if user.garchig == 'Гэр бүлийн мэдээлэл' %}
                                                 {% if user.bvrenEsekh == 1 %}
-                                                    <p>&emsp;Гэр бүл 😊</p>
+                                                    <p>&emsp;Гэр бүл </p>
                                                     <div class="container1">
                                                         <div class="skills family" style="width:100%;">100%</div>
                                                     </div>
@@ -263,7 +263,7 @@
                                                 {% endif %}
                                             {% elif user.garchig == 'Боловсрол' %}
                                                 {% if user.bvrenEsekh == 1 %}
-                                                    <p>&emsp;Боловсрол 😊</p>
+                                                    <p>&emsp;Боловсрол </p>
                                                     <div class="container1">
                                                         <div class="skills edu" style="width:100%;">100%</div>
                                                     </div>
@@ -276,7 +276,7 @@
                                                 {% endif %}
                                             {% elif user.garchig == 'Туршлага' %}
                                                 {% if user.bvrenEsekh == 1 %}
-                                                    <p>&emsp;Туршлага 😊</p>
+                                                    <p>&emsp;Туршлага </p>
                                                     <div class="container1">
                                                         <div class="skills exp" style="width:100%;">100%</div>
                                                     </div>
@@ -289,7 +289,7 @@
                                                 {% endif %}
                                             {% elif user.garchig == 'Чадвар' %}
                                                 {% if user.bvrenEsekh == 1 %}
-                                                    <p>&emsp;Чадвар 😊</p>
+                                                    <p>&emsp;Чадвар </p>
                                                     <div class="container1">
                                                         <div class="skills skill" style="width:100%;">100%</div>
                                                     </div>
@@ -302,7 +302,7 @@
                                                 {% endif %}
                                             {% elif user.garchig == 'Сошиал' %}
                                                 {% if user.bvrenEsekh == 1 %}
-                                                    <p>&emsp;Сошиал 😊</p>
+                                                    <p>&emsp;Сошиал </p>
                                                     <div class="container1">
                                                         <div class="skills social" style="width:100%;">100%</div>
                                                     </div>
@@ -318,7 +318,13 @@
                                         {% endfor %}
                                     </div>
                                 </div>
-                                <div class="box" style="height:400px; width:300px;">Хэрэглэгчийн санал гомдол илгээх form</div>
+                                <div class="box" style="height:400px; width:300px;">
+                                    <h4>Хэрэглэгчийн санал гомдол илгээх form: </h4>
+                                    <div class="form-check mt-3">
+                                        <textarea name="Message" cols="36" rows="9"></textarea>  
+                                    </div>
+                                    <div style="border:2px black solid; padding: 4px 4px 4px 4px; width:65px;">Илгээх</div>
+                                </div>
                             </div>
                         </form>
                     </body>
