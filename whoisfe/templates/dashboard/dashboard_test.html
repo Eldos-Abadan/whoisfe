@@ -1,0 +1,363 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="{% static ''%}" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Dashboard WhoIs</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="{% static '/css/dashboard/bootstrap.min.css'%}" rel="stylesheet" />
+    <link href="{% static '/css/Profile/1.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static '/css/dashboard/animate.min.css'%}" rel="stylesheet" />
+    <link href="{% static '/css/dashboard/light-bootstrap-dashboard.css'%}" rel="stylesheet" />
+    <link href="{% static '/css/dashboard/demo.css'%}" rel="stylesheet" />
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css" />
+    <link href="{% static '/css/dashboard/pe-icon-7-stroke.css'%}" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="{% static '/css/Profile/3.css' %}" rel="stylesheet" type="text/css">
+    <style>
+        .section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            {% comment %} background-color: #f1f1f1; {% endcomment %}
+            padding: 5px;
+            {% comment %} text-align: center; {% endcomment %}
+        }
+        .section1 {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            {% comment %} background-color: #f1f1f1; {% endcomment %}
+            padding: 1px;
+            {% comment %} text-align: center; {% endcomment %}
+        }
+
+        .box {
+            width: 460px;
+            height: 300px;
+            {% comment %} background-color: #ddd; {% endcomment %}
+            margin: 5px;
+        }
+        {% comment %} height:80px; width:200px; background:white; {% endcomment %}
+        .box2 {
+            width: 45%;
+            height: 30%;
+            {% comment %} background-color: #ddd; {% endcomment %}
+            margin: 5px;
+        }
+        .box11 {
+            width: 60%;
+            height: 100%;
+            {% comment %} background-color: #ddd; {% endcomment %}
+            margin: 5px;
+        }
+        .box12 {
+            width: 30%;
+            height: 100%;
+            {% comment %} background-color: #ddd; {% endcomment %}
+            margin: 5px;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .section {
+                padding: 5px;
+            }
+            
+            .box {
+                width: 150px;
+                height: 50px;
+                margin: 5px;
+            }
+        }
+        .container1 {
+          width: 60%;
+          background-color: #ddd;
+          border: black 2px solid;
+          border-radius: 20px;
+        }
+        
+        .skills {
+            text-align: right;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            color: white;
+            border-radius: 20px;
+        }
+        
+        .html {width: 90%; background-color: #04AA6D;}
+        .add {width: 90%; background-color: #04AA6D;}
+        .exp {width: 90%; background-color: #04AA6D;}
+        .skill {width: 90%; background-color: #04AA6D;}
+        .edu {width: 90%; background-color: #04AA6D;}
+        .social {width: 90%; background-color: #04AA6D;}
+        .family {width: 90%; background-color: #04AA6D;}
+    </style>
+</head>
+
+<body>
+    <div class="main-panel">
+        <nav class="navbar navbar-default navbar-fixed" style="width: 1200px;">
+            <div class="container-fluid">
+                <!-- <div class="navbar-header"> -->
+                    {% include "../includes/logout.html" %}
+                    <li class="separator hidden-lg"></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="wrapper">
+        <div class="sidebar" data-color="purple" data-image="{% static '/images/sidebar-5.jpg'%}">
+            {% include "../includes/menu.html" %}
+        </div> <br> <br> <br><br>
+        <div class="container">
+            <div class="wrapper">
+                <div class="main4">
+                    <!-- ############################################################### -->
+                    
+                    {% comment %} <h1 style="text-align: center;">Хэрэглэгчийн самбар</h1> {% endcomment %}
+                    {% comment %} <b>{{aldaaniiMedegdel}}</b> {% endcomment %}
+                    </head>
+
+                    <body>
+                        <form action="{% url 'profileEdu' %}" method="post" name="">
+                            {% csrf_token %}
+                            <div class="section">
+                                <div class="box" style="height:200px; width:860px; ">
+                                    <div class="section1">
+                                        <div class="box11">
+                                            <br>
+                                            {% for user in userD %}
+                                                {% if user.lastName %}
+                                                    <p>Сайн байна уу, {{ user.lastName }}!</p>
+                                                {% endif %}
+                                            {% endfor %}
+                                            {% if niitMedeelel == 6 %}
+                                                <p>&emsp;Хэрэглэгчийн мэдээллээ оруулсан байдал. 😊</p>
+                                                <div class="container1">
+                                                    <div class="skills html" style="width: 100%;  background-color: darkgreen;"> 100%</div>
+                                                </div>
+                                            {% elif niitMedeelel == 5%}
+                                                <p>&emsp;Хэрэглэгчийн мэдээллээ оруулсан байдал.</p>
+                                                <div class="container1">
+                                                    <div class="skills html" style="width: 83%;  background-color: darkgreen;"> 83%</div>
+                                                </div>
+                                            {% elif niitMedeelel == 4%}
+                                                <p>&emsp;Хэрэглэгчийн мэдээллээ оруулсан байдал.</p>
+                                                <div class="container1">
+                                                    <div class="skills html" style="width: 66%;  background-color: darkgreen;"> 66%</div>
+                                                </div>
+                                            {% elif niitMedeelel == 3%}
+                                                <p>&emsp;Хэрэглэгчийн мэдээллээ оруулсан байдал.</p>
+                                                <div class="container1">
+                                                    <div class="skills html" style="width: 50%;  background-color: darkgreen;"> 50%</div>
+                                                </div>
+                                            {% elif niitMedeelel == 2%}
+                                                <p>&emsp;Хэрэглэгчийн мэдээллээ оруулсан байдал.</p>
+                                                <div class="container1">
+                                                    <div class="skills html" style="width: 33%;  background-color: darkgreen;"> 33%</div>
+                                                </div>
+                                            {% elif niitMedeelel == 1%}
+                                                <p>&emsp;Хэрэглэгчийн мэдээллээ оруулсан байдал.</p>
+                                                <div class="container1">
+                                                    <div class="skills html" style="width: 16%;  background-color: darkgreen;"> 16%</div>
+                                                </div>
+                                            {% else %}
+                                                <p>&emsp;Хэрэглэгчийн мэдээллээ оруулсан байдал.</p>
+                                                <div class="container1">
+                                                    <div class="skills html" style="width: 10%;  background-color: darkgreen;"> 0%</div>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                        <div class="box12">
+                                            <br>
+                                            <br>
+                                            <h5>Дансны үлдэгдэл:</h5>
+                                            {% for user in userD %}
+                                                {% if user.balance is not None %}
+                                                    <h2>{{ user.balance }} ₮</h2>
+                                                {% endif %}
+                                            {% endfor %}
+                                            {% for user in userD %}
+                                                {% if user.walletName %}
+                                                    <h5>Дансны нэр: {{ user.walletName }}</h5>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                                {% comment %} <div class="box" style="height:200px; width:360px;">Box 2</div> {% endcomment %}
+
+                                <div class="box" style="height:400px; width:600px;">
+                                    <div class="section1">
+                                        {% for user in userD %}
+                                        <div class="box2">
+                                            {% if user.garchig == 'Нэмэлт мэдээлэл' %}
+                                                {% if user.bvrenEsekh == 1 %}
+                                                    <p>&emsp;Нэмэлт мэдээлэл 😊</p>
+                                                    <div class="container1">
+                                                        <div class="skills add" style="width: 100%">100%</div>
+                                                    </div> 
+                                                {% elif user.nemeltDutuu == 12 %}
+                                                    <p>&emsp;Нэмэлт мэдээлэл</p>
+                                                    <div class="container1">
+                                                        <div class="skills add" style="width: 12.5%;background-color: darkgreen;"> 12.5%</div>
+                                                    </div> 
+                                                {% elif user.nemeltDutuu == 25 %}
+                                                    <p>&emsp;Нэмэлт мэдээлэл</p>
+                                                    <div class="container1">
+                                                        <div class="skills add" style="width: 25%;  background-color: darkgreen;"> 25%</div>
+                                                    </div> 
+                                                {% elif user.nemeltDutuu == 37 %}
+                                                    <p>&emsp;Нэмэлт мэдээлэл</p>
+                                                    <div class="container1">
+                                                        <div class="skills add" style="width: 37.5%;background-color: darkgreen;"> 37.5%</div>
+                                                    </div> 
+                                                {% elif user.nemeltDutuu == 50 %}
+                                                    <p>&emsp;Нэмэлт мэдээлэл</p>
+                                                    <div class="container1">
+                                                        <div class="skills add" style="width: 50%;background-color: darkgreen;"> 50%</div>
+                                                    </div> 
+                                                {% elif user.nemeltDutuu == 62 %}
+                                                    <p>&emsp;Нэмэлт мэдээлэл</p>
+                                                    <div class="container1">
+                                                        <div class="skills add" style="width: 62.5%;background-color: darkgreen;"> 62.5%</div>
+                                                    </div> 
+                                                {% elif user.nemeltDutuu == 75 %}
+                                                    <p>&emsp;Нэмэлт мэдээлэл</p>
+                                                    <div class="container1">
+                                                        <div class="skills add" style="width:755%;background-color: darkgreen;"> 75%</div>
+                                                    </div> 
+                                                {% elif user.nemeltDutuu == 87 %}
+                                                    <p>&emsp;Нэмэлт мэдээлэл</p>
+                                                    <div class="container1">
+                                                        <div class="skills add" style="width: 87.5%;background-color: darkgreen;"> 87.5%</div>
+                                                    </div> 
+                                                {% else %}
+                                                    <p>&emsp;Нэмэлт мэдээлэл</p>
+                                                    <div class="container1">
+                                                        <div class="skills add" style="""with: 10%;background-color: darkgreen;""">0%</div>
+                                                    </div> 
+                                                {% endif %}
+                                                {% endif %}
+                                            {% if user.garchig == 'Гэр бүлийн мэдээлэл' %}
+                                                {% if user.bvrenEsekh == 1 %}
+                                                    <p>&emsp;Гэр бүл 😊</p>
+                                                    <div class="container1">
+                                                        <div class="skills family" style="width:100%;">100%</div>
+                                                    </div>
+                                                {% else %}
+                                                    <p>&emsp;Гэр бүл</p>
+                                                    <div class="container1">
+                                                        <div class="skills family" style="width:10% ;background-color: darkgreen;">0%</div>
+                                                    </div>
+                                                    <p>&emsp;Мэдээллээ бүрэн бөглөнө үү.</p>
+                                                {% endif %}
+                                            {% elif user.garchig == 'Боловсрол' %}
+                                                {% if user.bvrenEsekh == 1 %}
+                                                    <p>&emsp;Боловсрол 😊</p>
+                                                    <div class="container1">
+                                                        <div class="skills edu" style="width:100%;">100%</div>
+                                                    </div>
+                                                {% else %}
+                                                    <p>&emsp;Боловсрол</p>
+                                                    <div class="container1">
+                                                        <div class="skills family" style="width:10%;background-color: darkgreen;">0%</div>
+                                                    </div>
+                                                    <p>&emsp;Мэдээллээ бүрэн бөглөнө үү.</p>
+                                                {% endif %}
+                                            {% elif user.garchig == 'Туршлага' %}
+                                                {% if user.bvrenEsekh == 1 %}
+                                                    <p>&emsp;Туршлага 😊</p>
+                                                    <div class="container1">
+                                                        <div class="skills exp" style="width:100%;">100%</div>
+                                                    </div>
+                                                {% else %}
+                                                    <p>&emsp;Туршлага</p>
+                                                    <div class="container1">
+                                                        <div class="skills exp" style="width:10%;background-color: darkgreen;">0%</div>
+                                                    </div>
+                                                    <p>&emsp;Мэдээллээ бүрэн бөглөнө үү.</p>
+                                                {% endif %}
+                                            {% elif user.garchig == 'Чадвар' %}
+                                                {% if user.bvrenEsekh == 1 %}
+                                                    <p>&emsp;Чадвар 😊</p>
+                                                    <div class="container1">
+                                                        <div class="skills skill" style="width:100%;">100%</div>
+                                                    </div>
+                                                {% else %}
+                                                    <p>&emsp;Чадвар</p>
+                                                    <div class="container1">
+                                                        <div class="skills skill" style="width:10%;background-color: darkgreen;">0%</div>
+                                                    </div>
+                                                    <p>&emsp;Мэдээллээ бүрэн бөглөнө үү.</p>
+                                                {% endif %}
+                                            {% elif user.garchig == 'Сошиал' %}
+                                                {% if user.bvrenEsekh == 1 %}
+                                                    <p>&emsp;Сошиал 😊</p>
+                                                    <div class="container1">
+                                                        <div class="skills social" style="width:100%;">100%</div>
+                                                    </div>
+                                                {% else %}
+                                                    <p>&emsp;Сошиал</p>
+                                                    <div class="container1">
+                                                        <div class="skills social" style="width:10%;background-color: darkgreen;">0%</div>
+                                                    </div>
+                                                    <p>&emsp;Мэдээллээ бүрэн бөглөнө үү.</p>
+                                                {% endif %}
+                                            {% endif %}
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="box" style="height:400px; width:300px;">Хэрэглэгчийн санал гомдол илгээх form</div>
+                            </div>
+                        </form>
+                    </body>
+                             <!-- ############################################################### -->
+                    </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="wrapper2">
+        <div class="footer">
+            {% include "../includes/footer.html" %}
+        </div>
+    </div>
+
+
+</body>
+<script src="{% static '/js/dashboard/jquery.3.2.1.min.js'%}" type="text/javascript"></script>
+<script src="{% static '/js/dashboard/bootstrap.min.js'%}" type="text/javascript"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<script src="{% static '/js/dashboard/light-bootstrap-dashboard.js'%}"></script>
+<script src="{% static '/js/dashboard/demo.js'%}"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#educationMedeelel").addClass("active");
+        demo.initChartist();
+
+        $.notify({
+            icon: "pe-7s-gift",
+            message: "Welcome to WhoIs Dashboard</b>"
+        }, {
+            type: "info",
+            timer: 4000
+        });
+    });
+    $(document).ready(function () {
+    $("#profileMenuItem").addClass("active");
+    demo.initChartist();
+  });
+</script>
+</body>
+</html>
