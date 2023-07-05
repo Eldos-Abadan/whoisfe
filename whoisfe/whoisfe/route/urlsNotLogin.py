@@ -10,12 +10,13 @@ urlpatterns = [
     path("signUpWarn/",                 viewsSignUpWarn.signUpWarnViews,    name="viewsSignUpWarning"),
     path("register/email_activation",   viewsEmailVer.EmailVerView,         name="EmailVerView"), 
     # CV bolon NC template-uud ##########################################################################
-    path("mycv/<int:tid>/<str:uname>/",                     viewsTemplate.myCvView,              name="myCvView"),
-    path("justCV/",                     viewsMain.justCVViews,              name="justcv"),
-    path("justNC/",                     viewsMain.justNCViews,              name="justnc"),
-    path("BC/",                         viewsMain.odkeBcViews,              name="BC"),
-    path("mainNC/",                     viewsMain.mainNCViews,              name="mainnc"),
-    path("enkuCV/",                     viewsMain.enkuCVViews,              name="enkucv"),
-    path("enku2CV/",                     viewsMain.enku2CVViews,              name="enku2cv"),
+    path("mycv/<int:tid>/<str:uname>/",                     viewsTemplate.myCvView,             name="myCvView"),
+    path("justCV/",                                         viewsMain.justCVViews,              name="justcv"),
+    path("justNC/",                                         viewsMain.justNCViews,              name="justnc"),
+    path("BC/",                                             viewsMain.odkeBcViews,              name="BC"),
+    path("mainNC/",                                         viewsMain.mainNCViews,              name="mainnc"),
+    path("enkuCV/",                                         viewsMain.enkuCVViews,              name="enkucv"),
+    path("enku2CV/",                                        viewsMain.enku2CVViews,             name="enku2cv"),
+    path("kucv/",                                           viewsMain.kucvViews,                name="kucv"),
     #####################################################################################################
     ]   

@@ -135,3 +135,6 @@ def enkuCVViews(request):
 
 def enku2CVViews(request): 
   return render(request, "templates/enku2.html")
+
+def kucvViews(request): 
+  return render(request, "templates/kucv.html")
