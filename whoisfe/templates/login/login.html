@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Home/log in</title>
     <link
       rel="icon"
@@ -25,14 +26,15 @@
         align-items: center;
         min-height: 100vh;
         width: 100%;
-        background: url("{% static '/images/week1/p11.jpg'%}") no-repeat; 
+        /* background: url("{% static '/images/week1/p11.jpg'%}") no-repeat;  */
         background-position: 100% 90%;
         background-size: cover;
         position: relative;
+        background-color: #DDDDDD;
       }
       .form-box {
         width: 400px;
-        height: 450px;
+        height: 100%;
         background: transparent;
         border: 3px solid rgba(119, 11, 122, 0.5);
         border-radius: 20px;
@@ -74,7 +76,7 @@
         outline: none;
         font-size: 1em;
         padding: 0 35px 0 5px;
-        color: ##060606;
+        color: #060606;
       }
       .inputbox ion-icon {
         position: absolute;
@@ -86,7 +88,7 @@
       .forget {
         margin: -15px 0 15px;
         font-size: 0.9em;
-        color: #040404a;
+        color: #040404;
         display: flex;
         justify-content: center;
       }
@@ -109,11 +111,29 @@
         outline: none;
         cursor: pointer;
         font-size: 1em;
-        font-weight: 600;
+        font-weight: 400;
+        
+      }
+      .m {
+        width: 100%;
+        height: 40px;
+        border-radius: 40px;
+        background: #db68eb;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 400;
+        margin-top: 10px;
+        display: flex;
+      justify-content: center;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 10px;
       }
       .register {
         font-size: 0.9em;
-        color: #040404a;
+        color: #040404;
         text-align: center;
         margin: 25px 0 10px;
       }
@@ -130,6 +150,13 @@
         background: transparent;
         border-radius: 50%;
       }
+       input value{
+        color: #db68eb;
+      }
+      img{
+        z-index: 1000px;
+        
+      }
     </style>
   </head>
   <body>
@@ -138,15 +165,17 @@
         <div class="form-value">
           <form action="" id="loginForm" method="post">
             {%csrf_token%}
-            <img
+         <center>  <img
               class="lg"
               src="{% static '/images/week1/l.png'%}"
               alt="logo"
-              width="100px"
-              height="100px"
-            /> 
-            
-            <h2>Нэвтрэх</h2>
+              width="150px"
+              height="150px"
+            style="margin-bottom: -3rem;"
+            /> </center> 
+
+                       <a href="{%url 'homeView'%}"><i class='fa fa-arrow-left' style="color: #040404; font-size: 25px;" ></i>
+                        <h2></a>Нэвтрэх</h2>
 
             <div class="inputbox">
               <input
@@ -177,11 +206,15 @@
                 <a href="{% url 'forgetView'%}"
                   ><span style="color: blueviolet">Нууц үг мартсан?</span></a
                 >
+               
               </label>
             </div>
             <!-- <button id="loginForm" type="submit">Нэвтрэх</button> -->
             <span style="color: #ff0000"> {{ aldaaniiMedegdel }} </span>
             <input id="my" type="submit" value="Нэвтрэх" />
+            
+           <!-- <a href="{%url 'homeView' %}" class="m">Буцах</a> -->
+
             <div class="register">
               <p>
                 Бүртгэлгүй бол
@@ -190,14 +223,10 @@
                 >
               </p>
               <p>
-                <a href="/week1"
-                  ><span style="color: blueviolet">Cv of students</span></a
-                >
-              </p>
-              <p>
-                <a href="/profile"
-                  ><span style="color: blueviolet">Profile</span></a
-                >
+                
+                <a href="{% url 'guideViews'%}"  style="color: blueviolet;"> Заавар</a>
+
+              
               </p>
             </div>
           </form>
