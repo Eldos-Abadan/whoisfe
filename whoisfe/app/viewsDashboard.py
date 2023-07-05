@@ -6,7 +6,7 @@ from django.http import HttpResponse
 import json.decoder
 
 # Хэрэглэгчийн мэдээллээ бөглөсөн эсэхийг мэдэгдэх
-def dashboardViews(request): 
+def dashboardTestViews(request): 
     # Хэрэглэгч нэвтэрсэн эсэхийг шалгах
     checkSession(request)
     if request.session['beegii'] == 0:
@@ -96,7 +96,7 @@ def dashboardViews(request):
         # return render(request, "dashboard/dashboard.html", htmlData) 
     return render(request, "dashboard/dashboard.html", htmlData)
 ##############################################################################
-def dashboardTestViews(request): 
+def dashboardViews(request): 
     # Хэрэглэгч нэвтэрсэн эсэхийг шалгах
     checkSession(request)
     if request.session['beegii'] == 0:
@@ -203,7 +203,8 @@ def dashboardTestViews(request):
         except Exception as e:
             htmlData["aldaaniiMedeelel"] = "Уучлаарай, одоогоор энэ хуудсан дээрх мэдээллийг харуулах боломжгүй байна."
             # htmlData["userData1"] = ""
-            # return render(request, "dashboard/dashboard.html", htmlData) 
+            # print(str(e))
+            return render(request, "dashboard/dashboard.html", htmlData) 
     hi = {"nemeltDutuu": int(100 - int(userNemeltDutuu)*12.5)}
     htmlData["userD"][0]["nemeltDutuu"] = int(100 - int(userNemeltDutuu)*12.5)
     htmlData["userD"].append(hi)
@@ -220,4 +221,5 @@ def dashboardTestViews(request):
     # print(niitMedeelel)
     htmlData["niitMedeelel"] = niitMedeelel
     htmlData["userD"].append(hi)
+    # print(htmlData["userD"])
     return render(request, "dashboard/dashboard_test.html", htmlData)
