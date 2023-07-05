@@ -32,7 +32,7 @@
               {% endfor %}
             </ul>
           {% endif %}
-          <p style="color: gray;"> Бүртгүүлэхийн тулд дараах зүйлсийг оруулна уу</p>
+          <p style="color: #040404;margin-top: 10px;"> Бүртгүүлэхийн тулд дараах зүйлсийг оруулна уу</p>
 
           <div class="inputbox">
             <input type="text" id="username"  name="first_name" required />
@@ -72,9 +72,11 @@
           <div class="register">
             <p>
               Бүртгэлтэй бол
-              <a href="/login"><span style="color: aqua;padding-top:-300px ;">Нэвтрэх</span></a>
+              <a href="/login"><span style="color: blueviolet;">Нэвтрэх</span></a>
             </p>
-
+            <p>
+              <a href="{% url 'guideViews'%}" style="color:blueviolet;">Заавар</a>
+            </p>
           </div>
         </form>
 
