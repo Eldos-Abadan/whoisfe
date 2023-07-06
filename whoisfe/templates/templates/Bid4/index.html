@@ -17,20 +17,16 @@
 <body>
     <header>
         <h1><i class="fas fa-user"></i> {{undsen.firstName}}</h1>
-        <img id="myImage" src="{% static '' %}" alt="Tuguldur's photo" onclick="showImage()">
+        <img id="myImage" src="{% static '' %}" alt="{{undsen.firstName}}" onclick="showImage()">
 
         <div id="overlay">
             <img id="overlayImg" src="" alt="">
             <button id="closeButton" onclick="hideImage()">Close</button>
           </div>
-        <div class="socials">
-            <a href="https://www.facebook.com/tuguldur.stn/" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
-            <a href="https://www.instagram.com/uiliin_ur/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
-        </div>
     </header>
     <div class="container">
         <section class="section">
-            <h2><i class="fas fa-info-circle"></i>Миний тухай</h2>
+            <h2><i class="fas fa-info-circle"></i> Миний тухай</h2>
             <h3>Нэр: <span>{{undsen.firstName}}</span></h3>
             <h3>Овог: <span>{{undsen.lastName}}</span></h3>
             <h3>Төрсөн огноо: <span>{{nemelt.torsonOgnoo}}</span></h3>
@@ -40,9 +36,16 @@
         </section>
         <section class="section">
             <h2><i class="fas fa-graduation-cap"></i>Боловсрол</h2>
+            {% for elem in education %}
             <h3>Сургууль</h3>
             <p>{{ elem.education }} </p>
-         
+            <h3>Чиглэл</h3>
+            <p>{{ elem.direction }} </p>
+            <h3>Элссэн он</h3>
+            <p>{{elem.elssenOn }} </p>
+            <h3>Төгссөн он</h3>
+            <p>{{ elem.duussanOn }} </p>
+            {% endfor %}
         </section>
         <section class="section">
             <h2><i class="fa-solid fa-lightbulb"></i>Чадвар</h2>
@@ -57,10 +60,15 @@
                 
             </ul>
         </section>
+        <section class="section">
+            <h2><i class="fas fa-heart"></i>Цахим хаягууд</h2>
+            {% for elem in social %}
+            <h3>Платформ: {{ elem.app }}  Хаяг: {{ elem.site }}</h3>
+            {% endfor %}
+        </section>
         <section class="contact section">
             <h2><i class="fas fa-envelope"></i>Холбогдох</h2>
             <p>Цахим шуудан: <a href="mailto:apoxmn@gmail.com">{{undsen.email}}</a></p>
-           
             <p>Утасны дугаар:{{nemelt.dugaar}}</p>
         </section>
         <button class="downloadButton" onclick="savePageAsPDF()">PDF ээр татах</button>
