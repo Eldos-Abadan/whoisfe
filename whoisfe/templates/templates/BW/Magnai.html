@@ -178,12 +178,12 @@
 		}
 
 		.left {
-			width: 25%;
+			width: 50%;
 			float: left;
 		}
 
 		.right {
-			width: 75%;
+			width: 50%;
 			float: left;
 		}
 
@@ -300,28 +300,28 @@
 				<img src="{% static '/images/week1/pro.jpg' %}" class="profile-img">
 				<div class="blue-box" id="hi"></div>
 			</div>
-			<h2 class="name"> <br><span>Н.Магнай</span></h2>
+			<h2 class="name"> <br><span>{{undsen.lastName}}</span></h2>
 			<p class="n-p">Программ хангамжийн суралцагч</p>
 
 
 			<div class="info" id="hi">
 				<p class="heading">Мэдээлэл</p>
 				<p class="p1"><span class="span1"><img src="{% static '/images/week1/location.png' %}" /></span>Хаяг<span>
-						<br>47.92757248676632, 106.88894748258966</span></p>
-				<p class="p1"><span class="span1"><img src="{% static '/images/week1/call.png' %}"></span>Утас<span> <br>+976
-						95864026</span></p>
+						<br>{{nemelt.hayg}}</span></p>
+				<p class="p1"><span class="span1"><img src="{% static '/images/week1/call.png' %}"></span>Утас<span> <br>{{nemelt.dugaar}}</span></p>
 				<p class="p1"><span class="span1"><img src="{% static '/images/week1/mail.png' %}"></span>Имайл<span>
-						<br>sw21d039@mandakh.edu.mn</span></p>
+						<br>{{undsen.email}}</span></p>
 
 			</div>
 
 			<div class="info" id="hi">
+				{% for elem in social %}
 				<p class="heading">Сошиал</p>
 
-				<p class="p1"><span class="span1"><img src="{% static '/images/week1/facebook.png' %}"></span>Facebook<span>
-						<br>Магнай</span></p>
+				<p class="p1"><span class="span1"><img src=" {{ elem.app }}"></span> {{ elem.site }}<span>
+						<br>   </span></p>
 			</div>
-
+			{% endfor %}
 		</div>
 
 		<div class="right-section" id="hi">
@@ -337,38 +337,38 @@
 				<img src="{% static '/images/week1/pencil.png' %}">
 				<p class="p2">Ажлын туршлага</p>
 			</div>
+			{% for elem in work %}
 			<div class="clearfix" id="hi"></div>
 			<div class="lr-box" id="hi">
 				<div class="left" id="hi">
-					<p class="p4">2018 - 2019</p>
-					<p class="p5">Circkle K</p>
+					<p class="p4">{{ elem.ehelsen }} {{ elem.duussan }}</p>
+					<p class="p5">{{ elem.ajil }}</p>
 				</div>
 
 				<div class="right" id="hi">
-					<p class="p4">Circkle k</p>
-					<p class="p5">international convention store</p>
-					<p class="p5">Үйлчилгээний ажилтангаар 1жилийн хугацаанд зөв боловсон харилцаа ёс зүйд суралцсан.
-					</p>
+					<p class="p4">{{ elem.company }}</p>
+					
 				</div>
 
 				<div class="clearfix" id="hi"></div>
 			</div>
 
-
+			{% endfor %}
 			<br>
 			<div class="right-heading" id="hi">
 				<img src="{% static '/images/week1/edu.png' %}">
 				<p class="p2">Боловсрол</p>
 			</div>
+			{% for elem in education %}
 			<div class="clearfix" id="hi"></div>
 			<div class="lr-box" id="hi">
 				<div class="left" id="hi">
-					<p class="p4">2007 - 2014</p>
-					<p class="p5">ЕБС</p>
+					<p class="p4">{{ elem.elssenOn }} {{ elem.duussanOn }}</p>
+					<p class="p5"></p>
 				</div>
 
 				<div class="right" id="hi">
-					<p class="p4">БГД Ган-зам 20-р сургууль</p>
+					<p class="p4">{{ elem.education }}</p>
 					<p class="p5">Суурь боловсрол</p>
 					<p class="p5"> </p>
 				</div>
@@ -376,45 +376,12 @@
 			</div>
 
 			<div class="lr-box" id="hi">
-				<div class="left" id="hi">
-					<p class="p4">2015 - 2017</p>
-					<p class="p5">МСҮТ</p>
-				</div>
+				
 
-				<div class="right" id="hi">
-					<p class="p4">ЧД-н Шинэ иргэншил политехник коллеж </p>
-					<p class="p5">Хэвлэлийн эх бэлтгэгч график дизайнер </p>
-					<p class="p5"> </p>
-				</div>
-				<div class="clearfix" id="hi"></div>
-				<div class="lr-box" id="hi">
-					<div class="left" id="hi">
-						<p class="p4">2017 - 2018</p>
-						<p class="p5">Их сургууль</p>
-					</div>
+				
+				
 
-					<div class="right" id="hi">
-						<p class="p4">ЧД-н Шинэ иргэншил дээд сургууль</p>
-						<p class="p5">НББ</p>
-						<p class="p5"> </p>
-					</div>
-					<div class="clearfix" id="hi"></div>
-				</div>
-
-				<div class="lr-box" id="hi">
-					<div class="left" id="hi">
-						<p class="p4">2021 - 2025</p>
-						<p class="p5">Мандах их сургууль</p>
-					</div>
-
-					<div class="right" id="hi">
-						<p class="p4">Мэдээлэл технологийн сургууль </p>
-						<p class="p5">Программ хангамж </p>
-						<p class="p5"> </p>
-					</div>
-					<div class="clearfix" id="hi"></div>
-				</div>
-
+				{% endfor %}
 				<br>
 				<div class="right-heading" id="hi">
 					<img src="{% static '/images/week1/edu.png' %}">
@@ -425,10 +392,9 @@
 				
 
 				<div class="right" id="hi">
-					<p class="p4">Circkle k</p>
+					<p class="p4"> {{skill.chadvarNer}}</p>
 					
-					<p class="p5">Үйлчилгээний ажилтангаар 1жилийн хугацаанд зөв боловсон харилцаа ёс зүйд суралцсан.
-					</p>
+					
 				</div>
 
 
@@ -445,9 +411,9 @@
 				<div class="col-md-12 text-right mb-3" id="hi">
         
 				<div class="right" id="hi">
-					<p class="p4">Circkle k</p>
+					<p class="p4">{{nemelt.hobby}}</p>
 					
-					<p class="p5">Үйлчилгээний ажилтангаар 1жилийн хугацаанд зөв боловсон харилцаа ёс зүйд суралцсан.
+					<!-- <p class="p5">{{nemelt.hobby}} -->
 					</p>
 				</div>
 
