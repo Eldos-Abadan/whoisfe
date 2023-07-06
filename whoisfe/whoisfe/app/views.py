@@ -14,4 +14,3 @@ def registerViews(request):
 
 def perinfoViews(request):
     return render(request,"Profile/1.html")
-
