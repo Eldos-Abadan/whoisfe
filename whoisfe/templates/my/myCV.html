@@ -93,17 +93,12 @@ table th td{
                       <th>Загвар харах</th>
                       <th>хуулах</th>
                     </tr>
-                    <!-- <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr> -->
                     {% for ele  in kholboos %}
                     <tr>
                       <td>{{ele.name}}</td>
-                      <td> <a id="link" href="http://localhost:8000/mycv/{{ele.id}}/{{userName}}/"> http://whois.mandakh.org/mycv/{{ele.id}}/{{userName}}/</a></td>
-                      <td> <a href="http://localhost:8000/mycv/{{ele.id}}/{{userName}}/"> <i class="fa fa-external-link" aria-hidden="true"></i></a></td>
-                      <td><i class="fa fa-copy" aria-hidden="true" id="copy-button"></i></td>
+                      <td> <a href="http://whois.mandakh.org/mycv/{{ele.id}}/{{userName}}/"> http://whois.mandakh.org/mycv/{{ele.id}}/{{userName}}/</a></td>
+                      <td> <a href="http://whois.mandakh.org/mycv/{{ele.id}}/{{userName}}/"> <i class="fa fa-external-link" aria-hidden="true"></i></a></td>
+                      <td><i class="fa fa-copy" aria-hidden="true"></i></i></td>
                     </tr>
                     {% endfor %}
                   </table>
@@ -142,17 +137,4 @@ table th td{
       );
     });
   </script>
-  <script>
-    document.getElementById("copy-button").addEventListener("click", function() {
-      var link = document.getElementById("link");
-      var tempInput = document.createElement("input");
-      tempInput.value = link.href;
-      document.body.appendChild(tempInput);
-      tempInput.select();
-      document.execCommand("copy");
-      document.body.removeChild(tempInput);
-      alert("Link copied to clipboard!");
-    });
-  </script> 
-  
 </html>
