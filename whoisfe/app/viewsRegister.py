@@ -4,6 +4,7 @@ import json
 import requests
 from django.contrib import messages
 from whoisfe.settings import *
+from django.urls import reverse
 
 
 def registerViews(request):
@@ -72,3 +73,13 @@ def registerViews(request):
             messages.error(request, error_message)
             return render(request, 'register/register.html')
     return render(request, 'register/register.html')
+### email verify #########################################################
+def EmailVerView(request):
+    return render(request, "email_verification/email_verification.html")
+#### sign up warning #####################################################
+def signUpWarnViews(request):
+    if request.method == 'POST':
+
+        return redirect(reverse('loginViews'))
+    else:
+        return render(request, "register/signUpwarning.html")

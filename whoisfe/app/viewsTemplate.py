@@ -44,3 +44,27 @@ def myCvView(request,tid,uname):
     
 
     return render (request, renderFile, HTMLruuDamjuulahUtga)
+
+def justCVViews(request): 
+  return render(request, "templates/just.html")
+
+def justNCViews(request): 
+  return render(request, "templates/bc.html")
+
+def odkeBcViews(request): 
+  return render(request, "templates/odkeBc.html")
+
+def odkeBcViews(request): 
+  return render(request, "templates/odkeBc.html")
+
+def mainNCViews(request): 
+  return render(request, "templates/main.html")
+
+def enkuCVViews(request): 
+  return render(request, "templates/enku.html")
+
+def enku2CVViews(request): 
+  return render(request, "templates/enku2.html")
+
+def kucvViews(request): 
+  return render(request, "templates/kucv.html")

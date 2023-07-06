@@ -3,12 +3,14 @@ from whoisfe.settings import *
 import requests
 import json
 
+## log out #########################################################
 def homeLogoutView(request): 
     checkSession(request)    
     request.session['beegii'] = 0
     return redirect("homeView")
-#   homeLogoutView
+#####################################################################
 
+## home #########################################################
 def homeView(request):    
     checkSession(request)    
     if request.session['beegii'] != 0:
@@ -44,9 +46,11 @@ def homeView(request):
     zahia["aldaaniiMedegdel"] = aldaaniiMedegdel
 
     return render(request, "home/home.html",zahia)
+############################################################
 
+## wallet ##################################################
 
-# balance kharakh
+# balance kharakh # 
 def walletView(request): 
   # Check session
   checkSession(request)
@@ -66,9 +70,8 @@ def walletView(request):
   data = r.json()
   htmlRuu["vldegdel"] = data["dansniiUldegdel"]
   return render(request, "wallet/wallet.html", htmlRuu)
-##############################################################
-
-# Gvilgee khiikhed
+# end balance kharakh #
+# Gvilgee khiikhed 3
 def wallet1View(request): 
     # Check session
     checkSession(request)
@@ -113,28 +116,10 @@ def wallet1View(request):
       #  htmlRuu["userData"]["dugaar"] = i + 1
        htmlRuu["userData"][i]["dugaar"] = str(i + 1)
     return render(request, "wallet/wallet1.html", htmlRuu)
-##########################################################
+## end guilgee hiihed ########################################################
+##############################################################################
 
-def justCVViews(request): 
-  return render(request, "templates/just.html")
-
-def justNCViews(request): 
-  return render(request, "templates/bc.html")
-
-def odkeBcViews(request): 
-  return render(request, "templates/odkeBc.html")
-
-def odkeBcViews(request): 
-  return render(request, "templates/odkeBc.html")
-
-def mainNCViews(request): 
-  return render(request, "templates/main.html")
-
-def enkuCVViews(request): 
-  return render(request, "templates/enku.html")
-
-def enku2CVViews(request): 
-  return render(request, "templates/enku2.html")
-
-def kucvViews(request): 
-  return render(request, "templates/kucv.html")
+## guide #####################################################################
+def guideViews(request):
+    return render(request, "guide/guide.html")
+##############################################################################

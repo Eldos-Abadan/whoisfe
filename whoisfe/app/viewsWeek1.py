@@ -1,7 +1,5 @@
 from django.shortcuts import render
 
-
-
 def week1Views(request):
     return render(request, "week1/tm1.html")
 
