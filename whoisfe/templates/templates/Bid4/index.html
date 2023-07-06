@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tuguldur CV</title>
+    <title>{{undsen.firstName}}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="path/to/jspdf.min.js"></script>
@@ -16,8 +16,8 @@
 </head>
 <body>
     <header>
-        <h1><i class="fas fa-user"></i> {{undsen.lastName}}</h1>
-        <img id="myImage" src="{% static 'images/week1/Tudu/image1.jpg' %}" alt="Tuguldur's photo" onclick="showImage()">
+        <h1><i class="fas fa-user"></i> {{undsen.firstName}}</h1>
+        <img id="myImage" src="{% static '' %}" alt="Tuguldur's photo" onclick="showImage()">
 
         <div id="overlay">
             <img id="overlayImg" src="" alt="">
@@ -30,40 +30,40 @@
     </header>
     <div class="container">
         <section class="section">
-            <h2><i class="fas fa-info-circle"></i> About Me</h2>
-            <h3>First name: <span>{{undsen.firstName}}</span></h3>
-            <h3>Last name: <span>{{undsen.lastName}}</span></h3>
-            <h3>Birth Date: <span>{{nemelt.torsonOgnoo}}</span></h3>
-            <h3>Address</h3>
+            <h2><i class="fas fa-info-circle"></i>Миний тухай</h2>
+            <h3>Нэр: <span>{{undsen.firstName}}</span></h3>
+            <h3>Овог: <span>{{undsen.lastName}}</span></h3>
+            <h3>Төрсөн огноо: <span>{{nemelt.torsonOgnoo}}</span></h3>
+            <h3>Хаяг</h3>
             <p>{{nemelt.hayg}}</p>
             
         </section>
         <section class="section">
-            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-            <h3>University</h3>
+            <h2><i class="fas fa-graduation-cap"></i>Боловсрол</h2>
+            <h3>Сургууль</h3>
             <p>{{ elem.education }} </p>
          
         </section>
         <section class="section">
-            <h2><i class="fa-solid fa-lightbulb"></i> Soft Skills</h2>
+            <h2><i class="fa-solid fa-lightbulb"></i>Чадвар</h2>
             <ul>
-                <li><i class="fa-solid fa-clock"></i>{{nemelt.hobby}}</li>
+                <li><i class="fa-solid fa-clock"></i>{{skill.chadvarNer}}</li>
             </ul>
         </section>
         <section class="section">
-            <h2><i class="fas fa-heart"></i> Hobbies</h2>
+            <h2><i class="fas fa-heart"></i>Сонирхол</h2>
             <ul>
                 <li><i class="fas fa-star"></i>{{nemelt.hobby}}</li>
                 
             </ul>
         </section>
         <section class="contact section">
-            <h2><i class="fas fa-envelope"></i> Contact</h2>
-            <p>Personal Email: <a href="mailto:apoxmn@gmail.com">{{undsen.email}}</a></p>
+            <h2><i class="fas fa-envelope"></i>Холбогдох</h2>
+            <p>Цахим шуудан: <a href="mailto:apoxmn@gmail.com">{{undsen.email}}</a></p>
            
-            <p>Phone number:{{nemelt.dugaar}}</p>
+            <p>Утасны дугаар:{{nemelt.dugaar}}</p>
         </section>
-        <button class="downloadButton" onclick="savePageAsPDF()">Download as PDF</button>
+        <button class="downloadButton" onclick="savePageAsPDF()">PDF ээр татах</button>
     </div>
     </body>
 </html>
