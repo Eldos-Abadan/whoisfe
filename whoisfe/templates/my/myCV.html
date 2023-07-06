@@ -22,35 +22,7 @@
       rel="stylesheet"
       type="text/css"/>
     <link href="{% static '/css/dashboard/pe-icon-7-stroke.css'%}"rel="stylesheet"/>
-    <style>
-table{
-  margin-top: 30px;
-  box-shadow: 0px 0px 5px black;
-  /* padding: 10px; */
-  width: 900px;
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-table th{
-  background-color: darkviolet;
-  box-shadow: 0px 0px 5px darkviolet;
-  outline: darkviolet;
-  border: 1px solid white;
-  text-align: center;
-  padding: 10px;
-}
-table tr td{
-  border: 1px solid white;
-  padding: 10px;
-  
-}
-
-table th td{
-  padding: 10px;
-}
-
-</style>
+    <link rel="stylesheet" href="{%static '/css/my/1.css'%}">
   </head>
 
   <body>
@@ -101,8 +73,8 @@ table th td{
                     {% for ele  in kholboos %}
                     <tr>
                       <td>{{ele.name}}</td>
-                      <td> <a id="link" href="http://localhost:8000/mycv/{{ele.id}}/{{userName}}/"> http://whois.mandakh.org/mycv/{{ele.id}}/{{userName}}/</a></td>
-                      <td> <a href="http://localhost:8000/mycv/{{ele.id}}/{{userName}}/"> <i class="fa fa-external-link" aria-hidden="true"></i></a></td>
+                      <td> <a target="_blank" id="link" href="http://localhost:8000/mycv/{{ele.id}}/{{userName}}/"> http://whois.mandakh.org/mycv/{{ele.id}}/{{userName}}/</a></td>
+                      <td> <a target="_blank" href="http://localhost:8000/mycv/{{ele.id}}/{{userName}}/"> <i class="fa fa-external-link" aria-hidden="true"></i></a></td>
                       <td><i class="fa fa-copy" aria-hidden="true" id="copy-button"></i></td>
                     </tr>
                     {% endfor %}
