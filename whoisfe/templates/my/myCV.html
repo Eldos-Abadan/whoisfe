@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <link rel="icon" type="image/png" href="{% static ''%}" />
-    <title>Миний танилцуулга</title>
+    <title>Dashboard WhoIs</title>
     <link
       href="{% static '/css/dashboard/bootstrap.min.css'%}"
       rel="stylesheet"/>
@@ -93,12 +93,19 @@ table th td{
                       <th>Загвар харах</th>
                       <th>хуулах</th>
                     </tr>
+                    <!-- <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr> -->
+                    {% for ele  in kholboos %}
                     <tr>
-                      <td>Загваргүй загвар</td>
-                      <td> <a href="http://whois.mandakh.org/mycv/8/{{ undsen.userName }}/"> </a></td>
-                      <td> <a href="http://whois.mandakh.org/mycv/8/{{undsen.userName}}/"> <i class="fa fa-external-link" aria-hidden="true"></i></a></td>
+                      <td>{{ele.name}}</td>
+                      <td> <a href="http://localhost:8000/mycv/{{ele.id}}/{{userName}}/"> http://whois.mandakh.org/mycv/{{ele.id}}/{{userName}}/</a></td>
+                      <td> <a href="http://localhost:8000/mycv/{{ele.id}}/{{userName}}/"> <i class="fa fa-external-link" aria-hidden="true"></i></a></td>
                       <td><i class="fa fa-copy" aria-hidden="true"></i></i></td>
                     </tr>
+                    {% endfor %}
                   </table>
                 </div>
              </form>  
