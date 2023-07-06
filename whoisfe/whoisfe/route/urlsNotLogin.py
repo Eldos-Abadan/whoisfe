@@ -11,6 +11,7 @@ urlpatterns = [
     path("register/email_activation",   viewsRegister.EmailVerView,         name="EmailVerView"), 
     # CV bolon NC template-uud ##########################################################################
     path("mycv/<int:tid>/<str:uname>/",                     viewsTemplate.myCvView,                 name="myCv"),
+    path("myNC/<int:tid>/<str:uname>/",                     viewsTemplate.myNcView,                 name="myNc"),
     path("justCV/",                                         viewsTemplate.justCVViews,              name="justcv"),
     path("justNC/",                                         viewsTemplate.justNCViews,              name="justnc"),
     path("BC/",                                             viewsTemplate.odkeBcViews,              name="BC"),
