@@ -26,7 +26,6 @@ def myCVViews(request):
                         data=json.dumps(requestJSON),
                         headers={'Content-Type': 'application/json'})
     data = r.json()
-    print(data)
     # Бүх загварийн мэдээлэл авах end
     
     kholboos = []
