@@ -1,0 +1,202 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Material Resume</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;family=Roboto:wght@300;400;500;700&amp;display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;family=Roboto:wght@300;400;500;700&amp;display=swap" media="print" onload="this.media='all'"/>
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;family=Roboto:wght@300;400;500;700&amp;display=swap"/>
+    </noscript>
+    <link href="{%static 'css/week1/Eldos/css/font-awesome/css/all.min.css' %}" rel="stylesheet">
+    <link href="{%static 'css/week1/Eldos/css/mdb.min.css' %}" rel="stylesheet">
+    <link href="{%static 'css/week1/Eldos/css/aos.css' %}" rel="stylesheet">
+    <link href="{%static 'css/week1/Eldos/css/main.css' %}" rel="stylesheet">
+    <noscript>
+      <style type="text/css">
+        [data-aos] {
+            opacity: 1 !important;
+            transform: translate(0) scale(1) !important;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body class="bg-light" id="top">
+    <header class="d-print-none">
+      <div class="container text-center text-lg-left">
+        <div class="pt-4 clearfix">
+          <h1 class="site-title mb-0">{{undsen.lastName}} {{undsen.firstName}}</h1>
+          <div class="site-nav"> 
+            <nav role="navigation">
+              <ul class="nav justify-content-center">
+                <li class="nav-item"><a class="nav-link" href="#about" title="About"><span class="menu-title">About</span></a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#skills" title="Skills"><span class="menu-title">Skills</span></a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#education" title="Education"><span class="menu-title">Education</span></a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#contact" title="Contact"><span class="menu-title">Contact</span></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="page-content">
+      <div class="container">
+<div class="resume-container">
+  <div class="shadow-1-strong bg-white my-5" id="intro">
+    <div class="bg-info text-white">
+      <div class="cover bg-image"><img src="{%static 'images/week1/Eldos/images/header-background.jpg' %}"/>
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);backdrop-filter: blur(1px);">
+          <div class="text-center p-5">
+            <div class="avatar p-1"><img class="img-thumbnail shadow-2-strong" src="{%static 'images/week1/Eldos/images/ProPic.jpg' %}" width="160" height="160"/></div>
+            <div class="header-bio mt-3">
+              <div data-aos="zoom-in" data-aos-delay="0">
+                <h2 class="h1">{{undsen.firstName}} {{undsen.lastName}}</h2>
+                {% comment %} <p>Student</p> {% endcomment %}
+              </div>
+
+              <div class="header-social mb-3 d-print-none" data-aos="zoom-in" data-aos-delay="200">
+                <nav role="navigation">
+                  <ul class="nav justify-content-center">
+                    <li class="nav-item"><a class="nav-link" href="" title=""><span class="menu-title sr-only">{{ elem.app }}</span></a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+
+              <div class="d-print-none"><a class="btn btn-info btn-lg shadow-sm mt-1" href="res/eldoscv_000webhostapp.pdf" data-aos="fade-left" data-aos-delay="700">Open PDF</a> <a class="btn btn-info btn-lg shadow-sm mt-1" href="https://eldoscv.000webhostapp.com/" data-aos="fade-left" data-aos-delay="700">Open Website</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="shadow-1-strong bg-white my-5 p-5" id="about">
+    <div class="about-section">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="h6">
+            <br>
+            <i class="fa fa-birthday-cake" style="width:24px;opacity:0.85;"></i> 
+            {{nemelt.torsonOgnoo}}
+        </div>
+        <br>
+          <div class="h6">
+            <i class="fas fa-map-marker-alt pe-2 text-muted" style="width:24px;opacity:0.85;"></i> 
+            {{nemelt.irgenshil}}
+        </div>
+        <br>
+          <div class="h6">
+            <i class="fa fa-university" style="width:24px;opacity:0.85;"></i>
+            {{nemelt.ysUndes}}
+            </div>
+          <div class="h6"></div>
+          <div class="h6"></div>
+        </div>
+        <div class="col-md-5 offset-lg-1">
+          <div class="row mt-2">
+            {% comment %} <h2 class="h2 fw-light mb-4">Bio</h2> {% endcomment %}
+            <div class="col-sm-5">
+              <div class="pb-2 fw-bolder"><i class="far fa-calendar-alt pe-2 text-muted" style="width:24px;opacity:0.85;"></i> Хүйс:</div>
+            </div>
+            <div class="col-sm-7">
+              <div class="pb-2"
+              >{% if nemelt.huis == 1 %} Эр {% endif %} {% if nemelt.huis == 2 %} Эм
+                {% endif %}</div>
+            </div>
+            <div class="col-sm-5">
+              <div class="pb-2 fw-bolder"><i class="far fa-envelope pe-2 text-muted" style="width:24px;opacity:0.85;"></i> Имэйл:</div>
+            </div>
+            <div class="col-sm-7">
+              <div class="pb-2">{{undsen.email}}</div>
+            </div>
+            <div class="col-sm-5">
+              <div class="pb-2 fw-bolder"><i class="fas fa-phone pe-2 text-muted" style="width:24px;opacity:0.85;"></i> Утасны дугаар:</div>
+            </div>
+            <div class="col-sm-7">
+              <div class="pb-2">{{nemelt.dugaar}}</div>
+            </div>
+            <div class="col-sm-5">
+              <div class="pb-2 fw-bolder"><i class="fas fa-map-marker-alt pe-2 text-muted" style="width:24px;opacity:0.85;"></i>  Хаяг:</div>
+            </div>
+            <div class="col-sm-7">
+              <div class="pb-2">{{nemelt.hayg}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="shadow-1-strong bg-white my-5 p-5" id="skills">
+    <div class="skills-section">
+      <h2 class="h2 fw-light mb-4">Чадвар:</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <span class="fw-bolder">{{skill.chadvarNer}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="shadow-1-strong bg-white my-5 p-5" id="education">
+    <div class="education-section">
+      <h2 class="h2 fw-light mb-4"> Боловсрол:</h2>
+      {% for elem in education %}
+      <div class="timeline">
+        <div class="timeline-card timeline-card-success" data-aos="fade-in" data-aos-delay="200">
+          <div class="timeline-head px-4 pt-3">
+            <div class="h5"> Сургууль <p>{{ elem.education }}</p><span class="text-muted h6"> Чиглэл <p>{{ elem.direction }}</p> </span>          
+            </div>
+          </div>
+          <div class="timeline-body px-4 pb-4">
+            <div class="text-muted text-small mb-3">Элссэн он  {{ elem.elssenOn }}</div>
+            <div class="text-muted text-small mb-3"> Төгссөн он {{ elem.duussanOn }}</div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="shadow-1-strong bg-white my-5 p-5" id="contact">
+    <div class="contant-section">
+        <h2 class="h2 fw-light text mb-4">Холбоо барих</h2>
+        <div class="row mb-4">
+            <div class="col-md-5" data-aos="fade-left" data-aos-delay="200">
+                <div class="mt-1">
+                    <div class="h6"><i class="fas fa-phone pe-2 text-muted" style="width:24px;opacity:0.85;"></i> {{nemelt.dugaar}} </div>
+                    <div class="h6"><i class="far fa-envelope pe-2 text-muted" style="width:24px;opacity:0.85;"></i> {{undsen.email}}</div>
+                </div>
+                <div class="mt-5 d-print-none">
+                    <form action="https://formspree.io/your@email.com"method="POST">
+                        <div class="form-outline mb-4">
+                          <input type="text" id="name" class="form-control" required/>
+                          <label class="form-label" for="name">Нэр</label>
+                        </div>
+                        <div class="form-outline mb-4">
+                          <input type="email" id="email" class="form-control" required/>
+                          <label class="form-label" for="email">Имейл хаяг</label>
+                        </div>
+                        <div class="form-outline mb-4">
+                          <textarea class="form-control" style="resize: none;" id="message" rows="4" required></textarea>
+                          <label class="form-label" for="message">Мессеж</label>
+                        </div>
+                        <button class="btn btn-info btn-block mb-4" type="submit">Явуулах</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <script src="{%static 'js/week1/Eldos/scripts/mdb.min.js' %}"></script>
+  <script src="{%static 'js/week1/Eldos/scripts/aos.js' %}"></script>
+  <script src="{%static 'js/week1/Eldos/scripts/main.js' %}"></script>
+</body>
+</html>
