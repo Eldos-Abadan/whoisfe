@@ -36,4 +36,10 @@ table{
   h1{
     text-align: center;
   }
+  .a1{
+    color:black
+  }
+  .a1:hover{
+    color:blueviolet
+  }
   
