@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from whoisfe.settings import *
 import requests
 import json
+from reportlab.pdfgen import canvas
 
 def myCVViews(request):
     # Хэрэглэгч нэвтэрсэн эсэхийг шалгах
@@ -38,6 +39,13 @@ def myCVViews(request):
         })
     htmlRuuDamjuulahUtguud["userName"] = userName
     htmlRuuDamjuulahUtguud["kholboos"] = kholboos
+    ## pdf    
+    # x = canvas.Canvas("pdf/1.pdf")
+    # x.getpdfdata(render(request, "my/myCV.html", htmlRuuDamjuulahUtguud))
+    # x.save()    
+    ###################################
+
+
     return render(request, "my/myCV.html", htmlRuuDamjuulahUtguud)
 
 def myNCViews(request):
