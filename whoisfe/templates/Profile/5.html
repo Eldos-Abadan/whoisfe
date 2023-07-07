@@ -88,9 +88,9 @@
           <tbody id="table">
             {% for user in myData %}
             <tr>
-              <td style="text-align: center;">{{ user.dugaar }}</td>
-              <td>{{ user.ajil }}</td>
+              <td style="text-align: center;">{{ user.dugaar }}</td>              
               <td>{{ user.company }}</td>
+              <td>{{ user.ajil }}</td>
               <td>{{ user.ehelsen }}</td>
               <td>{{ user.duussan }}</td>
               <td><a href="{% url 'profileExpDel' id=user.id %}" onclick="if (!confirm('Та устгахдаа итгэлтэй байна уу?')) { return false }"><i class="fa fa-trash" style="font-size: 17px; color:#b85ee6;padding-left: 34px;"></i></a></td>
