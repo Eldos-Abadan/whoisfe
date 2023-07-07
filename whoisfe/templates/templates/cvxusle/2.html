@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="styles.css">
+
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <title>CV  template</title>
+    </head>
+    <body>
+        <div class="hero">
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">X4E</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active aaa">Нүүр хуудас</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link aaa">Миний тухай</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link aaa">Чадвар</a></li>
+                        <li class="nav__item"><a href="#work" class="nav__link aaa">Хобби</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link aaa">Холбогдох</a></li>
+                    </ul>
+                    <img src="moon.png" id="icon" style="float: left; margin-top: -25px;">
+                </div>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                    
+                </div>
+            </nav>
+        </header>
+        
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+                    <h1 class="home__title">Сайн байцгаана уу.<br>Намайг <span class="home__title-color">Хүслэн</span> гэдэг.<br> Backend хөгжүүлэгч</h1>
+
+                    <a href="#contact" class="button">Холбогдох</a>
+                </div>
+
+                <div class="home__social" >
+                    <a href="" class="home__social-icon"><i class='bx bxl-facebook'></i></a>
+                    <a href="" class="home__social-icon"><i class='bx bxl-instagram' ></i></a>
+                    <a href="" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                </div>
+
+                <div class="home__img">
+                    <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <image class="home__blob-img" x="100" y="-50" href="ap.jpg" rx="70%" ry="50%"/>
+                    </svg>
+                </div>
+            </section>
+
+            <!--===== ABOUT =====-->
+            <section class="about section " id="about">
+                <h2 class="section-title">Миний тухай</h2>
+
+                <div class="about__container bd-grid">
+                    <div class="about__img">
+                        <img src="ap.jpg" alt="">
+                    </div>
+                    
+                    <div>
+                        <h2 class="about__subtitle">Хүслэн Отгонбаяр</h2>
+                        <p class="about__text aaa">Намайг Хүслэн гэдэг. Би Мандах ИС-н МТС-н 2-р курсын оюутан. Айлын том ба 4-н дүүтэй.</p>           
+                    </div>                                   
+                </div>
+            </section>
+
+            <!--===== SKILLS =====-->
+            <section class="skills section" id="skills">
+                <h2 class="section-title">Чадвар</h2>
+
+                <div class="skills__container bd-grid">          
+                    <div>
+                        <h2 class="skills__subtitle"></h2>
+                        <p class="skills__text"></p>
+                        <div class="skills__data">
+                            <div class="skills__names" style="padding-top: -50px;">
+                                <i class='bx bxl-html5 skills__icon'></i>
+                                <span class="skills__name aaa">HTML5</span>
+                            </div>
+                            <div class="skills__bar skills__html">
+
+                            </div>
+                            <div>
+                                <span class="skills__percentage aaa">95%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl-css3 skills__icon'></i>
+                                <span class="skills__name aaa">CSS3</span>
+                            </div>
+                            <div class="skills__bar skills__css">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage aaa">85%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl-javascript skills__icon' ></i>
+                                <span class="skills__name aaa">JAVASCRIPT</span>
+                            </div>
+                            <div class="skills__bar skills__js">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage aaa">50%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>              
+                        <img src="com.png" alt="" class="skills__img">
+                    </div>
+                </div>
+            </section>
+
+            <!--===== WORK =====-->
+            <section class="work section" id="work">
+                <h2 class="section-title">Хобби</h2>
+
+                <div class="work__container bd-grid">
+                        <textarea class="textarea">
+
+                        </textarea>
+                </div>
+            </section>
+
+            <!--===== CONTACT =====-->
+            <section class="contact section" id="contact">
+                <h2 class="section-title">Надтай холбогдох</h2>
+
+                <div class="contact__container bd-grid">
+                    <form action="" class="contact__form">
+                        <input type="text" placeholder="Нэр" class="contact__input">
+                        <input type="mail" placeholder="Емэйл" class="contact__input">
+                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
+                        <input type="button" value="Илгээх" class="contact__button button">
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!--===== FOOTER =====-->
+        <footer class="footer">
+            <p class="footer__title">Who Is</p>
+            <div class="footer__social">
+                <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+                <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+            </div>
+            <p class="footer__copy">&#169; Мандах ИС, Мэдээллийн Технологийн Сургууль</p>
+        </footer>
+
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="main.js"></script>
+        <script>
+                var icon = document.getElementById("icon");
+
+                icon.onclick = function(){
+                  document.body.classList.toggle("darktheme");
+                  if(document.body.classList.contains("darktheme")){
+                    icon.src = "sun.png";
+                  }else{
+                    icon.src = "moon.png";
+                  }
+                }
+        </script>
+    </div>
+    </body>
+</html>
