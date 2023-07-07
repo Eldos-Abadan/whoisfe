@@ -10,6 +10,9 @@ urlpatterns = [
   
     # week1 huudasnuud #
     path("", include('whoisfe.route.urlsWeek1')),
+
+    # Dashboard #
+    path("", include('whoisfe.route.urlsDashboard')),
    
     # Forget #
     path("", include('whoisfe.route.urlsForget')),
