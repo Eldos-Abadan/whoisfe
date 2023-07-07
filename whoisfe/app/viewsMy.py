@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from whoisfe.settings import *
 import requests
 import json
-from reportlab.pdfgen import canvas
+# from reportlab.pdfgen import canvas
 
 def myCVViews(request):
     # Хэрэглэгч нэвтэрсэн эсэхийг шалгах
