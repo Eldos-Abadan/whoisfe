@@ -9,7 +9,31 @@
 
         <!-- =====BOX ICONS===== -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-        <title>CV  template</title>
+        <style>
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 20px;
+            }
+        
+            .item {
+                flex-basis: 50%;
+                padding: 10px;
+            }
+            @media (min-width: 768px) {
+                .row {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-bottom: 20px;
+                }
+        
+                .item {
+                    flex-basis: 25%;
+                    padding: 10px;
+                }
+            }
+        </style>
+        <title>{{undsen.firstName}}</title>
     </head>
     <body>
         <div class="hero">
@@ -17,15 +41,14 @@
         <header class="l-header">
             <nav class="nav bd-grid">
                 <div>
-                    <a href="#" class="nav__logo">X4E</a>
+                    <a href="#" class="nav__logo">{{undsen.firstName}}</a>
                 </div>
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
                         <li class="nav__item"><a href="#home" class="nav__link active aaa">Нүүр хуудас</a></li>
                         <li class="nav__item"><a href="#about" class="nav__link aaa">Миний тухай</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link aaa">Чадвар</a></li>
-                        <li class="nav__item"><a href="#work" class="nav__link aaa">Хобби</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link aaa">Боловсрол</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link aaa">Холбогдох</a></li>
                     </ul>
                     <img src="{% static '/images/moon.png' %}" id="icon" style="float: left; margin-top: -25px;">
@@ -41,7 +64,7 @@
             <!--===== HOME =====-->
             <section class="home bd-grid" id="home">
                 <div class="home__data">
-                    <h1 class="home__title">Сайн байцгаана уу.<br>Намайг <span class="home__title-color">Хүслэн</span> гэдэг.<br> Backend хөгжүүлэгч</h1>
+                    <h1 class="home__title">Сайн байцгаана уу.<br><span class="home__title-color">{{undsen.lastName}} {{undsen.firstName}} </span> <br>байна.<br></h1>
 
                     <a href="#contact" class="button">Холбогдох</a>
                 </div>
@@ -69,71 +92,60 @@
                     </div>
                     
                     <div>
-                        <h2 class="about__subtitle">Хүслэн Отгонбаяр</h2>
-                        <p class="about__text aaa">Намайг Хүслэн гэдэг. Би Мандах ИС-н МТС-н 2-р курсын оюутан. Айлын том ба 4-н дүүтэй.</p>           
+                        <h3 class="about__text aaa">Нэр: <span>{{undsen.firstName}}</span></h3>
+                        <h3 class="about__text aaa">Овог: <span>{{undsen.lastName}}</span></h3>
+                        <h3 class="about__text aaa">Төрсөн огноо: <span>{{nemelt.torsonOgnoo}}</span></h3>
+                        <h3 class="about__text aaa">Хаяг</h3>
+                        <h3 class="about__text aaa">{{nemelt.hayg}}</h3>           
                     </div>                                   
                 </div>
             </section>
 
             <!--===== SKILLS =====-->
             <section class="skills section" id="skills">
-                <h2 class="section-title">Чадвар</h2>
+                <h2 class="section-title">Боловсрол</h2>
 
                 <div class="skills__container bd-grid">          
                     <div>
-                        <h2 class="skills__subtitle"></h2>
-                        <p class="skills__text"></p>
-                        <div class="skills__data">
-                            <div class="skills__names" style="padding-top: -50px;">
-                                <i class='bx bxl-html5 skills__icon'></i>
-                                <span class="skills__name aaa">HTML5</span>
+                        <section class="skills__text">
+                            {% for elem in education %}
+                            <div class="row aaa">
+                                <div class="item aaa">
+                                    <h3 style="margin-top: 0;">Сургууль</h3>
+                                    <p>{{ elem.education }}</p>
+                                </div>
+                                <div class="item aaa">
+                                    <h3 style="margin-top: 0;">Чиглэл</h3>
+                                    <p>{{ elem.direction }}</p>
+                                </div>
+                                <div class="item aaa">
+                                    <h3 style="margin-top: 0;">Элссэн он</h3>
+                                    <p>{{ elem.elssenOn }}</p>
+                                </div>
+                                <div class="item aaa">
+                                    <h3 style="margin-top: 0;">Төгссөн он</h3>
+                                    <p>{{ elem.duussanOn }}</p>
+                                </div>
                             </div>
-                            <div class="skills__bar skills__html">
-
-                            </div>
-                            <div>
-                                <span class="skills__percentage aaa">95%</span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-css3 skills__icon'></i>
-                                <span class="skills__name aaa">CSS3</span>
-                            </div>
-                            <div class="skills__bar skills__css">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage aaa">85%</span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-javascript skills__icon' ></i>
-                                <span class="skills__name aaa">JAVASCRIPT</span>
-                            </div>
-                            <div class="skills__bar skills__js">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage aaa">50%</span>
-                            </div>
+                            {% endfor %}
+                        </section>
+                        
                         </div>
                     </div>
                     
-                    <div>              
+                    <!-- <div>              
                         <img src="{% static 'images/com.png' %}" alt="" class="skills__img">
-                    </div>
+                    </div> -->
                 </div>
             </section>
 
             <!--===== WORK =====-->
             <section class="work section" id="work">
-                <h2 class="section-title">Хобби</h2>
+                <h2 class="section-title">Чадвар</h2>
 
                 <div class="work__container bd-grid">
                         <textarea class="textarea">
-
+                            {{skill.chadvarNer}}
                         </textarea>
                 </div>
             </section>
