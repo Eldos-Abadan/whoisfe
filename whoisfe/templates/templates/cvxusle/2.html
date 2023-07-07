@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="{% static '/css/xusle/styles.css' %}">
 
         <!-- =====BOX ICONS===== -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
@@ -27,7 +28,7 @@
                         <li class="nav__item"><a href="#work" class="nav__link aaa">Хобби</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link aaa">Холбогдох</a></li>
                     </ul>
-                    <img src="moon.png" id="icon" style="float: left; margin-top: -25px;">
+                    <img src="{% static '/images/moon.png' %}" id="icon" style="float: left; margin-top: -25px;">
                 </div>
                 <div class="nav__toggle" id="nav-toggle">
                     <i class='bx bx-menu'></i>
@@ -53,7 +54,7 @@
 
                 <div class="home__img">
                     <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <image class="home__blob-img" x="100" y="-50" href="ap.jpg" rx="70%" ry="50%"/>
+                            <image class="home__blob-img" x="100" y="-50" href="{% static 'images/ap.jpg'%}" rx="70%" ry="50%"/>
                     </svg>
                 </div>
             </section>
@@ -64,7 +65,7 @@
 
                 <div class="about__container bd-grid">
                     <div class="about__img">
-                        <img src="ap.jpg" alt="">
+                        <img src="{% static 'images/ap.jpg'%}" alt="">
                     </div>
                     
                     <div>
@@ -121,7 +122,7 @@
                     </div>
                     
                     <div>              
-                        <img src="com.png" alt="" class="skills__img">
+                        <img src="{% static 'images/com.png' %}" alt="" class="skills__img">
                     </div>
                 </div>
             </section>
@@ -168,16 +169,16 @@
         <script src="https://unpkg.com/scrollreveal"></script>
 
         <!--===== MAIN JS =====-->
-        <script src="main.js"></script>
+        <script src="{% static 'js/main.js' %}"></script>
         <script>
                 var icon = document.getElementById("icon");
 
                 icon.onclick = function(){
                   document.body.classList.toggle("darktheme");
                   if(document.body.classList.contains("darktheme")){
-                    icon.src = "sun.png";
+                    icon.src = "{% static '/images/sun.png' %}";
                   }else{
-                    icon.src = "moon.png";
+                    icon.src = "{% static '/images/moon.png' %}";
                   }
                 }
         </script>
