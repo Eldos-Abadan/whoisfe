@@ -30,7 +30,8 @@ def myCVViews(request):
     
     kholboos = []
     for ele in data:
-        # diki = 
+        if(ele["tempTypeId"] != 1):
+            continue
         kholboos.append({
             "name": str(ele["name"]), 
             "id": str(ele["id"])
@@ -67,6 +68,8 @@ def myNCViews(request):
     kholboos = []
     for ele in data:
         # diki = 
+        if(ele["tempTypeId"] != 2):
+            continue
         kholboos.append({
             "name": str(ele["name"]), 
             "id": str(ele["id"])
