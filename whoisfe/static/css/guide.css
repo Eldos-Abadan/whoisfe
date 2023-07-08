@@ -10,7 +10,7 @@ body{
   display: flex;
   background-size: cover;
   padding: 0 20px;
-  background-image: url("../../images/guide1.png");
+  background-image: url("../images/guide1.png");
   margin-left: 24%;
   margin-top: 40px;
 }
@@ -54,11 +54,27 @@ body{
 .wrapper .butt5{
   /* background-color: #e0e2e6; */
   background: transparent;
-  width: 100%;
-  margin-top: 65px;
+  width: 500px;
+  margin-top: 120px;
   border-radius: 10px;
   margin-left: 50px;
 }
+.wrapper .butt6{
+    /* background-color: #e0e2e6; */
+    background: transparent;
+    width: 500px;
+    margin-top: 140px;
+    border-radius: 10px;
+    margin-left: 50px;
+  }
+  .wrapper .butt7{
+    /* background-color: #e0e2e6; */
+    background: transparent;
+    width: 500px;
+    margin-top: 160px;
+    border-radius: 10px;
+    margin-left: 50px;
+  }
 .wrapper nav{
   width: 800px;
   height: 50px;
@@ -82,7 +98,9 @@ body{
 #blog:checked ~ nav label.blog,
 #code:checked ~ nav label.code,
 #help:checked ~ nav label.help,
-  #about:checked ~ nav label.about{
+#about:checked ~ nav label.about,
+#but1:checked ~ nav label.but1,
+#but2:checked ~ nav label.but2{
   color: blueviolet;
 }
 nav label i{
@@ -111,6 +129,12 @@ input[type="radio"]{
 #about:checked ~ nav .slider{
   left: 80%;
 }
+#but1:checked ~ nav .slider{
+    left: 100%;
+} 
+#but2:checked ~ nav .slider{
+    left: 120%;  
+}
 section .content{
   display: none;
 }
@@ -118,7 +142,9 @@ section .content{
 #blog:checked ~ section .content-2,
 #code:checked ~ section .content-3,
 #help:checked ~ section .content-4,
-#about:checked ~ section .content-5{
+#about:checked ~ section .content-5,
+#but1:checked ~ section .content-6,
+#but2:checked ~ section .content-7{
   display: block;
 }
 section .content .te1{
@@ -137,6 +163,39 @@ section .content .te2{
   width: 100%;
   height: 120px;
 }
+section .content .te3{
+  font-size: 15px;
+  font-weight: normal;
+  margin-top: 70px;
+  margin-left: 60px;
+  width: 100%;
+  height: 10px;
+}
+section .content .te4{
+    font-size: 15px;
+    font-weight: normal;
+    margin-top: 80px;
+    margin-left: 60px;
+    width: 100%;
+    height: 1px;
+}
+section .content .te5{
+    font-size: 15px;
+    font-weight: normal;
+    margin-top: 90px;
+    margin-left: 60px;
+    width: 100%;
+    height: 1px;
+}
+section .content .te6{
+    font-size: 15px;
+    font-weight: normal;
+    margin-top: 95px;
+    margin-left: 60px;
+    width: 100%;
+    height: 1px;
+}
+
 a{
   text-decoration: none;
 }

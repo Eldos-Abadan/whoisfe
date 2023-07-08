@@ -1,15 +1,16 @@
-{% load static%}
+{% load static%} 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Guide </title>
-    <link href="{% static '/css/guide/guide.css' %}" rel="stylesheet">
+    <link href="{% static '/css/guide.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   </head>
   <body>
-    {% comment %} <div class="form-box"> {% endcomment %}
+    <div class="form-box">
+    <div class="form-box">
       <div class="wrapper">
         <input type="radio" name="slider" checked id="home">
         <nav>
@@ -22,7 +23,7 @@
         <input type="radio" name="slider" id="blog">
         <nav>
           <button class="butt2"> 
-            <label for="blog" class="blog">  Who is бүргүүлэх заавар &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+            <label for="blog" class="blog">  Who is бүргүүлэх заавар &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
               <i class="fas fa-arrow-down"></i> 
             </label>
           </button> 
@@ -44,7 +45,7 @@
         <input type="radio" name="slider" id="code">
         <nav>
         <button class="butt3"> 
-          <label for="code" class="code"> Нууц үг сэргээх заавар &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
+          <label for="code" class="code"> Нууц үг сэргээх заавар&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
             <i class="fas fa-arrow-down"></i> 
           </label> 
         </button> 
@@ -67,30 +68,73 @@
         <input type="radio" name="slider" id="help">
         <nav>
           <button class="butt4">
-            <label for="help" class="help">Бусад заавар &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="help" class="help">Хэрэглэгчийн самбар&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <i class="fas fa-arrow-down"></i> 
             </label>
           </button> 
         </nav>
         <section>
           <div class="content content-4">
-            <div class="te2">Тун удахгүй..</div>
+            <div class="te3">  
+              &nbsp; 1. Та хэрэглэгчийн самбар хуудаснаас бөглөсөн болон 
+              <p>&nbsp; &nbsp; &nbsp; бөглөөгүй мэдээллээ харах боломжтой.</p>
+            </div>
           </div>
         </section>
 
-          <!-- <input type="radio" name="slider" id="about"> 
-          <nav>
-            <button class="butt5">
-              <label for="about" class="about">About</label> 
-            </button>
-          </nav>
-          <section>
-            <div class="content content-5">
-              <div class="te1">This is a About content</div>
-            </div> 
-          </section> -->
+        <input type="radio" name="slider" id="about">
+        <nav>
+          <button class="butt5">
+            <label for="about" class="about">Хувийн мэдээллийн заавар&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <i class="fas fa-arrow-down"></i> 
+            </label>
+          </button> 
+        </nav>
+        <section>
+          <div class="content content-5">
+            <div class="te4">  
+              &nbsp;1. Үндсэн мэдээлэл болон бусад мэдээллээ бөглөснөөр өөрийн  
+              <p>&nbsp; &nbsp; &nbsp;танилцуулга болон нэрийн хуудасны мэдээллээ авах боломжтой.</p>
+            </div>
+          </div>
+        </section>
+
+        <input type="radio" name="slider" id="but1">
+        <nav>
+          <button class="butt6">
+            <label for="but1" class="but1">Үндсэн мэдээлэлийн заавар &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <i class="fas fa-arrow-down"></i> 
+            </label>
+          </button> 
+        </nav>
+        <section>
+          <div class="content content-6">
+            <div class="te5">  
+              &nbsp; 1. Овог, нэр болон хэрэглэгчийн нэрээ өөрчлөх.
+              <p>&nbsp; 2. Нууц үгээ солих боломжтой.</p>
+            </div>
+          </div>
+        </section>
+
+        <input type="radio" name="slider" id="but2">
+        <nav>
+          <button class="butt7">
+            <label for="but2" class="but2">Танилцуулга болон Нэрийн хуудасны заавар&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <i class="fas fa-arrow-down"></i> 
+            </label>
+          </button> 
+        </nav>
+        <section>
+          <div class="content content-7">
+            <div class="te6">  
+              &nbsp; 1. Холбоос болон загвар харах хэсгээс сонгон нэвтэрч болно.
+              <p>&nbsp; 2. Хуулах товчлуур дээр дарж линкийг хуулаарай.</p>
+            </div>
+          </div>
+        </section>
       </div>
-    {% comment %} </div> {% endcomment %}
+    </div>
+    </div>
   </body>
 </html>
 
