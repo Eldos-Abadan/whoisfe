@@ -3,7 +3,9 @@ from whoisfe.settings import *
 import requests
 import json
 
-    
+def walletView(request): 
+  return render(request, "wallet/wallet.html")
+
 
 def homeLogoutView(request): 
     checkSession(request)    
@@ -14,14 +16,14 @@ def homeLogoutView(request):
 def homeView(request):    
     checkSession(request)    
     if request.session['beegii'] != 0:
-        return redirect("perinfoViews")
+        return redirect("profileViews")
     zahia = {}
     aldaaniiMedegdel = ""
     # хэрвээ форм.пост бол:
     #     үр дүн  = нэвтрэх сервис(нэр, нууц үг)
     #     хэрвээ үр дүн.responseCode == 200
     #         request.session['beegii'] = 1
-    #         return redirect("perinfoViews")
+    #         return redirect("profileViews")
     #     else:
     #         aldaaniiMedegdel = "нэр нууц үг буруу"
     if(request.method == "POST"):
@@ -39,7 +41,7 @@ def homeView(request):
         resultMessage = r.json()['responseText']
         if(resultCode == 200):
             request.session['beegii'] = 1
-            return redirect("perinfoViews")
+            return redirect("profileViews")
         else:
             aldaaniiMedegdel = resultMessage        
 

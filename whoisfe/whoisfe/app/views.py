@@ -15,7 +15,7 @@ def registerViews(request):
 def dashboardViews(request):
     return render(request, "dashboard/dashboard.html")
 
-def perinfoViews(request):
+def profileViews(request):
     return render(request,"Profile/1.html")
 
 def myNCViews(request):
@@ -26,3 +26,4 @@ def createCVViews(request):
 
 def guideViews(request):
     return render(request, "guide/guide.html")
+

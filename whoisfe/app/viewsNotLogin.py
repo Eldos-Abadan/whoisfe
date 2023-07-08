@@ -16,3 +16,4 @@ def forgetViews(request):
 def guideViews(request):
     return render(request, "guide/guide.html")
 
+

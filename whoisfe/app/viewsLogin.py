@@ -19,12 +19,12 @@ def loginViews(request):
     if request.session['beegii'] !=0 :
         return redirect("dashboardViews")
     zahia = {}
-    aldaaniiMedegdel = "wertyu"
+    aldaaniiMedegdel = ""
     # хэрвээ форм.пост бол:
     #     үр дүн  = нэвтрэх сервис(нэр, нууц үг)
     #     хэрвээ үр дүн.responseCode == 200
     #         request.session['beegii'] = 1
-    #         return redirect("perinfoViews")
+    #         return redirect("profileViews")
     #     else:
     #         aldaaniiMedegdel = "нэр нууц үг буруу"
     if request.method == "POST":

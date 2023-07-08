@@ -46,6 +46,6 @@ def registerViews(request):
         userCursor.close()
         disconnectDB(myCon)
 
-        return redirect('homeViews')
+        return redirect('homeView')
 
     return render(request, 'register/register.html')
