@@ -2,12 +2,12 @@
 from pathlib import Path
 import os
 import psycopg2
-
+# from django.contrib.auth.models import User
 # busad nemelt import
 import hashlib
 import base64
-from django.urls import resolve, get_resolver, URLResolver, URLPattern
-###############################
+# from django.urls import resolve, get_resolver, URLResolver, URLPattern
+# ###############################
 
 
 BASE_DIR =          Path(__file__).resolve().parent.parent
@@ -61,6 +61,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
             ],
         },
     },
@@ -205,4 +206,29 @@ def connectDB():
 def disconnectDB(con):
     if(con):
         con.close()
+
+# def emailExists(email):
+#     # Check if the email already exists in the User model
+#     return User.objects.filter(email=email).exists()
+
+# def userNameExists(username):
+#     # Check if the username already exists in the User model
+#     return User.objects.filter(username=username).exists()
+def emailExists(email):
+    myCon = connectDB()
+    userCursor = myCon.cursor()
+    userCursor.execute('SELECT COUNT(*) FROM "user" WHERE "email" = %s', (email,))
+    result = userCursor.fetchone()
+    userCursor.close()
+    disconnectDB(myCon)
+    return result[0] > 0
+def userNameExists(username):
+    myCon = connectDB()
+    userCursor = myCon.cursor()
+    userCursor.execute('SELECT COUNT(*) FROM "user" WHERE "userName" = %s', (username,))
+    result = userCursor.fetchone()
+    userCursor.close()
+    disconnectDB(myCon)
+    return result[0] > 0
+
 

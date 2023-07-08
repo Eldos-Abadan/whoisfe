@@ -2,9 +2,12 @@ from django.shortcuts import render,redirect
 from whoisfe.settings import *
 import requests 
 import json
-
+import hashlib
     
 
+def mandakhHash(password):
+    return hashlib.md5(password.encode('utf-8')).hexdigest()
+    
 def homeLogoutView(request): 
     checkSession(request)    
     request.session['beegii'] = 0
@@ -27,9 +30,11 @@ def loginViews(request):
     if request.method == "POST":
         myName = request.POST["myName"]
         myPass = request.POST["myPass"]
+        passs = mandakhHash(myPass)
+
         requestJSON = {}
         requestJSON["name"] = myName
-        requestJSON["pass"] = myPass
+        requestJSON["pass"] = passs
 
         r = requests.get("http://whoisb.mandakh.org/userLogin/",
                             data=json.dumps(requestJSON),
