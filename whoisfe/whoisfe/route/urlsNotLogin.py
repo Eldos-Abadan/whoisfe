@@ -6,6 +6,6 @@ urlpatterns = [
     path("register/",   viewsRegister.registerViews,    name="registerViews"), 
     path("forget/",     viewsForget.forgetView,         name="forgetView"),
     path("guide/",      viewsGuide.guideViews,          name="guideViews"),
-    path("signUpWar/",  viewsSignUpWar.signUpWarViews,  name="viewsSignUpWar"),
+    path("signUpWar/",  viewsSignUpWar.signUpWarViews,  name="viewsSignUpWarning"),
         
     ]   
