@@ -7,5 +7,6 @@ urlpatterns = [
     path("forget/",     viewsForget.forgetView,         name="forgetView"),
     path("guide/",      viewsGuide.guideViews,          name="guideViews"),
     path("signUpWar/",  viewsSignUpWar.signUpWarViews,  name="viewsSignUpWarning"),
-        
+    path("justCV/",     viewsMain.justCVViews,          name="justcv"),
+    path("justNC/",     viewsMain.justNCViews,          name="justnc"),
     ]   

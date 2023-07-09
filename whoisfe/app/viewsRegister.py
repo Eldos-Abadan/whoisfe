@@ -3,10 +3,27 @@ import datetime
 import hashlib
 from django.contrib import messages
 from whoisfe.settings import *
+import re
+import dns.resolver
 
 def mandakhHash(password):
     return hashlib.md5(password.encode('utf-8')).hexdigest()
 
+
+def isEmailValid(email):
+    # Use regex pattern to validate email format
+    pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
+    if re.match(pattern, email):
+        try:
+            # Check if the domain has valid MX records using DNS resolution
+            domain = email.split('@')[1]
+            records = dns.resolver.resolve(domain, 'MX')
+            return True
+        except dns.resolver.NXDOMAIN:
+            return False
+        except dns.resolver.NoAnswer:
+            return False
+    return False
 
 def registerViews(request):
     if request.method == 'POST':
@@ -16,7 +33,6 @@ def registerViews(request):
             if not reqValidation(jsons, required_fields):
                 error_message = 'Fields are missing or invalid'
                 messages.error(request, error_message)
-                return render(request, 'register/register.html')
 
             first_name = jsons['first_name']
             last_name = jsons['last_name']
@@ -30,16 +46,21 @@ def registerViews(request):
             if password != confirm_password:
                 error_message = 'Нууц үгээ зөв давтан оруулна уу.'
                 messages.error(request, error_message)
-                return render(request, 'register/register.html')
 
             if emailExists(email):
                 error_message = 'Email already exists'
                 messages.error(request, error_message)
-                return render(request, 'register/register.html')
 
             if userNameExists(user_name):
                 error_message = 'Username already exists'
                 messages.error(request, error_message)
+
+            # Perform email verification
+            if not isEmailValid(email):
+                error_message = 'Invalid email address'
+                messages.error(request, error_message)
+
+            if messages.get_messages(request):
                 return render(request, 'register/register.html')
 
             myCon = connectDB()
@@ -56,6 +77,5 @@ def registerViews(request):
         except Exception as e:
             error_message = 'Database error'
             messages.error(request, error_message)
-            return render(request, 'register/register.html')
 
     return render(request, 'register/register.html')
