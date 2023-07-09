@@ -1,159 +1,117 @@
 {%load static%}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="forgetpassword.css">
-    <title>Forget Password</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>forget password</title>
+    <link rel="icon" type="image/x-icon" href="l.jpg">
     <style>
-        *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 16px;
-    transition: all 500ms ease;
+        * {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
-body {
-    background: url( "{% static '/images/week1/fpass.jpg'%}") no-repeat center;
-    /* background: url('img/eneshuuu.jpg') no-repeat center; */
-    background-size: 100%;
-    font-family: sans-serif;
-}
 
-/* .form {
-    position: relative;
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     width: 100%;
-    max-width: 380px;
-    padding: 80px 40px 40px;
-    background: rgba(0,0,0,0.7);
-    border-radius: 10px;
+    background: url( "{% static '/images/week1/bck.jpg'%}") no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+}
+.form-box{
+   position: relative;
+   width: 400px;
+   height: 450px;
+   background:transparent;
+   border: 2px solid rgba(255, 255, 255, 0.5);
+   border-radius: 20px;
+   backdrop-filter: blur(90px);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+h2{
+    font-size: 2em;
     color: #fff;
-    box-shadow: 0 15px 25px rgba(0,0,0,0.7);
-} */
-
-/* .form img {
-    position: absolute;
-    top: -40px;
-    left: calc(50% - 50px);
-    width: 300px;
-} */
-
-.row{
-    background-color: #033258;
-    color: #9dc3e2;
     text-align: center;
-    padding: 2em 2em 0.5em;
-    width: 90%;
-    margin: 2em auto;
-    border-radius: 5px;
-    background: rgba(0,0,0,0.7);
-    border-radius: 10px;
-    color: linear-gradient(120deg, #1c99fe 20.69%, #7644ff 50.19%, #fd4766 79.69%);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
 }
-
-.row h1{
-    font-size: 2.5em;
+.inputbox{
+position: relative;
+margin: 30px 0;
+width: 310px;
+border-bottom: 2px solid #fff;
 }
-
-.row .form-group{
-    margin: 0.5em 0;
-}
-
-.row .form-group label{
-    display: block;
+.inputbox label{
+    position:absolute;
+    top: 5%;
+    left: 5px;
+    transform: translateY(-50%);
     color: #fff;
-    text-align: left;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+
+input:focus ~ label
+input:valid ~ label{
+    top: -5px;
+}
+.inputbox input{
+    width: 100%;
+    height: 50px;
+    background:transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: #fff;
+}
+.inputbox ion-icon{
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    top: 20px;
+
+}
+.forget{
+    margin: -15px 0 15px;
+    font-size: .9em;
+    color: #fff;
+    display: flex;
+    justify-content:center ;
+}
+.forget label input{
+    margin-right: 3px;
+}
+.forget label a{
+    color: #fff;
+    text-decoration: none;
+
+}
+.forget label a:hover{
+    text-decoration: underline;
+}
+button{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #fff ;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
     font-weight: 600;
 }
-
-.row .form-group input, .row .form-group button{
-    display: block;
-    padding: 0.5em 0;
-    width: 100%;
-    margin-top: 0.5em;
-    background-color: inherit;
-    border: none;
-    border-bottom: 1px solid #555;
-    color: #eee;
-}
-
-/* .row .form-group input, .row .form-group button:hover{
-    background: transparent;
-    border-color: #fd4766;
-    color: #fd4766;
-} */
-
-.row .form-group input:focus, .row .form-group button:focus {
-    background-color: #fff;
-    color: #000;
-    border: none;
-    padding: 1em 0.5em;
-    animation: pulse 1s infinite ease;
-}
-
-.row .form-group button{
-    border: 1px solid #fff;
-    /* background: linear-gradient(120deg, #1c99fe 20.69%, #7644ff 50.19%, #fd4766 79.69%); */
-    border-radius: 5px;
-    outline: none;
-    -moz-user-select: none;
-    user-select: none;
-    color: #80aed4;
-    font-weight: 800;
-    cursor: pointer;
-    margin-top: 2em;
-    padding: 1em;
-}
-
-.row .form-group button:hover{
-    background: transparent;
-    border-color: #fd4766;
-    color: #fd4766;
-}
-
-.row .form-group button:hover, .row .form-group button:focus {
-    background-color: #fff;
-}
-
-.row .form-group button.is-loading::after {
-    animation: spinner 500ms infinite linear;
-    content: '';
-    position: absolute;
-    margin-left: 2em;
-    border: 2px solid #000;
-    border-radius: 100%;
-    border-right-color: transparent;
-    border-left-color: transparent;
-    height: 1em;
-    width: 4%;
-}
-
-.row .footer h5{
-    margin-top: 1em;
-}
-
-.row .footer p{
-    margin-top: 2em;
-}
-
-.row .footer p .symbols{
-    color: #033258;
-}
-
-.row .footer a{
-    color: inherit;
-    text-decoration: none;
-}
-
-.information-text{
-    color: #ddd;
-}
-
-
 .register{
     font-size: .9em;
     color: #fff;
@@ -168,55 +126,46 @@ body {
 .register p a:hover{
     text-decoration: underline;
 }
-@media screen and (max-width: 320px) {
-    .row{
-        padding-left: 1em;
-        padding-right: 1em;
-    }
-    .row h1{
-        font-size: 1.5em !important;
-    }
-}
 
-@media screen and (min-width: 900px) {
-    .row{
-        width: 50%;
-        
-    }
-}
     </style>
-</head>
-<body>
-    <div class="row">
-        <h1>Нууц үг сэргээх</h1>
-        <!-- <h6 class="information-text">Enter your Registered email to reset password.</h6> -->
+  </head>
+  <body>
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                <form action="" id="loginForm">
+                   <h2>Нууц үг сэргээх</h2>
+                   <div class="inputbox">
+                    
+                    <input type="email" id="username" placeholder="Бүртгэлтэй имэйл хаягаа оруулна уу." required>
+                    <label for="">Email</label>
+                    <ion-icon name="mail-outline"></ion-icon>
+                   </div>
 
-    <div class="form-group">
-        <form action="" id="loginForm">
-        <p><label for="username">Email</label></p>
-        <input type="email" id="username" placeholder="Бүртгэлтэй имэйл хаягаа оруулна уу." required>
-        <!-- <p><label for="username">Email</label></p> -->
+                   <div class="inputbox">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" id="password" placeholder="Энд нууц үгээ хийнэ үү." required>
+                    <label for="">Шинэ нууц үг</label>
+                   </div>
+
+                   <div class="inputbox">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" id="password" placeholder="Энд нууц үгээ хийнэ үү." required>
+                    <label for="">Нууц үгээ дахин оруулна уу</label>
+                   </div>
 
 
-    <div class="form-group">
-        <p><label for="password">Шинэ нууц үг</label></p>
-        <input type="password" id="password" placeholder="Энд нууц үгээ хийнэ үү." required>
-        <!-- <p><label for="password">Шинэ нууц үг</label></p> -->
-
-    <div class="form-group">
-        <p><label for="password">Нууц үгээ дахин оруулна уу.</label></p>
-        <input type="password" id="password" placeholder="Энд нууц үгээ хийнэ үү." required>
-        <!-- <p><label for="password">Нууц үгээ дахин оруулна уу.</label></p> -->
-    
 
 
-        <button id="loginForm" type="submit">Нэвтрэх</button>
+
+                   
+                    <button id="loginForm" type="submit">Нэвтрэх</button>
                     <div class="register">
                         <p><a href="{% url 'homeView'%}"><span style="color: aqua;">Буцах</span></a></p>
                     </div>
-                    <!-- <div class="Profile">
+                    <div class="Profile">
                         <p><a href="{% url 'homeView'%}"><span style="color: aqua;">Буцах</span></a></p>
-                    </div> -->
+                    </div>
                 </form>
             </div>
         </div>
@@ -249,8 +198,4 @@ body {
 		</script>
 
   </body>
-</html>
-</div>
-    </div>
-</body>
 </html>
