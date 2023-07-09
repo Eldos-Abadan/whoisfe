@@ -19,7 +19,7 @@
   <link href="{% static '/css/dashboard/light-bootstrap-dashboard.css'%}" rel="stylesheet" />
 
   <link href="{% static '/css/dashboard/demo.css'%}" rel="stylesheet" />
-
+  <link href="{% static '/css/dashboard/dash.css'%}" rel="stylesheet" />
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
   <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css" />
   <link href="{% static '/css/dashboard/pe-icon-7-stroke.css'%}" rel="stylesheet" />
@@ -72,8 +72,26 @@
       </nav>
       {% include "../includes/banner.html" %}
       <h1>Dashboard</h1>
-
-      {% include "../includes/footer.html" %}
+      <hr>
+      <main>
+        <section id="about">
+          <h3>Танилцуулга</h3>
+          <p>Өөрийн танилцуулга /CV/ болон нэрийн хуудасны бэлэн дизайн template зохион бүтээж техник технологид <br> суурилсан шинэ систем нэвтрүүлэх.</p>
+        </section>
+        <section id="about">
+          <h3>Бидний зорилго</h3>
+          <p>Хэрэглэгч өөрийн мэдээллийг оруулаад өөрийн хүссэн загвар дизайн, өнгө төрхийг
+            бүрдүүлсэн танилцуулга /CV/ <br>болон нэрийн хуудсыг цахимаар гарган авах боломжийг олгоно.</p>
+        </section>
+        <section id="about">
+          <h3>Үр дүн</h3>
+          <p>Хүмүүсийн ажлыг хөнгөвчлөн хэзээ ч хаанаас ч байршуулсан системээсээ
+            цахимаар танилцуулгаа хэрэгтэй<br>үедээ татан авч, цаг хугацаагаа хэмнэнэ. </p>
+        </section>
+      </main><br>
+      <footer>
+        {% include "../includes/footer.html" %}
+      </footer>
     </div>
   </div>
 </body>
