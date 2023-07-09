@@ -9,5 +9,5 @@ urlpatterns = [
     path("profile/",    viewsProfile.profileViews,       name="profileViews"),
     path("home/",       viewsMain.homeLogoutView,        name="homeLogoutView"),
     path("wallet/",     viewsMain.walletView,            name="wallet"),
-    path("myCV/",       viewsMyCV.myCVViews,            name="myCV"),
+    path("myCV/",       viewsMyCV.myCVViews,            name="myCVViews"),
     ]   
