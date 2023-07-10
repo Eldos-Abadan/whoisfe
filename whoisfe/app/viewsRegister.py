@@ -52,7 +52,7 @@ def registerViews(request):
             userCursor.close()
             disconnectDB(myCon)
 
-            return redirect('loginViews')
+            return redirect('EmailVerView')
 
         except Exception as e:
             error_message = 'Database error'
