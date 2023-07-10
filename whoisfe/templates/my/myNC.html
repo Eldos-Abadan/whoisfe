@@ -68,9 +68,9 @@
                     {% for ele  in kholboos %}
                     <tr>
                       <td>{{ele.name}}</td>
-                      <td> <a class="a1" target="_blank" id="link" href="http://localhost:8000/mycv/{{ele.id}}/{{userName}}/"> http://whois.mandakh.org/mync/{{ele.id}}/{{userName}}/</a></td>
-                      <td> <a class="a1" target="_blank" href="http://localhost:8000/mycv/{{ele.id}}/{{userName}}/"> <i class="fa fa-external-link" aria-hidden="true"></i></a></td>
-                      <td><i class="fa fa-copy" aria-hidden="true" data-url="http://localhost:8000/mycv/{{ele.id}}/{{userName}}/" id="copy-button" onclick="copyClipboard(this)"></i></td>
+                      <td> <a class="a1" target="_blank" id="link" href="http://whois.mandakh.org/mycv/{{ele.id}}/{{userName}}/"> http://whois.mandakh.org/mync/{{ele.id}}/{{userName}}/</a></td>
+                      <td> <a class="a1" target="_blank" href="http://whois.mandakh.org/mycv/{{ele.id}}/{{userName}}/"> <i class="fa fa-external-link" aria-hidden="true"></i></a></td>
+                      <td><i class="fa fa-copy" aria-hidden="true" data-url="http://whois.mandakh.org/mycv/{{ele.id}}/{{userName}}/" id="copy-button" onclick="copyClipboard(this)"></i></td>
                     </tr>
                     {% endfor %}
                   </table>
