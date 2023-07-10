@@ -34,7 +34,6 @@ def homeView(request):
         r = requests.get("http://whoisb.mandakh.org/userLogin/",
                             data=json.dumps(requestJSON),
                             headers={'Content-Type': 'application/json'} )
-        # print(r.json())
         resultCode = r.json()['responseCode']
         resultMessage = r.json()['responseText']
         if(resultCode == 200):
@@ -79,13 +78,26 @@ def wallet1View(request):
         return redirect("homeView")
     htmlRuu = {}
     htmlRuu["aldaa"] = ""
+    # start userName
+    serviceZam = "http://whoisb.mandakh.org/getDashboardInfo/"
+    id = request.session['userId']
+    requestJSON = {"user_id" : str(id)}
+    r = requests.get(serviceZam,
+                              data=json.dumps(requestJSON),
+                              headers={'Content-Type': 'application/json'} )
+    data = r.json()
+    userName = data['userName']
+    # end userName
     # makeTransaction
     if request.method == "POST":
         serviceZam = "http://whoisb.mandakh.org/makeTransaction/"
         utga = request.POST.get("utga")
         hend = request.POST.get("hend")
         amount = request.POST.get("amount")
-
+        if hend == userName:
+            htmlRuu['aldaa'] = 'Та дансаа шалгаад дахин оролдоно уу.'
+            return render(request, "wallet/wallet1.html", htmlRuu)
+            
         requestJSON = {
           "from": request.session['userId'],
           "target": hend,
@@ -103,9 +115,7 @@ def wallet1View(request):
     #  end makeTransaction
     serviceZam = "http://whoisb.mandakh.org/getTransactionLog/"
     id = request.session['userId']
-    requestJSON = {
-      "user_id" : str(id)
-    }
+    requestJSON = {"user_id" : str(id)}
     r = requests.get(serviceZam,
                               data=json.dumps(requestJSON),
                               headers={'Content-Type': 'application/json'} )
@@ -113,8 +123,11 @@ def wallet1View(request):
     htmlRuu["vldegdel"] = data["dansniiUldegdel"]
     htmlRuu["userData"] = data["guilgee"]
     for i in range(0, len(htmlRuu["userData"])):
-      #  htmlRuu["userData"]["dugaar"] = i + 1
        htmlRuu["userData"][i]["dugaar"] = str(i + 1)
+    # Хэрэгчлэгчийн нэр солих
+    for i in range(0, len(htmlRuu['userData'])):
+        if htmlRuu['userData'][i]['from'] != userName:
+            htmlRuu['userData'][i]['to'] = htmlRuu['userData'][i]['from']
     return render(request, "wallet/wallet1.html", htmlRuu)
 ## end guilgee hiihed ########################################################
 ##############################################################################
