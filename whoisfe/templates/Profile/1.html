@@ -156,15 +156,17 @@
       <div class="wrapper">
         <div class="cctabs">
           <input checked id="one" name="tabs" type="radio">
-          <label for="one"><i class="fa fa-pencil-square-o"></i> Хувийн мэдээлэл</label>
-          <input id="two" name="tabs" type="radio" value="Two">
-          <label for="two"><i class="fa fa-magic"></i> Боловсрол</label>
-          <input id="three" name="tabs" type="radio">
-          <label for="three"><i class="fa fa-plus-square"></i> Хобби</label>
+          <label for="one"><i class="fa fa-pencil-square-o"></i> Үндсэн мэдээлэл</label>
+          <input checked id="two" name="tabs" type="radio">
+          <label for="two"><i class="fa fa-pencil-square-o"></i> Хувийн мэдээлэл</label>
+          <input id="three" name="tabs" type="radio" value="Two">
+          <label for="three"><i class="fa fa-magic"></i> Боловсрол</label>
           <input id="four" name="tabs" type="radio">
-          <label for="four"><i class="fa fa-envelope"></i> Туршлага</label>
-          <input id="five " name="tabs" type="radio">
-          <label for="five"><i class="fa fa-plus-square"></i>Чадвар</label>
+          <label for="four"><i class="fa fa-plus-square"></i> Хобби</label>
+          <input id="five" name="tabs" type="radio">
+          <label for="five"><i class="fa fa-envelope"></i> Туршлага</label>
+          <input id="six" name="tabs" type="radio">
+          <label for="six"><i class="fa fa-envelope"></i>Чадвар </label>
           <div class="panels">
             <div class="panel">
               <div class="example">
@@ -173,15 +175,15 @@
                     <div class="col-sm-3">
                       <div class="form-floating mt-3">
                         <label for="floatingInput"> Овог</label>
-                        <input type="name" name="Fist name" class="form-control form-control-sm" id="floatingFname"
-                          placeholder="First Name">
+                        <input type="name" name="fistname" class="form-control form-control-sm" id="floatingFname"
+                          placeholder="Овог">
 
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-floating mt-3">
                         <label for="floatingInput">Нэр</label>
-                        <input type="name" name="last name" class="form-control form-control-sm" id="floatingLname"
+                        <input type="name" name="lastname" class="form-control form-control-sm" id="floatingLname"
                           placeholder="Нэр">
 
                       </div>
@@ -192,17 +194,48 @@
                   <div class="row">
                     <div class="col-sm-8 mt-3">
                       <div class="form-floating mt-8">
-                        <label for="floatingInput">Цахим хаяг</label>
+                        <label for="floatingInput">Имэйл хаяг</label>
                         <input type="email" name="email" class="form-control form-control-sm" id="floatingEmail"
-                          placeholder="Email">
-
-
+                          placeholder="Имэйл">
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-8 mt-3">
+                      <div class="form-floating mt-8">
+                        <label for="floatingInput">Нууц үг</label>
+                        <input type="password" name="password" class="form-control form-control-sm" id="floatingPassword"
+                          placeholder="Нууц үг">
                       </div>
                     </div>
                     <div class="col-sm-2"></div>
                   </div>
 
-
+                </div>
+                <div class="row">
+                  <div class="col-sm-8 mt-3">
+                    <div class="form-floating mt-8">
+                      <label for="floatingInput">Хэрэглэгчийн нэр</label>
+                      <input type="username" name="username" class="form-control form-control-sm" id="floatingUsername"
+                        placeholder="Хэрэглэгчийн нэр">
+                    </div>
+                  </div>
+                  <div class="col-sm-2"></div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 mt-3 mb-4" class="col-sm-2">
+                    <div class="btn-group mr-2 " role="group" aria-label="First group">
+                      <input type="button" style="font-size: 20px;" value="Хадгалах">
+                    </div>
+                  </div>
+                </div>
+                </form>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="example">
+                <form id="cc-contact" class="form-group" action="" method="post">
                   <div class="row">
                     <div class="col-sm-5">
                       <div class="form-floating mt-3">
@@ -383,15 +416,24 @@
                       <input type="text">
                       </select>
                     </div>
-
                   </div>
-
                   <button name="submit" type="submit" id="contact-submit" data-submit="Saved">Save</button>
                 </form>
               </div>
             </div>
             
-          
+            <div class="panel">
+              <div class="headline">
+                <form id="cc-contact" class="form-group" action="" method="post">
+                  <h1>chadwar</h1>
+
+                  <div class="form-check mt-3">
+                    <textarea name="Message" cols="80" rows="10"></textarea>
+                  </div>
+                  <button name="submit" type="submit" id="contact-submit" data-submit="Saved">Save</button>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
