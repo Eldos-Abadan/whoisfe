@@ -39,6 +39,6 @@ def forgetView(request):
             resultMessage = response_json.get('responseText')
             htmlRuuDamjuulahUtguud["aldaaniiMedegdel"] = resultMessage            
 
-    else:
-        htmlRuuDamjuulahUtguud["aldaaniiMedegdel"] = "ene huudas shiljij orj irjee"
+    # else:
+    #     htmlRuuDamjuulahUtguud["aldaaniiMedegdel"] = "ene huudas shiljij orj irjee"
     return render(request, "forget/Forget.html",htmlRuuDamjuulahUtguud)
