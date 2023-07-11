@@ -25,9 +25,11 @@ header h1 {
   margin-top: -5%;
 }
 
-main {
-  padding: 25px;
+.main {
   display: flex ;
+  margin-right: 5%;
+  margin-left: 5%;
+  width: 90%;
 }
 
 img {
@@ -78,13 +80,14 @@ input[type=button].active {
 .main1 {
   border: purple solid 2px;
   border-radius: 5px;
-  text-align: justify ;
   margin-right: 5%;
   margin-left: 5%;
-  text-align: center;
+  width: 90%;
+  display: flex;
 
 }
 .main1 p{
   font-size: xx-large;
+  margin: 15px;
   
 }
