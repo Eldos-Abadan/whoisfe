@@ -128,7 +128,7 @@
                     </head>
 
                     <body>
-                        <form action="{% url 'profileEdu' %}" method="post" name="">
+                        <form action="" method="post" name="">
                             {% csrf_token %}
                             <div class="section">
                                 <div class="box" style="height:200px; width:860px; ">
@@ -322,9 +322,11 @@
                                     <span style="font-size:16px;">Санал хүсэлт</span>
                                     <br><br> 
                                     <div class="form-check mt-3">
-                                        <textarea name="Message" cols="36" rows="9"></textarea>  
+                                        <textarea name="text" cols="36" rows="9"></textarea>  
                                     </div>
-                                    <div style="border:2px black solid; padding: 4px 4px 4px 4px; width:65px;">Илгээх</div>
+                                    <input type="submit" value="Илгээх" name="complainSubmit">
+                                    <br>
+                                    <span style="color:blue;">{{ilgeehMedegdel}}</span>
                                 </div>
                             </div>
                         </form>

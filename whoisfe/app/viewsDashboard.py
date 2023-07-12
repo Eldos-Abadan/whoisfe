@@ -132,7 +132,6 @@ def dashboardViews(request):
                                 headers={'Content-Type': 'application/json'} )
             jsonsData = r.json()
             if i == 6:
-                # print(jsonsData)
                 if(jsonsData["responseCode"]) != 200:
                     htmlData["aldaaniiMedeelel"] = jsonsData["responseText"]
                 else:
@@ -203,7 +202,6 @@ def dashboardViews(request):
         except Exception as e:
             htmlData["aldaaniiMedeelel"] = "Уучлаарай, одоогоор энэ хуудсан дээрх мэдээллийг харуулах боломжгүй байна."
             # htmlData["userData1"] = ""
-            # print(str(e))
             return render(request, "dashboard/dashboard.html", htmlData) 
     hi = {"nemeltDutuu": int(100 - int(userNemeltDutuu)*12.5)}
     htmlData["userD"][0]["nemeltDutuu"] = int(100 - int(userNemeltDutuu)*12.5)
@@ -218,8 +216,28 @@ def dashboardViews(request):
         if htmlData["userD"][i]["bvrenEsekh"] == 0:
             niitMedeelel -= 1
     hi = {"niitMedeelel": niitMedeelel}
-    # print(niitMedeelel)
     htmlData["niitMedeelel"] = niitMedeelel
     htmlData["userD"].append(hi)
-    # print(htmlData["userD"])
+    htmlData["ilgeehMedegdel"] = ""
+    
+    if request.method == "POST":
+            if "complainSubmit" in request.POST:
+                try:
+                    text = request.POST.get("text")
+                    if len(text) < 6:
+                        htmlData["ilgeehMedegdel"] = "Та саналаа тодорхой бичнэ үү."
+                    else:
+                        id = request.session['userId']
+                        request_data = {
+                            'id': id,
+                            "text": text,
+                        }
+                        r = requests.post("http://whoisb.mandakh.org/insertComplain/",
+                                            data=json.dumps(request_data),
+                                            headers={'Content-Type': 'application/json'})
+                        resJSON = r.json()
+                        if resJSON["responseCode"] == 200: 
+                            htmlData["ilgeehMedegdel"] = "Саналаа илгээсэн танд баярлалаа. Таны илгээсэн хүсэлтийг хүлээн авлаа."
+                except Exception as e:
+                    htmlData["ilgeehMedegdel"] = "Баазын алдаа"
     return render(request, "dashboard/dashboard_test.html", htmlData)
