@@ -61,7 +61,12 @@
                                                     <p>Сайн байна уу, {{ user.lastName }}!</p>
                                                 {% endif %}
                                             {% endfor %}
+
+                                            {% if niitMedeelel == 6 %}
+                                            <p>&emsp;Хэрэглэгчийн мэдээллээ оруулсан байдал.😊</p>
+                                            {% else %}
                                             <p>&emsp;Хэрэглэгчийн мэдээллээ оруулсан байдал.</p>
+                                            {% endif %}
                                             <div class="container1">
                                             {% if niitMedeelel == 6 %}
                                                     <div class="skills html" style="width: 100%;  background-color: darkgreen;padding-right:7px;"> 100%</div>
