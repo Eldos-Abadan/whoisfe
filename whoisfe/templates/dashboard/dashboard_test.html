@@ -20,86 +20,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="{% static '/css/Profile/3.css' %}" rel="stylesheet" type="text/css">
-    <style>
-        .section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            {% comment %} background-color: #f1f1f1; {% endcomment %}
-            padding: 5px;
-            {% comment %} text-align: center; {% endcomment %}
-        }
-        .section1 {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            {% comment %} background-color: #f1f1f1; {% endcomment %}
-            padding: 1px;
-            {% comment %} text-align: center; {% endcomment %}
-        }
-
-        .box {
-            width: 460px;
-            height: 300px;
-            {% comment %} background-color: #ddd; {% endcomment %}
-            margin: 5px;
-        }
-        {% comment %} height:80px; width:200px; background:white; {% endcomment %}
-        .box2 {
-            width: 45%;
-            height: 25%;
-            {% comment %} background-color: #ddd; {% endcomment %}
-            margin: 5px;
-        }
-        .box11 {
-            width: 60%;
-            height: 100%;
-            {% comment %} background-color: #ddd; {% endcomment %}
-            margin: 5px;
-        }
-        .box12 {
-            width: 30%;
-            height: 100%;
-            {% comment %} background-color: #ddd; {% endcomment %}
-            margin: 5px;
-        }
-        
-        @media screen and (max-width: 600px) {
-            .section {
-                padding: 5px;
-            }
-            
-            .box {
-                width: 150px;
-                height: 50px;
-                margin: 5px;
-            }
-        }
-        .container1 {
-          width: 60%;
-          background-color: #ddd;
-          border: black 2px solid;
-          border-radius: 20px;
-        }
-        
-        .skills {
-            text-align: right;
-            padding-top: 3px;
-            padding-bottom: 3px;
-            color: white;
-            border-radius: 20px;
-        }
-        
-        .html {width: 90%; background-color: #04AA6D;}
-        .add {width: 90%; background-color: #04AA6D;}
-        .exp {width: 90%; background-color: #04AA6D;}
-        .skill {width: 90%; background-color: #04AA6D;}
-        .edu {width: 90%; background-color: #04AA6D;}
-        .social {width: 90%; background-color: #04AA6D;}
-        .family {width: 90%; background-color: #04AA6D;}
-    </style>
+    <link href="{% static '/css/Profile/4.css' %}" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -140,42 +61,24 @@
                                                     <p>Сайн байна уу, {{ user.lastName }}!</p>
                                                 {% endif %}
                                             {% endfor %}
+                                            <p>&emsp;Хэрэглэгчийн мэдээллээ оруулсан байдал.</p>
+                                            <div class="container1">
                                             {% if niitMedeelel == 6 %}
-                                                <p>&emsp;Хэрэглэгчийн мэдээллээ оруулсан байдал. 😊</p>
-                                                <div class="container1">
                                                     <div class="skills html" style="width: 100%;  background-color: darkgreen;padding-right:7px;"> 100%</div>
-                                                </div>
                                             {% elif niitMedeelel == 5%}
-                                                <p>&emsp;Хэрэглэгчийн мэдээллээ оруулсан байдал.</p>
-                                                <div class="container1">
                                                     <div class="skills html" style="width: 83%;  background-color: darkgreen;padding-right:7px;"> 83%</div>
-                                                </div>
                                             {% elif niitMedeelel == 4%}
-                                                <p>&emsp;Хэрэглэгчийн мэдээллээ оруулсан байдал.</p>
-                                                <div class="container1">
                                                     <div class="skills html" style="width: 66%;  background-color: darkgreen;padding-right:7px;"> 66%</div>
-                                                </div>
                                             {% elif niitMedeelel == 3%}
-                                                <p>&emsp;Хэрэглэгчийн мэдээллээ оруулсан байдал.</p>
-                                                <div class="container1">
                                                     <div class="skills html" style="width: 50%;  background-color: darkgreen;padding-right:7px;"> 50%</div>
-                                                </div>
                                             {% elif niitMedeelel == 2%}
-                                                <p>&emsp;Хэрэглэгчийн мэдээллээ оруулсан байдал.</p>
-                                                <div class="container1">
                                                     <div class="skills html" style="width: 33%;  background-color: darkgreen;padding-right:7px;"> 33%</div>
-                                                </div>
                                             {% elif niitMedeelel == 1%}
-                                                <p>&emsp;Хэрэглэгчийн мэдээллээ оруулсан байдал.</p>
-                                                <div class="container1">
                                                     <div class="skills html" style="width: 16%;  background-color: darkgreen;padding-right:7px;"> 16%</div>
-                                                </div>
                                             {% else %}
-                                                <p>&emsp;Хэрэглэгчийн мэдээллээ оруулсан байдал.</p>
-                                                <div class="container1">
                                                     <div class="skills html" style="width: 10%;  background-color: darkgreen;"> 0%</div>
-                                                </div>
-                                            {% endif %}
+                                                {% endif %}
+                                            </div>
                                         </div>
                                         <div class="box12">
                                             <br>
@@ -201,114 +104,82 @@
                                         {% for user in userD %}
                                         <div class="box2">
                                             {% if user.garchig == 'Нэмэлт мэдээлэл' %}
+                                                <p>&emsp;<a href="http://whois.mandakh.org/profile/add/" id="shilj">Нэмэлт мэдээлэл </a></p>
+                                                <div class="container1">
                                                 {% if user.bvrenEsekh == 1 %}
-                                                    <p>&emsp;Нэмэлт мэдээлэл </p>
-                                                    <div class="container1">
                                                         <div class="skills add" style="width: 100%;padding-right:7px;">100%</div>
-                                                    </div> 
                                                 {% elif user.nemeltDutuu == 12 %}
-                                                    <p>&emsp;Нэмэлт мэдээлэл</p>
-                                                    <div class="container1">
                                                         <div class="skills add" style="width: 12.5%;background-color: darkgreen;padding-right:7px; "> 12.5%</div>
-                                                    </div> 
                                                 {% elif user.nemeltDutuu == 25 %}
-                                                    <p>&emsp;Нэмэлт мэдээлэл</p>
-                                                    <div class="container1">
                                                         <div class="skills add" style="width: 25%;  background-color: darkgreen;padding-right:7px;">25%</div>
-                                                    </div> 
                                                 {% elif user.nemeltDutuu == 37 %}
-                                                    <p>&emsp;Нэмэлт мэдээлэл</p>
-                                                    <div class="container1">
                                                         <div class="skills add" style="width: 37.5%;background-color: darkgreen;padding-right:7px;">37.5%</div>
-                                                    </div> 
                                                 {% elif user.nemeltDutuu == 50 %}
-                                                    <p>&emsp;Нэмэлт мэдээлэл</p>
-                                                    <div class="container1">
                                                         <div class="skills add" style="width: 50%;background-color: darkgreen;padding-right:7px;">50%</div>
-                                                    </div> 
                                                 {% elif user.nemeltDutuu == 62 %}
-                                                    <p>&emsp;Нэмэлт мэдээлэл</p>
-                                                    <div class="container1">
                                                         <div class="skills add" style="width: 62.5%;background-color: darkgreen;padding-right:7px;">62.5%</div>
-                                                    </div> 
                                                 {% elif user.nemeltDutuu == 75 %}
-                                                    <p>&emsp;Нэмэлт мэдээлэл</p>
-                                                    <div class="container1">
                                                         <div class="skills add" style="width:755%;background-color: darkgreen;padding-right:7px;">75%</div>
-                                                    </div> 
                                                 {% elif user.nemeltDutuu == 87 %}
-                                                    <p>&emsp;Нэмэлт мэдээлэл</p>
-                                                    <div class="container1">
                                                         <div class="skills add" style="width: 87.5%;background-color: darkgreen;padding-right:7px;">87.5%</div>
-                                                    </div> 
                                                 {% else %}
-                                                    <p>&emsp;Нэмэлт мэдээлэл</p>
-                                                    <div class="container1">
                                                         <div class="skills add" style="with: 10%;background-color: darkgreen;">0%</div>
-                                                    </div> 
                                                 {% endif %}
+                                                </div> 
                                                 {% endif %}
                                             {% if user.garchig == 'Гэр бүлийн мэдээлэл' %}
+                                                <p>&emsp;<a href="http://whois.mandakh.org/profile/family/" id="shilj">Гэр бүл </a></p>
+                                                <div class="container1">
                                                 {% if user.bvrenEsekh == 1 %}
-                                                    <p>&emsp;Гэр бүл </p>
-                                                    <div class="container1">
                                                         <div class="skills family" style="width:100%;padding-right:7px;">100%</div>
                                                     </div>
                                                 {% else %}
                                                     <p>&emsp;Гэр бүл</p>
-                                                    <div class="container1">
                                                         <div class="skills family" style="width:10% ;background-color: darkgreen;">0%</div>
                                                     </div>
                                                     <p>&emsp;Мэдээллээ бүрэн бөглөнө үү.</p>
                                                 {% endif %}
                                             {% elif user.garchig == 'Боловсрол' %}
+                                                <p>&emsp;<a href="http://whois.mandakh.org/profile/edu/" id="shilj">Боловсрол</a> </p>
+                                                <div class="container1">
                                                 {% if user.bvrenEsekh == 1 %}
-                                                    <p>&emsp;Боловсрол </p>
-                                                    <div class="container1">
                                                         <div class="skills edu" style="width:100%; padding-right:7px;">100%</div>
                                                     </div>
                                                 {% else %}
-                                                    <p>&emsp;Боловсрол</p>
-                                                    <div class="container1">
                                                         <div class="skills family" style="width:10%;background-color: darkgreen;">0%</div>
                                                     </div>
                                                     <p>&emsp;Мэдээллээ бүрэн бөглөнө үү.</p>
                                                 {% endif %}
                                             {% elif user.garchig == 'Туршлага' %}
+                                            <p>&emsp;<a href="http://whois.mandakh.org/profile/exp/" id="shilj">Туршлага</a> </p>
                                                 {% if user.bvrenEsekh == 1 %}
-                                                    <p>&emsp;Туршлага </p>
                                                     <div class="container1" style="text-align: right;">
                                                         <div class="skills exp" style="width:100%;text-align: right;padding-right:7px;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100%</div>
                                                     </div>
                                                 {% else %}
-                                                    <p>&emsp;Туршлага</p>
                                                     <div class="container1">
                                                         <div class="skills exp" style="width:10%;background-color: darkgreen;">0%</div>
                                                     </div>
                                                     <p>&emsp;Мэдээллээ бүрэн бөглөнө үү.</p>
                                                 {% endif %}
                                             {% elif user.garchig == 'Чадвар' %}
+                                            <p>&emsp;<a href="http://whois.mandakh.org/profile/skill/" id="shilj">Чадвар</a> </p>
+                                            <div class="container1">
                                                 {% if user.bvrenEsekh == 1 %}
-                                                    <p>&emsp;Чадвар </p>
-                                                    <div class="container1">
                                                         <div class="skills skill" style="width:100%;padding-right:7px;">100%</div>
                                                     </div>
                                                 {% else %}
-                                                    <p>&emsp;Чадвар</p>
-                                                    <div class="container1">
                                                         <div class="skills skill" style="width:10%;background-color: darkgreen;">0%</div>
                                                     </div>
                                                     <p>&emsp;Мэдээллээ бүрэн бөглөнө үү.</p>
                                                 {% endif %}
                                             {% elif user.garchig == 'Сошиал' %}
+                                            <p>&emsp;<a href="http://whois.mandakh.org/profile/social/" id="shilj">Сошиал</a> </p>
+                                            <div class="container1">
                                                 {% if user.bvrenEsekh == 1 %}
-                                                    <p>&emsp;Сошиал </p>
-                                                    <div class="container1">
                                                         <div class="skills social" style="width:100%;padding-right:7px;">100%</div>
                                                     </div>
                                                 {% else %}
-                                                    <p>&emsp;Сошиал</p>
-                                                    <div class="container1">
                                                         <div class="skills social" style="width:10%;background-color: darkgreen;">0%</div>
                                                     </div>
                                                     <p>&emsp;Мэдээллээ бүрэн бөглөнө үү.</p>
