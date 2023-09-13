@@ -1,0 +1,66 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js "></script>    
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <title>Document</title>
+    <style>
+        .button {
+			position: absolute;
+
+			background-color: blue;
+			display: block;
+			line-height: 1;
+
+		}
+    </style>
+</head>
+<body>
+    <div class="resume-box" id="hi">
+        <h1>hi everybody</h1>
+        <div class="button">
+            <button onclick="print()">Download</button>
+        </div>
+        <script>
+            window.jsPDF = window.jspdf.jsPDF;
+            var docPDF = new jsPDF();
+            function print() {
+                var elementHTML = document.querySelector("#hi");
+                docPDF.html(elementHTML, {
+                    callback: function (docPDF) {
+                        docPDF.save('mycv');
+                    },
+                    x: 15,
+                    y: 15,
+                    width: 170,
+                    windowWidth: 650
+                });
+            }
+        </script>
+    </div>
+</body>+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hi </h1>
+    <button class="downloadButton" onclick="savePageAsPDF()">PDF ээр татах</button>
+    <script>
+        function savePageAsPDF() {
+    const originalMediaType = window.matchMedia('screen').media;
+    window.matchMedia('screen').media = 'print';
+    window.print();
+    window.matchMedia('screen').media = originalMediaType;
+  }
+
+    </script>
+</body>
+</html>
