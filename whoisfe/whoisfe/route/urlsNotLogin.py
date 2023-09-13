@@ -19,5 +19,6 @@ urlpatterns = [
     path("enkuCV/",                                         viewsTemplate.enkuCVViews,              name="enkucv"),
     path("enku2CV/",                                        viewsTemplate.enku2CVViews,             name="enku2cv"),
     path("kucv/",                                           viewsTemplate.kucvViews,                name="kucv"),
+    path("bw/",                                             viewsTemplate.bwViews,                  name="bw"),
     #####################################################################################################
     ]   

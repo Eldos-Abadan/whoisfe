@@ -1,0 +1,490 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js "></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script> -->
+
+	<style>
+		:root {
+			--bgcolor: #beb8ac;
+			--blue: #2fb7fe;
+			--black: #3D3F42;
+			--white: #f4f7ff;
+			--gray: #d8dce4;
+			--lightgray: #8e9095;
+		}
+
+		* {
+			margin: 0px;
+			padding: 0px;
+			box-sizing: border-box;
+			font-family: monospace;
+		}
+
+		body {
+			background: var(--bgcolor);
+		}
+
+		.clearfix {
+			clear: both;
+		}
+
+		.resume-box {
+			width: 800px;
+			height: 1000px;
+			margin: 100px auto;
+			background: var(--white);
+			box-shadow: 5px 21px 20px 20px #3d3f4238;
+		}
+
+		.left-section {
+			background: var(--black);
+			width: 250px;
+			height: 1000px;
+			float: left;
+		}
+
+		.profile {
+			overflow: hidden;
+			position: relative;
+		}
+
+		.blue-box {
+			width: 257px;
+			height: 407px;
+			background: var(--black);
+			margin-left: -100px;
+			transform: rotateZ(48deg);
+			margin-top: -178px;
+
+		}
+
+		.profile-img {
+			position: absolute;
+			z-index: 9;
+			width: 120px;
+			height: 120px;
+			transform: translate(-50%, -50%);
+			left: 50%;
+			top: 50%;
+			border-radius: 50%;
+			border: 3px solid var(--gray);
+		}
+
+		.name {
+			color: var(--gray);
+			text-align: center;
+			margin-top: -34px;
+			font-size: 30px;
+			letter-spacing: 2px;
+			font-weight: 400;
+			text-transform: uppercase;
+		}
+
+		.name span {
+			color: var(--blue);
+		}
+
+		.n-p {
+			width: 180px;
+			margin: 0 auto;
+			text-align: center;
+			padding: 7px;
+			border-bottom: 1px solid var(--gray);
+			border-top: 1px solid var(--gray);
+			color: var(--gray);
+			margin-top: 11px;
+			text-transform: uppercase;
+		}
+
+		.info {
+			margin-top: 50px;
+		}
+
+		.heading {
+			width: 180px;
+			margin: 0 auto;
+			padding: 2px;
+			border-bottom: 1px solid var(--gray);
+			border-top: 1px solid var(--gray);
+			color: var(--gray);
+			margin-top: 11px;
+			text-transform: uppercase;
+			font-size: 20px;
+		}
+
+		.p1 {
+			color: var(--gray);
+			width: 184px;
+			margin: 0 auto;
+			margin-top: 25px;
+			font-size: 20px;
+			line-height: 14px;
+		}
+
+		.p1 span {
+			font-size: 16px;
+		}
+
+		.span1 img {
+			background: white;
+			width: 30px;
+			padding: 6px;
+			border-radius: 16px;
+			float: left;
+			margin-right: 10px;
+		}
+
+		.right-section {
+			padding: 50px 40px;
+			background: var(--white);
+			width: 68%;
+			float: left;
+			height: 1000px;
+		}
+
+		.right-heading img {
+			background: #3d3f42;
+			width: 36px;
+			padding: 7px;
+			border-radius: 17px;
+			display: inline-block;
+			margin-top: -6px;
+		}
+
+		.p2 {
+			margin: 0 auto;
+			padding: 2px;
+			border-bottom: 1px solid var(--lightgray);
+			border-top: 1px solid var(--lightgray);
+			color: var(--black);
+			text-transform: uppercase;
+			font-size: 20px;
+			font-weight: bolder;
+			margin-left: 50px;
+			line-height: 18px;
+		}
+
+		.p3 {
+			margin-top: 20px;
+			color: var(--lightgray);
+			text-align: justify;
+			word-spacing: -4px;
+		}
+
+		.left {
+			width: 25%;
+			float: left;
+		}
+
+		.right {
+			width: 75%;
+			float: left;
+		}
+
+		.lr-box {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+
+		.p4 {
+			font-size: 16px;
+			font-weight: 600;
+		}
+
+		.p5 {
+			font-size: 15px;
+			color: var(--lightgray);
+		}
+
+
+
+		.progress {
+			background: #333;
+			border-radius: 13px;
+			height: 8px;
+			width: 100%;
+		}
+
+		.progress:after {
+			content: '';
+			display: block;
+			background: var(--blue);
+			width: 30%;
+			height: 100%;
+			border-radius: 9px;
+		}
+
+		.progress1 {
+			background: #333;
+			border-radius: 13px;
+			height: 8px;
+			width: 100%;
+		}
+
+		.progress1:after {
+			content: '';
+			display: block;
+			background: var(--blue);
+			width: 30%;
+			height: 100%;
+			border-radius: 9px;
+		}
+
+		.progress2 {
+			background: #333;
+			border-radius: 13px;
+			height: 8px;
+			width: 100%;
+		}
+
+		.progress2:after {
+			content: '';
+			display: block;
+			background: var(--blue);
+			width: 35%;
+			height: 100%;
+			border-radius: 9px;
+		}
+
+		.progress3 {
+			background: #333;
+			border-radius: 13px;
+			height: 8px;
+			width: 100%;
+		}
+
+		.progress3:after {
+			content: '';
+			display: block;
+			background: var(--blue);
+			width: 36%;
+			height: 100%;
+			border-radius: 9px;
+		}
+
+		.p6 {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		.h-img {
+			margin-top: 25px;
+			width: 45px;
+			margin-right: 45px;
+		}
+
+		.button {
+			position: absolute;
+
+			background-color: blue;
+			display: block;
+			line-height: 1;
+
+		}
+	</style>
+
+<body>
+	<div class="resume-box" id="hi">
+
+		<div class="left-section" id="hi">
+			<div class="profile" id="hi">
+				<img src="{% static '/images/week1/pro.jpg' %}" class="profile-img">
+				<div class="blue-box" id="hi"></div>
+			</div>
+			<h2 class="name"> <br><span>Н.Магнай</span></h2>
+			<p class="n-p">Программ хангамжийн суралцагч</p>
+
+
+			<div class="info" id="hi">
+				<p class="heading">Мэдээлэл</p>
+				<p class="p1"><span class="span1"><img src="{% static '/images/week1/location.png' %}" /></span>Хаяг<span>
+						<br>47.92757248676632, 106.88894748258966</span></p>
+				<p class="p1"><span class="span1"><img src="{% static '/images/week1/call.png' %}"></span>Утас<span> <br>+976
+						95864026</span></p>
+				<p class="p1"><span class="span1"><img src="{% static '/images/week1/mail.png' %}"></span>Имайл<span>
+						<br>sw21d039@mandakh.edu.mn</span></p>
+
+			</div>
+
+			<div class="info" id="hi">
+				<p class="heading">Сошиал</p>
+
+				<p class="p1"><span class="span1"><img src="{% static '/images/week1/facebook.png' %}"></span>Facebook<span>
+						<br>Магнай</span></p>
+			</div>
+
+		</div>
+
+		<div class="right-section" id="hi">
+			<div class="right-heading" id="hi">
+
+
+			</div>
+			<p class="p3"></p>
+
+			<div class="clearfix" id="hi"></div>
+			<br><br>
+			<div class="right-heading" id="hi">
+				<img src="{% static '/images/week1/pencil.png' %}">
+				<p class="p2">Ажлын туршлага</p>
+			</div>
+			<div class="clearfix" id="hi"></div>
+			<div class="lr-box" id="hi">
+				<div class="left" id="hi">
+					<p class="p4">2018 - 2019</p>
+					<p class="p5">Circkle K</p>
+				</div>
+
+				<div class="right" id="hi">
+					<p class="p4">Circkle k</p>
+					<p class="p5">international convention store</p>
+					<p class="p5">Үйлчилгээний ажилтангаар 1жилийн хугацаанд зөв боловсон харилцаа ёс зүйд суралцсан.
+					</p>
+				</div>
+
+				<div class="clearfix" id="hi"></div>
+			</div>
+
+
+			<br>
+			<div class="right-heading" id="hi">
+				<img src="{% static '/images/week1/edu.png' %}">
+				<p class="p2">Боловсрол</p>
+			</div>
+			<div class="clearfix" id="hi"></div>
+			<div class="lr-box" id="hi">
+				<div class="left" id="hi">
+					<p class="p4">2007 - 2014</p>
+					<p class="p5">ЕБС</p>
+				</div>
+
+				<div class="right" id="hi">
+					<p class="p4">БГД Ган-зам 20-р сургууль</p>
+					<p class="p5">Суурь боловсрол</p>
+					<p class="p5"> </p>
+				</div>
+				<div class="clearfix" id="hi"></div>
+			</div>
+
+			<div class="lr-box" id="hi">
+				<div class="left" id="hi">
+					<p class="p4">2015 - 2017</p>
+					<p class="p5">МСҮТ</p>
+				</div>
+
+				<div class="right" id="hi">
+					<p class="p4">ЧД-н Шинэ иргэншил политехник коллеж </p>
+					<p class="p5">Хэвлэлийн эх бэлтгэгч график дизайнер </p>
+					<p class="p5"> </p>
+				</div>
+				<div class="clearfix" id="hi"></div>
+				<div class="lr-box" id="hi">
+					<div class="left" id="hi">
+						<p class="p4">2017 - 2018</p>
+						<p class="p5">Их сургууль</p>
+					</div>
+
+					<div class="right" id="hi">
+						<p class="p4">ЧД-н Шинэ иргэншил дээд сургууль</p>
+						<p class="p5">НББ</p>
+						<p class="p5"> </p>
+					</div>
+					<div class="clearfix" id="hi"></div>
+				</div>
+
+				<div class="lr-box" id="hi">
+					<div class="left" id="hi">
+						<p class="p4">2021 - 2025</p>
+						<p class="p5">Мандах их сургууль</p>
+					</div>
+
+					<div class="right" id="hi">
+						<p class="p4">Мэдээлэл технологийн сургууль </p>
+						<p class="p5">Программ хангамж </p>
+						<p class="p5"> </p>
+					</div>
+					<div class="clearfix" id="hi"></div>
+				</div>
+
+				<br>
+				<div class="right-heading" id="hi">
+					<img src="{% static '/images/week1/edu.png' %}">
+					<p class="p2">Ур чадвар</p>
+				</div>
+					<div class="clearfix" id="hi"></div>
+			<div class="lr-box" id="hi">
+				
+
+				<div class="right" id="hi">
+					<p class="p4">Circkle k</p>
+					
+					<p class="p5">Үйлчилгээний ажилтангаар 1жилийн хугацаанд зөв боловсон харилцаа ёс зүйд суралцсан.
+					</p>
+				</div>
+
+
+
+				<div class="clearfix" id="hi"></div>
+				<br><br>
+				<div class="right-heading" id="hi">
+					<img src="{% static '/images/week1/hobbies.png' %}">
+					<p class="p2">Хобби</p>
+				</div>
+				<div class="clearfix" id="hi"></div>
+				
+
+				<div class="col-md-12 text-right mb-3" id="hi">
+        
+				<div class="right" id="hi">
+					<p class="p4">Circkle k</p>
+					
+					<p class="p5">Үйлчилгээний ажилтангаар 1жилийн хугацаанд зөв боловсон харилцаа ёс зүйд суралцсан.
+					</p>
+				</div>
+
+				</div>
+
+
+			</div>
+
+			<div class="clearfix" id="hi"></div>
+
+
+
+		</div>
+
+
+		<script>
+			window.jsPDF = window.jspdf.jsPDF;
+			var docPDF = new jsPDF();
+			function print() {
+				var elementHTML = document.querySelector("#hi");
+				docPDF.html(elementHTML, {
+					callback: function (docPDF) {
+						docPDF.save('CV_version_02.pdf');
+					},
+					x: 15,
+					y: 15,
+					width: 170,
+					windowWidth: 650
+				});
+			}
+	
+		</script>
+
+
+
+		
+	</div>
+
+
+
+</body>
+
+</html>
