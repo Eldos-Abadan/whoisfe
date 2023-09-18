@@ -74,8 +74,23 @@ def registerViews(request):
             return render(request, 'register/register.html')
     return render(request, 'register/register.html')
 ### email verify #########################################################
-def EmailVerView(request):
-    return render(request, "email_verification/email_verification.html")
+def EmailVerView(request, otp):
+    try:
+        response = requests.get(f"http://whoisb.mandakh.org/verifyEmail/{otp}/")
+        if response.status_code == 200:
+            response_data = response.json()
+            messages.success(request, response_data['responseText'])
+            # Render an additional template if needed
+            return render(request, 'register/emailVerify.html')
+        else:
+            error_message = 'Email verification failed'
+            messages.error(request, error_message)
+            return redirect('loginViews')
+
+    except Exception as e:
+        error_message = 'Error occurred: ' + str(e)
+        messages.error(request, error_message)
+        return redirect('loginViews') 
 #### sign up warning #####################################################
 def signUpWarnViews(request):
     if request.method == 'POST':
