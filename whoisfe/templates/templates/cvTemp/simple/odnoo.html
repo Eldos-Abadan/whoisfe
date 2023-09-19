@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CV</title>
+  <style>
+    a{color:black;}
+    body {width:100%;
+    background-color: #d0cabe;
+    display: flex;}
+    .body {
+      display: flex;
+      width: 800px;
+      height: 1000px;
+      border-style: groove;
+      border-radius: 5px;
+      margin-left: 300px;
+      box-shadow: 5px 7px 15px 5px #898787;
+    }
+
+    .t {
+      width: 250px;
+      background-color: #ebc4c4;
+      border: inset 5px
+    }
+
+    .t2 {
+      width: 550px;
+      background-color: white;
+      font-size: 18px;
+    }
+
+    img {
+      border-radius: 20%;
+      margin:10px;
+      width: 200px;
+      height: auto;
+    }
+
+    .ner {
+      margin: 20px;
+    }
+
+    .ab {
+      margin-left: 20px;
+    }
+
+    .t3 {
+      display: flex;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div class="body">
+  <div class="t">
+    <!-- <img src="" width="180">  -->
+    <!-- zurag oruulah heseg -->
+    <!-- <form action="upload.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" id="image" accept="image/*" required>
+        <input type="submit" value="Upload Image">
+    </form> -->
+    <input type="file" id="imageInput" accept="image/*">
+    <div id="imageContainer"></div><br>
+    <div class="ner">
+
+      <h2> {{undsen.lastName}}-н {{undsen.firstName}}</h2>
+      <!-- <hr style="border-top: 2px solid ; width: 230px;">
+      <h4> <br> Мэдээлэл, Техногийн Сургууль <br></h4>
+      <p>Мэдээлийн систем-1 </p> -->
+      <hr style="border-top: 2px solid ;width: 230px;">
+      {% for elem in social %}
+      <h3>ХОЛБОГДОХ</h3>
+      <p>Email: {{undsen.email}}</p>
+      <p>Утас: +976 {{nemelt.dugaar}}</p>
+      <p>{{ elem.app }}: {{ elem.site }} </p>
+    </div>
+  </div>
+  <div class="t2">
+    <div class="ab">
+      <hr>
+      <ul>
+        <p>
+        </p> <br>
+        {% for elem in education %}
+        <h3>БОЛОВСРОЛ:</h3>
+        <li>{{ elem.education }}: {{ elem.direction }}  {{ elem.elssenOn }}-{{ elem.duussanOn }}</li> <br>
+        {% for elem in work %}
+        <h3>ТУРШЛАГА:</h3>
+        <li> Байгууллага: {{ elem.ajil }} <br>
+            <ol style="font-size: 14px;">  Албан тушаал: {{ elem.company }} Эхэлсэн огноо: {{ elem.ehelsen }}-Дууссан огноо: {{ elem.duussan }} </ol>
+        </li> <br> <br>
+
+        <div class="t3">
+          <div style="width: 45%;">
+            <h3>ЧАДВАР:</h3>
+            <li>{{skill.chadvarNer}}</li>
+          </div>
+          <div style="border-left: 1px solid#969595 ; width:10%"></div>
+          <div style="width: 45%; ">
+            <h3>HOBBY:</h3>
+            <li>{{nemelt.hobby}}</li>
+          </div>
+        </div>
+      </ul>
+
+    </div>
+  </div>
+</div>
+<!-- zurag oruulah -->
+<!-- <script>
+    document.getElementById("image").addEventListener("change", function () {
+        const fileInput = this;
+        const allowedTypes = ["image/jpeg", "image/png", "image/gif"];
+
+        if (fileInput.files.length > 0) {
+            const fileType = fileInput.files[0].type;
+            if (!allowedTypes.includes(fileType)) {
+                alert("Please select a valid image file (JPEG, PNG, or GIF).");
+                fileInput.value = ""; // Clear the file input
+            }
+        }
+    });
+</script> -->
+<!-- <script>
+    // Get references to HTML elements
+    const imageInput = document.getElementById('imageInput');
+    const imageContainer = document.getElementById('imageContainer');
+
+    // Add an event listener to the file input
+    imageInput.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+
+        if (file && file.type.startsWith('image/')) {
+            // Create an image element to display the uploaded image
+            const image = document.createElement('img');
+            image.src = URL.createObjectURL(file);
+            image.style.maxWidth = '100%';
+            imageContainer.appendChild(image);
+        } else {
+            alert('Please select a valid image file.');
+        }
+    });
+</script> -->
+<script>
+    // Get references to HTML elements
+    const imageInput = document.getElementById('imageInput');
+    const imageContainer = document.getElementById('imageContainer');
+
+    // Add an event listener to the file input
+    imageInput.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+
+        if (file && file.type.startsWith('image/')) {
+            // Create an image element to display the uploaded image
+            const image = document.createElement('img');
+            image.src = URL.createObjectURL(file);
+            image.style.maxWidth = '100%';
+            imageContainer.appendChild(image);
+
+            // Hide the input element
+            imageInput.style.display = 'none';
+        } else {
+            alert('Please select a valid image file.');
+        }
+    });
+</script>
+
+</body>
+</html>

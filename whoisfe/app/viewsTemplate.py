@@ -87,9 +87,6 @@ def justNCViews(request):
 def odkeBcViews(request): 
   return render(request, "templates/homeTemp/odkeBc.html")
 
-# def odkeBcViews(request): 
-#   return render(request, "templates/ncTemp/odkeBc.html")
-
 def mainNCViews(request): 
   return render(request, "templates/homeTemp/main.html")
 
