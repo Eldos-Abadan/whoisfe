@@ -8,7 +8,8 @@ urlpatterns = [
     path("forget/",                     viewsLogin.forgetView,              name="forgetView"),
     path("guide/",                      viewsMain.guideViews,               name="guideViews"),
     path("signUpWarn/",                 viewsRegister.signUpWarnViews,      name="viewsSignUpWarning"),
-    path("emailVerify/<str:otp>/",   viewsRegister.EmailVerView,         name="EmailVerView"), 
+    path("emailVerify/<str:otp>/", viewsRegister.EmailVerView, name="EmailVerView"),
+ 
     # CV bolon NC template-uud ##########################################################################
     path("mycv/<int:tid>/<str:uname>/",                     viewsTemplate.myCvView,                 name="myCv"),
     path("myNC/<int:tid>/<str:uname>/",                     viewsTemplate.myNcView,                 name="myNc"),
