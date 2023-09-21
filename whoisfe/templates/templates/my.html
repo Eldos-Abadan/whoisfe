@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .resizeableContent {
+            font-size: 10px; /* Initial font size */
+            width: auto;   /* Initial width */
+            border: 1px solid #000;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="resizeableContent">
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+    </div>
+    <div class="resizeableContent">
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+    </div>
+    <div class="resizeableContent">
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+    </div>
+    <div class="resizeableContent">
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+        <p>This is some content.</p>
+    </div>
+</body>
+</html>
+
+<script>
+    const resizeableElements = document.querySelectorAll('.resizeableContent');
+
+    resizeableElements.forEach(function (element) {
+        element.addEventListener('click', function () {
+            if (element.style.fontSize === '10px') {
+                element.style.fontSize = '24px'; // Set the larger font size
+                element.style.width = 'auto';    // Set the larger width
+            } else {
+                element.style.fontSize = '10px'; // Set the initial font size
+                element.style.width = 'auto';    // Set the initial width
+            }
+        });
+    });
+</script>
