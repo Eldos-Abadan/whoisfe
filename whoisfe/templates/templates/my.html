@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <title></title>
@@ -151,4 +151,164 @@
             }
         });
     });
+</script> -->
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="{% static ''%}" />
+    <title>Dashboard WhoIs</title>
+    <link
+      href="{% static '/css/dashboard/bootstrap.min.css'%}"
+      rel="stylesheet"/>
+    <link
+      href="{% static '/css/dashboard/animate.min.css'%}"
+      rel="stylesheet"/>
+    <link
+      href="{% static '/css/dashboard/light-bootstrap-dashboard.css'%}"
+      rel="stylesheet"/>
+    <link href="{% static '/css/dashboard/demo.css'%}" rel="stylesheet" />
+    <link
+      href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+      rel="stylesheet"/>
+    <link
+      href="http://fonts.googleapis.com/css?family=Roboto:400,700,300"
+      rel="stylesheet"
+      type="text/css"/>
+    <link href="{% static '/css/dashboard/pe-icon-7-stroke.css'%}"rel="stylesheet"/>
+    <link rel="stylesheet" href="{%static '/css/my/1.css'%}">
+    <style>
+        .thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .thumbnail {
+    width: calc(33.33% - 20px); /* Adjust the width as needed */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 10px; /* Initial font size */
+    width: auto;   /* Initial width */
+    border: 1px solid #000;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  .thumbnail h3 {
+    margin-top: 0;
+  }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div
+        class="sidebar"
+        data-color="purple"
+        data-image="{% static '/images/sidebar-5.jpg'%}">
+        {% include "../includes/menu.html" %}
+      </div>
+      <div class="main-panel">
+        <nav class="navbar navbar-default navbar-fixed" style="width: 1200px;">
+          <div class="container-fluid">
+            <!-- <div class="navbar-header"> -->
+                {% include "../includes/logout.html" %}
+            <!-- </div> -->
+          </div>
+        </nav>
+        <div class="container">
+          <div class="wrapper">
+                      <!-- ############################################################### -->
+             <form action="{% url 'myCV' %}">
+                <div class="main3">
+                <h1>Миний танилцуулга</h1>
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="form-floating mt-3">
+                      <span style="color:#9726ad;">
+                        {{ responseText }}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                  <h4 > Танилцуулгын загварын жагсаалт</h4>
+                  <div class="thumbnails">
+                    {% for ele  in kholboos %}
+                    <div class="thumbnail">
+                      <h3>{{ ele.name }}</h3>
+                      <a href="http://whois.mandakh.org/mycv/{{ ele.id }}/{{ userName }}/" target="_blank"></a>
+                      <a class="a1" target="_blank" href="http://whois.mandakh.org/mycv/{{ele.id}}/{{userName}}/"> <i class="fa fa-external-link" aria-hidden="true"></i></a>
+                      <i class="fa fa-copy" aria-hidden="true" id="copy-button" data-url="http://whois.mandakh.org/mycv/{{ ele.id }}/{{ userName }}/" onclick="copyClipboard(this);"></i>
+                    </div>
+                    {% endfor %}
+                  </div>
+                  
+                </div>
+             </form>  
+              {% include "../includes/footer.html" %}
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script
+    src="{% static '/js/dashboard/jquery.3.2.1.min.js'%}"
+    type="text/javascript"></script>
+  <script rc="{% static '/js/dashboard/bootstrap.min.js'%}"type="text/javascript"></script>
+  <script src="{% static '/js/dashboard/light-bootstrap-dashboard.js'%}"></script>
+  <script src="{% static '/js/dashboard/demo.js'%}"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#MyCvMenuItem").addClass("active");
+      demo.initChartist();
+    });
+    $(document).ready(function () {
+      demo.initChartist();
+
+      $.notify(
+        {
+          icon: "pe-7s-gift",
+          message: "Welcome to WhoIs Dashboard</b>",
+        },
+        {
+          type: "info",
+          timer: 4000,
+        }
+      );
+    });
+  </script>
+  <script>
+    function copyClipboard(sss)
+    {
+      var tempInput = document.createElement("input");
+      tempInput.value = $(sss).data('url');
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+      alert("Link copied to clipboard!");
+    }
+  </script> 
+  <script>
+    const thumbnailElements = document.querySelectorAll('.thumbnail');
+
+    thumbnail.forEach(function (element) {
+        element.addEventListener('click', function () {
+            if (element.style.fontSize === '10px') {
+                element.style.fontSize = '24px'; 
+                element.style.width = 'auto';   
+            } else {
+                element.style.fontSize = '10px';
+                element.style.width = 'auto';   
+            }
+        });
+    });
 </script>
+  
+</html>
