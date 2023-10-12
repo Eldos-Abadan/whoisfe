@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cv template</title>
+    <style>
+        :root{
+            --background:#c3c0ba;
+            --white: #fff;
+            --one:#c3266f;
+            --two:#743578;
+            --black:#54585d;
+            --process:#a5a5a5;
+        }
+        *{
+            margin: 0px;
+            padding: 0px;box-sizing: border-box;font-family: system-ui;
+        }
+        .col-div-3{width: 25%;float: left;}
+        .col-div-7{width: 75%;float: left;}
+        .col-div-4{width: 35%;float: left;margin-left: 20px;}
+        .col-div-8{width: 65%;float: left;}
+        .skill{width: 50%;float: left;}
+        .main{width: 700px;height: 700px;background:linear-gradient(var(--one),var(--two));
+            margin: 50px auto;box-shadow: 5px 5px 5px 5px #54585d33;}
+        .left{width: 35%;float: left;height: 700px;}
+        .right{width: 65%;float: left;background-color: var(--white);height: 700px;
+        box-shadow: -7px 2px 15px 2px #54585d52;}
+        .content{padding: 0px 40px 0px 35px;}
+        .content h2{text-transform: uppercase;font-weight: 500;color: var(--white);
+            letter-spacing: 1px;font-size: 15px;}
+        .content h3{font-size: 13px;text-transform: uppercase;letter-spacing: 1px;padding-top: 10px;
+        color: white;font-weight: 500;}
+        .p2{font-size: 15px;margin-bottom: 5px;margin-top: 5px;}
+        h1{font-size: 30px;text-transform: uppercase;color: var(--black);line-height: 50px;}
+        h1 span{color: var(--one);}
+        .heading{text-transform: uppercase;font-weight: 500;color: var(--one);letter-spacing: 1px;font-size: 15px;}
+        .hr2{border: none;height: 1px;background: var(--black);margin-top: 3px;}
+        .p5{font-weight: 700;color: var(--black);}
+        .span1{font-size: 12px;color: var(--black);}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="left">
+            <div class="content">
+                <br>
+                <h2>Хувийн Мэдээлэл</h2>
+                <hr class="hr1">
+                <p class="p1">Хүйс: {% if nemelt.huis == 1 %} Эр {% endif %} {% if nemelt.huis == 2 %} Эм
+                    {% endif %}</p>
+                <p class="p1">Төрсөн он,сар,өдөр: {{nemelt.torsonOgnoo}}</p>
+                <p class="p1">Регистерийн дугаар: {{nemelt.regDug}}</p>
+                <p class="p1">Утасны дугаар: {{nemelt.dugaar}}</p>
+                <p class="p1">Иргэншил: {{nemelt.irgenshil}}</p>
+                <p class="p1">Яс үндэс: {{nemelt.ysUndes}}</p>
+                <p class="p1">Гэрийн хаяг: {{nemelt.hayg}}</p>
+                <p class="p1">Хобби: {{nemelt.hobby}}</p>
+                <br>
+                <h2>Гэр бүлийн мэдээлэл</h2>
+                {% for elem in family %}
+                <hr class="hr1">
+                <p class="p1"> Хэн болох: {{ elem.henBoloh }}</p>
+                <p class="p1"> Нэр: {{ elem.ner }}</p>
+                <p class="p1">Утасны дугаар: {{ elem.dugaar }}</p>
+                <br>
+                <h2>Миний чадвар</h2>
+                <hr class="hr1">
+                <div class="skill"><p class="p2">{{skill.chadvarNer}}</p></div>
+            </div>
+        </div>
+        <div class="right">
+            <h1>
+                {{undsen.lastName}} <br><span>{{undsen.firstName}}</span>
+            </h1>
+            <br>
+            <h2 lang="heading">{% endfor %} Ажлын туршлага</h2>
+            {% for elem in work %}
+            <hr class="hr2">
+            <div class="col-div-4">
+                <p class="p1"> Байгууллага: {{ elem.ajil }}</p>
+                <p class="p1">Албан тушаал: {{ elem.company }} </p>
+                <p class="p1">Эхэлсэн он: {{ elem.ehelsen }}</p>
+                <p class="p1">Дууссан он: {{ elem.duussan }}</p>
+            </div>
+            <div class="clearfix"></div>
+            <br><p style="margin-top: 150px;"></p>
+            <h2 lang="heading">{% endfor %} Боловсрол</h2>
+            {% for elem in education %}
+            <hr class="hr2">
+            <div class="col-div-4">
+                <p class="p1"> Сургуулийн нэр: {{ elem.education }}</p>
+                <p class="p1">Чиглэл: {{ elem.direction }} </p>
+                <p class="p1">Элссэн он: {{ elem.elssenOn }}</p>
+                <p class="p1">Дууссан он: {{ elem.duussanOn }}</p>
+            </div>
+            <div class="clearfix"></div>
+            <p style="margin-top: 170px;"></p>
+            <h2 lang="heading">{% endfor %} Цахим хаяг</h2>
+            <hr class="hr2">
+            <div class="col-div-4">
+                <p class="p1">{% for elem in social %} Платформ: {{ elem.app }} </p>
+                <p class="p1"> Хаяг: {{ elem.site }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
