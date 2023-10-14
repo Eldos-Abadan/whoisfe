@@ -47,9 +47,24 @@
                       <span style="color:#0000FF;">
                         {{ responseText }}
                       </span>
-                </div>
+                    </div>
                   </div>
                 </div>
+                   
+              <!-- zurag oruulah section -->
+              <div class="row">
+                <div class="col-sm-12 mt-3">
+                  <div class="form-floating">
+                    <input type="file" id="imageInput" accept="image/*">
+                    <div id="imageContainer"></div>
+                    <label for="imageInput"></label>
+                    <label for="imageInput" class="custom-file-upload" >
+                      Зураг оруулах
+                    </label>
+                  </div>
+                </div>
+              </div>
+
                 <div class="row">
                   <div class="col-sm-3">
                     <div class="form-floating mt-3">
@@ -171,6 +186,31 @@
     $(document).ready(function () {
     $("#profileMenuItem").addClass("active");
     demo.initChartist();
+  });
+</script>
+<script>
+  // Get references to HTML elements
+  const imageInput = document.getElementById('imageInput');
+  const imageContainer = document.getElementById('imageContainer');
+
+  // Add an event listener to the file input
+  imageInput.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+
+      // Remove the previous image if it exists
+      while (imageContainer.firstChild) {
+        imageContainer.removeChild(imageContainer.firstChild);
+      }
+
+      if (file && file.type.startsWith('image/')) {
+          // Create an image element to display the uploaded image
+          const image = document.createElement('img');
+          image.src = URL.createObjectURL(file);
+          image.style.minWidth = '200px';
+          imageContainer.appendChild(image);
+      } else {
+          alert('Та зурагаа сонгоно уу.');
+      }
   });
 </script>
 </html>

@@ -551,3 +551,38 @@ input[type=submit]:hover {
   font-size: 30px;
   padding-left: 34px;
 }
+#imageContainer{
+  border-radius: 20px;
+  margin:10px;
+  width: 100%; 
+  height: auto;
+}
+
+input[type=file]{
+  padding: 10px;
+  background-color: #b85ee6;
+  color: white;
+  border-radius: 5px;
+  border-color: white ;
+}
+input[type="file"] {
+  display: none; /* Hide the default file input */
+}
+
+.custom-file-upload {
+  padding: 10px 20px; /* Padding for the pink button */
+  background-color:#ad57ea; /* Pink background color */
+  color:#fff;
+  border: none; /* Remove borders */
+  border-radius: 5px;
+  cursor: pointer; /* Change cursor to pointer on hover */
+  display: inline-block;
+}
+
+.custom-file-upload:hover {
+  background-color: #b85ee6; /* Darker pink on hover */
+}
+
+input[type="file"] + label {
+  font-size: 10px;
+}
