@@ -38,7 +38,7 @@
     
       <div class="container">
         <div class="wrapper">
-          <div class="main1">
+          <!-- <div class="main1">
             <form id="cc-contact" class="form-group" action="" method="post">
                 {% csrf_token %}
               <h1>Миний чадварууд</h1>
@@ -47,7 +47,60 @@
               </div>
               <input type="submit" style="font-size: 20px ;"  id="skillInfoUpdateSubmit" name="skillInfoUpdateSubmit" value="Хадгалах">
             </form>
-          </div> 
+          </div>  -->
+          <!-- ############################################################### -->     
+        <div class="main3">
+          <h1>Чадвар </h1>
+          <form action="{% url 'profileSkill' %}" method="post" name="insertButton">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-floating mt-3">
+                  <span style="color:#9726ad;">
+                    {{ responseText }}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="form-div">
+              <div class="row">
+                <div class="col-md-3">
+                  <label style="padding-left: 40px;">Чадвар</label>
+                  <input type="text"  name="chadwar" class="form-control" id="chadwar" placeholder="Чадвар"> 
+                </div>
+                <div class="col-md-3">
+                  <label style="padding-left: 60px;">Түвшин</label>
+                  <input type="text" name="tuvshin" class="form-control" id="tuvshin" placeholder="Түвшин">
+                </div>
+              </div>
+            <input type="submit"  value="Нэмэх" id="insertButton" name="insertButton" style="float: right; margin-right:380px; margin-top: -40px; height: 41px;">
+            <h4 style="margin-bottom:-28px ;">Чадварын жагсаалт</h4>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th style="color: white;text-align: center;">S.Nu</th>
+                  <th style="color: white;">Чадвар</th>
+                  <th style="color: white;">Түвшин</th>
+                  <!-- <th style="color: white;">Эхэлсэн огноо</th>
+                  <th style="color: white;">Дууссан огноо</th> -->
+                  <th style="color: white;">Устгах</th>
+                </tr>
+              </thead>
+              <tbody id="table">
+                {% for user in myData %}
+                <tr>
+                  <td style="text-align: center;">{{ user.dugaar }}</td>  
+                  <td>{{ user.chadwar }}</td>
+                  <td>{{ user.tuvshin }}</td>            
+                  <td><a href="{% url 'profileSkillDel' id=user.id %}" onclick="if (!confirm('Та устгахдаа итгэлтэй байна уу?')) { return false }"><i class="fa fa-trash" style="font-size: 17px; color:#b85ee6;padding-left: 34px;"></i></a></td>
+                </tr>
+                {% endfor %}          
+              </tbody>
+            </table>
+            </div>
+          </form>
+        </div>
+ <!-- ############################################################### -->
       </div>
     </div>
     <div class="wrapper2">
