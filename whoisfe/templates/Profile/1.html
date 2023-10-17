@@ -55,16 +55,27 @@
               <div class="row">
                 <div class="col-sm-12 mt-3">
                   <div class="form-floating">
-                    <input type="file" id="imageInput" accept="image/*">
+                    <form method="post" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      <input type="file" id="imageInput" accept="image/*">
                     <div id="imageContainer"></div>
                     <label for="imageInput"></label>
-                    <label for="imageInput" class="custom-file-upload" >
+                    <label for="imageInput" class="custom-file-upload" id="insertImgSubmit" >
                       Зураг оруулах
                     </label>
+                    <div>
+                      <!-- Display uploaded images here
+                      {% for image in images %}
+                          <img src="{{ image.image.url }}" alt="Uploaded Image">
+                      {% empty %}
+                      {% endfor %} -->
+                  </div>
+                  </form>
+                    
                   </div>
                 </div>
               </div>
-
+               <!-- end -->
                 <div class="row">
                   <div class="col-sm-3">
                     <div class="form-floating mt-3">
@@ -212,5 +223,47 @@
           alert('Та зурагаа сонгоно уу.');
       }
   });
+</script>
+<script>
+  // Inside your existing event listener for file input
+imageInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+
+    // Remove the previous image if it exists
+    while (imageContainer.firstChild) {
+        imageContainer.removeChild(imageContainer.firstChild);
+    }
+
+    if (file && file.type.startsWith('image/')) {
+        const image = document.createElement('img');
+        image.src = URL.createObjectURL(file);
+        image.style.minWidth = '200px';
+        imageContainer.appendChild(image);
+
+        // Additional logic to save the image on the server and store the path/URL
+        // You'll need to implement this part on the server-side.
+        // For example, you can use FormData to send the file to the server via AJAX.
+
+        // Example AJAX request using jQuery
+        const formData = new FormData();
+        formData.append('image', file);
+
+        $.ajax({
+            url: '/upload-image-endpoint', // Replace with your server endpoint
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                // response should contain the path/URL of the saved image
+                // You can update the image source with the path/URL here.
+                image.src = response.imageURL; // Adjust the response format as needed
+            },
+        });
+    } else {
+        alert('Та зурагаа сонгоно уу.');
+    }
+});
+
 </script>
 </html>

@@ -79,9 +79,9 @@
                   {% comment %} <td style="text-align: center;">{{ user.dugaar }}</td>   {% endcomment %}
                   <td></td>
                   <td>{{ user.chadvariinNer }}</td>
-                  <td>{{ user.chadvariinTuvshin }}</td>            
-                  {% comment %} <td><a href="{% url 'profileSkillDel' id=user.id %}" onclick="if (!confirm('Та устгахдаа итгэлтэй байна уу?')) { return false }"><i class="fa fa-trash" style="font-size: 17px; color:#b85ee6;padding-left: 34px;"></i></a></td> {% endcomment %}
-                </tr>
+                  <td>{{ user.chadvariinTuvshin }}</td> {% comment %}           
+                  <td><a href="{% url 'profileSkillDel' id=user.id %}" onclick="if (!confirm('Та устгахдаа итгэлтэй байна уу?')) { return false }"><i class="fa fa-trash" style="font-size: 17px; color:#b85ee6;padding-left: 34px;"></i></a></td>
+                  {% endcomment %}</tr>
                 {% endfor %}          
                 <tr>
                   <td>afd</td>

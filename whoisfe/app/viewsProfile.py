@@ -4,6 +4,8 @@ import requests
 from whoisfe.settings import *
 from django.http import HttpResponse
 import json.decoder
+from django.core.files.storage import FileSystemStorage
+from .models import UploadedImage 
 
 
 def profileMain(request):
@@ -381,6 +383,43 @@ def profileSkill(request):
         chadwar["aldaa"] = responseJson["responseText"]
     print(chadwar)
     return render(request, "Profile/6.html", chadwar)
+
+#skill ustgal heseg
+
+def profileSkillDel(request,id):
+    checkSession(request)
+    if request.session['beegii'] == 0:
+        return redirect("homeView")
+    chadwar = {}
+    chadwar["responseText"] = ""
+    chadwar["textColor"] = "#00FF00"
+    requestJSON = {
+        "user_id": id           
+    }
+    r = requests.get("http://whoisb.mandakh.org//",
+                        data=json.dumps(requestJSON),
+                        headers={'Content-Type': 'application/json'})
+    responseJson = r.json()
+    chadwar["responseText"] = chadwar["responseText"]+"|"+responseJson['responseText']
+    # Medeelel ustgah end    
+    # Medeelel haruulah start
+    requestJSON = {
+        "id": request.session['userId']
+    }
+    r = requests.get("http://whoisb.mandakh.org/userSkill/",
+                        data=json.dumps(requestJSON),
+                        headers={'Content-Type': 'application/json'})    
+    try:
+        responseJson = r.json()        
+        if responseJson["responseCode"] == 200:
+            chadwar['medeelel'] = responseJson["skills"]
+        else:
+            chadwar["aldaa"] = responseJson["responseText"]
+            chadwar["textColor"] = "#ff0000"
+    except:
+        chadwar["responseText"] = "Ямар 1 балай алдаа"
+    return render(request, 'Profile/6.html', chadwar)
+
 # end setSkill.
 #####################################
 
@@ -588,3 +627,32 @@ def profileEduDel(request,id):
 
 
     return render(request, "Profile/3.html", htmlRuuDamjuulahUtguud)
+
+
+
+###zurag oruulah heseg#############
+# def upload_file(request, id):
+#     checkSession(request)
+#     if request.session['beegii'] == 0:
+#         return redirect("homeView")
+    
+#     htmlRuuDamjuulahUtguud = {}
+#     htmlRuuDamjuulahUtguud["responseText"] = ""
+#     htmlRuuDamjuulahUtguud["textColor"] = "#00FF00"
+#     requestJSON = {
+#         "user_id": request.session['userId']            
+#     }
+#     r = requests.post("http://whoisb.mandakh.org/insertImg/",
+#                         data=json.dumps(requestJSON),
+#                         headers={'Content-Type': 'application/json'})
+
+#     if request.method == 'POST' and 'image' in request.FILES:
+#         uploaded_image = request.FILES['image']
+#         fs = FileSystemStorage()
+#         filename = fs.save(uploaded_image.name, uploaded_image)
+#         image_instance = UploadedImage(image=filename)
+#         image_instance.save()
+
+#     images = UploadedImage.objects.all()
+
+#     return render(request, '1.html', {'htmlRuuDamjuulahUtguud': htmlRuuDamjuulahUtguud, 'images': images})

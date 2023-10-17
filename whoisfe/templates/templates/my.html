@@ -31,40 +31,51 @@
 </head>
 <body>
   <div class="row">
-    <div class="col-sm-12 mt-3">
-      <div class="form-floating">
-        <!-- Label for the custom file input -->
-        <label for="imageInput">Choose File:</label>
-        <!-- Custom file upload button -->
-        <label for="imageInput" class="custom-file-upload">
-          Browse...
-        </label>
-        <input type="file" id="imageInput" accept="image/*">
-        <div id="imageContainer"></div><br>
-        <div class="ner">
-        </div>
+      <div class="col-sm-12 mt-3">
+          <div class="form-floating">
+              <label for="imageInput">Choose File:</label>
+              <label for="imageInput" class="custom-file-upload">Browse...</label>
+              <input type="file" id="imageInput" accept="image/*">
+              <div id="imageContainer"></div><br>
+              <div class="ner"></div>
+          </div>
       </div>
-    </div>
   </div>
+  <script>
+      const imageInput = document.getElementById('imageInput');
+      const imageContainer = document.getElementById('imageContainer');
+
+      imageInput.addEventListener('change', (event) => {
+          const file = event.target.files[0];
+
+          if (file && file.type.startsWith('image/')) {
+              const image = document.createElement('img');
+              image.src = URL.createObjectURL(file);
+              image.style.maxWidth = '100%';
+              imageContainer.appendChild(image);
+
+              // Use Fetch API to upload the image to the server
+              const formData = new FormData();
+              formData.append('file', file);
+
+              fetch('/upload', {
+                  method: 'POST',
+                  body: formData,
+              })
+                  .then(response => response.json())
+                  .then(data => {
+                      if (data.success) {
+                          // Display the file path
+                          const fileInfo = document.createElement('p');
+                          fileInfo.textContent = `File Path: ${data.file_path}`;
+                          document.querySelector('.ner').appendChild(fileInfo);
+                      }
+                  })
+                  .catch(error => console.error('Error:', error));
+          } else {
+              alert('Та зурагаа сонгоно уу.');
+          }
+      });
+  </script>
 </body>
-<script>
-  // Get references to HTML elements
-  const imageInput = document.getElementById('imageInput');
-  const imageContainer = document.getElementById('imageContainer');
-
-  // Add an event listener to the file input
-  imageInput.addEventListener('change', (event) => {
-      const file = event.target.files[0];
-
-      if (file && file.type.startsWith('image/')) {
-          // Create an image element to display the uploaded image
-          const image = document.createElement('img');
-          image.src = URL.createObjectURL(file);
-          image.style.maxWidth = '100%';
-          imageContainer.appendChild(image);
-      } else {
-          alert('Та зурагаа сонгоно уу.');
-      }
-  });
-</script>
 </html>
