@@ -38,17 +38,6 @@
     
       <div class="container">
         <div class="wrapper">
-          <!-- <div class="main1">
-            <form id="cc-contact" class="form-group" action="" method="post">
-                {% csrf_token %}
-              <h1>Миний чадварууд</h1>
-              <div class="form-check mt-3">
-                <textarea name="Message" cols="80" rows="10">{{ medeelelel }} {{ aldaa }}</textarea>  
-              </div>
-              <input type="submit" style="font-size: 20px ;"  id="skillInfoUpdateSubmit" name="skillInfoUpdateSubmit" value="Хадгалах">
-            </form>
-          </div>  -->
-          <!-- ############################################################### -->     
         <div class="main3">
           <h1>Чадвар </h1>
           <form action="{% url 'profileSkill' %}" method="post" name="insertButton">
@@ -81,20 +70,24 @@
                   <th style="color: white;text-align: center;">S.Nu</th>
                   <th style="color: white;">Чадвар</th>
                   <th style="color: white;">Түвшин</th>
-                  <!-- <th style="color: white;">Эхэлсэн огноо</th>
-                  <th style="color: white;">Дууссан огноо</th> -->
                   <th style="color: white;">Устгах</th>
                 </tr>
               </thead>
               <tbody id="table">
-                {% for user in myData %}
+                {% for user in medeelel %}
                 <tr>
-                  <td style="text-align: center;">{{ user.dugaar }}</td>  
-                  <td>{{ user.chadwar }}</td>
-                  <td>{{ user.tuvshin }}</td>            
-                  <td><a href="{% url 'profileSkillDel' id=user.id %}" onclick="if (!confirm('Та устгахдаа итгэлтэй байна уу?')) { return false }"><i class="fa fa-trash" style="font-size: 17px; color:#b85ee6;padding-left: 34px;"></i></a></td>
+                  {% comment %} <td style="text-align: center;">{{ user.dugaar }}</td>   {% endcomment %}
+                  <td></td>
+                  <td>{{ user.chadvariinNer }}</td>
+                  <td>{{ user.chadvariinTuvshin }}</td>            
+                  {% comment %} <td><a href="{% url 'profileSkillDel' id=user.id %}" onclick="if (!confirm('Та устгахдаа итгэлтэй байна уу?')) { return false }"><i class="fa fa-trash" style="font-size: 17px; color:#b85ee6;padding-left: 34px;"></i></a></td> {% endcomment %}
                 </tr>
                 {% endfor %}          
+                <tr>
+                  <td>afd</td>
+                  <td>afd</td>
+                  <td>afd</td>
+                </tr>
               </tbody>
             </table>
             </div>
@@ -135,4 +128,3 @@
   });
   </script>
 </html>
-

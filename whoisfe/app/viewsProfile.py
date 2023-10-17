@@ -347,36 +347,39 @@ def profileSkill(request):
     chadwar["textColor"] = "#00FF00"
     chadwar["userId"] = request.session['userId']
     requestJSON = {
-        'id': request.session['userId']
+        'user_id': request.session['userId']
     }
     # setSkill duudan ajillana.
     if request.method == "POST":
-        serviceHayag = "http://whoisb.mandakh.org/setSkill/"
-
-        if ("skillInfoUpdateSubmit" in request.POST):
-            requestJSON = {
-                "id": request.session['userId'],
-                "skill": request.POST.get("Message")
-            }
-            r = requests.get(serviceHayag,
-                            data=json.dumps(requestJSON),
-                            headers={'Content-Type': 'application/json'})
+        serviceHayag = "http://whoisb.mandakh.org/insertUserSkill/"
+        requestJSON = {
+            "user_id": request.session['userId'],
+            "chadvariinNer": request.POST.get("chadwar"),
+            "chadvariinTuvshin": request.POST.get("tuvshin")
+        }
+        r = requests.get(serviceHayag,
+                        data=json.dumps(requestJSON),
+                        headers={'Content-Type': 'application/json'})
         responseJson = r.json()
         if responseJson["responseCode"] != 200:
             chadwar["aldaa"] = responseJson["responseText"]
             return render(request, "Profile/6.html", chadwar)
     # end getSkill
-
+    
+    requestJSON = {
+        'user_id': request.session['userId']
+    }
     # getSkill duudan ajillana.
-    serviceHayag = "http://whoisb.mandakh.org/getSkill/"
+    serviceHayag = "http://whoisb.mandakh.org/getUserSkill/"
     r = requests.get(serviceHayag,
                     data=json.dumps(requestJSON),
                     headers={'Content-Type': 'application/json'})
     responseJson = r.json()
     if responseJson["responseCode"] == 200:
-        chadwar["medeelelel"] = responseJson["skill"]
+        chadwar["medeelel"] = responseJson["skills"]
     else:
         chadwar["aldaa"] = responseJson["responseText"]
+    print(chadwar)
     return render(request, "Profile/6.html", chadwar)
 # end setSkill.
 #####################################
