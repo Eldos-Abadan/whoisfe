@@ -76,18 +76,13 @@
               <tbody id="table">
                 {% for user in medeelel %}
                 <tr>
-                  {% comment %} <td style="text-align: center;">{{ user.dugaar }}</td>   {% endcomment %}
-                  <td></td>
+                  <td style="text-align: center;">{{ user.dugaar }}</td>
                   <td>{{ user.chadvariinNer }}</td>
-                  <td>{{ user.chadvariinTuvshin }}</td> {% comment %}           
+                  <td>{{ user.chadvariinTuvshin }}</td>          
                   <td><a href="{% url 'profileSkillDel' id=user.id %}" onclick="if (!confirm('Та устгахдаа итгэлтэй байна уу?')) { return false }"><i class="fa fa-trash" style="font-size: 17px; color:#b85ee6;padding-left: 34px;"></i></a></td>
-                  {% endcomment %}</tr>
+              </tr>
                 {% endfor %}          
-                <tr>
-                  <td>afd</td>
-                  <td>afd</td>
-                  <td>afd</td>
-                </tr>
+                
               </tbody>
             </table>
             </div>

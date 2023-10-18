@@ -15,6 +15,7 @@ urlpatterns = [
     path("profile/exp/"   ,                 viewsProfile.profileExp,        name="profileExp"       ) ,
     path("profile/exp/del/<int:id>/"   ,    viewsProfile.profileExpDel,     name="profileExpDel"    ) ,
     path("profile/skill/" ,                 viewsProfile.profileSkill,      name="profileSkill"     ) ,
+    path("profile/skill/del/<int:id>/"   ,  viewsProfile.profileSkillDel,   name="profileSkillDel"    ) ,
     path("profile/social/",                 viewsProfile.profileSocial,     name="profileSocial"    ) ,
     path("profile/social/del/<int:id>/" ,   viewsProfile.profileSocialDel,  name="profileSocialDel" ) ,
     ##############################################################################

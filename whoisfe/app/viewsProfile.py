@@ -379,9 +379,10 @@ def profileSkill(request):
     responseJson = r.json()
     if responseJson["responseCode"] == 200:
         chadwar["medeelel"] = responseJson["skills"]
+        for i in range(0, len(chadwar["medeelel"])):
+            chadwar["medeelel"][i]["dugaar"] =  i + 1
     else:
         chadwar["aldaa"] = responseJson["responseText"]
-    print(chadwar)
     return render(request, "Profile/6.html", chadwar)
 
 #skill ustgal heseg
@@ -394,9 +395,9 @@ def profileSkillDel(request,id):
     chadwar["responseText"] = ""
     chadwar["textColor"] = "#00FF00"
     requestJSON = {
-        "user_id": id           
+        "id": id
     }
-    r = requests.get("http://whoisb.mandakh.org//",
+    r = requests.get("http://whoisb.mandakh.org/delUserSkill/",
                         data=json.dumps(requestJSON),
                         headers={'Content-Type': 'application/json'})
     responseJson = r.json()
@@ -404,22 +405,21 @@ def profileSkillDel(request,id):
     # Medeelel ustgah end    
     # Medeelel haruulah start
     requestJSON = {
-        "id": request.session['userId']
+        'user_id': request.session['userId']
     }
-    r = requests.get("http://whoisb.mandakh.org/userSkill/",
-                        data=json.dumps(requestJSON),
-                        headers={'Content-Type': 'application/json'})    
-    try:
-        responseJson = r.json()        
-        if responseJson["responseCode"] == 200:
-            chadwar['medeelel'] = responseJson["skills"]
-        else:
-            chadwar["aldaa"] = responseJson["responseText"]
-            chadwar["textColor"] = "#ff0000"
-    except:
-        chadwar["responseText"] = "Ямар 1 балай алдаа"
-    return render(request, 'Profile/6.html', chadwar)
-
+    # getSkill duudan ajillana.
+    serviceHayag = "http://whoisb.mandakh.org/getUserSkill/"
+    r = requests.get(serviceHayag,
+                    data=json.dumps(requestJSON),
+                    headers={'Content-Type': 'application/json'})
+    responseJson = r.json()
+    if responseJson["responseCode"] == 200:
+        chadwar["medeelel"] = responseJson["skills"]
+        for i in range(0,len(chadwar["medeelel"])):
+            chadwar["medeelel"][i]["dugaar"] = i + 1
+    else:
+        chadwar["aldaa"] = responseJson["responseText"]
+    return render(request, "Profile/6.html", chadwar)
 # end setSkill.
 #####################################
 
