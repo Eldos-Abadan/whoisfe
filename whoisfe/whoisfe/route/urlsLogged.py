@@ -17,7 +17,6 @@ urlpatterns = [
     path("profile/skill/" ,                 viewsProfile.profileSkill,      name="profileSkill"     ) ,
     path("profile/social/",                 viewsProfile.profileSocial,     name="profileSocial"    ) ,
     path("profile/social/del/<int:id>/" ,   viewsProfile.profileSocialDel,  name="profileSocialDel" ) ,
-    path('upload/<int:id>/',                viewsProfile.upload_file,       name='upload_file'      ),
     ##############################################################################
     path("home/"     ,   viewsMain.homeLogoutView,        name="homeLogoutView") ,
     path("wallet/"   ,   viewsMain.walletView,            name="wallet"        ) ,
