@@ -58,19 +58,17 @@
                     <form method="post" enctype="multipart/form-data">
                       {% csrf_token %}
                       <input type="file" id="imageInput" accept="image/*">
-                    <div id="imageContainer"></div>
-                    <label for="imageInput"></label>
-                    <label for="imageInput" class="custom-file-upload" id="insertImgSubmit" >
-                      Зураг оруулах
-                    </label>
-                    <div>
+                      <div id="imageContainer"></div>
+                      <label for="imageInput"></label>
+                      <label for="imageInput" class="custom-file-upload" id="insertImgSubmit" >
+                        <i class="fa fa-camera" aria-hidden="true"></i> 
+                      </label>
                       <!-- Display uploaded images here
                       {% for image in images %}
                           <img src="{{ image.image.url }}" alt="Uploaded Image">
                       {% empty %}
                       {% endfor %} -->
-                  </div>
-                  </form>
+                    </form>
                     
                   </div>
                 </div>
