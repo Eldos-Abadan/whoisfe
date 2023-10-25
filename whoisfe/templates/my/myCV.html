@@ -125,13 +125,33 @@
                     {% endfor %}
                   </table>
                   
-                        
-                    <input type="file" id="imageInput" accept=".html">
-                      <div id="imageContainer"></div>
-                      <label for="imageInput"></label>
-                      <label for="imageInput" class="custom-file-upload" id="insertImgSubmit" >
-                        <i class="fa fa-plus" aria-hidden="true"></i> 
-                      </label>
+                  <form id="uploadTemplateForm" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <label for="imageUploadInput" class="file-label">Template</label>
+                    <input type="file" id="imageUploadInput" name="file" class="hidden-input" required>
+                    
+                    <select name="tempTypeId" required>
+                        <option value="1">Template Type 1</option>
+                        <option value="2">Template Type 2</option>
+                    </select>
+                
+                    <select name="catId" required>
+                        <option value="1">Category 1</option>
+                        <option value="2">Category 2</option>
+                    </select>
+                    
+                    <input type="text" name="name" placeholder="Template Name" required>
+                    
+                    <button type="submit" name="tempSubmit">Upload Template</button>
+                </form>
+                
+                
+                
+                
+                
+                
+                
+                
 
                 </div>
              </form>  
@@ -180,38 +200,6 @@
     }
   </script> 
  
-<script>
-  // Get references to HTML elements
-  const imageInput = document.getElementById('imageInput');
-  const imageContainer = document.getElementById('imageContainer');
 
-  // Add an event listener to the file input
-  imageInput.addEventListener('change', (event) => {
-    const file = event.target.files[0];
-
-    // Remove the previous content if it exists
-    while (imageContainer.firstChild) {
-      imageContainer.removeChild(imageContainer.firstChild);
-    }
-
-    if (file && file.name.endsWith('.html')) {
-      // Read the content of the HTML file and display it
-      const reader = new FileReader();
-
-      reader.onload = (event) => {
-        const htmlContent = event.target.result;
-        const iframe = document.createElement('iframe');
-        iframe.srcdoc = htmlContent;
-        iframe.style.minWidth = '100%';
-        iframe.style.minHeight = '400px';
-        imageContainer.appendChild(iframe);
-      };
-
-      reader.readAsText(file);
-    } else {
-      alert('Та HTML файл сонгоно уу.');
-    }
-  });
-</script>
 
 </html>
