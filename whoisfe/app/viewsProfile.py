@@ -4,12 +4,11 @@ import requests
 from whoisfe.settings import *
 from django.http import HttpResponse
 import json.decoder
+from django.conf import settings
+import os
 from django.core.files.storage import FileSystemStorage
-from .models import UploadedImage 
-
 
 def profileMain(request):
-    # Check session
     checkSession(request)
     if request.session['beegii'] == 0:
         return redirect("homeView")
@@ -20,17 +19,24 @@ def profileMain(request):
 
     if request.method == "POST":
         if "userInfoUpdateSubmit" in request.POST:
-            # Start userInfoUpdateSubmit
             serviceHayag = "http://whoisb.mandakh.org/userInfoUpdate/"
             userName = request.POST.get("userName")
             firstName = request.POST.get("firstName")
             lastName = request.POST.get("lastName")
+            profile = request.POST.get("profile")
             requestJSON = {
                 "id": request.session['userId'],
                 "userName": userName,
                 "firstName": firstName,
-                "lastName": lastName
+                "lastName": lastName,
+                "profile": profile
             }
+            if "profile" in request.FILES:
+              uploaded_file = request.FILES["profile"]
+              if uploaded_file:
+                  file_system = FileSystemStorage(location=settings.STATICFILES_DIRS[0] + '/profile')
+                  filename = file_system.save(uploaded_file.name, uploaded_file)
+                  requestJSON["profile"] = f'profile/{filename}'
             r = requests.get(serviceHayag,
                              data=json.dumps(requestJSON),
                              headers={'Content-Type': 'application/json'})
@@ -40,7 +46,6 @@ def profileMain(request):
                 htmlRuuDamjuulahUtguud["textColor"] = "#00ff00"
             else:
                 htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
-            # End userInfoUpdateSubmit
 
         if "changePassSubmit" in request.POST:
             if request.POST.get("new") == request.POST.get("new2"):
@@ -58,7 +63,6 @@ def profileMain(request):
             else:
                 htmlRuuDamjuulahUtguud["responseText"] = "zailnovsho"
 
-    # Get user information
     serviceHayag = "http://whoisb.mandakh.org/userInfoShow/"
     requestJSON = {
         "id": request.session['userId']
@@ -75,11 +79,90 @@ def profileMain(request):
         htmlRuuDamjuulahUtguud["firstName"] = userData["firstName"]
         htmlRuuDamjuulahUtguud["email"] = userData["email"]
         htmlRuuDamjuulahUtguud["userName"] = userData["userName"]
+        htmlRuuDamjuulahUtguud["path"] = userData["profile"]
     else:
         htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
         htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
 
     return render(request, "Profile/1.html", htmlRuuDamjuulahUtguud)
+
+
+
+# def profileMain(request):
+#     # Check session
+#     checkSession(request)
+#     if request.session['beegii'] == 0:
+#         return redirect("homeView")
+
+#     htmlRuuDamjuulahUtguud = {}
+#     htmlRuuDamjuulahUtguud["responseText"] = ""
+#     htmlRuuDamjuulahUtguud["textColor"] = "#00FF00"
+
+#     if request.method == "POST":
+#         if "userInfoUpdateSubmit" in request.POST:
+#             # Start userInfoUpdateSubmit
+#             serviceHayag = "http://whoisb.mandakh.org/userInfoUpdate/"
+#             userName = request.POST.get("userName")
+#             firstName = request.POST.get("firstName")
+#             lastName = request.POST.get("lastName")
+#             lastName = request.POST.get("lastName")
+#             profile = request.POST.get("profile")
+#             requestJSON = {
+#                 "id": request.session['userId'],
+#                 "userName": userName,
+#                 "firstName": firstName,
+#                 "lastName": lastName,
+#                 "profile":profile
+#             }
+#             r = requests.get(serviceHayag,
+#                              data=json.dumps(requestJSON),
+#                              headers={'Content-Type': 'application/json'})
+#             responseJson = r.json()
+#             htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
+#             if responseJson["responseCode"] == 200:
+#                 htmlRuuDamjuulahUtguud["textColor"] = "#00ff00"
+#             else:
+#                 htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
+
+#         if "changePassSubmit" in request.POST:
+#             if request.POST.get("new") == request.POST.get("new2"):
+#                 serviceHayag = "http://whoisb.mandakh.org/changePass/"
+#                 requestJSON = {
+#                     "id": request.session['userId'],
+#                     "oldpass": mandakhHash(request.POST.get("old")),
+#                     "newpass": mandakhHash(request.POST.get("new")),
+#                 }
+#                 r = requests.get(serviceHayag,
+#                                  data=json.dumps(requestJSON),
+#                                  headers={'Content-Type': 'application/json'})
+#                 responseJson = r.json()
+#                 htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
+#             else:
+#                 htmlRuuDamjuulahUtguud["responseText"] = "zailnovsho"
+
+#     # Get user information
+#     serviceHayag = "http://whoisb.mandakh.org/userInfoShow/"
+#     requestJSON = {
+#         "id": request.session['userId']
+#     }
+#     r = requests.get(serviceHayag,
+#                      data=json.dumps(requestJSON),
+#                      headers={'Content-Type': 'application/json'})
+#     responseJson = r.json()
+
+#     if responseJson["responseCode"] == 200:
+#         userData = responseJson["data"]
+#         htmlRuuDamjuulahUtguud["userId"] = userData["id"]
+#         htmlRuuDamjuulahUtguud["lastName"] = userData["lastName"]
+#         htmlRuuDamjuulahUtguud["firstName"] = userData["firstName"]
+#         htmlRuuDamjuulahUtguud["email"] = userData["email"]
+#         htmlRuuDamjuulahUtguud["userName"] = userData["userName"]
+#         htmlRuuDamjuulahUtguud["path"] = userData["profile"]
+#     else:
+#         htmlRuuDamjuulahUtguud["responseText"] = responseJson["responseText"]
+#         htmlRuuDamjuulahUtguud["textColor"] = "#ff0000"
+
+#     return render(request, "Profile/1.html", htmlRuuDamjuulahUtguud)
 
 
 def profileAdd(request):
