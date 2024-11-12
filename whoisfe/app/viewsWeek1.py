@@ -29,8 +29,6 @@ def week1SarnaiViews(request):
 def week1EnkhzulViews(request):
     return render(request, "week1/week1Enkhzul/index.html")
 
-def week1ZndraViews(request):
-    return render(request, "week1/week1Zndra/cv.html")
 
 def week1BayrbatViews(request):
     return render(request,"week1/week1Bayrbat/nuur.html")

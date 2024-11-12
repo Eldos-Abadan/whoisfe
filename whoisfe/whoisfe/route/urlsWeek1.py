@@ -9,7 +9,6 @@ urlpatterns = [
     path("week1/week1Sarnai/",      viewsWeek1.week1SarnaiViews,        name="week1Sarnai"),
     path("week1/week1Xuslen/",      viewsWeek1.week1XuslenViews,        name="week1Xuslen"),
     path("week1/week1Enkzul/",      viewsWeek1.week1EnkhzulViews,       name="week1Enkhzul"),
-    path("week1/week1Zndra/",       viewsWeek1.week1ZndraViews,         name="week1Zndra"),
     path("week1/week1Bayrbat/",     viewsWeek1.week1BayrbatViews,       name="week1Bayrbat"),
     path("week1/week1Odonkhuu/",    viewsWeek1.week1OdonkhuuViews,      name="week1Odonkhuu"),
     path("week1/week1Eldos/",       viewsWeek1.week1EldosViews,         name="week1Eldos"),

@@ -1,166 +1,175 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/templates/just.css'%}">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/templates/just.css'%}"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
     <title><3></title>
-</head>
-<style>
-.tr, td{
-    border: 1px solid blue;
-    width: auto;    
-    padding: 0.5rem;
-}
-</style>
-<body>
+  </head>
+  <style>
+    .tr,
+    td {
+      border: 1px solid blue;
+      width: auto;
+      padding: 0.5rem;
+    }
+  </style>
+  <body>
     <div class="wrapper">
-        <div class="intro">
-            <div class="profile">
-                <div class="photo">
-                    <img src="#">
-                    <!-- {% static 'images/bi.jpg'%} -->
-                </div>
-                <div class="bio">
-                    <h1 class="name">{{undsen.userName}}</h1>
-                    <p class="profession">Back-end Developer</p>
-                </div>
-            </div>
-            <div class="intro-section about">
-                <h1 class="title">Хувийн мэдээлэл</h1>
-                <p class="paragraph">Овог: {{undsen.lastName}}</p>
-                <p class="paragraph">Нэр: {{undsen.firstName}}</p>
-                <p class="paragraph">Хүйс: {% if nemelt.huis == 1 %} Эр {% endif %} {% if nemelt.huis == 2 %} Эм{% endif %}</p>
-                <p class="paragraph">Регистер: {{nemelt.regDug}}</p>
-                <p class="paragraph">Төрсөн огноо: {{nemelt.torsonOgnoo}}</p>
-                <p class="paragraph">Иргэншил: {{nemelt.irgenshil}}</p>
-                <p class="paragraph">Яс үндэс: {{nemelt.ysUndes}}</p>
-            </div>
-            <div class="intro-section contact">
-                <h1 class="title">Холбоо барих</h1>
-                <div class="info-section">
-                    <i class="fa fa-phone"></i>
-                    <span>{{nemelt.dugaar}}</span>
-                </div>
-                <div class="info-section">
-                    <i class="fa fa-envelope"></i>
-                    <span>{{undsen.email}}</span>
-                </div>
-                <div class="info-section link">
-                    <i class="fa fa-facebook"></i>
-                    <a target="_blank" rel="author" href="https://www.facebook.com/{{social.site}}">
-                        <span>{{social.site}}</span>
-                    </a>
-                </div>
-            </div>
-            <div class="intro-section follow">
-                <h1 class="title">Follow</h1>
-                <div class="info-section link">
-                    <i class="fa fa-github"></i>
-                    <a target="_blank" rel="author" href="https://github.com/zndra">
-                        <span>zndra</span>
-                    </a>
-                </div>
-                <div class="info-section link">
-                    <i class="fa fa-instagram"></i>
-                    <a target="_blank" rel="author" href="https://medium.com/狗奴工程師">
-                        <span>zzndra</span>
-                    </a>
-                </div>
-            </div>
+      <div class="intro">
+        <div class="profile">
+          <div class="photo">
+            <img src="#" />
+            <!-- {% static 'images/bi.jpg'%} -->
+          </div>
+          <div class="bio">
+            <h1 class="name">{{undsen.userName}}</h1>
+            {% for elem in work %}
+            <p>Organization: {{elem.ajil}}</p>
+            {% endfor %}
+          </div>
         </div>
-        <div class="detail">
-
-            <div class="detail-section edu">
-                <div class="detail-title">
-                    <div class="title-icon">
-                        <i class="fa fa-graduation-cap"></i>
-                    </div>
-                    <span>Боловсрол</span>
-                </div>
-                {% for elem in education %}
-                <div class="detail-content">
-                    <div class="timeline-block">
-                        <h1>{{elem.education}}</h1>
-                        <p>{{elem.direction}}</p>
-                        <time>{{ elem.elssenOn }} - {{ elem.duussanOn }}</time>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-            <div class="detail-section edu">
-                <div class="detail-title">
-                    <div class="title-icon">
-                        <i class="fa fa-history"></i>
-                    </div>
-                    <span>Ажлын туршлага</span>
-                </div>
-                {% for elem in work %}
-                <div class="detail-content">
-                    <div class="timeline-block">
-                        <h1>{{elem.ajil}}</h1>
-                        <p>{{elem.company}}</p>
-                        <time>{{elem.ehelsen}}-{{elem.duussan}}</time>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-            <div class="detail-section pg-skill">
-                <div class="detail-title">
-                    <div class="title-icon">
-                        <i class="fa fa-users"></i>
-                    </div>
-                    <span>Гэр бүлийн мэдээлэл</span>
-                </div>
-                <div class="detail-content">
-                    <table class="table">
-                        <tr>
-                            <td>Хэн болох</td>
-                            <td>Нэр</td>
-                            <td>Утасны дугаар</td>
-                        </tr>
-                        {% for elem in family %}
-                        <tr>
-                            <td>{{elem.henBoloh}}</td>
-                            <td>{{elem.ner}}</td>
-                            <td>{{elem.dugaar}}</td>
-                        </tr>
-                        {% endfor %}
-                    </table>
-                </div>
-            </div>
-            <div class="detail-section pg-skill">
-                <div class="detail-title">
-                    <div class="title-icon">
-                        <i class="fa fa-laptop"></i>
-                    </div>
-                    <span>Чадвар</span>
-                </div>
-                <div class="detail-content">
-                   <textarea name="" id="" cols="auto" rows="auto">{{skill.chadvarNer}}</textarea>
-                </div>
-            </div>
-
-            <div class="detail-section interests">
-                <div class="detail-title">
-                    <div class="title-icon">
-                        <i class="fa fa-heart"></i>
-                    </div>
-                    <span>Хобби</span>
-                </div>
-                <div class="detail-content">
-                    <textarea name="" id="" cols="auto" rows="auto">{{nemelt.hobby}}</textarea>
-                </div>
-            </div>
+        <div class="intro-section about">
+          <h1 class="title">Хувийн мэдээлэл</h1>
+          <p class="paragraph">Овог: {{undsen.lastName}}</p>
+          <p class="paragraph">Нэр: {{undsen.firstName}}</p>
+          <p class="paragraph">
+            Хүйс: {% if nemelt.huis == 1 %} Эр {% endif %} {% if nemelt.huis ==
+            2 %} Эм{% endif %}
+          </p>
+          <p class="paragraph">Регистер: {{nemelt.regDug}}</p>
+          <p class="paragraph">Төрсөн огноо: {{nemelt.torsonOgnoo}}</p>
+          <p class="paragraph">Иргэншил: {{nemelt.irgenshil}}</p>
+          <p class="paragraph">Яс үндэс: {{nemelt.ysUndes}}</p>
         </div>
+        <div class="intro-section contact">
+          <h1 class="title">Холбоо барих</h1>
+          <div class="info-section">
+            <i class="fa fa-phone"></i>
+            <span>{{nemelt.dugaar}}</span>
+          </div>
+          <div class="info-section">
+            <i class="fa fa-envelope"></i>
+            <span>{{undsen.email}}</span>
+          </div>
+          <div class="info-section link">
+            <i class="fa fa-{{ social.app|lower }}"></i>
+            <a
+              target="_blank"
+              rel="author"
+              href="https://www.{{social.app}}.com/{{social.site}}"
+            >
+              <span>{{social.site}}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="detail">
+        <div class="detail-section edu">
+          <div class="detail-title">
+            <div class="title-icon">
+              <i class="fa fa-graduation-cap"></i>
+            </div>
+            <span>Боловсрол</span>
+          </div>
+          {% for elem in education %}
+          <div class="detail-content">
+            <div class="timeline-block">
+              <h1>University: {{elem.education}}</h1>
+              <p>Programme: {{elem.direction}}</p>
+              <time>{{ elem.elssenOn }} - {{ elem.duussanOn }}</time>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="detail-section edu">
+          <div class="detail-title">
+            <div class="title-icon">
+              <i class="fa fa-history"></i>
+            </div>
+            <span>Ажлын туршлага</span>
+          </div>
+          {% for elem in work %}
+          <div class="detail-content">
+            <div class="timeline-block">
+              <h1>Position: {{elem.ajil}}</h1>
+              <p>Organization: {{elem.company}}</p>
+              <time>{{elem.ehelsen}}-{{elem.duussan}}</time>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="detail-section pg-skill">
+          <div class="detail-title">
+            <div class="title-icon">
+              <i class="fa fa-users"></i>
+            </div>
+            <span>Гэр бүлийн мэдээлэл</span>
+          </div>
+          <div class="detail-content">
+            <table class="table">
+              <tr>
+                <td>Хэн болох</td>
+                <td>Нэр</td>
+                <td>Утасны дугаар</td>
+              </tr>
+              {% for elem in family %}
+              <tr>
+                <td>{{elem.henBoloh}}</td>
+                <td>{{elem.ner}}</td>
+                <td>{{elem.dugaar}}</td>
+              </tr>
+              {% endfor %}
+            </table>
+          </div>
+        </div>
+        <div class="detail-section pg-skill">
+          <div class="detail-title">
+            <div class="title-icon">
+              <i class="fa fa-laptop"></i>
+            </div>
+            <span>Чадвар</span>
+          </div>
+          <div class="detail-content">
+            <textarea name="" id="" cols="auto" rows="auto">
+{{skill.chadvarNer}}</textarea
+            >
+          </div>
+        </div>
+
+        <div class="detail-section interests">
+          <div class="detail-title">
+            <div class="title-icon">
+              <i class="fa fa-heart"></i>
+            </div>
+            <span>Хобби</span>
+          </div>
+          <div class="detail-content">
+            <textarea name="" id="" cols="auto" rows="auto">
+{{nemelt.hobby}}</textarea
+            >
+          </div>
+        </div>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
