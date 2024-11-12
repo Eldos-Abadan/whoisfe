@@ -107,7 +107,7 @@
                     </div>
                   </div>
                 </div>
-                  <h4 > Танилцуулгын загварын жагсаалт</h4>
+                 <center> <h4 > Танилцуулгын загварын жагсаалт</h4>
                   <table border="1" >
                     <tr>
                       <th style="color: white;" id="name">Нэр</th>
@@ -123,9 +123,9 @@
                       <td><i class="fa fa-copy" aria-hidden="true" id="copy-button" data-url="http://whois.mandakh.org/mycv/{{ele.id}}/{{userName}}/" onclick="copyClipboard(this);"></i></td>
                     </tr>
                     {% endfor %}
-                  </table>
+                  </table></center>
                   
-                  <form id="uploadTemplateForm" method="post" enctype="multipart/form-data">
+                  <!-- <form id="uploadTemplateForm" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     <label for="imageUploadInput" class="file-label">Template</label>
                     <input type="file" id="imageUploadInput" name="file" class="hidden-input" required>
@@ -144,7 +144,7 @@
                     
                     <button type="submit" name="tempSubmit">Upload Template</button>
                 </form>
-                
+                 -->
                 
                 
                 
