@@ -38,13 +38,16 @@
       <div class="intro">
         <div class="profile">
           <div class="photo">
-            <img src="#" />
-            <!-- {% static 'images/bi.jpg'%} -->
+            {% if undsen.profile is null %}
+            <img src="{% static 'profile/default.jpg' %}" />
+            {% else %}
+            <img src="{% static undsen.profile %}" alt="{{undsen.profile}}" />
+            {% endif %}
           </div>
           <div class="bio">
-            <h1 class="name">{{undsen.userName}}</h1>
+            <h1 class="name">{{undsen.userName|title}}</h1>
             {% for elem in work %}
-            <p>Organization: {{elem[0].ajil}}</p>
+            <h3>{{elem.ajil|title}}</h3>
             {% endfor %}
           </div>
         </div>
@@ -53,8 +56,8 @@
           <p class="paragraph">Овог: {{undsen.lastName}}</p>
           <p class="paragraph">Нэр: {{undsen.firstName}}</p>
           <p class="paragraph">
-            Хүйс: {% if nemelt.huis == 1 %} Эр {% elif nemelt.huis == 2 %} Эм {%
-            else %} Тодорхой бус {% endif %}
+            Хүйс: {% if nemelt.huis == 1 %} Эр {% elif nemelt.huis == 2 %} Эм
+            {%endif %}
           </p>
 
           <p class="paragraph">Регистер: {{nemelt.regDug}}</p>
@@ -95,8 +98,8 @@
           {% for elem in education %}
           <div class="detail-content">
             <div class="timeline-block">
-              <h1>University: {{elem.education}}</h1>
-              <p>Programme: {{elem.direction}}</p>
+              <h1>University: {{elem.education|title}}</h1>
+              <p>Programme: {{elem.direction|title}}</p>
               <time>{{ elem.elssenOn }} - {{ elem.duussanOn }}</time>
             </div>
           </div>
@@ -112,8 +115,8 @@
           {% for elem in work %}
           <div class="detail-content">
             <div class="timeline-block">
-              <h1>Position: {{elem.ajil}}</h1>
-              <p>Organization: {{elem.company}}</p>
+              <h1>Position: {{elem.ajil|title}}</h1>
+              <p>Organization: {{elem.company |title}}</p>
               <time>{{elem.ehelsen}}-{{elem.duussan}}</time>
             </div>
           </div>
@@ -135,8 +138,8 @@
               </tr>
               {% for elem in family %}
               <tr>
-                <td>{{elem.henBoloh}}</td>
-                <td>{{elem.ner}}</td>
+                <td>{{elem.henBoloh|title}}</td>
+                <td>{{elem.ner|title}}</td>
                 <td>{{elem.dugaar}}</td>
               </tr>
               {% endfor %}
