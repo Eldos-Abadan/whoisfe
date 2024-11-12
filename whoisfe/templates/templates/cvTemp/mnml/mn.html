@@ -44,7 +44,7 @@
           <div class="bio">
             <h1 class="name">{{undsen.userName}}</h1>
             {% for elem in work %}
-            <p>Organization: {{elem.ajil}}</p>
+            <p>Organization: {{elem[0].ajil}}</p>
             {% endfor %}
           </div>
         </div>
@@ -53,9 +53,10 @@
           <p class="paragraph">Овог: {{undsen.lastName}}</p>
           <p class="paragraph">Нэр: {{undsen.firstName}}</p>
           <p class="paragraph">
-            Хүйс: {% if nemelt.huis == 1 %} Эр {% endif %} {% if nemelt.huis ==
-            2 %} Эм{% endif %}
+            Хүйс: {% if nemelt.huis == 1 %} Эр {% elif nemelt.huis == 2 %} Эм {%
+            else %} Тодорхой бус {% endif %}
           </p>
+
           <p class="paragraph">Регистер: {{nemelt.regDug}}</p>
           <p class="paragraph">Төрсөн огноо: {{nemelt.torsonOgnoo}}</p>
           <p class="paragraph">Иргэншил: {{nemelt.irgenshil}}</p>
