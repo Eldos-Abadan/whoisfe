@@ -1,41 +1,47 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/templates/bc.css'%}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/templates/bc.css'%}"
+    />
     <title>Document</title>
-</head>
+    <style></style>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="card">
-
-            <div class="front side">
-                <h1 class="logo">{{undsen.userName}}</h1>
-            </div>
-
-            <div class="back side">
-                <h3 class="name">{{undsen.firstName}} {{undsen.lastName}}</h3>
-                <p><span class="property">                        
-                    {% for elem in work %}
-                        {% if elem.duussan == 'Ажиллаж байгаа' %} 
-                            {{ elem.ajil }}
-                        {% endif %}
-                    {% endfor %}
-                </p>
-            <div style="color:black"></div>
-                <div class="info">
-                    <p><span class="property">Email: </span>{{undsen.email}}</p>
-                    <p><span class="property">Phone: </span>(976) {{nemelt.dugaar}}</p>
-                    <p><span class="property">Website: </span>Your website...</p>
-                </div>
-            </div>
-
+      <div class="card">
+        <div class="front side">
+          <h1 class="logo">{{undsen.userName}}</h1>
         </div>
-    </div>
-</body>
 
+        <div class="back side">
+          <div class="left-section">
+            <h3 class="name">{{ undsen.lastName }} {{ undsen.firstName }}</h3>
+            <p style="color: #50586c">
+              {% for elem in work %} {% if elem.duussan == 'Ажиллаж байгаа' %}
+              {{ elem.ajil }} {% endif %} {% endfor %}
+            </p>
+          </div>
+
+          <div class="right-section">
+            <div class="info">
+              <p><span class="property">Email: </span>{{ undsen.email }}</p>
+              <p><span class="property">Phone: </span>{{ nemelt.dugaar }}</p>
+              {% if social %} {% for a in social %}
+              <p>
+                <span class="property">{{ a.app|upper }}: </span>{{ a.site }}
+              </p>
+              {% endfor %} {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

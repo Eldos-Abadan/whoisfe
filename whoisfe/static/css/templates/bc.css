@@ -1,18 +1,22 @@
-@import 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto:300';
+@import "https://fonts.googleapis.com/css?family=Open+Sans|Roboto:300";
 
+* {
+  box-sizing: border-box;
+}
 
-* { box-sizing: border-box; }
-
-body { background: white; overflow-x: hidden; }
+body {
+  background: white;
+  overflow-x: hidden;
+}
 .container {
   perspective: 800px;
-  
-  /* Styling */  
-  color: #fff;
-  font-family: 'Open Sans', sans-serif;
+
+  /* Styling */
+  color: #45506c;
+  font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
   letter-spacing: 4px;
-  
+
   /* Center it */
   position: absolute;
   top: 50%;
@@ -23,12 +27,12 @@ body { background: white; overflow-x: hidden; }
   /* Styling */
   width: 700px;
   height: 400px;
-  background: #50586C;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);  
-  
+  background: #50586c;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
   /* Card flipping effects */
   transform-style: preserve-3d;
-  transition: 0.6s; 
+  transition: 0.6s;
 }
 .side {
   position: absolute;
@@ -52,42 +56,52 @@ body { background: white; overflow-x: hidden; }
   text-align: center;
 }
 .logo {
-  outline: 1px solid #DCE2F0;
+  outline: 1px solid #dce2f0;
   display: inline-block;
   padding: 15px 40px;
-  
+
   text-transform: uppercase;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.4em;
   font-weight: normal;
   line-height: 32px;
   letter-spacing: 8px;
 }
 
-/* Back styling */
 .back {
-  background: #DCE2F0;
+  background: #dce2f0;
   padding: 30px;
+  display: flex;
+  justify-content: space-between;
 }
+
+.left-section,
+.right-section {
+  width: 48%; /* Adjusted to leave some space between columns */
+}
+
 .name {
-  color: #50586C;
+  color: #8699ca;
   margin-bottom: 0;
 }
-p {
-  margin: 0.8em 0;
-}
+
 .info {
-  position: absolute;
-  bottom: 50px;
-  left: 30px;
-  color: #50586C;
+  color: #50586c;
+  display: flex;
+  flex-wrap: wrap;
 }
+
 .property {
-  color: #50586C;
+  flex-basis: 50%;
+  margin-bottom: 0.5em;
 }
 
 /* Make semi-responsive */
-@media (max-width:700px) {
-  .card { transform: scale(.5); }
-  .container:hover .card { transform: scale(.5) rotateY(-180deg) translateZ(1px); }
+@media (max-width: 700px) {
+  .card {
+    transform: scale(0.5);
+  }
+  .container:hover .card {
+    transform: scale(0.5) rotateY(-180deg) translateZ(1px);
+  }
 }

@@ -130,6 +130,7 @@
             <span>Гэр бүлийн мэдээлэл</span>
           </div>
           <div class="detail-content">
+            {% if family %}
             <table class="table">
               <tr>
                 <td>Хэн болох</td>
@@ -144,6 +145,7 @@
               </tr>
               {% endfor %}
             </table>
+            {% endif %}
           </div>
         </div>
         <div class="detail-section pg-skill">
